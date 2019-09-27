@@ -1,0 +1,5 @@
+C:\Users\alombardi\GitHub\TestTemplate_toolkit\Build\BHoM_Adapter_Template1_oM.dll
+C:\Users\alombardi\GitHub\TestTemplate_toolkit\Build\BHoM_Adapter_Template1_oM.pdb
+C:\Users\alombardi\GitHub\TestTemplate_toolkit\BHoMtemplate_oM\obj\Debug\SoftwareName_oM.csprojResolveAssemblyReference.cache
+C:\Users\alombardi\GitHub\TestTemplate_toolkit\BHoMtemplate_oM\obj\Debug\BHoM_Adapter_Template1_oM.dll
+C:\Users\alombardi\GitHub\TestTemplate_toolkit\BHoMtemplate_oM\obj\Debug\BHoM_Adapter_Template1_oM.pdb

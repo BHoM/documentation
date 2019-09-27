@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+
+  <!--
+  Invoke-MSBuild .\build-templates.proj -targets BuildStandAlone -properties @{'ls-TemplateSubFolder'='SideWaffle';'TemplateSourceRoot'='C:\Users\Sayed\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\sources\sidewaffleremote\\';'ls-TemplateReferenceRoot'='C:\Users\Sayed\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\sources\sidewaffleremote\Project Templates\\';'ls-ProjectTemplateRoot'='C:\Users\Sayed\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\sources\sidewaffleremote\Project Templates v0\\';'ls-ItemTemplateRoot'='C:\Users\Sayed\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\sources\sidewaffleremote\Item Templates\\';'BaseIntermediateOutputPath'='C:\Users\Sayed\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\baseintout\sidewaffleremote\\';'OutputPath'='C:\Users\Sayed\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\output\sidewaffleremote\\'}
+  Invoke-MSBuild .\build-templates.proj -targets BuildStandAlone -properties @{
+    'ls-TemplateSubFolder'='SideWaffle';
+    'TemplateSourceRoot'='C:\Users\Sayed\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\sources\sidewaffleremote\\';
+    'ls-TemplateReferenceRoot'='C:\Users\Sayed\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\sources\sidewaffleremote\Project Templates\\';
+    'ls-ProjectTemplateRoot'='C:\Users\Sayed\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\sources\sidewaffleremote\Project Templates v0\\';
+    'ls-ItemTemplateRoot'='C:\Users\Sayed\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\sources\sidewaffleremote\Item Templates\\';
+    'BaseIntermediateOutputPath'='C:\Users\Sayed\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\baseintout\sidewaffleremote\\';
+    'OutputPath'='C:\Users\Sayed\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\output\sidewaffleremote\\'}
+  -->
+  
+  <PropertyGroup Label="TemplateBuilder">
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$(MSBuildThisFileDirectory)ligershark.templates.targets</TemplateBuilderTargets>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <!--<BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">obj\</BaseIntermediateOutputPath>-->
+    <IntermediateOutputPath Condition=" '$(PlatformName)' == 'AnyCPU' ">$(BaseIntermediateOutputPath)$(Configuration)\</IntermediateOutputPath>
+    <IntermediateOutputPath Condition=" '$(PlatformName)' != 'AnyCPU' ">$(BaseIntermediateOutputPath)$(PlatformName)\$(Configuration)\</IntermediateOutputPath>
+    <OutputPath Condition=" '$(OutputPath)'=='' ">bin\Debug\</OutputPath>
+    <ls-TemplateSubFolder Condition=" '$(ls-TemplateSubFolder)'=='' ">My Custom Templates</ls-TemplateSubFolder>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!--<TemplateSourceRoot Condition=" '$(TemplateSourceRoot)'=='' ">C:\Data\personal\mycode\side-waffle\</TemplateSourceRoot>
+    <ls-ProjectTemplateRoot Condition=" '$(ls-ProjectTemplateRoot)'=='' ">$(TemplateSourceRoot)Project Templates\</ls-ProjectTemplateRoot>
+    <ls-ItemTemplateRoot Condition=" '$(ls-ItemTemplateRoot)'=='' ">$(TemplateSourceRoot)Item Templates\</ls-ItemTemplateRoot>-->
+    <ls-ItemTemplatesExtendBuild>true</ls-ItemTemplatesExtendBuild>
+  </PropertyGroup>
+  <Import Project="$(TemplateBuilderTargets)" Condition="Exists('$(TemplateBuilderTargets)')" Label="TemplateBuilder" />
+
+  <Target Name="ValidateProperties">
+    <Message Text="Inside validate properties" Importance="low"/>
+    <Error Condition=" '$(TemplateSourceRoot)'=='' " Text="TemplateSourceRoot is a required property but it is empty"/>
+    <Error Condition="!Exists('$(TemplateSourceRoot)')" Text="[$(TemplateSourceRoot)] was not found on"/>
+
+    <Warning Text="ls-TemplateReferenceRoot is a required property but it is empty" Condition=" '$(ls-ProjectTemplateRoot)'=='' "/>
+    
+    <Warning Text="ls-ProjectTemplateRoot is a required property but it is empty" Condition=" '$(ls-ProjectTemplateRoot)'=='' "/>
+    <!--<Error Condition="!Exists('$(ls-ProjectTemplateRoot)')" Text="[$(ls-ProjectTemplateRoot)] was not found on"/>-->
+
+    <Warning Text="ls-ItemTemplateRoot is a required property but it is empty" Condition=" '$(ls-ItemTemplateRoot)'=='' "/>
+    <!--<Error Condition="!Exists('$(ls-ItemTemplateRoot)')" Text="[$(ls-ItemTemplateRoot)] was not found on"/>-->
+    
+    <Error Text="BaseIntermediateOutputPath is a required property but it is empty" Condition=" '$(BaseIntermediateOutputPath)'=='' "/>    
+    <Error Text="OutputPath is a required property but it is empty" Condition=" '$(OutputPath)'=='' "/>
+
+    <MakeDir Directories="$(BaseIntermediateOutputPath);$(OutputPath)"/>   
+  </Target>
+  
+  <Target Name="FixProperties">
+    <PropertyGroup>
+      <ls-TemplateReferenceRoot Condition="!HasTrailingSlash('$(ls-TemplateReferenceRoot)')">$(ls-TemplateReferenceRoot)\</ls-TemplateReferenceRoot>
+      <ls-ProjectTemplateRoot Condition="!HasTrailingSlash('$(ls-ProjectTemplateRoot)')">$(ls-ProjectTemplateRoot)\</ls-ProjectTemplateRoot>
+      <ls-ItemTemplateRoot Condition="!HasTrailingSlash('$(ls-ItemTemplateRoot)')">$(ls-ItemTemplateRoot)\</ls-ItemTemplateRoot>
+    </PropertyGroup>
+  </Target>
+  <ItemGroup>
+    <!-- 
+    This is a hack to allow TemplateReference to be populated in 
+    a target. This value needs to be removed, and is in the DiscoverTemplateFiles target below
+    -->
+    <TemplateReference Include="removeme"/>
+  </ItemGroup>
+  <PropertyGroup>
+    <DiscoverTemplateFilesDependsOn>
+      $(DiscoverTemplateFilesDependsOn);
+      ValidateProperties;
+      FixProperties
+    </DiscoverTemplateFilesDependsOn>
+  </PropertyGroup>
+  <Target Name="DiscoverTemplateFiles" DependsOnTargets="$(DiscoverTemplateFilesDependsOn)">
+    <Message Text="ls-TemplateReferenceRoot: [$(ls-TemplateReferenceRoot)]" Importance="low"/>    
+    <Message Text="ls-ItemTemplateRoot: [$(ls-ItemTemplateRoot)]" Importance="low"/>
+    <ItemGroup>
+      <_templatefiles Include="$(ls-TemplateReferenceRoot)**\*.csproj"/>
+      <TemplateReferene Remove="removeme"/>
+      <TemplateReference Include="@(_templatefiles)">
+        <PathToProject>%(Identity)</PathToProject>
+      </TemplateReference>
+    </ItemGroup>
+    <Message Text="_templatefiles: @(_templatefiles)" Importance="low"/>
+    <Message Text="TemplateReference:%0a@(TemplateReference->'[%(FullPath) ||| %(PathToProject)]','%0a')" Importance="low"/>
+
+    <Message Text="_templatefiles.identity: [%(_templatefiles.identity)]" Importance="low"/>
+    <Message Text="TemplateReference.PathToProject:[%(TemplateReference.PathToProject)]" Importance="low"/>
+    <Message Text="TemplateReference: [@(TemplateReference)]" Importance="low"/>
+  </Target>
+  
+  <!--<PropertyGroup>
+    <BuildDependsOn>
+      $(CoreCompileDependsOn);
+      $(BuildDependsOn);
+      ValidateProperties;
+      DiscoverTemplateFiles;
+      ls-ProcessItemTemplates;
+    </BuildDependsOn>
+  </PropertyGroup>
+  <Target Name="Build" DependsOnTargets="$(BuildDependsOn)" />-->
+  <PropertyGroup>
+    <BuildDependsOn>
+      $(BuildDependsOn);
+      ValidateProperties;
+      DiscoverTemplateFiles;
+    </BuildDependsOn>
+  </PropertyGroup>
+  <Target Name="Build" DependsOnTargets="$(BuildDependsOn);$(CoreCompileDependsOn);ls-ProcessItemTemplates" />
+</Project>

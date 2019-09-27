@@ -1,0 +1,2 @@
+C:\Users\alombardi\GitHub\TestTemplate_toolkit\BHoMtemplate_Adapter\obj\Debug\BHoMtemplate_Adapter.csprojAssemblyReference.cache
+C:\Users\alombardi\GitHub\TestTemplate_toolkit\BHoMtemplate_Adapter\obj\Debug\BHoMtemplate_Adapter.csproj.CoreCompileInputs.cache
