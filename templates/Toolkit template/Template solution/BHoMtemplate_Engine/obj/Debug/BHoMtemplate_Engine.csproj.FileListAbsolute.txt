@@ -1,7 +1,0 @@
-C:\Users\alombardi\GitHub\TestTemplate_toolkit\Build\BHoM_Adapter_Template1_Engine.dll
-C:\Users\alombardi\GitHub\TestTemplate_toolkit\Build\BHoM_Adapter_Template1_Engine.pdb
-C:\Users\alombardi\GitHub\TestTemplate_toolkit\BHoMtemplate_Engine\obj\Debug\BHoMtemplate_Engine.csprojAssemblyReference.cache
-C:\Users\alombardi\GitHub\TestTemplate_toolkit\BHoMtemplate_Engine\obj\Debug\BHoMtemplate_Engine.csproj.CoreCompileInputs.cache
-C:\Users\alombardi\GitHub\TestTemplate_toolkit\BHoMtemplate_Engine\obj\Debug\BHoMtemplate_Engine.csproj.CopyComplete
-C:\Users\alombardi\GitHub\TestTemplate_toolkit\BHoMtemplate_Engine\obj\Debug\BHoM_Adapter_Template1_Engine.dll
-C:\Users\alombardi\GitHub\TestTemplate_toolkit\BHoMtemplate_Engine\obj\Debug\BHoM_Adapter_Template1_Engine.pdb
