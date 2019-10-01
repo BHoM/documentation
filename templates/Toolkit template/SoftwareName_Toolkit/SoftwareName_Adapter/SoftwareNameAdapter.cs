@@ -8,7 +8,7 @@ using BH.Engine.$ext_safeprojectname$;
 
 namespace BH.Adapter.$ext_safeprojectname$
 {
-    public partial class $ext_safeprojectname$ : BHoMAdapter
+    public partial class $ext_safeprojectname$Adapter : BHoMAdapter
     {
 
         /***************************************************/
@@ -16,7 +16,7 @@ namespace BH.Adapter.$ext_safeprojectname$
         /***************************************************/
 
         //Add any applicable constructors here, such as linking to a specific file or anything else as well as linking to that file through the (if existing) com link via the API
-        public $ext_safeprojectname$ ()
+        public $ext_safeprojectname$Adapter ()
         {
             AdapterId = BH.Engine.$ext_safeprojectname$.Convert.AdapterId;   //Sets` the "AdapterId" to "SoftwareName_id". Generally stored as a constant string in the convert class in the SoftwareName_Engine
 

@@ -30,7 +30,7 @@ using BH.oM.Common.Materials;
 
 namespace BH.Adapter.$ext_safeprojectname$
 {
-    public partial class $ext_safeprojectname$
+    public partial class $ext_safeprojectname$Adapter
     {
         /***************************************************/
         /**** Adapter overload method                   ****/

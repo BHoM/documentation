@@ -29,7 +29,7 @@ using BH.oM.Common.Materials;
 
 namespace BH.Adapter.$ext_afeprojectname$
 {
-    public partial class $ext_afeprojectname$
+    public partial class $ext_safeprojectname$Adapter
     {
 
         /***************************************************/
