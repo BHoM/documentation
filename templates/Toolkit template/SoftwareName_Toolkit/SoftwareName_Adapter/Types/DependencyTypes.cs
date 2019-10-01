@@ -31,7 +31,7 @@ using System.Collections.Generic;
 
 namespace BH.Adapter.$ext_safeprojectname$
 {
-    public partial class $ext_safeprojectname$
+    public partial class $ext_safeprojectname$Adapter
     {
         /***************************************************/
         /**** BHoM Adapter Interface                    ****/

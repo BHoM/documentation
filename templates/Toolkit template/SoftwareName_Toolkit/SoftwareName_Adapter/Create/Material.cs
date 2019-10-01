@@ -27,7 +27,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BH.oM.Common.Materials;
 
-namespace BH.Adapter.$ext_afeprojectname$
+namespace BH.Adapter.$ext_safeprojectname$
 {
     public partial class $ext_safeprojectname$Adapter
     {
