@@ -1,9 +1,13 @@
-### INSTRUCTIONS
+## Installing the BHoM Toolkit Template
+This will install the Template in the system and it is required only once per machine.
 
-In Visual Studio, do File --> New Project and search for "BHoM". Select the template "BHoM Toolkit Template".
+Take SoftwareName_Toolkit.zip from the `documentation` repo (`documentation\templates\Toolkit template`) and copy it over to your Visual Studio `ProjectTemplates` folder, generally in: `C:\userName\Documents\Visual Studio 20xx\Templates\ProjectTemplates`
 
-0. Take SoftwareName_Toolkit.zip from the `documentation` repo and copy it over to your Visual Studio `ProjectTemplates` folder, generally in: 
-`C:\userName\Documents\Visual Studio 20xx\Templates\ProjectTemplates`
+Reboot Visual Studio. 
+
+## Create the Toolkit using the Template
+
+0. Open Visual Studio. Do File --> New Project and search for "BHoM". Select the template "BHoM Toolkit Template".
 
 1. If Visual Studio displays the checkbox "_Place solution and project in the same directory_" (VS version 2019 onwards), select it. 
 
@@ -44,5 +48,3 @@ Once the solution is created:
      In Solution Explorer, right click each project and do "Remove".
      Then right-click on the Solution name and do "Add Existing Project". 
      Browse and select the `SoftwareName_Adapter`, `SoftwareName_Engine` and `SoftwareName_oM` projects in their new location.
-   
-
