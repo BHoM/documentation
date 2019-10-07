@@ -1,8 +1,8 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
     xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">  
     <TemplateData>  
-        <Name>SoftwareName</Name>  
-        <Description>Template to create a BHoM_Toolkit template, including BHoM_Adapter, BHoM_Engine and BHoM_oM projects. Replace "SoftwareName" with the name of the project. Once the solution is created, add "_Toolkit" to the solution name.</Description>  
+        <Name>BHoM Toolkit Template</Name>  
+        <Description>Template to create a BHoM_Toolkit template, including BHoM_Adapter, BHoM_Engine and BHoM_oM projects. </Description>  
 		<ProjectType>CSharp</ProjectType>
 		<CreateNewFolder>false</CreateNewFolder>
 		<Icon>BHoMLogo.ico</Icon>		
