@@ -21,7 +21,7 @@ Once the solution is created:
 
 5. Close Visual Studio.
 
-6. (Applies only you couldn't do step 1. "_Place solution and project in the same directory_")
+6. (Applies only if you couldn't do step 1. "_Place solution and project in the same directory_")
 
    Go in the repo folder, which will be called "SoftwareName". It will contain only the solution file "SoftwareName.sln" and another folder "SoftwareName".
    
