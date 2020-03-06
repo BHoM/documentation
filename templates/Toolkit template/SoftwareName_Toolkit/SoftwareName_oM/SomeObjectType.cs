@@ -1,6 +1,6 @@
 ﻿/*
  * This file is part of the Buildings and Habitats object Model (BHoM)
- * Copyright (c) 2015 - 2019, the respective contributors. All rights reserved.
+ * Copyright (c) 2015 - 2020, the respective contributors. All rights reserved.
  *
  * Each contributor holds copyright over their respective contributions.
  * The project versioning (Git) records all such contribution source information.
@@ -31,11 +31,11 @@ namespace BH.oM.External.$ext_safeprojectname$
 {
 	// You can define your own Toolkit-specific types in this namespace.
 
-    public class SomeObject : BHoMObject
-    {
-       // See examples in the BHoM repo and the wiki to see how we define types.
-	   // Generally, all properties should be public and have public getter and setter.
-	   // No constructor should be specified as we auto generate it from the class properties.
-	   // If a specific instantiaton method is needed, we categorise it as an "Engine/Create" method.
-    }
+    // public class SomeObject : BHoMObject
+    // {
+       // // See examples in the BHoM repo and the wiki to see how we define types.
+	   // // Generally, all properties should be public and have public getter and setter.
+	   // // No constructor should be specified as we auto generate it from the class properties.
+	   // // If a specific instantiaton method is needed, we categorise it as an "Engine/Create" method.
+    // }
 }

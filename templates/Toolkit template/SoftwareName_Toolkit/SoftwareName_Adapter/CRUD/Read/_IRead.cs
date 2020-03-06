@@ -1,6 +1,6 @@
 ﻿/*
  * This file is part of the Buildings and Habitats object Model (BHoM)
- * Copyright (c) 2015 - 2019, the respective contributors. All rights reserved.
+ * Copyright (c) 2015 - 2020, the respective contributors. All rights reserved.
  *
  * Each contributor holds copyright over their respective contributions.
  * The project versioning (Git) records all such contribution source information.
@@ -39,7 +39,7 @@ namespace BH.Adapter.$ext_safeprojectname$
 
         // This method gets called when appropriate by the Pull method contained in the base Adapter class.
         // It gets called once per each Type.
-        protected override IEnumerable<IBHoMObject> Read(Type type, IList ids, ActionConfig actionConfig = null)
+        protected override IEnumerable<IBHoMObject> IRead(Type type, IList ids, ActionConfig actionConfig = null)
         {			
             // Preferrably, different Create logic for different object types should go in separate methods.
             // We achieve this by using the ICreate method to only dynamically dispatching to *type-specific Create implementations*
