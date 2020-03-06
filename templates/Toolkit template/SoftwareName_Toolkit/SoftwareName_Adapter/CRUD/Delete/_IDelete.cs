@@ -25,15 +25,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BH.oM.Adapter;
 
 namespace BH.Adapter.$ext_safeprojectname$
 {
     public partial class $ext_safeprojectname$Adapter
     {
-        /***************************************************/
-        /**** Adapter overload method                   ****/
-        /***************************************************/
-
         // Basic Delete method that deletes objects depending on their Type and Id. 
 		// It gets called by the Push or by the Remove Adapter Actions.
         // Its implementation is facultative (not needed for a simple export/import scenario). 
