@@ -28,20 +28,18 @@ using System.Threading.Tasks;
 
 namespace BH.Adapter.$ext_safeprojectname$
 {
-    public partial class $ext_safeprojectname$Adapter
+    public static partial class Convert
     {
         /***************************************************/
-        /**** Adapter overload method                   ****/
+        /**** Public Methods                            ****/
         /***************************************************/
 
-        // This method gets called when appropriate by the Push method contained in the base Adapter class.
-        // It gets called once per each Type, and if equal objects are found. The equality is tested through IEqualityComparer.
-        // IEqualityComparer must be implemented per each type. If not,
-        // by default the method first deletes the existing objects, then creates new ones.
-        protected override bool UpdateObjects<T>(IEnumerable<T> objects)
-        {
-            return base.UpdateObjects<T>(objects);
-        }
+        // Add methods for converting From BHoM to the specific software types
+		// Example:
+        //public static BH.oM.External.$ext_safeprojectname$.Node To$ext_safeprojectname$(this BH.oM.Structure.Elements.Node node)
+        //{
+        //    //Insert code for convertion
+        //}
 
         /***************************************************/
     }

@@ -21,26 +21,27 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BH.oM.Structure.Elements;
+using System.Collections.Generic;
+using System.ComponentModel;
+using BH.oM.Reflection.Attributes;
+using BH.oM.Base;
 
-namespace BH.Engine.$ext_safeprojectname$
+namespace $rootnamespace$ //`Compute` is a partial class. Remove any reference to `Compute` from namespace.
 {
-    public static partial class Convert
+    public static partial class Compute
     {
         /***************************************************/
         /**** Public Methods                            ****/
         /***************************************************/
 
-        //Add methods for converting From BHoM to the specific software types, if possible to do without any BHoM calls
-        //Example:
-        //public static $ext_safeprojectname$.Node To$ext_safeprojectname$(this Node node)
-        //{
-        //    //Insert code for convertion
-        //}
+        [Description("")]
+		[Input("","")]
+        [Output("", "")]
+        public static void $safeitemname$()
+        {
+			throw new NotImplementedException();
+        }
 
         /***************************************************/
     }

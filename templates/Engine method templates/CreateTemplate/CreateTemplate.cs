@@ -21,32 +21,26 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BH.oM.Structure.Elements;
+using System.Collections.Generic;
+using System.ComponentModel;
+using BH.oM.Reflection.Attributes;
+using BH.oM.Base;
 
-namespace BH.Adapter.$ext_safeprojectname$
+namespace $rootnamespace$ //`Create` is a partial class. Remove any reference to `Create` from namespace.
 {
-    public partial class $ext_safeprojectname$Adapter
+    public static partial class Create
     {
-
         /***************************************************/
-        /**** Private methods                           ****/
+        /**** Public Methods                            ****/
         /***************************************************/
 
-        private bool CreateCollection(IEnumerable<Node> nodes)
+        [Description("")]
+		[Input("","")]
+        [Output("", "")]
+        public static void $safeitemname$()
         {
-            //Code for creating a collection of nodes in the software
-
-            foreach (Node node in nodes)
-            {
-                //Tip: if the NextId method has been implemented you can get the id to be used for the creation out as (cast into applicable type used by the software):
-                object nodeId = node.CustomData[AdapterId];
-            }
-
-            throw new NotImplementedException();
+			throw new NotImplementedException();
         }
 
         /***************************************************/

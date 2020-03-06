@@ -26,40 +26,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BH.Adapter;
-using BH.Engine.$ext_safeprojectname$;
 
 namespace BH.Adapter.$ext_safeprojectname$
 {
     public partial class $ext_safeprojectname$Adapter : BHoMAdapter
     {
-
         /***************************************************/
         /**** Constructors                              ****/
         /***************************************************/
-
-        //Add any applicable constructors here, such as linking to a specific file or anything else as well as linking to that file through the (if existing) com link via the API
+        
         public $ext_safeprojectname$Adapter ()
         {
-            AdapterId = BH.Engine.$ext_safeprojectname$.Convert.AdapterId;   //Sets` the "AdapterId" to "SoftwareName_id". Generally stored as a constant string in the convert class in the SoftwareName_Engine
-
-            Config.SeparateProperties = true;   //Set to true to push dependant properties of objects before the main objects are being pushed. Example: push nodes before pushing bars
-            Config.MergeWithComparer = true;    //Set to true to use EqualityComparers to merge objects. Example: merge nodes in the same location
-            Config.ProcessInMemory = false;     //Set to false to to update objects in the toolkit during the push
-            Config.CloneBeforePush = true;      //Set to true to clone the objects before they are being pushed through the software. Required if any modifications at all, as adding a software ID is done to the objects
-            Config.UseAdapterId = true;         //Tag objects with a software specific id in the CustomData. Requires the NextIndex method to be overridden and implemented
+			//Sets as a constant string, located in the Convert class
+            AdapterIdName = Convert.AdapterIdName;  
+			
+			// If your toolkit needs to define this.AdapterComparers and or this.DependencyTypes,
+			// this constructor has to populate those properties.
+			// See the wiki for more information.
         }
 
-
-
+		// You can add any other constructors that take more inputs here. 
 
         /***************************************************/
         /**** Private  Fields                           ****/
         /***************************************************/
 
-        //Add any comlink object as a private field here, example named:
-
-        //private SoftwareComLink m_softwareNameCom;
-
+		// You can add any private variable that should be in common to any other adapter methods here.
+		// If you need to add some private methods, please consider first what their nature is:
+		// if a method does not need any external call (API call, connection call, etc.)
+		// we place them in the Engine project, and then reference them from the Adapter.
+		// See the wiki for more information.
 
         /***************************************************/
 

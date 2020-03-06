@@ -16,15 +16,6 @@
   <TemplateContent>
     <Project TargetFileName="SoftwareName_Engine.csproj" File="SoftwareName_Engine.csproj" ReplaceParameters="true">
       <Folder Name="Compute" TargetFolderName="Compute" />
-      <Folder Name="Convert" TargetFolderName="Convert">
-        <ProjectItem ReplaceParameters="true" TargetFileName="AdapterId.cs">AdapterId.cs</ProjectItem>
-        <Folder Name="ToBHoM" TargetFolderName="ToBHoM">
-          <ProjectItem ReplaceParameters="true" TargetFileName="Node.cs">Node.cs</ProjectItem>
-        </Folder>
-        <Folder Name="ToSoftwareName" TargetFolderName="ToSoftwareName">
-          <ProjectItem ReplaceParameters="true" TargetFileName="Node.cs">Node.cs</ProjectItem>
-        </Folder>
-      </Folder>
       <Folder Name="Create" TargetFolderName="Create" />
       <Folder Name="Modify" TargetFolderName="Modify" />
       <Folder Name="Properties" TargetFolderName="Properties">

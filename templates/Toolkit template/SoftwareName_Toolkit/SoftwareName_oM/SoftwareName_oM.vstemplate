@@ -15,6 +15,7 @@
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="SoftwareName_oM.csproj" File="SoftwareName_oM.csproj" ReplaceParameters="true">
+	  <ProjectItem ReplaceParameters="true" TargetFileName="SomeObjectType.cs">SomeObjectType.cs</ProjectItem>
       <Folder Name="Properties" TargetFolderName="Properties">
         <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
       </Folder>

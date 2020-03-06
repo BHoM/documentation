@@ -30,6 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Adapter_oM">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BHoM_Adapter\Build\Adapter_oM.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="Adapter_Engine">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BHoM_Adapter\Build\Adapter_Engine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="BHoM">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\BHoM\Build\BHoM.dll</HintPath>
@@ -87,12 +97,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Convert\AdapterId.cs" />
-    <Compile Include="Convert\ToBHoM\Node.cs" />
-    <Compile Include="Convert\ToSoftwareName\Node.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Compute\" />

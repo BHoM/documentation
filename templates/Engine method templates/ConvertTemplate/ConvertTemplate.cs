@@ -21,43 +21,28 @@
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.ComponentModel;
+using BH.oM.Reflection.Attributes;
 using BH.oM.Base;
-using BH.oM.Structure.Elements;
-using BH.oM.Structure.SectionProperties;
-using BH.oM.Common.Materials;
 
-namespace BH.Adapter.$ext_safeprojectname$
+namespace $rootnamespace$ //`Convert` is a partial class. Remove any reference to `Convert` from namespace.
 {
-    public partial class $ext_safeprojectname$Adapter
+    public static partial class Convert
     {
         /***************************************************/
-        /**** Adapter overload method                   ****/
+        /**** Public Methods                            ****/
         /***************************************************/
 
-        // This method gets called when appropriate by the Pull method contained in the base Adapter class.
-        // It gets called once per each Type.
-        protected override IEnumerable<IBHoMObject> Read(Type type, IList ids)
+        [Description("")]
+		[Input("","")]
+        [Output("", "")]
+        public static void $safeitemname$()
         {
-            //Main dispatcher method.
-            //Choose what to pull out depending on the type.
-            if (type == typeof(Node))
-                return ReadNodes(ids as dynamic);
-            else if (type == typeof(Bar))
-                return ReadBars(ids as dynamic);
-            else if (type == typeof(ISectionProperty) || type.GetInterfaces().Contains(typeof(ISectionProperty)))
-                return ReadSectionProperties(ids as dynamic);
-            else if (type == typeof(Material))
-                return ReadMaterials(ids as dynamic);
-
-            return new List<IBHoMObject>();
+			throw new NotImplementedException();
         }
 
         /***************************************************/
-
     }
 }
