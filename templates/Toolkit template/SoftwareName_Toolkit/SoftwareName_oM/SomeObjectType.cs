@@ -25,23 +25,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BH.oM.Base;
 
-namespace BH.Adapter.$ext_safeprojectname$
+namespace BH.oM.External.$ext_safeprojectname$
 {
-    public partial class $ext_safeprojectname$Adapter
+	// You can define your own Toolkit-specific types in this namespace.
+
+    public class SomeObject : BHoMObject
     {
-        /***************************************************/
-        /**** Adapter overload method                   ****/
-        /***************************************************/
-
-        // This method gets called when appropriate by the Push method contained in the base Adapter class.
-        // It gets called once per each Type.
-        protected override int Delete(Type type, IEnumerable<object> ids)
-        {
-            //Insert code here to enable deletion of specific types of objects with specific ids
-            return 0;
-        }
-
-        /***************************************************/
+       // See examples in the BHoM repo and the wiki to see how we define types.
+	   // Generally, all properties should be public and have public getter and setter.
+	   // No constructor should be specified as we auto generate it from the class properties.
+	   // If a specific instantiaton method is needed, we categorise it as an "Engine/Create" method.
     }
 }

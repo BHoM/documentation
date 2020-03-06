@@ -15,37 +15,34 @@
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="SoftwareName_Adapter.csproj" File="SoftwareName_Adapter.csproj" ReplaceParameters="true">
-      <Folder Name="Create" TargetFolderName="Create">
-        <ProjectItem ReplaceParameters="true" TargetFileName="_Create.cs">_Create.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Bar.cs">Bar.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Material.cs">Material.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Node.cs">Node.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="SectionProperty.cs">SectionProperty.cs</ProjectItem>
-      </Folder>
-      <Folder Name="Delete" TargetFolderName="Delete">
-        <ProjectItem ReplaceParameters="true" TargetFileName="_Delete.cs">_Delete.cs</ProjectItem>
-      </Folder>
-      <Folder Name="Execute" TargetFolderName="Execute" />
-      <Folder Name="Properties" TargetFolderName="Properties">
-        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="false" TargetFileName="template-builder.props">template-builder.props</ProjectItem>
-      </Folder>
-      <Folder Name="Read" TargetFolderName="Read">
-        <ProjectItem ReplaceParameters="true" TargetFileName="_Read.cs">_Read.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Bar.cs">Bar.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Material.cs">Material.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Node.cs">Node.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="SectionProperty.cs">SectionProperty.cs</ProjectItem>
-      </Folder>
-      <ProjectItem ReplaceParameters="true" TargetFileName="$ext_safeprojectname$Adapter.cs">SoftwareNameAdapter.cs</ProjectItem>
-      <Folder Name="Types" TargetFolderName="Types">
-        <ProjectItem ReplaceParameters="true" TargetFileName="Comparer.cs">Comparer.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="DependencyTypes.cs">DependencyTypes.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="NextId.cs">NextId.cs</ProjectItem>
-      </Folder>
-      <Folder Name="Update" TargetFolderName="Update">
-        <ProjectItem ReplaceParameters="true" TargetFileName="_UpdateObjects.cs">_UpdateObjects.cs</ProjectItem>
-      </Folder>
+		<Folder Name="Properties" TargetFolderName="Properties">
+			<ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+			<ProjectItem ReplaceParameters="false" TargetFileName="template-builder.props">template-builder.props</ProjectItem>
+		</Folder>
+		<Folder Name="Convert" TargetFolderName="Convert">
+			<Folder Name="FromBHoM" TargetFolderName="FromBHoM">
+				<ProjectItem ReplaceParameters="true" TargetFileName="Node.cs">Node.cs</ProjectItem>
+			</Folder>
+			<Folder Name="ToBHoM" TargetFolderName="ToBHoM">
+				<ProjectItem ReplaceParameters="true" TargetFileName="Node.cs">Node.cs</ProjectItem>
+			</Folder>
+			<ProjectItem ReplaceParameters="true" TargetFileName="AdapterIdName.cs">AdapterIdName.cs</ProjectItem>
+		</Folder>
+		<Folder Name="CRUD" TargetFolderName="CRUD">
+			<Folder Name="Create" TargetFolderName="Create">
+				<ProjectItem ReplaceParameters="true" TargetFileName="_ICreate.cs">_ICreate.cs</ProjectItem>
+			</Folder>
+			<Folder Name="Delete" TargetFolderName="Delete">
+				<ProjectItem ReplaceParameters="true" TargetFileName="_IDelete.cs">_IDelete.cs</ProjectItem>
+			</Folder>
+			<Folder Name="Read" TargetFolderName="Read">
+				<ProjectItem ReplaceParameters="true" TargetFileName="_IRead.cs">_IRead.cs</ProjectItem>
+			</Folder>
+			<Folder Name="Update" TargetFolderName="Update">
+				<ProjectItem ReplaceParameters="true" TargetFileName="_IUpdate.cs">_IUpdate.cs</ProjectItem>
+			</Folder>
+		</Folder>
+		<ProjectItem ReplaceParameters="true" TargetFileName="$ext_safeprojectname$Adapter.cs">SoftwareNameAdapter.cs</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>

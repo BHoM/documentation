@@ -21,34 +21,28 @@
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.ComponentModel;
+using BH.oM.Reflection.Attributes;
 using BH.oM.Base;
-using BH.oM.Structure.Elements;
-using BH.oM.Structure.Constraints;
 
-namespace BH.Adapter.$ext_safeprojectname$
+namespace $rootnamespace$ //`Modify` is a partial class. Remove any reference to `Modify` from namespace.
 {
-    public partial class $ext_safeprojectname$Adapter
+    public static partial class Modify
     {
-
         /***************************************************/
-        /**** Private methods                           ****/
+        /**** Public Methods                            ****/
         /***************************************************/
 
-        //The List<string> in the methods below can be changed to a list of any type of identification more suitable for the toolkit
-        //If no ids are provided, the convention is to return all elements of the type
-
-        private List<Node> ReadNodes(List<string> ids = null)
+        [Description("")]
+		[Input("","")]
+        [Output("", "")]
+        public static void $safeitemname$()
         {
-            //Implement code for reading nodes
-            throw new NotImplementedException();
+			throw new NotImplementedException();
         }
 
         /***************************************************/
-
     }
 }

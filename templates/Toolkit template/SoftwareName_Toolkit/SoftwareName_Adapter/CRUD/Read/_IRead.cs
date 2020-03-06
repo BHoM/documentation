@@ -20,57 +20,43 @@
  * along with this code. If not, see <https://www.gnu.org/licenses/lgpl-3.0.html>.      
  */
 
-using BH.Engine.Base.Objects;
-using BH.oM.Common.Materials;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using BH.oM.Base;
 using BH.oM.Structure.Elements;
 using BH.oM.Structure.SectionProperties;
-using BH.oM.Structure.SurfaceProperties;
-using BH.oM.Structure.Constraints;
-using System;
-using System.Collections.Generic;
+using BH.oM.Common.Materials;
 
 namespace BH.Adapter.$ext_safeprojectname$
 {
     public partial class $ext_safeprojectname$Adapter
     {
         /***************************************************/
-        /**** BHoM Adapter Interface                    ****/
+        /**** Adapter overload method                   ****/
         /***************************************************/
 
-        //Standard implementation of the comparer class.
-        //Compares nodes by distance (down to 3 decimal places -> mm)
-        //Compares Materials, SectionProprties, LinkConstraints, and Property2D by name
-        //Add/remove any type in the dictionary below that you want (or not) a specific comparison method for
-        protected override IEqualityComparer<T> Comparer<T>()
-        {
-            Type type = typeof(T);
+        // This method gets called when appropriate by the Pull method contained in the base Adapter class.
+        // It gets called once per each Type.
+        protected override IEnumerable<IBHoMObject> Read(Type type, IList ids, ActionConfig actionConfig = null)
+        {			
+            // Preferrably, different Create logic for different object types should go in separate methods.
+            // We achieve this by using the ICreate method to only dynamically dispatching to *type-specific Create implementations*
+            // In other words:
+            // if (type == typeof(SomeType1))
+            //     return ReadSomeType1(ids as dynamic);
+            // else if (type == typeof(SomeType2))
+            //     return ReadSomeType2(ids as dynamic);
+            // else if (type == typeof(SomeType3))
+            //     return ReadSomeType3(ids as dynamic);
 
-            if (m_Comparers.ContainsKey(type))
-            {
-                return m_Comparers[type] as IEqualityComparer<T>;
-            }
-            else
-            {
-                return EqualityComparer<T>.Default;
-            }
-
+            return new List<IBHoMObject>();
         }
 
-
-        /***************************************************/
-        /**** Private Fields                            ****/
         /***************************************************/
 
-        private static Dictionary<Type, object> m_Comparers = new Dictionary<Type, object>
-        {
-            {typeof(Node), new BH.Engine.Structure.NodeDistanceComparer(3) },   //The 3 in here sets how many decimal places to look at for node merging. 3 decimal places gives mm precision
-            {typeof(ISectionProperty), new BHoMObjectNameOrToStringComparer() },
-            {typeof(Material), new BHoMObjectNameComparer() },
-            {typeof(LinkConstraint), new BHoMObjectNameComparer() },
-            {typeof(ISurfaceProperty), new BHoMObjectNameComparer() },
-        };
-
-
-        /***************************************************/
     }
 }

@@ -1,0 +1,21 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>QueryMethod.cs</DefaultName>
+    <Name>Query - BHoM_Engine</Name>
+    <Description>Add a Query method to your BHoM engine project</Description>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>Query.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>BHoM</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Reflection_oM</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">QueryTemplate.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

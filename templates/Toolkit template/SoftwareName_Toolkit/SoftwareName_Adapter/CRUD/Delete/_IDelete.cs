@@ -25,35 +25,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BH.oM.Structure.SectionProperties;
-using BH.oM.Common.Materials;
 
 namespace BH.Adapter.$ext_safeprojectname$
 {
     public partial class $ext_safeprojectname$Adapter
     {
-
         /***************************************************/
-        /**** Private methods                           ****/
+        /**** Adapter overload method                   ****/
         /***************************************************/
 
-        private bool CreateCollection(IEnumerable<ISectionProperty> sectionProperties)
+        // Basic Delete method that deletes objects depending on their Type and Id. 
+		// It gets called by the Push or by the Remove Adapter Actions.
+        // Its implementation is facultative (not needed for a simple export/import scenario). 
+        // Toolkits need to implement (override) this only to get the full CRUD to work.
+        protected override int IDelete(Type type, IEnumerable<object> ids, ActionConfig actionConfig = null)
         {
-            //Code for creating a collection of section properties in the software
-
-            foreach (ISectionProperty sectionProperty in sectionProperties)
-            {
-                //Tip: if the NextId method has been implemented you can get the id to be used for the creation out as (cast into applicable type used by the software):
-                object secPropId = sectionProperty.CustomData[AdapterId];
-                //If also the default implmentation for the DependencyTypes is used,
-                //one can from here get the id's of the subobjects by calling (cast into applicable type used by the software): 
-                object materialId = sectionProperty.Material.CustomData[AdapterId];
-            }
-
-            throw new NotImplementedException();
+            //Insert code here to enable deletion of specific types of objects with specific ids
+			Engine.Reflection.Compute.RecordError($"Delete for objects of type {type.Name} is not implemented in {(this as dynamic).GetType().Name}.");
+            return 0;
         }
 
+		// There are more virtual Delete methods you might want to override and implement.
+		// Check the base BHoM_Adapter solution and the wiki for more info.
+				
         /***************************************************/
-
     }
 }

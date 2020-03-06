@@ -34,41 +34,17 @@ namespace BH.Adapter.$ext_safeprojectname$
         /**** Adapter overload method                   ****/
         /***************************************************/
 
-        // Method that returns the next free index for a specific object type as 'object'. 
-        // 'object' is required as ID is software specific (could be int, string, Guid or anything else).
-        // NextId is called in the base Adapter Push method, just before the call to Create();
-        // it follows that at the point of index assignment, the objects have not yet been created in the target software. 
-        // This is to ensure that the object exported in the software will have the the ID that we decided here.
-        protected override object NextId(Type objectType, bool refresh = false)
-        {
-            //Change from object to what the specific software is using
-            object index;
-
-            // This 'if' is to grab the first free index for the first object being created and after that increment.
-            if (!refresh && m_indexDict.TryGetValue(objectType, out index))
-            {
-                // If it is possible to infer the next index based on the previous one 
-                // (for example index++ for an int based index system), then do it here
-                // Example int based:
-                // index++
-            }
-            else
-            {
-                index = 0; //Insert code to get the next index of the specific type
-            }
-
-            m_indexDict[objectType] = index;
-            return index;
-        }
+        // This method gets called when appropriate by the Push method contained in the base Adapter class.
+		// Unlike the Create, Delete and Read, this method already exposes a simple implementation: it calls Delete and then Create.
+		// It can be overridden here keeping in mind the following:
+        // - it gets called once per each Type, and if equal objects are found;
+		// - the object equality is tested through IEqualityComparer, that need to be implemented for each type.
+        // protected override bool IUpdate<T>(IEnumerable<T> objects, ActionConfig actionConfig = null) 
+        // {
+            // return base.UpdateObjects<T>(objects);
+        // }
 
         /***************************************************/
-        /**** Private Fields                            ****/
-        /***************************************************/
-
-        // Change from object to the index type used by the specific software
-        private Dictionary<Type, object> m_indexDict = new Dictionary<Type, object>();
-
-
-        /***************************************************/
+		
     }
 }

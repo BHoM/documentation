@@ -33,7 +33,17 @@
     <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.1.6.1\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Analytical_oM, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Adapter_oM">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BHoM_Adapter\Build\Adapter_oM.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="Adapter_Engine">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BHoM_Adapter\Build\Adapter_Engine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Analytical_oM">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\BHoM\Build\Analytical_oM.dll</HintPath>
       <Private>False</Private>
@@ -72,7 +82,7 @@
       <HintPath>..\..\BHoM\Build\Geometry_oM.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Physical_oM, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Physical_oM">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\BHoM\Build\Physical_oM.dll</HintPath>
       <Private>False</Private>
@@ -86,16 +96,6 @@
       <HintPath>..\..\BHoM\Build\Reflection_oM.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Structure_Engine">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\BHoM_Engine\Build\Structure_Engine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Structure_oM">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\BHoM\Build\Structure_oM.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -106,26 +106,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Create\Bar.cs" />
-    <Compile Include="Create\Material.cs" />
-    <Compile Include="Create\Node.cs" />
-    <Compile Include="Create\SectionProperty.cs" />
-    <Compile Include="Create\_Create.cs" />
-    <Compile Include="Delete\_Delete.cs" />
-    <Compile Include="Types\NextId.cs" />
-    <Compile Include="Read\Bar.cs" />
-    <Compile Include="Read\Material.cs" />
-    <Compile Include="Read\Node.cs" />
-    <Compile Include="Read\SectionProperty.cs" />
-    <Compile Include="Read\_Read.cs" />
-    <Compile Include="Update\_UpdateObjects.cs" />
+    <Compile Include="CRUD\Create\_ICreate.cs" />
+    <Compile Include="CRUD\Delete\_IDelete.cs" />
+    <Compile Include="CRUD\Read\_IRead.cs" />
+    <Compile Include="CRUD\Update\_IUpdate.cs" />
     <Compile Include="$ext_safeprojectname$Adapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Types\Comparer.cs" />
-    <Compile Include="Types\DependencyTypes.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Execute\" />
+	<Compile Include="Convert\FromBHoM\Node.cs" />
+	<Compile Include="Convert\ToBHoM\Node.cs" />
+	<Compile Include="Convert\AdapterIdName.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\template-builder.props" />
