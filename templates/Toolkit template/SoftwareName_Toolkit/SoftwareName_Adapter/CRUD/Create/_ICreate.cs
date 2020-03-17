@@ -37,8 +37,7 @@ namespace BH.Adapter.$ext_safeprojectname$
 	// They are automatically invoked by the Adapter Actions (Push, Pull, etc.).
 	// Specifically, the Create is primarily called by the Push (in the context of the CRUD method, and also by other methods that require it: Update, UpdateProperty).
 	// See the wiki for more information.
-    public abstract partial class BHoMAdapter
-    {
+
         // The Create should only contain the logic that generates the objects in the external software.
         protected override bool ICreate<T>(IEnumerable<T> objects, ActionConfig actionConfig = null)
         {
