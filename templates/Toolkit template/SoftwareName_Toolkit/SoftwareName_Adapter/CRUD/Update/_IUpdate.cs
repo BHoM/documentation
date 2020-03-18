@@ -40,7 +40,7 @@ namespace BH.Adapter.$ext_safeprojectname$
 		
         // protected override bool IUpdate<T>(IEnumerable<T> objects, ActionConfig actionConfig = null) 
         // {
-            // return base.UpdateObjects<T>(objects);
+        //    return base.IUpdate(objects, actionConfig);
         // }
 
         /***************************************************/
