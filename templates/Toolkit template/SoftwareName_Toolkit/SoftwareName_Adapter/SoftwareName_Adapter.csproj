@@ -87,8 +87,8 @@
     <Compile Include="CRUD\Update\_IUpdate.cs" />
     <Compile Include="$ext_safeprojectname$Adapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-	<Compile Include="Convert\FromBHoM\Node.cs" />
-	<Compile Include="Convert\ToBHoM\Node.cs" />
+	<Compile Include="Convert\FromSoftwareName\Node.cs" />
+	<Compile Include="Convert\ToSoftwareName\Node.cs" />
 	<Compile Include="Convert\AdapterIdName.cs" />
   </ItemGroup>
   <ItemGroup>
