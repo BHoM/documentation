@@ -26,7 +26,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BH.Adapter.$ext_safeprojectname$
+namespace BH.Adapter.$ext_safeprojectname$ // Rename the parent folder `FromSoftwareName` with the name of your Toolkit's software.
 {
     public static partial class Convert
     {
