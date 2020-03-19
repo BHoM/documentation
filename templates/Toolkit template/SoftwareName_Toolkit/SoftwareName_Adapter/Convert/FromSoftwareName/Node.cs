@@ -36,7 +36,7 @@ namespace BH.Adapter.$ext_safeprojectname$ // Rename the parent folder `FromSoft
 
         // Add methods for converting to BHoM from the specific software types. 
         // Example:
-        //public static BH.oM.Structure.Elements.Node ToBHoM(this BH.oM.External.$ext_safeprojectname$.Node node)
+        //public static BH.oM.Structure.Elements.Node From$ext_safeprojectname$(this BH.oM.External.$ext_safeprojectname$.Node node)
         //{
         //    //Insert code for convertion
         //}
