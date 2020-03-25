@@ -27,16 +27,13 @@ using System.ComponentModel;
 using BH.oM.Reflection.Attributes;
 using BH.oM.Base;
 
-namespace BH.Engine.External.SoftwareName // Replace SoftwareName with the name of your Toolkit software.
+namespace BH.Engine.$rootnamespace$ //Compute is a partial class. Remove any reference to Compute from the namespace
 {
     public static partial class Compute
     {
         /***************************************************/
         /**** Public Methods                            ****/
         /***************************************************/
-		// All public engine methods are reflected into the UIs.
-		// Compute methods should be only those methods that are computationally-intensive
-		// or do not fall in any other Engine method category.
 
         [Description("")]
 		[Input("","")]
@@ -48,14 +45,5 @@ namespace BH.Engine.External.SoftwareName // Replace SoftwareName with the name 
 
         /***************************************************/
 		
-		/***************************************************/
-        /**** Private Methods                           ****/
-        /***************************************************/
-		// Include here any private method that the public one might need to reference.
-		// Private methods are not reflected in the UIs.
-		
-		
-		/***************************************************/
-
 	}
 }

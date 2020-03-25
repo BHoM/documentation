@@ -2,7 +2,10 @@
   <TemplateData>
     <DefaultName>ModifyMethod.cs</DefaultName>
     <Name>Modify - BHoM Toolkit Engine method</Name>
-    <Description>Add a Modify method to your BHoM Toolkit Engine project</Description>
+    <Description>Adds a Modify method to your BHoM Toolkit Engine project.
+
+Modify methods must modify and return the same object type that is passed as the first argument.
+		</Description>
     <ProjectType>CSharp</ProjectType>
     <SortOrder>10</SortOrder>
     <Icon>Modify.ico</Icon>

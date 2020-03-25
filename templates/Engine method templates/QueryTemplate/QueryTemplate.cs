@@ -27,16 +27,13 @@ using System.ComponentModel;
 using BH.oM.Reflection.Attributes;
 using BH.oM.Base;
 
-namespace BH.Engine.External.SoftwareName // Replace SoftwareName with the name of your Toolkit software.
+namespace BH.Engine.$rootnamespace$ //Query is a partial class. Remove any reference to Query from the namespace
 {
     public static partial class Query
     {
         /***************************************************/
         /**** Public Methods                            ****/
         /***************************************************/
-		// All public engine methods are reflected into the UIs.
-		// Query methods should only return values queryable from the given object with little indirection.
-		// If you need to perform heavy computation to extract a value from the input object, consider making a Compute method instead.
 
         [Description("")]
 		[Input("","")]
@@ -50,14 +47,5 @@ namespace BH.Engine.External.SoftwareName // Replace SoftwareName with the name 
         }
 
         /***************************************************/
-		
-		/***************************************************/
-        /**** Private Methods                           ****/
-        /***************************************************/
-		// Include here any private method that the public one might need to reference.
-		// Private methods are not reflected in the UIs.
-		
-		
-		/***************************************************/
     }
 }

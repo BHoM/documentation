@@ -29,16 +29,13 @@ using BH.oM.Base;
 using BH.oM.Reflection;
 using BH.Engine.Base;
 
-namespace BH.Engine.External.SoftwareName // Replace SoftwareName with the name of your Toolkit software.
+namespace BH.Engine.$rootnamespace$ //Modify is a partial class. Remove any reference to Modify from the namespace
 {
     public static partial class Modify
     {
         /***************************************************/
         /**** Public Methods                            ****/
         /***************************************************/
-		// All public engine methods are reflected into the UIs.
-		// Modify methods must return the same object type that is passed as the first argument.
-		// To ensure immutability in the UI, the object being modified must be cloned, so modification by reference is avoided.
 
         [Description("")]
 		[Input("","")]
@@ -59,14 +56,6 @@ namespace BH.Engine.External.SoftwareName // Replace SoftwareName with the name 
         }
 
         /***************************************************/
-		
-		/***************************************************/
-        /**** Private Methods                           ****/
-        /***************************************************/
-		// Include here any private method that the public one might need to reference.
-		// Private methods are not reflected in the UIs.
-		
-		
-		/***************************************************/
+
     }
 }

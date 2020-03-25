@@ -2,7 +2,9 @@
   <TemplateData>
     <DefaultName>ComputeMethod.cs</DefaultName>
     <Name>Compute - BHoM Toolkit Engine method</Name>
-    <Description>Add a Compute method to your BHoM Toolkit Engine project</Description>
+    <Description>Adds a Compute method to your BHoM Toolkit Engine project.
+
+Compute methods should be only those methods that are computationally-intensive or do not fall in any other Engine method category.</Description>
     <ProjectType>CSharp</ProjectType>
     <SortOrder>10</SortOrder>
     <Icon>Compute.ico</Icon>
