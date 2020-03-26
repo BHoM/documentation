@@ -27,7 +27,7 @@ using System.ComponentModel;
 using BH.oM.Reflection.Attributes;
 using BH.oM.Base;
 
-namespace BH.Engine.$rootnamespace$ //Create is a partial class. Remove any reference to Create from the namespace
+namespace $rootnamespace$ //Create is a partial class. Remove any reference to Create from the namespace
 {
     public static partial class Create
     {

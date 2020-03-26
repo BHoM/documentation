@@ -29,7 +29,7 @@ using BH.oM.Base;
 using BH.oM.Reflection;
 using BH.Engine.Base;
 
-namespace BH.Engine.$rootnamespace$ //Modify is a partial class. Remove any reference to Modify from the namespace
+namespace $rootnamespace$ //Modify is a partial class. Remove any reference to Modify from the namespace
 {
     public static partial class Modify
     {

@@ -27,7 +27,7 @@ using System.ComponentModel;
 using BH.oM.Reflection.Attributes;
 using BH.oM.Base;
 
-namespace BH.Engine.$rootnamespace$ //Query is a partial class. Remove any reference to Query from the namespace
+namespace $rootnamespace$ //Query is a partial class. Remove any reference to Query from the namespace
 {
     public static partial class Query
     {
