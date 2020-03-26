@@ -20,10 +20,10 @@
 			<ProjectItem ReplaceParameters="false" TargetFileName="template-builder.props">template-builder.props</ProjectItem>
 		</Folder>
 		<Folder Name="Convert" TargetFolderName="Convert">
-			<Folder Name="FromBHoM" TargetFolderName="FromBHoM">
+			<Folder Name="FromSoftwareName" TargetFolderName="FromSoftwareName">
 				<ProjectItem ReplaceParameters="true" TargetFileName="Node.cs">Node.cs</ProjectItem>
 			</Folder>
-			<Folder Name="ToBHoM" TargetFolderName="ToBHoM">
+			<Folder Name="ToSoftwareName" TargetFolderName="ToSoftwareName">
 				<ProjectItem ReplaceParameters="true" TargetFileName="Node.cs">Node.cs</ProjectItem>
 			</Folder>
 			<ProjectItem ReplaceParameters="true" TargetFileName="AdapterIdName.cs">AdapterIdName.cs</ProjectItem>
