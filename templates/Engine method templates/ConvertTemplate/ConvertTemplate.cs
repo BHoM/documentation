@@ -36,11 +36,11 @@ namespace $rootnamespace$ //`Convert` is a partial class. Remove any reference t
         /***************************************************/
 
         [Description("")]
-		[Input("","")]
+	[Input("","")]
         [Output("", "")]
         public static void $safeitemname$()
         {
-			throw new NotImplementedException();
+		throw new NotImplementedException();
         }
 
         /***************************************************/
