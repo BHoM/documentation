@@ -27,9 +27,9 @@ using System.ComponentModel;
 using BH.oM.Base.Attributes;
 using BH.oM.Base;
 
-namespace $rootnamespace$ //`Query` is a partial class. Remove any reference to `Query` from namespace.
+namespace $rootnamespace$ //`Convert` is a partial class. Remove any reference to `Convert` from namespace.
 {
-    public static partial class Query
+    public static partial class Convert
     {
         /***************************************************/
         /**** Public Methods                            ****/

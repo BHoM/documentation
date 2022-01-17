@@ -14,9 +14,6 @@ Create method scope is to be restricted to instantiating objects. They must retu
       <Reference>
         <Assembly>BHoM</Assembly>
       </Reference>
-      <Reference>
-        <Assembly>Reflection_oM</Assembly>
-      </Reference>
     </References>
     <ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">CreateTemplate.cs</ProjectItem>
   </TemplateContent>
