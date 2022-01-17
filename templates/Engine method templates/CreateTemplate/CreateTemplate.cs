@@ -1,6 +1,6 @@
 ﻿/*
  * This file is part of the Buildings and Habitats object Model (BHoM)
- * Copyright (c) 2015 - 2020, the respective contributors. All rights reserved.
+ * Copyright (c) 2015 - $year$, the respective contributors. All rights reserved.
  *
  * Each contributor holds copyright over their respective contributions.
  * The project versioning (Git) records all such contribution source information.
@@ -24,21 +24,21 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
-using BH.oM.Reflection.Attributes;
+using BH.oM.Base.Attributes;
 using BH.oM.Base;
 
-namespace $rootnamespace$ //Create is a partial class. Remove any reference to Create from the namespace
+namespace $rootnamespace$ //`Create` is a partial class. Remove any reference to `Create` from namespace.
 {
     public static partial class Create
     {
         /***************************************************/
         /**** Public Methods                            ****/
         /***************************************************/
-		
+
         [Description("")]
 		[Input("","")]
         [Output("", "")]
-        public static SpecificObjectType $safeitemname$(allNeededParameters)
+        public static void $safeitemname$()
         {
 			throw new NotImplementedException();
         }

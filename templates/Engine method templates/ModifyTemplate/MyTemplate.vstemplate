@@ -15,9 +15,6 @@ Modify methods must modify and return the same object type that is passed as the
       <Reference>
         <Assembly>BHoM</Assembly>
       </Reference>
-      <Reference>
-        <Assembly>Reflection_oM</Assembly>
-      </Reference>
     </References>
     <ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">ModifyTemplate.cs</ProjectItem>
   </TemplateContent>

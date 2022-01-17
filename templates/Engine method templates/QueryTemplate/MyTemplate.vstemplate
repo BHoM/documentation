@@ -16,9 +16,6 @@ If you need to perform computation to calculate data from the input, consider th
       <Reference>
         <Assembly>BHoM</Assembly>
       </Reference>
-      <Reference>
-        <Assembly>Reflection_oM</Assembly>
-      </Reference>
     </References>
     <ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">QueryTemplate.cs</ProjectItem>
   </TemplateContent>
