@@ -27,7 +27,7 @@ using System.ComponentModel;
 using BH.oM.Base.Attributes;
 using BH.oM.Base;
 
-namespace $rootnamespace$ //`Modify` is a partial class. Remove any reference to `Modify` the from namespace.
+namespace $rootnamespace$ //`Modify` is a partial class. Remove any reference to `Modify` from the namespace.
 {
     public static partial class Modify
     {
