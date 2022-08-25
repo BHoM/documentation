@@ -27,7 +27,7 @@ using System.ComponentModel;
 using BH.oM.Base.Attributes;
 using BH.oM.Base;
 
-namespace $rootnamespace$ //`Compute` is a partial class. Remove any reference to `Compute` the from namespace.
+namespace $rootnamespace$ //`Compute` is a partial class. Remove any reference to `Compute` from the namespace.
 {
     public static partial class Compute
     {
