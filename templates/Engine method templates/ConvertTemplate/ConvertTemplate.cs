@@ -27,7 +27,7 @@ using System.ComponentModel;
 using BH.oM.Base.Attributes;
 using BH.oM.Base;
 
-namespace $rootnamespace$ //`Convert` is a partial class. Remove any reference to `Convert` the from namespace.
+namespace $rootnamespace$ //`Convert` is a partial class. Remove any reference to `Convert` from the namespace.
 {
     public static partial class Convert
     {
