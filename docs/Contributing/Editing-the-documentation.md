@@ -1,15 +1,26 @@
 # Editing the documentation
-## The enhanced markdown
-This documentation is set as a simple set of Markdown documents, which are then transformed into a proper web page thanks to [mkdocs](https://www.mkdocs.org/) every time a Push to this repository is done.
 
-This markdown is effectively enhanced thanks to mkdocs. You also can embed:
+This documentation is simply a set of Markdown documents.
+The markdown documents are then automatically mapped to a web page every time a Push to the main branch of the [documentation repository](https://github.com/BHoM/documentation) is done. See below for technical details on how this is achieved.
+
+In order to edit the documentation, you just need to:
+
+1. Clone the [documentation repository](https://github.com/BHoM/documentation) on your machine
+1. Navigate to the `docs` folder, and edit a markdown file or add new markdown files.  
+You can also group markdown files in folders, see below.
+
+
+## The enhanced markdown
+The documentation markdown can incorporate non-markdown content. You can embed:
 
 - HTML blocks
 - Latex/Mathjax, e.g. $f(x) = x^2$ (enclose the formula between single `$` for inline and double `$$` for block).
 
 ## Using a text editor to edit the documentation
 
-We recommend using either Visual Studio Code or Markdown Monster to edit the documentation. With Visual Studio Code you can [preview the markdown](https://code.visualstudio.com/docs/languages/markdown#_dynamic-previews-and-preview-locking) while editing.
+We recommend using either Visual Studio Code or Markdown Monster to edit the documentation. 
+
+With Visual Studio Code you can [preview the markdown](https://code.visualstudio.com/docs/languages/markdown#_dynamic-previews-and-preview-locking) while editing.
 
 ## Adding pages
 If you want to add a page, just add an new markdown document. 
@@ -26,10 +37,23 @@ A folder may contain one markdown file called `index.md`; if it exists, that fil
 For information on how to sort the pages, [see below](#customising-the-ordering-of-the-pages-in-the-menu).
 
 
+## Previewing the website before pushing to the repository
 
-## Site configurations
+You may want to preview how your markdown documents will appear in the automatically-generated website. In order to do this, you can use [mkdocs](https://www.mkdocs.org/) from command line.
 
-As mentioned, the Markdown documents are transformed into a proper web page thanks to [mkdocs](https://www.mkdocs.org/) every time a Push to this repository is done. 
+You need to:
+
+1. Have Python and PIP installed on your machine. Install `mkdocs` by running `pip install mkdocs`.
+2. Navigate to your locally cloned `documentation` repository folder.
+3. In that location, invoke from command line:  
+  `python -m mkdocs serve`.
+
+Mkdocs should spin up a local server and you should be able to connect to `http://localhost:8000/` in your browser to display the documentation website. Any change to your local file will be hot-reloaded into the webpage.
+
+
+## Website configurations
+
+As mentioned, the Markdown documents are transformed into a proper web page thanks to [mkdocs](https://www.mkdocs.org/) every time a Push to the main branch of the [documentation repository](https://github.com/BHoM/documentation) is done. 
 
 The web page can be configured by configuring mkdocs and related dependencies.
 
