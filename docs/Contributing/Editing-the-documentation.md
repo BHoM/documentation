@@ -13,8 +13,17 @@ You can also group markdown files in folders, see below.
 ## The enhanced markdown
 The documentation markdown can incorporate non-markdown content. You can embed:
 
-- HTML blocks
 - Latex/Mathjax, e.g. $f(x) = x^2$ (enclose the formula between single `$` for inline and double `$$` for block).
+- HTML blocks with embedded functionality, e.g.:
+  <details> 
+  <iframe height="500px" width="100% - 200px"  src="https://service.tib.eu/webvowl/#url=https://raw.githubusercontent.com/BHoM/RDF_Prototypes/main/WebVOWLOntology/BH.oM.Base.json" frameborder="0" allowfullscreen></iframe>
+  
+  </details>
+
+!!! tip
+
+    Many more features are available to spice up the look of the documentation and help you convey information.  
+    Have a look at [Customising the appearance of the documentation](#customising-the-appearance-of-the-documentation) below for more info.
 
 ## Using a text editor to edit the documentation
 
