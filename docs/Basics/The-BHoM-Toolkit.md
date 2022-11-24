@@ -29,7 +29,7 @@ See [The Object Model](/BHoM_oM) and [The Engine](/BHoM_Engine) for more informa
 
 The Engine should contain the functions applicable to the objects you've defined in the oM.
 
-See /BH.Engine-%E2%80%90-Create-New-Algorithms for more information.
+See [The Engine](/BHoM_Engine) for more information.
 
 ## Implement the Adapter
 
