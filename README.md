@@ -1,2 +1,8 @@
-# documentation
-Repository to host general Wiki, any material required for this and any additional documentation about the Building and Habitats object Model
+# BHoM Documentation
+Repository to host general documentation on BHoM.
+
+
+Navigate the documentation by heading to [www.bhom.xyz/documentation](www.bhom.xyz/documentation).
+
+
+See [editing the documentation](www.bhom.xyz/documentation/Contributing/Editing-the-documentation/) for more information.

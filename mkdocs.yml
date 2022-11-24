@@ -1,0 +1,46 @@
+site_name: BHoM documentation
+copyright: Copyright &copy; 2018 - 2022 BHoM
+
+theme:
+  name: material
+  logo: _images/logos/logo.png
+  favicon: _images/logos/favicon.ico
+  palette:
+    primary: white
+    accent: pink
+
+  features:
+    - navigation.tracking
+    - navigation.top
+
+plugins:
+  - search
+  - awesome-pages #allows to customise the ordering of pages
+
+markdown_extensions:
+  - attr_list # allows to add HTML/CSS attributes to almost every Markdown element, useful for e.g. aligning an image to the left/right (can't do centre though! use md_in_html instead)
+  - md_in_html # allows to add markdown within HTML elements, useful for e.g. adding image captions or centering an image
+  
+  - pymdownx.betterem # Wider support to markdown symbols
+  
+  # Code syntax highlighting
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+  # Mathjax support
+  - pymdownx.arithmatex:
+      generic: true
+
+  # Call-outs and note boxes ('admonition')
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+extra_javascript: 
+  # Also required for Mathjax support
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

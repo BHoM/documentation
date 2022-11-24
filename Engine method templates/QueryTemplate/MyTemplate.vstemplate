@@ -1,0 +1,22 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>QueryMethod.cs</DefaultName>
+    <Name>Query - BHoM Toolkit Engine method</Name>
+    <Description>Adds a Query method to your BHoM Toolkit Engine project.
+	
+Query methods should only return values queryable from the given object with little indirection.
+If you need to perform computation to calculate data from the input, consider the Compute method.
+		</Description>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>Query.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>BHoM</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">QueryTemplate.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
