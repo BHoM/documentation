@@ -1,5 +1,5 @@
 This page gives a more in-depth technical explanation about some diffing methods, and also serves as a guide for developers to build functionality on top of existing diffing code.  
-See the [Diffing](/Diffing:-tracking-changes-in-your-BHoM-objects) and the [Hash](/Hash:-an-object's-identity) wiki pages for a more quick-start guide.
+See the [Diffing](/documentation/Diffing:-tracking-changes-in-your-BHoM-objects) and the [Hash](/documentation/Hash:-an-object's-identity) wiki pages for a more quick-start guide.
 
 ### Contents
 
@@ -13,11 +13,11 @@ See the [Diffing](/Diffing:-tracking-changes-in-your-BHoM-objects) and the [Hash
 * [Customising the Diffing output: ComparisonInclusion() extension method](#customising-the-diffing-output-comparisoninclusion-extension-method)
 * [Customising the Hash: HashString() extension method](#customising-the-hash-hashstring-extension-method)
 * [Toolkit-specific ComparisonConfig options](#toolkit-specific-comparisonconfig-options)
-* [Testing and profiling](/Diffing-and-Hashing%3A-guide-for-developers/#testing-and-profiling)
+* [Testing and profiling](/documentation/Diffing-and-Hashing%3A-guide-for-developers/#testing-and-profiling)
 
 # Developing _Toolkit-specific diffing methods_
 
-The [`IDiffing()` method](/Diffing:-tracking-changes-in-your-BHoM-objects#idiffing-method) is designed to be a "universal" entry point for users wanting to diff their objects; for this reason, it has an automated mechanism to call any _Toolkit-specific diffing method_ that can is compatible with the input objects. This work similarly to the [_Extension Method discovery pattern_](https://github.com/BHoM/BHoM_Engine/blob/b7b03a0785fc21a7dea21680925a4f94c760ef77/Reflection_Engine/Compute/TryRunExtensionMethod.cs) that is often leveraged in many BHoM methods.
+The [`IDiffing()` method](/documentation/Diffing:-tracking-changes-in-your-BHoM-objects#idiffing-method) is designed to be a "universal" entry point for users wanting to diff their objects; for this reason, it has an automated mechanism to call any _Toolkit-specific diffing method_ that can is compatible with the input objects. This work similarly to the [_Extension Method discovery pattern_](https://github.com/BHoM/BHoM_Engine/blob/b7b03a0785fc21a7dea21680925a4f94c760ef77/Reflection_Engine/Compute/TryRunExtensionMethod.cs) that is often leveraged in many BHoM methods.
 
 A _Toolkit-specific Diffing method_ is defined as a method:
 - that is `public`;
@@ -28,7 +28,7 @@ A _Toolkit-specific Diffing method_ is defined as a method:
   - any number of optional parameters;
   - a final `DiffingConfig` parameter (that should default to `null`, and be auto initialised if null within the implementation).
 
-Any method that respect these criteria is discovered and stored during the assembly loading [through this method](https://github.com/BHoM/BHoM_Engine/blob/main/Diffing_Engine/Query/AdaptersDiffingMethods.cs). It gets [invoked by the `IDiffing()` as explained here](/Diffing:-guide-for-developers#invoking-of-the-toolkit-specific-diffing-methods).
+Any method that respect these criteria is discovered and stored during the assembly loading [through this method](https://github.com/BHoM/BHoM_Engine/blob/main/Diffing_Engine/Query/AdaptersDiffingMethods.cs). It gets [invoked by the `IDiffing()` as explained here](/documentation/Diffing:-guide-for-developers#invoking-of-the-toolkit-specific-diffing-methods).
 
 # `IDiffing()` method: internal workings
 
@@ -36,7 +36,7 @@ The IDiffing method does a series of automated steps to ensure that the most app
 
 ## Invoking of the Toolkit-specific diffing methods
 
-The IDiffing first looks for any [Toolkit-specific diffing method](/Diffing%3A-guide-for-developers/_edit#developing-toolkit-specific-diffing-methods) that is compatible with the input objects ([relevant code here](https://github.com/BHoM/BHoM_Engine/blob/82c1276ecb10d3d773a6a8e28643787f742e6a43/Diffing_Engine/Compute/IDiffing.cs#L89-L120)). This is done by checking if there is a `IPersistentAdapterId` stored on the objects; if there is, the namespace to which that `IPersistentAdapterId` object belongs is taken as the source namespace to get a compatible Toolkit-specific diffing method. For example, if the input objects own a [`RevitIdentifier` fragment](https://github.com/BHoM/Revit_Toolkit/blob/a71d99fa93ab5fbad0c01ac14885e090c186ab91/Revit_oM/Parameters/RevitIdentifiers.cs#L29) (which implements `IPersistentAdapterId`), then the namespace `BH.oM.Adapters.Revit.Parameters` is taken. This namespace, which is an `.oM` one, is ["modified" to an `.Engine` one](https://github.com/BHoM/BHoM_Engine/blob/82c1276ecb10d3d773a6a8e28643787f742e6a43/Diffing_Engine/Compute/IDiffing.cs#L105), so the related Toolkit Engine is searched for a diffing method. 
+The IDiffing first looks for any [Toolkit-specific diffing method](/documentation/Diffing%3A-guide-for-developers/_edit#developing-toolkit-specific-diffing-methods) that is compatible with the input objects ([relevant code here](https://github.com/BHoM/BHoM_Engine/blob/82c1276ecb10d3d773a6a8e28643787f742e6a43/Diffing_Engine/Compute/IDiffing.cs#L89-L120)). This is done by checking if there is a `IPersistentAdapterId` stored on the objects; if there is, the namespace to which that `IPersistentAdapterId` object belongs is taken as the source namespace to get a compatible Toolkit-specific diffing method. For example, if the input objects own a [`RevitIdentifier` fragment](https://github.com/BHoM/Revit_Toolkit/blob/a71d99fa93ab5fbad0c01ac14885e090c186ab91/Revit_oM/Parameters/RevitIdentifiers.cs#L29) (which implements `IPersistentAdapterId`), then the namespace `BH.oM.Adapters.Revit.Parameters` is taken. This namespace, which is an `.oM` one, is ["modified" to an `.Engine` one](https://github.com/BHoM/BHoM_Engine/blob/82c1276ecb10d3d773a6a8e28643787f742e6a43/Diffing_Engine/Compute/IDiffing.cs#L105), so the related Toolkit Engine is searched for a diffing method. 
 
 [If a _Toolkit-specific diffing method_ match is found, that is then invoked](https://github.com/BHoM/BHoM_Engine/blob/82c1276ecb10d3d773a6a8e28643787f742e6a43/Diffing_Engine/Compute/IDiffing.cs#L111-L120). For example, this is how [`RevitDiffing()`](https://github.com/BHoM/Revit_Toolkit/blob/main/Revit_Engine/Compute/RevitDiffing.cs) gets called by the IDiffing.  
 Note that only the first matching method gets invoked. This is because we only allow to have 1 Toolkit-specific diffing method. If you have method overloading over your Toolkit-specific Diffing method (for example, because you want to provide the users with multiple choices when they choose to invoke directly your Toolkit-specific diffing method), you must ensure that all overloads are equally valid and can any can be picked by the IDiffing with the same results (like it happens for [`RevitDiffing()`](https://github.com/BHoM/Revit_Toolkit/blob/main/Revit_Engine/Compute/RevitDiffing.cs): all methods end up calling a single, `private` Diffing method, and additional inputs are optional, so they all behave the same if called by the IDiffing).
@@ -54,7 +54,7 @@ In addition to the main Diffing method `IDiffing()`, there are several other met
 
 Most diffing methods are simply relying on an ID that is associated to the input objects, or a similar way to determine which object should be compared to which. Once a match is found, the two matched objects (one from the `pastObjects` set and one from the `followingObjects` set) are sent to the `ObjectDifferences()` method, as illustrated by the following diagram.  
 
-This diagram also illustrates that only the `DiffWithHash()` method does not rely on the `ObjectDifferences()` method. The `DiffWithHash()` is a rather simple and limited method, in that it cannot identify Modified objects but only new/old ones, and it is described [here](/Diffing:-tracking-changes-in-your-BHoM-objects#other-diffing-methods).
+This diagram also illustrates that only the `DiffWithHash()` method does not rely on the `ObjectDifferences()` method. The `DiffWithHash()` is a rather simple and limited method, in that it cannot identify Modified objects but only new/old ones, and it is described [here](/documentation/Diffing:-tracking-changes-in-your-BHoM-objects#other-diffing-methods).
 
 ![Diffing methods-simplified](https://user-images.githubusercontent.com/6352844/146228227-b826c68b-6b4f-4be5-b41f-3b09b7e9653b.png)
 
@@ -62,16 +62,16 @@ This diagram also illustrates that only the `DiffWithHash()` method does not rel
 
 As shown above, the method that does most of the work in diffing is the [`BH.Engine.Diffing.Query.ObjectDifferences()` method](https://github.com/BHoM/BHoM_Engine/blob/main/Diffing_Engine/Query/ObjectDifferences.cs). 
 
-This is the method that has the task of finding all the differences between two input objects. This method currently leverages an open-source, free library called [`CompareNETObjects` by Kellerman software](https://github.com/GregFinzer/Compare-Net-Objects). It maps our [`ComparisonConfig` options](/Configuring-objects-comparison%3A-%60ComparisonConfig%60) to the [equivalent class](https://github.com/GregFinzer/Compare-Net-Objects/blob/master/Compare-NET-Objects/ComparisonConfig.cs) in the `CompareNETObjects` library, and then executes the comparison using it.
+This is the method that has the task of finding all the differences between two input objects. This method currently leverages an open-source, free library called [`CompareNETObjects` by Kellerman software](https://github.com/GregFinzer/Compare-Net-Objects). It maps our [`ComparisonConfig` options](/documentation/Configuring-objects-comparison%3A-%60ComparisonConfig%60) to the [equivalent class](https://github.com/GregFinzer/Compare-Net-Objects/blob/master/Compare-NET-Objects/ComparisonConfig.cs) in the `CompareNETObjects` library, and then executes the comparison using it.
 
 ### Mapping our `ComparisonConfig` to Kellerman library
 
-Because not all of the options available in the [ComparisonConfig](/Configuring-objects-comparison%3A-%60ComparisonConfig%60) are mappable to Kellerman's, `ObjectDifferences()` has to adopt a workaround. For example, our [numerical approximation options](https://github.com/BHoM/BHoM/blob/5ec4a0ec34f95382f64530779aafda34252dbbfa/BHoM/BaseComparisonConfig.cs#L70-L88) are not directly compatible.  
+Because not all of the options available in the [ComparisonConfig](/documentation/Configuring-objects-comparison%3A-%60ComparisonConfig%60) are mappable to Kellerman's, `ObjectDifferences()` has to adopt a workaround. For example, our [numerical approximation options](https://github.com/BHoM/BHoM/blob/5ec4a0ec34f95382f64530779aafda34252dbbfa/BHoM/BaseComparisonConfig.cs#L70-L88) are not directly compatible.  
 The general compatibility strategy is:
 - if an option is mappable/convertible, map/convert it from our `ComparisonConfig` to Kellerman's `CompareLogic` object. [This is true for most of them](https://github.com/BHoM/BHoM_Engine/blob/82c1276ecb10d3d773a6a8e28643787f742e6a43/Diffing_Engine/Query/ObjectDifferences.cs#L72-L78).
 - if an option is not compatible with Kellerman (like our [numerical approximation options](https://github.com/BHoM/BHoM/blob/5ec4a0ec34f95382f64530779aafda34252dbbfa/BHoM/BaseComparisonConfig.cs#L70-L88)), set Kellerman `CompareLogic` so it finds all possible differences with regards to that option (like we do for [numerical differences](https://github.com/BHoM/BHoM_Engine/blob/82c1276ecb10d3d773a6a8e28643787f742e6a43/Diffing_Engine/Query/ObjectDifferences.cs#L80-L84)), then **iterate the differences found** and cull out those that are non relevant ([example for the numerical differences](https://github.com/BHoM/BHoM_Engine/blob/82c1276ecb10d3d773a6a8e28643787f742e6a43/Diffing_Engine/Query/ObjectDifferences.cs#L189-L191)).
 
-The loop to iterate over the differences found by Kellerman is also useful to further customise the output, as shown by the [following section](/Diffing-and-Hashing%3A-guide-for-developers/#customising-the-diffing-output-comparisoninclusion-extension-method).
+The loop to iterate over the differences found by Kellerman is also useful to further customise the output, as shown by the [following section](/documentation/Diffing-and-Hashing%3A-guide-for-developers/#customising-the-diffing-output-comparisoninclusion-extension-method).
 
 # Customising the Diffing output: `ComparisonInclusion()` extension method
 
@@ -104,7 +104,7 @@ public static ComparisonInclusion ComparisonInclusion(this RevitParameter parame
 }
 ```
 
-Note that this method supports Toolkit-specific `ComparisonConfig` objects, like e.g. `RevitComparisonConfig`. See [the section below](/Diffing-and-Hashing:-guide-for-developers#toolkit-specific-comparisonconfig-options) for more details.
+Note that this method supports Toolkit-specific `ComparisonConfig` objects, like e.g. `RevitComparisonConfig`. See [the section below](/documentation/Diffing-and-Hashing:-guide-for-developers#toolkit-specific-comparisonconfig-options) for more details.
 
 # Customising the Hash: `HashString()` extension method
 
@@ -133,7 +133,7 @@ public static string HashString(this RevitParameter revitParameter, string prope
 }
 ```
 
-Note that this method supports Toolkit-specific `ComparisonConfig` objects, like e.g. `RevitComparisonConfig`. See [the section below](/Diffing-and-Hashing:-guide-for-developers#toolkit-specific-comparisonconfig-options) for more details.
+Note that this method supports Toolkit-specific `ComparisonConfig` objects, like e.g. `RevitComparisonConfig`. See [the section below](/documentation/Diffing-and-Hashing:-guide-for-developers#toolkit-specific-comparisonconfig-options) for more details.
 
 # Toolkit-specific `ComparisonConfig` options
 
@@ -143,9 +143,9 @@ The "default" [`comparisonConfig` object](https://github.com/BHoM/BHoM/blob/main
 See an example with Revit's [`RevitComparisonConfig`](https://github.com/BHoM/Revit_Toolkit/blob/main/Revit_oM/Config/RevitComparisonConfig.cs).
 
 If you implement your own Toolkit-specific `ComparisonConfig` object, you will need to implement the functions that deal with it too, which should include at least one of:
-- A toolkit-specific `Diffing()` method ([example in Revit](https://github.com/BHoM/Revit_Toolkit/blob/main/Revit_Engine/Compute/RevitDiffing.cs)), which your users can call independently, or that may be automatically called by the IDiffing method, [as shown here](/Diffing-and-Hashing%3A-guide-for-developers/#developing-toolkit-specific-diffing-methods).
+- A toolkit-specific `Diffing()` method ([example in Revit](https://github.com/BHoM/Revit_Toolkit/blob/main/Revit_Engine/Compute/RevitDiffing.cs)), which your users can call independently, or that may be automatically called by the IDiffing method, [as shown here](/documentation/Diffing-and-Hashing%3A-guide-for-developers/#developing-toolkit-specific-diffing-methods).
 - A toolkit-specific `HashString()` method ([example in Revit](https://github.com/BHoM/Revit_Toolkit/blob/main/Revit_Engine/Query/HashString.cs)), which will get [invoked when computing the Hash()](https://github.com/BHoM/BHoM_Engine/blob/82c1276ecb10d3d773a6a8e28643787f742e6a43/BHoM_Engine/Query/Hash.cs#L217-L221). 
-- Any number of `ComparisonInclusion()` methods that you might need to customise the diffing output per each object ([example in Revit for RevitParameters](https://github.com/BHoM/Revit_Toolkit/blob/a71d99fa93ab5fbad0c01ac14885e090c186ab91/Revit_Engine/Query/ComparisonInclusion.cs#L39-L44)), as explained [here](/Diffing-and-Hashing:-guide-for-developers#customising-the-diffing-output-comparisoninclusion-extension-method). 
+- Any number of `ComparisonInclusion()` methods that you might need to customise the diffing output per each object ([example in Revit for RevitParameters](https://github.com/BHoM/Revit_Toolkit/blob/a71d99fa93ab5fbad0c01ac14885e090c186ab91/Revit_Engine/Query/ComparisonInclusion.cs#L39-L44)), as explained [here](/documentation/Diffing-and-Hashing:-guide-for-developers#customising-the-diffing-output-comparisoninclusion-extension-method). 
 
 
 # Testing and profiling

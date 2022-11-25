@@ -102,10 +102,10 @@ Used on methods that are not yet implemented. Method with this tag will not be e
 ```
 
 ### PreviousVersion
-The previous version attribute helps with code versioning of methods when a method has been changed in terms of name, namespace or input parameters. Example of how to use it see [Method versioning](/Versioning---How-to-modify-code-without-breaking-user-scripts#modifying-methods)
+The previous version attribute helps with code versioning of methods when a method has been changed in terms of name, namespace or input parameters. Example of how to use it see [Method versioning](/documentation/Versioning---How-to-modify-code-without-breaking-user-scripts#modifying-methods)
 
 ### Replaced
-Used on a method that is being replaced by another method and is to be deleted in coming versions while no automatic versioning is possible. **_This attribute should only be used when [Versioning](/Versioning---How-to-modify-code-without-breaking-user-scripts) is impossible!_** This attribute will hide the method from the method tree in the UIs as long as the `FromVersion` property is lower or equal to the assembly file version and thereby make it impossible to create any new instances of the method. Any existing scripts will still work and reference the method. To read more about method deprecation strategy [please see here](/Backwards-compatibility).
+Used on a method that is being replaced by another method and is to be deleted in coming versions while no automatic versioning is possible. **_This attribute should only be used when [Versioning](/documentation/Versioning---How-to-modify-code-without-breaking-user-scripts) is impossible!_** This attribute will hide the method from the method tree in the UIs as long as the `FromVersion` property is lower or equal to the assembly file version and thereby make it impossible to create any new instances of the method. Any existing scripts will still work and reference the method. To read more about method deprecation strategy [please see here](/documentation/Backwards-compatibility).
 
 The deprecated attribute has four properties:
 
@@ -125,5 +125,5 @@ Example:
 ```
 
 ### ToBeRemoved
-Attribute only to tag a class or method that is to be removed. **_This attribute should only be used when [Versioning](/Versioning---How-to-modify-code-without-breaking-user-scripts) is impossible!_** This attribute will hide the method from the method tree in the UIs as long as the `FromVersion` property is lower or equal to the assembly file version and thereby make it impossible to create any new instances of the method.
+Attribute only to tag a class or method that is to be removed. **_This attribute should only be used when [Versioning](/documentation/Versioning---How-to-modify-code-without-breaking-user-scripts) is impossible!_** This attribute will hide the method from the method tree in the UIs as long as the `FromVersion` property is lower or equal to the assembly file version and thereby make it impossible to create any new instances of the method.
 

@@ -34,7 +34,7 @@ Correct at time of writing.
 
 | Check  | Severity | Compliance Type | 
 | ------------- | ------------- | ------------- |
-| [**Assembly Information**](/Code%20Compliance%20and%20CI/Compliance%20Checks/AssemblyInfo-compliance) | Fail | Project |
+| [**Assembly Information**](/documentation/Code%20Compliance%20and%20CI/Compliance%20Checks/AssemblyInfo-compliance) | Fail | Project |
 | [**AttributeHasEndingPunctuation**](Compliance%20Checks/AttributeHasEndingPunctuation) | Warning | Documentation |
 | [**EngineClassMatchesFilePath**](Compliance%20Checks/EngineClassMatchesFilePath) | Fail | Code |
 | [**HasConstructor**](Compliance%20Checks/HasConstructor) | Fail | Code |

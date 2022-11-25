@@ -1,7 +1,7 @@
 # Object name change and associated custom create method
 In the Audience_oM I want to change the object name for `ProfileParameters` to `TierProfileParameters`. There are two `Create` methods that will also need to be upgraded. This page describes the steps to achieve that.
 ## First I am going to set up some files and data to help with the process
-1. Capture the JSON string of the object to change as described [here](/How-to-check-your-versioned-changes-are-working-%3F).
+1. Capture the JSON string of the object to change as described [here](/documentation/How-to-check-your-versioned-changes-are-working-%3F).
 1. Set up a simple file with the auto generated object create method component and related methods that the changes will impact:
 
     ![Annotation 2020-08-21 121114](https://user-images.githubusercontent.com/6618854/90884388-8a721f80-e3a7-11ea-9df9-0e3c33255643.jpg)

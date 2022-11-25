@@ -1,27 +1,20 @@
 # Implement an Adapter 
 
-◀️ Previous read: _[The BHoM Toolkit](/Basics/The-BHoM-Toolkit)_
+An adapter can be implemented in order to add conversion features from BHoM to another software, and vice versa.
 
-▶️ Next read: _[The CRUD methods](./The-CRUD-methods)_
-
-___________________________________________________________________
-
-
-> ## ⚠️ Note ⚠️
-> Before reading this page, please check out:
-> - [Getting started for developers](/Contributing/Getting-started-for-developers)
-> - [Introduction to BHoM_Adapter](/BHoM_Adapter)
-> - [Adapter Actions](/BHoM_Adapter/Adapter-Actions)
-> - [The BHoM Toolkit](/Basics/The-BHoM-Toolkit)
-
-
-___________________________________________________________________
+An adapter should be added to a dedicated Toolkit repository. See the page dedicated to the _[The BHoM Toolkit](/documentation/Basics/The-BHoM-Toolkit)_ to learn how to set up a Toolkit, which can then contain an Adapter.
 
 
 
-## The Toolkit containing the adapter
+!!! warning
 
-See the page dedicated to the _[The BHoM Toolkit](/Basics/The-BHoM-Toolkit)_ to learn how to set up a Toolkit, which can then contain an Adapter.
+    Before reading this page, please check out:
+
+    - [Getting started for developers](/documentation/Contributing/Getting-started-for-developers)
+    - [Introduction to BHoM_Adapter](/documentation/BHoM_Adapter)
+    - [Adapter Actions](/documentation/BHoM_Adapter/Adapter-Actions)
+    - [The BHoM Toolkit](/documentation/Basics/The-BHoM-Toolkit)
+
 
 
 ## Main Adapter file and constructor
@@ -51,7 +44,7 @@ In order to reuse the existing logic embedded in the Adapter Actions, you should
 ## The Adapter Settings
 The Adapter settings are general settings that can be used by the Adapter Actions and/or the CRUD methods. 
 
-You can define them as you want; just consider that the settings are supposed to stay the same across any instance of the same adapter, i.e. the Adapter Settings are global `static` settings valid for all instances of your Toolkit Adapter. In other words, these settings are independent of what Action your Toolkit is doing (unlike the [ActionConfig](/BHoM_Adapter/Adapter-Actions---advanced-parameters#actionconfig)). If you want to create settings that affect a specific action, implement an ActionConfig instead.
+You can define them as you want; just consider that the settings are supposed to stay the same across any instance of the same adapter, i.e. the Adapter Settings are global `static` settings valid for all instances of your Toolkit Adapter. In other words, these settings are independent of what Action your Toolkit is doing (unlike the [ActionConfig](/documentation/BHoM_Adapter/Adapter-Actions---advanced-parameters#actionconfig)). If you want to create settings that affect a specific action, implement an ActionConfig instead.
 
 The base [BHoM_Adapter code](https://github.com/BHoM/BHoM_Adapter) gives you extensive explanation/descriptions/comments about the Adapter Settings. 
 
@@ -59,7 +52,7 @@ The base [BHoM_Adapter code](https://github.com/BHoM/BHoM_Adapter) gives you ext
 
 The CRUD folder should contain all the needed CRUD methods. 
 
-You can see the [CRUD methods implementation details in their dedicated page](/BHoM_Adapter/The-CRUD-methods).
+You can see the [CRUD methods implementation details in their dedicated page](/documentation/BHoM_Adapter/The-CRUD-methods).
 
 Here we will cover a convention that we use in the code organisation: the CRUD "interface methods".
 
@@ -130,7 +123,7 @@ DependencyTypes = new Dictionary<Type, List<Type>>
 
 
 ### Comparers
-The comparison between objects is needed in many scenarios, most notably [in the Push, when you need to tell an old object from a new one](/BHoM_Adapter/Adapter-Actions#push).
+The comparison between objects is needed in many scenarios, most notably [in the Push, when you need to tell an old object from a new one](/documentation/BHoM_Adapter/Adapter-Actions#push).
 
 In the same way that the BHoM Object model cannot define all possible relationships between the object types, it is also not possible to collect all possible ways of comparing the object with each other. Some software might want to compare two objects in a way, some in another.
 

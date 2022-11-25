@@ -2,7 +2,7 @@
 
 This page gives examples and outlines the general common behaviour of the adapters communicating with structural engineering software. 
 
-To get an general introduction to how the adapters are working, and how to implement a new one please see the set of wiki pages starting from [Introduction to the BHoM Adapter](/BHoM_Adapter/).
+To get an general introduction to how the adapters are working, and how to implement a new one please see the set of wiki pages starting from [Introduction to the BHoM Adapter](/documentation/BHoM_Adapter/).
 
 ## Specific Structural Engineering adapters
 

@@ -3,7 +3,7 @@
 To keep things organised and avoid stepping on each other's toes, we are relying on the [_GitHub Project SCRUM Board_](https://github.com/orgs/BHoM/projects/3). The _Project SCRUM Board_ is the way we communicate, the tool we use to have a bigger picture of what is happening, and the way you will keep records of your work into the BHoM.
 Since the the _Project SCRUM Board_ is fully automatised, it is read-only and represents a view on what is happening across all the BHoM repositories.
 
-![img](https://raw.githubusercontent.com/BuroHappoldEngineering/documentation-page/main/docs/_images/ScrumBoard.png).
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/ScrumBoard.png).
 
 Each card that you see there corresponds to an [issue raised in one of the repos](Submitting-an-Issue). From the moment it is created to the time when that issue has been completely resolved, the corresponding cards, i.e. the issue card and the associated pull-request card, will go through the different columns of this board. 
 

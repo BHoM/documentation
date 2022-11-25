@@ -48,7 +48,7 @@ Board](Using-the-SCRUM-Board) - it's easy!
    and considering [to branch or not to
    branch?](Working-Together-‐-Avoiding-Conflicts)
 
-1. As soon as you pushed your first commit, open a _Draft Pull Request_, and [add the card to the _Project SCRUM Board_](/Using-the-SCRUM-Board#creating-a-card). This action will communicate to others that the repo is now _locked_ and [avoids conflicts](Working-Together-‐-Avoiding-Conflicts). 
+1. As soon as you pushed your first commit, open a _Draft Pull Request_, and [add the card to the _Project SCRUM Board_](/documentation/Using-the-SCRUM-Board#creating-a-card). This action will communicate to others that the repo is now _locked_ and [avoids conflicts](Working-Together-‐-Avoiding-Conflicts). 
 
 1. Push each individual __Commit__ - keeping commits as specific and frequent
    as possible. Always review what files you are committing. And make sure your
@@ -96,11 +96,11 @@ Make sure to check [this
 page](Working-Together-‐-Avoiding-Conflicts)
 for the guidelines on when to create a branch and when not to.
 
-![img](https://raw.githubusercontent.com/BuroHappoldEngineering/documentation-page/main/docs/_images/Issues_NewBranch1.png)
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Issues_NewBranch1.png)
 
 You should see that your repo history has now switched to a new branch.
 
-![img](https://raw.githubusercontent.com/BuroHappoldEngineering/documentation-page/main/docs/_images/Issues_NewBranch2.png)
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Issues_NewBranch2.png)
 
 From there you are ready to work on your code. Any commit that you will do,
   will be on that new branch.

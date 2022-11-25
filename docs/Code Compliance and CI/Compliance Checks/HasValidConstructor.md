@@ -72,4 +72,4 @@ public class MyObject : BHoMObject, IImmutable
 
 #### More information
 
-More information on the use of `IImmutable` interface within the BHoM can be found [here](/The-IImmutable-interface).
+More information on the use of `IImmutable` interface within the BHoM can be found [here](/documentation/The-IImmutable-interface).

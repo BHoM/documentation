@@ -113,10 +113,10 @@ Despite being one of the pillars of OOP, data encapsulation has been systematica
 
 ## Further Reading
 
-* [BH.oM: Organise your Design Data](/BHoM_oM)
-* [BH.Engine: Create New Algorithms](/BHoM_Engine)
-* [BH.UI: Expose your Code to UIs](/BHoM_UI/)
-* [BH.Adapter: Linking to Commercial Software](/BHoM_Adapter) 
+* [BH.oM: Organise your Design Data](/documentation/BHoM_oM)
+* [BH.Engine: Create New Algorithms](/documentation/BHoM_Engine)
+* [BH.UI: Expose your Code to UIs](/documentation/BHoM_UI/)
+* [BH.Adapter: Linking to Commercial Software](/documentation/BHoM_Adapter) 
 
 	
 <br/>

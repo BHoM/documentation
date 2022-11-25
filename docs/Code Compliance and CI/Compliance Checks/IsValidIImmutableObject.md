@@ -12,4 +12,4 @@ If an object has no properties which are `get` only, then the `IImmutable` inter
 
 #### More information
 
-More information on the use of `IImmutable` interface within the BHoM can be found [here](/The-IImmutable-interface).
+More information on the use of `IImmutable` interface within the BHoM can be found [here](/documentation/The-IImmutable-interface).

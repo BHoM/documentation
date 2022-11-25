@@ -1,28 +1,18 @@
 # Adapter actions 
 
-After covering the basics in [Introduction to BHoM_Adapter](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter), this page explains the Adapter Actions more in detail, including their underlying mechanism.
+After covering the basics in [Introduction to BHoM_Adapter](/documentation/BHoM_Adapter/Introduction-to-the-BHoM_Adapter), this page explains the Adapter Actions more in detail, including their underlying mechanism.
 
-After reading this you should be all set to develop your own [BHoM Toolkit](/Basics/The-BHoM-Toolkit) 🚀 
+After reading this you should be all set to develop your own [BHoM Toolkit](/documentation/Basics/The-BHoM-Toolkit)! 🚀 
 
 
-___________________________________________________________________
 
-<br/>
+!!! Note
 
-> ### ⚠️ Note ⚠️
-> Before reading this page, make sure you have read the [Introduction to BHoM_Adapter](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter).
-<br/>
-
-◀️ Previous read: _[introduction to BHoM_Adapter](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter)_
-
-▶️ Next read: _[The BHoM Toolkit](/Basics/The-BHoM-Toolkit)_ and, optionally, _[The CRUD methods](/BHoM_Adapter/The-CRUD-methods)._
-
-<br/>
-___________________________________________________________________
+    Before reading this page, make sure you have read the [Introduction to BHoM_Adapter](/documentation/BHoM_Adapter/Introduction-to-the-BHoM_Adapter).
 
 
 ## How the Adapter Actions work
-[As we saw before](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter), the Adapter Actions are backed by what we call *CRUD* methods. Let's see what that means.
+[As we saw before](/documentation/BHoM_Adapter/Introduction-to-the-BHoM_Adapter), the Adapter Actions are backed by what we call *CRUD* methods. Let's see what that means.
 
 ### The CRUD paradigm
 A very common **paradigm** that describes **all the possible action types** is [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete). This paradigm says that, regardless of the connection being made, the connector actions can be always categorised as:
@@ -74,9 +64,9 @@ The following times, we expect the existing objects to be `Update`d with the par
 The paragraphs that follow down below are dedicated to explaining _the relationship between the CRUD methods and the Adapter Actions_. 
 
 For first time developers, this is not essential – **you just need to assume that _the CRUD methods are called by the Adapter Actions when appropriate_**.  
-You may now want to jump to [our guide to build a **BHoM Toolkit**](/BHoM_Adapter/The-BHoM-Toolkit).
+You may now want to jump to [our guide to build a **BHoM Toolkit**](/documentation/BHoM_Adapter/The-BHoM-Toolkit).
 
-> You will read more about the CRUD methods and how you should implement them in [their dedicated page](/BHoM_Adapter/The-CRUD-methods) that you should read after the BHoM_Toolkit page.
+> You will read more about the CRUD methods and how you should implement them in [their dedicated page](/documentation/BHoM_Adapter/The-CRUD-methods) that you should read after the BHoM_Toolkit page.
 
 Otherwise, keep reading.
 
@@ -102,7 +92,7 @@ Let's see again how we described the Push mechanism in the previous page:
 >   - under some particular circumstances and for specific software, if some objects in the external software are deemed to be "old", the Push will delete those. 
 
 The determination of the object status (_new, old_ or _edited_) is done through a "Venn Diagram" mechanism:
-![img](https://raw.githubusercontent.com/BuroHappoldEngineering/documentation-page/main/docs/_images/VennDiagram.png)
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/VennDiagram.png)
 
 The [Venn Diagram](https://github.com/BHoM/BHoM_Engine/blob/master/Data_Engine/Create/VennDiagram.cs) is a BHoM object class that can be created with any `Comparer` that you might have for the objects. It compares the objects with the given rule (the `Comparer`) and returns the objects belonging to one of two groups, and the intersection (objects belonging to both groups).
 
@@ -203,7 +193,7 @@ There is some additional logic related to technicalities, for instance how we de
 ![image](https://user-images.githubusercontent.com/6352844/74739504-def9de00-5250-11ea-807f-d38df3a8e4f1.png)
 
 
-You can find more info on Requests in their related section of the [Adapter Actions - Advanced parameters](/BHoM_Adapter/Adapter-Actions---advanced-parameters) wiki page.
+You can find more info on Requests in their related section of the [Adapter Actions - Advanced parameters](/documentation/BHoM_Adapter/Adapter-Actions---advanced-parameters) wiki page.
 
 Note that the method returns a list of `object`, because the pulled objects must not necessarily be limited to BHoM objects (you can import any other class/type, also from different Object Models).
 
@@ -254,5 +244,5 @@ The method returns _true_ if the command was executed successfully.
 
 # Next steps: Create Your Own Adapter
 
-Read on our [guide to build a **BHoM Toolkit**](/BHoM_Adapter/The-BHoM-Toolkit).
+Read on our [guide to build a **BHoM Toolkit**](/documentation/BHoM_Adapter/The-BHoM-Toolkit).
 

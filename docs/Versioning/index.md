@@ -442,6 +442,6 @@ Also note that those three are the 3 places where an older upgrader can be calle
 
 ![image](https://user-images.githubusercontent.com/16853390/82113415-7905ef80-9788-11ea-8d77-53c153286a2f.png)
 ## Example walk throughs
-* [How to check your versioned changes are working](/How-to-check-your-versioned-changes-are-working-%3F)
-* [Property name change](/Change-to-a-property-name)
-* [Object name change and associated custom create method](/Object-name-change-and-associated-custom-create-method)
+* [How to check your versioned changes are working](/documentation/How-to-check-your-versioned-changes-are-working-%3F)
+* [Property name change](/documentation/Change-to-a-property-name)
+* [Object name change and associated custom create method](/documentation/Object-name-change-and-associated-custom-create-method)

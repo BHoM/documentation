@@ -1,8 +1,8 @@
-As we've seen in the [Diffing](/Diffing:-tracking-changes-in-your-BHoM-objects) and [Hash](/Hash:-an-object's-identity) pages, we can customise how objects are compared to each other (either using Diffing or by comparing their Hashes) through the [`ComparisonConfig` object](/Configuring-objects-comparison-(ComparisonConfig)).
+As we've seen in the [Diffing](/documentation/Diffing:-tracking-changes-in-your-BHoM-objects) and [Hash](/documentation/Hash:-an-object's-identity) pages, we can customise how objects are compared to each other (either using Diffing or by comparing their Hashes) through the [`ComparisonConfig` object](/documentation/Configuring-objects-comparison-(ComparisonConfig)).
 
 In addition to the basic `ComparisonConfig` that we can use with any object, we also have a Revit-specific [`RevitComparisonConfig` object](https://github.com/BHoM/Revit_Toolkit/blob/ffe1406c8abac574ac5bfcbf25609da1e5db049a/Revit_oM/Config/RevitComparisonConfig.cs#L32-L59) that expands the available options.
 
-Below is an example of how the `RevitComparisonConfig` looks in Grasshopper. Note that most of them are already covered by the [`ComparisonConfig` object](/Configuring-objects-comparison-(ComparisonConfig)) base wiki, while the Revit-specific options are only the first 4 (explained below).
+Below is an example of how the `RevitComparisonConfig` looks in Grasshopper. Note that most of them are already covered by the [`ComparisonConfig` object](/documentation/Configuring-objects-comparison-(ComparisonConfig)) base wiki, while the Revit-specific options are only the first 4 (explained below).
 
 ![image](https://user-images.githubusercontent.com/6352844/145990764-8e8ae057-e81c-4489-b644-2e2e6e583a52.png)
 
@@ -35,11 +35,11 @@ This input supports `*` wildcard matching.
 
 ## `ParameterNumericTolerance`
 
-This works similarly to the [`PropertyNumericTolerance` option](/Configuring-objects-comparison:-%60ComparisonConfig%60#propertynumerictolerance), but it applies to Revit Parameters only. See that wiki section for more details on how to use it.
+This works similarly to the [`PropertyNumericTolerance` option](/documentation/Configuring-objects-comparison:-%60ComparisonConfig%60#propertynumerictolerance), but it applies to Revit Parameters only. See that wiki section for more details on how to use it.
 
 ## `ParameterSignificantFigures`
 
-This works similarly to the [`PropertySignificantFigures` option](/Configuring-objects-comparison:-%60ComparisonConfig%60#propertysignificantfigures), but it applies to Revit Parameters only. See that wiki section for more details on how to use it.
+This works similarly to the [`PropertySignificantFigures` option](/documentation/Configuring-objects-comparison:-%60ComparisonConfig%60#propertysignificantfigures), but it applies to Revit Parameters only. See that wiki section for more details on how to use it.
   
 <br/><br/>
 ______________

@@ -2,7 +2,7 @@
 
 The BHoM Engine repository contains all the functions and algorithms that process BHoM objects. 
 
-[As we saw earlier](/BHoM_oM), this structure gives us a few advantages, in particular:
+[As we saw earlier](/documentation/BHoM_oM), this structure gives us a few advantages, in particular:
 * we can see the BHoM object as a list of properties and their default values;
 * in the same way, **the BHoM Engine can be seen as a big collection of functions**.
 
@@ -11,7 +11,9 @@ The BHoM Engine repository contains all the functions and algorithms that proces
 
 The BH.Engine repository is structured to reflect this strategy. The [Visual Studio Solution](https://docs.microsoft.com/en-us/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#solutions) contains several different [Projects](https://docs.microsoft.com/en-us/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#projects): 
 
-![img](https://raw.githubusercontent.com/BuroHappoldEngineering/documentation-page/main/docs/_images/Project_List.png)
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Project_List.png)
+
+![img](/documentation/_images/Project_List.png)
 
 Each of those projects takes care of a different type of functionality. The "main" project however is the **BHoM_Engine project**: this contains everything that allows for basic direct processing of BHoM objects. The other projects are designed around a set of algorithms focused on a specific area such as geometry, form finding, model laundry or even a given discipline such as structure. 
 
@@ -19,7 +21,7 @@ Each of those projects takes care of a different type of functionality. The "mai
 > **Why so many projects?**  
 > 
 > The main reason why the BHoM Engine is split in so many projects is to allow for a large number of people to be able to work simultaneously on different parts of the code.  
-> Keep in mind that every time a file is added, deleted or even moved, [this changes the project file itself](https://docs.microsoft.com/en-us/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#projects). Consequentially, submitting code to GitHub can become really painful when [multiple people have modified the same files](/Working-Together-‐-Avoiding-Conflicts).  
+> Keep in mind that every time a file is added, deleted or even moved, [this changes the project file itself](https://docs.microsoft.com/en-us/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#projects). Consequentially, submitting code to GitHub can become really painful when [multiple people have modified the same files](/documentation/Working-Together-‐-Avoiding-Conflicts).  
 Splitting code per project therefore limits the need to coordinate changes to the level of each focus group.
 
 Another benefit will be visible when we get to the "Toolkit" level: having different project makes it easier to manage Namespaces and make certain functionalities "extendable" in other parts of the code, such as in Toolkits.
@@ -33,7 +35,7 @@ There are five possible **action types** that correspond to five different **fol
 
 Let's consider the Geometry_Engine project; we can see that it contains all of those folders:
 
-![img](https://raw.githubusercontent.com/BuroHappoldEngineering/documentation-page/main/docs/_images/Folder_Structure.png) 
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Folder_Structure.png) 
 
 Those five action names should be the same in all projects; however **it's not mandatory that an Engine project should have all of them**. 
 
@@ -317,7 +319,7 @@ PS: before anyone asks, using **((dynamic)curve).Bounds();** is not an option. N
 
 ## Fallback Methods
 
-But what if we do not have a method implemented for every type that that can be dynamically called by **IBounds**? That is what private fallback methods are for. In general fallback methods are used for handling unexpected behaviours of main method. In this case it should log an error with a proper message (see [Handling Exceptional Events](/Handling-Exceptional-Events) for more information) and return null or NaN.
+But what if we do not have a method implemented for every type that that can be dynamically called by **IBounds**? That is what private fallback methods are for. In general fallback methods are used for handling unexpected behaviours of main method. In this case it should log an error with a proper message (see [Handling Exceptional Events](/documentation/Handling-Exceptional-Events) for more information) and return null or NaN.
 
 ```c#
 namespace BH.Engine.Geometry
@@ -354,7 +356,7 @@ For the most experienced developers among you, some might worried about executio
 
 Thankfully, tests have shown that efficiency lost is minimal even for the smallest functions. Even a method that calculates the length of a vector (1 square root, 3 multiplications and 2 additions) is running at about 75% of the speed, which is perfectly acceptable. As soon as the method become bigger, the difference becomes negligible. Even a method as light as calculating the length of a short polyline doesn't show more than a few % in speed difference.
 
-![img](https://raw.githubusercontent.com/BuroHappoldEngineering/documentation-page/main/docs/_images/PolymorphicExtention_SpeedTest.png) 
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/PolymorphicExtention_SpeedTest.png) 
 
 ## RunExtensionMethod Pattern
 

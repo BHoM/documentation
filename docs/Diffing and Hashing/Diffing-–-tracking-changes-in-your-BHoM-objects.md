@@ -2,7 +2,7 @@ Diffing is the process of determining what changed between two sets of objects.
 
 Typically, the two sets of objects are two versions of the same thing (of a pulled Revit model, of a Structural Model that we want to Push to an Adapter, etc), in which case Diffing can effectively be used as a Version Control tool.
 
-🤖 **Developers**: check out also the [Diffing and Hash: Guide for developers](/Diffing-and-Hashing:-guide-for-developers).
+🤖 **Developers**: check out also the [Diffing and Hash: Guide for developers](/documentation/Diffing-and-Hashing:-guide-for-developers).
 
 ![image](https://user-images.githubusercontent.com/6352844/146008221-15ebcb4b-8b0c-410d-8dcb-ddf576664931.png)
 
@@ -12,7 +12,7 @@ The [Diffing_Engine](https://github.com/BHoM/BHoM_Engine/tree/main/Diffing_Engin
 
 # IDiffing method
 
-The most versatile method for diffing is the [`BH.Engine.Diffing.Compute.Diffing()` method](https://github.com/BHoM/BHoM_Engine/blob/main/Diffing_Engine/Compute/IDiffing.cs), also called `IDiffing`. Ideally, you should always use this Diffing method, although other alternatives exist for specific cases (see [Other diffing methods](/Diffing%3A-tracking-changes-in-your-BHoM-objects/#other-diffing-methods) below). A detailed technical explanation of the IDiffing can be found in the guide for developers.
+The most versatile method for diffing is the [`BH.Engine.Diffing.Compute.Diffing()` method](https://github.com/BHoM/BHoM_Engine/blob/main/Diffing_Engine/Compute/IDiffing.cs), also called `IDiffing`. Ideally, you should always use this Diffing method, although other alternatives exist for specific cases (see [Other diffing methods](/documentation/Diffing%3A-tracking-changes-in-your-BHoM-objects/#other-diffing-methods) below). A detailed technical explanation of the IDiffing can be found in the guide for developers.
 
 This method can be found in any UI by simply looking for `diffing`:
 ![image](https://user-images.githubusercontent.com/6352844/146007504-68efd77b-2cf7-4448-95a8-cd43a0a0bab8.png)
@@ -37,7 +37,7 @@ The `DiffingConfig` object can be attached to any Diffing method and allows you 
 ![New Project (12)](https://user-images.githubusercontent.com/6352844/146351680-1617c046-9507-47d6-a202-7bd213c43ffa.png)
 The Diffing config has the following inputs:
 
-- **`ComparisonConfig`** allows you to specify all the object comparison options; **see [its dedicated page](/Configuring-objects-comparison:-%60ComparisonConfig%60)**.
+- **`ComparisonConfig`** allows you to specify all the object comparison options; **see [its dedicated page](/documentation/Configuring-objects-comparison:-%60ComparisonConfig%60)**.
 - `EnablePropertyDiffing`: optional, defaults to `true`. If disabled, Diffing does not checks all the property-level differences, running much faster but potentially ignoring important changes.
 - `IncludedUnchangedObjects`: optional, defaults to `true`. When diffing large sets of objects, you may want to not include the objects that did not change in the diffing output, to save RAM.
 - `AllowDuplicateIds`: optional, defaults to `false`. The diffing generally uses identifiers to track "who is who" and decide which objects to compare; in such operations, duplicates should never be allowed, but there could be edge cases where it is useful to keep them.
@@ -79,7 +79,7 @@ An example of a DisplayName could be `StartNode.Position.X` (given a modified ob
 
 In addition to the main Diffing method `IDiffing()`, there are several other methods that can be used to perform Diffing. These are a bit more advanced and should be used only for specific cases. The additional diffing methods can be found in the [Compute folder of Diffing_Engine](https://github.com/BHoM/BHoM_Engine/tree/main/Diffing_Engine/Compute). 
 
-Other than these, _Toolkit-specific_ diffing methods exist to deal with the subtleties of comparing Objects defined in a Toolkit. Users do not generally need to know about these, as [Toolkit-specific diffing methods will be automatically called for you if needed by the generic IDiffing method](/Diffing-and-Hashing%3A-guide-for-developers#invoking-of-the-toolkit-specific-diffing-methods). Just for reference, a Toolkit-specific Diffing method is [`RevitDiffing()`](https://github.com/BHoM/Revit_Toolkit/blob/main/Revit_Engine/Compute/RevitDiffing.cs).
+Other than these, _Toolkit-specific_ diffing methods exist to deal with the subtleties of comparing Objects defined in a Toolkit. Users do not generally need to know about these, as [Toolkit-specific diffing methods will be automatically called for you if needed by the generic IDiffing method](/documentation/Diffing-and-Hashing%3A-guide-for-developers#invoking-of-the-toolkit-specific-diffing-methods). Just for reference, a Toolkit-specific Diffing method is [`RevitDiffing()`](https://github.com/BHoM/Revit_Toolkit/blob/main/Revit_Engine/Compute/RevitDiffing.cs).
 
 
 
@@ -103,7 +103,7 @@ You can specify some `null` Ids in the `pastObjsIds` and `followingObjsIds`; how
 The IDs are then used to match the objects from the `pastObjs` set to objects in the `followingObjs` set, to decide who should be compared to who:
 - If an object in the `pastObjs` does not have a corresponding object in the `followingObjs` set, it means that it has been deleted in the following version, so it is identified as "Removed" (old).
 - If an object in the `followingObjs` does not have a corresponding object in the `pastObjs` set, it means that it has been deleted in the past version, so it is identified as "Added" (new).
-- If an object in the `pastObjs` matches by ID an object in the `followingObjs`, then it is identified as "Modified" (it changed between the two versions). This means that the two objects will be compared and all their differences will be found. This is done by invoking the `ObjectDifferences()` method, that is [explained in detail here](/Diffing-and-Hashing:-guide-for-developers#objectdifferences-method-inner-workings).
+- If an object in the `pastObjs` matches by ID an object in the `followingObjs`, then it is identified as "Modified" (it changed between the two versions). This means that the two objects will be compared and all their differences will be found. This is done by invoking the `ObjectDifferences()` method, that is [explained in detail here](/documentation/Diffing-and-Hashing:-guide-for-developers#objectdifferences-method-inner-workings).
 
 
 ## DiffOneByOne()
@@ -114,15 +114,15 @@ For this reason, this method is not able to discover "Added" (new) or "Removed" 
 
 ## DiffWithHash()
 
-The [`DiffWithHash()`](https://github.com/BHoM/BHoM_Engine/blob/main/Diffing_Engine/Compute/DiffWithHash.cs) method simply does a Venn Diagram of the input objects' [Hashes](/Hash:-an-object's-identity):
+The [`DiffWithHash()`](https://github.com/BHoM/BHoM_Engine/blob/main/Diffing_Engine/Compute/DiffWithHash.cs) method simply does a Venn Diagram of the input objects' [Hashes](/documentation/Hash:-an-object's-identity):
 
 ![image](https://user-images.githubusercontent.com/6352844/146240551-33b43deb-6ac2-4c48-aef6-07bd172c25d2.png)
 
-The Venn Diagram is computed by means of a [`HashComparer`](https://github.com/BHoM/BHoM_Engine/blob/6cf19b04a34803fcdc904bdfaaab3245f5869514/BHoM_Engine/Objects/EqualityComparers/HashComparer.cs#L39), which simply means that the [Hash](/Hash:-an-object's-identity) of all input objects gets computed.  
+The Venn Diagram is computed by means of a [`HashComparer`](https://github.com/BHoM/BHoM_Engine/blob/6cf19b04a34803fcdc904bdfaaab3245f5869514/BHoM_Engine/Objects/EqualityComparers/HashComparer.cs#L39), which simply means that the [Hash](/documentation/Hash:-an-object's-identity) of all input objects gets computed.  
 
 If objects with the same hash are found they are identified as "Unchanged"; otherwise, objects are either "Added" (new) or "Removed" (old) depending if their hash exists exclusively in following or past set. For this reason, this method is **not able to discover "Modified" objects**.
 
-The Hash is leveraged by this method so you are able to customise how the diffing behaves by specifying a [`ComparisonConfig` options](/Configuring-objects-comparison:-%60ComparisonConfig%60) in the `DiffingConfig`.
+The Hash is leveraged by this method so you are able to customise how the diffing behaves by specifying a [`ComparisonConfig` options](/documentation/Configuring-objects-comparison:-%60ComparisonConfig%60) in the `DiffingConfig`.
 
 
 

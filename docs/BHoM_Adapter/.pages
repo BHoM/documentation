@@ -1,0 +1,5 @@
+nav:
+    - index.md
+    - Adapter-Actions.md
+    - ...
+    - Structural-Adapters.md

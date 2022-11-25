@@ -1,35 +1,32 @@
 # Introduction to the BHoM_Adapter
-▶️ Part of a series of pages. Next read:  _[The Adapter Actions](/BHoM_Adapter/Adapter-Actions)_
-
-___________________________________________________________________
-
-> ### Note
-> Before reading this page, have a look at the following pages:
-> - [Structure of the BHoM framework](/BHoM_Adapter/Structure-of-the-BHoM)
-> - [Getting started for developers](/BHoM_Adapter/Getting-started-for-developers)
->
-> and make sure you have a general understanding of:
-> - [The oM](/BHoM_Adapter/BH.oM-%E2%80%90-Define-New-Objects)
-> - [The Engine](/BHoM_Adapter/BH.Engine-%E2%80%90-Create-New-Algorithms)
-> - [Using the BHoM](/BHoM_Adapter/Using-the-BHoM)
-<br/>
 
 In this page you will find a first overview about **what is the BHoM Adapter**.
 
-___________________________________________________________________
+!!! note
 
+    ▶️ Part of a series of pages. Next read: [The Adapter Actions](Adapter-actions).
+
+    Before reading this page, have a look at the following pages:
+
+    - [Structure of the BHoM framework](/documentation/Basics/Structure-of-the-BHoM)
+    - [Getting started for developers](/documentation/Contributing/Getting-started-for-developers)
+
+    and make sure you have a general understanding of:
+
+    - [The oM](/documentation/BHoM_oM/)
+    - [The Engine](/documentation/BHoM_Engine/)
 
 ## What is a BHoM Adapter?
-As shown in the [Structure of the BHoM framework](/1.%20Basics/Structure-of-the-BHoM), an adapter is the piece of code responsible to actuate the connection (import/export) between different software packages.
+As shown in the [Structure of the BHoM framework](/documentation/Basics/Structure-of-the-BHoM), an adapter is the piece of code responsible to actuate the connection (import/export) between different software packages.
 
 The [BHoM_Adapter](https://github.com/BHoM/BHoM_Adapter) is one of the base repositories, with one main Project called `BHoM_Adapter`. That one is the **base** BHoM_Adapter (developers: it's an `abstract` class).
 
 The base BHoM_Adapter includes a series of methods that are common to all software connections. Specific Adapter **implementations** are included in what we call the **Toolkits**.
 
-We will see [how to create a Toolkit later](/BHoM_Adapter/The-BHoM-Toolkit); however consider that, in general, a Toolkit is simply a Visual Studio solution that can contain one or more of the following:
-- A [BHoM_Adapter](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter) project, that allows to implement the connection with an external software.
-- A [BHoM_Engine](/BHoM_Adapter/BH.Engine-%E2%80%90-Create-New-Algorithms) project, that should contain the Engine methods specific to your Toolkit.
-- A [BHoM_oM](/BHoM_Adapter/BH.oM-%E2%80%90-Define-New-Objects) project, that should contain any oM class (types) specific to your Toolkit.
+We will see [how to create a Toolkit later](/documentation/BHoM_Adapter/The-BHoM-Toolkit); however consider that, in general, a Toolkit is simply a Visual Studio solution that can contain one or more of the following:
+- A [BHoM_Adapter](/documentation/BHoM_Adapter/) project, that allows to implement the connection with an external software.
+- A [BHoM_Engine](/documentation/BHoM_Engine/) project, that should contain the Engine methods specific to your Toolkit.
+- A [BHoM_oM](/documentation/BHoM_oM/) project, that should contain any oM class (types) specific to your Toolkit.
 
 
 To recap:
@@ -99,7 +96,7 @@ Let's see what they do:
 
 You might have noticed that the Adapter Actions take some other particular input parameters that need to be explained: the Requests, the ActionConfig, and the Tags. 
 
-Their understanding is not essential to grasp the overall mechanics; however you can find their explanation in the [Adapter Actions - Advanced parameters](/BHoM_Adapter/Adapter-Actions---advanced-parameters) section of the wiki.
+Their understanding is not essential to grasp the overall mechanics; however you can find their explanation in the [Adapter Actions - Advanced parameters](/documentation/BHoM_Adapter/Adapter-Actions---advanced-parameters) section of the wiki.
 
 ### Wrap-up 
 
@@ -116,4 +113,4 @@ If you need to, however, you can *override* them (more details on that in last p
 
 **So what is it that you need to implement?**
 
-The answer is: the so called **`CRUD` Methods**. We will see them [in the next page](/BHoM_Adapter/Adapter-Actions).
+The answer is: the so called **`CRUD` Methods**. We will see them [in the next page](/documentation/BHoM_Adapter/Adapter-Actions).

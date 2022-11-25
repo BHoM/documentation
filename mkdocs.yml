@@ -1,5 +1,7 @@
 site_name: BHoM documentation
 copyright: Copyright &copy; 2018 - 2022 BHoM
+site_url: https://bhom.xyz/documentation/
+repo_url: https://github.com/BHoM/documentation
 
 theme:
   name: material

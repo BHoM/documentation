@@ -4,7 +4,7 @@ The two major subjects for backwards compatibility concerns methods/components a
 
 #### Methods/Components
 
-Only time these should have to break is when a parameter has been updated. This will in the long run be covered by the `Version_Engine`. See [object name or namespace changed](/Backwards-compatibility#object-name-or-namespace-changed).
+Only time these should have to break is when a parameter has been updated. This will in the long run be covered by the `Version_Engine`. See [object name or namespace changed](/documentation/Backwards-compatibility#object-name-or-namespace-changed).
 
 For all other cases the developer is responsible for ensuring that they never update _public_ methods in a manner that can cause a script to break. Updates to methods will lead to scripts breaking if the interface of the method has been updated, which will be the case if at least one of the following is true:
 
@@ -20,7 +20,7 @@ If any of the above holds true the following process should be applied:
 
 1. Implement the new method _without_ removing the old.
 
-1. Put a [Deprecated](/Code-Attributes#deprecated) tag on the old method you want to update. In the tag link over to the new method.
+1. Put a [Deprecated](/documentation/Code-Attributes#deprecated) tag on the old method you want to update. In the tag link over to the new method.
 
 1. The method with the `Deprecated` tag can be removed when at least 2 minor releases have passed. (For example a method deprecated in version 2.2 should not be removed before version 2.4 at the earliest.)
 
