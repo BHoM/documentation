@@ -4,7 +4,7 @@ In this page you will find a first overview about **what is the BHoM Adapter**.
 
 !!! note
 
-    ▶️ Part of a series of pages. Next read: [The Adapter Actions](Adapter-actions).
+    ▶️ Part of a series of pages. Next read: [The Adapter Actions](Adapter-Actions).
 
     Before reading this page, have a look at the following pages:
 
