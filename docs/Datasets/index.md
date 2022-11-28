@@ -5,7 +5,7 @@ Datasets are a way to store and distribute BHoMObjects for use by others. For ex
 
 The data should be serialised in a [Dataset](https://github.com/BHoM/BHoM/blob/main/Data_oM/Library/Dataset.cs) object, and the relevant .csproj file in the repo, in which the Dataset is stored, should have a post build event implemented that ensures that the Dataset is copied to the C:\ProgramData\BHoM\Datasets folder. This will allow it to be picked up by the `Library_Engine`.
 
-# Generate a new dataset
+## Generate a new dataset
 
 To generate a new dataset to be used with the BHoM the following steps should be taken.
 
@@ -35,7 +35,7 @@ To generate a new dataset to be used with the BHoM the following steps should be
    2. Raise a Pull request on github and ask for review from relevant parties.
 
 
-# Custom dataset folder
+## Custom dataset folder
 
 By default the Library_Engine scans the C:\ProgramData\BHoM\Datasets for all json files and loads them up to be queryable by the UI and the methods in the library engine. This location is reset with each BHoM install to make sure all datasets are up to date and that any modifications or fixes correctly are applied to the data. For some cases it can be also useful to have your own datasets stored in your own folder for example on a network drive to share during work on a particular project.
 
@@ -49,11 +49,11 @@ To stop the Library_Engine from looking in this particular folder, use the Remov
 
 Remember that the menu system of the Dataset dropdown components are built up using the subfolders, so even if only a single dataset is placed in this custom folder it might be a good idea to still put your json file in an appropriate subfolder.
 
-# Compliance
+## Compliance
 
 Compliance regulations for Datasets are outlined in /IsValidDataset
 
-# Source
+## Source
 
 For users of the data to be able to verify where it is coming from, it is important to populate the [Source](https://github.com/BHoM/BHoM/blob/main/Data_oM/Library/Source.cs) object for the dataset. As many of the properties of the source as available should generally be populated, with an emphasis on the following:
 
