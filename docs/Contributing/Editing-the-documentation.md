@@ -1,4 +1,4 @@
-# Editing the documentation
+# Editing the documentation 
 
 This documentation is simply a set of Markdown documents.
 The markdown documents are then automatically mapped to a web page every time a Push to the main branch of the [documentation repository](https://github.com/BHoM/documentation) is done. See below for technical details on how this is achieved.
@@ -9,6 +9,9 @@ In order to edit the documentation, you just need to:
 1. Navigate to the `docs` folder, and edit a markdown file or add new markdown files.  
 You can also group markdown files in folders, see below.
 
+Alternatively, for small modifications, you can **click the pencil** ✏️ icon on the top-right of the page. This will bring you to the Github Markdown editor. Avoid this for large changes.
+
+Depending on your account permissions, you should be able to commit directly to `main`, or a Pull Request will be required to perform the changes.
 
 ## The enhanced markdown
 The documentation markdown can incorporate non-markdown content. You can embed:
