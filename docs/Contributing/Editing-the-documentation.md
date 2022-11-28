@@ -83,9 +83,9 @@ On top of [mkdocs](https://www.mkdocs.org/), we also use:
 
 ### Customising the ordering of the pages in the menu
 
-Check the `.pages` file in the `docs` folder.
+You just need to add a `.pages` text file in the specific folder where you want to sort out your pages. For an example, see the `.pages` file in the `docs` folder.
 
-You can customise it according to [mkdocs awesome pages plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin).
+You can edit the `.page` file according to [mkdocs awesome pages plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin#customize-navigation).
 
 ### Customising the appearance of the documentation
 
