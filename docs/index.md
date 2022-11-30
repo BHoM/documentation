@@ -19,3 +19,5 @@ BHoM is crafted as transdisciplinary, software-agnostic and office/region/countr
 
 ### Embracing open-source
 The whole **BHoM** project uses an open-source model for project architecture, co-creation and planning. So explore, experiment and contribute to both the source code and the wiki. Sharing and building our code together in this open-source type approach means we can feed off and pool our disparate knowledge, experience and expertise towards a common goal – better design.
+
+asd
