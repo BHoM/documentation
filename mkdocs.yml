@@ -18,7 +18,11 @@ theme:
 
 plugins:
   - search
-  - awesome-pages #allows to customise the ordering of pages
+  - awesome-pages # allows to customise the ordering of pages.
+  - git-revision-date-localized: # Displays date created/modified on the page. The below configurations are bugged, so only date modified works.
+    # enable_creation_date: true
+    # fallback_to_build_date: true
+
 
 markdown_extensions:
   - attr_list # allows to add HTML/CSS attributes to almost every Markdown element, useful for e.g. aligning an image to the left/right (can't do centre though! use md_in_html instead)
