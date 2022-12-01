@@ -1,11 +1,13 @@
+# Structural and geometrical conventions
+
 This page covers Structural and Geometrical conventions for the BHoM framework.
 
 For Unit conventions, see [this page](/documentation/BHoM-Units-conventions).
 
 
-# 1D-elements
+## 1D-elements
 
-## Coordinate system
+### Coordinate system
 The following local coordinate system is adopted for 1D-elements e.g. beams, columns etc:
 
 <img src="/images/Coordinate axis bar.PNG" width=350>
@@ -26,7 +28,7 @@ A bar is vertical if its projected length to the horizontal plane is less than 0
 
 For curved elements the local z is aligned with the normal of the plane that the curve fits in and rotated around the curve axis with the orientation angle.
 
-## Section property nomenclature
+### Section property nomenclature
 
 Area - Area of the section property  
 I<sub>y</sub> - Second moment of area, major axis  
@@ -45,7 +47,7 @@ V<sub>p,y</sub> - Distance centre to leftmost fibre
 A<sub>s,z</sub> - Shear area, major axis  
 A<sub>s,y</sub> - Shear area, minor axis  
 
-## Signs of section forces
+### Signs of section forces
 
 The directions for the section forces in a cut of a beam can be seen in the image below:
 
@@ -58,19 +60,19 @@ This is:
 
 This leads to the following:
 
-### Axial force F<sub>x</sub>  
+#### Axial force F<sub>x</sub>  
 Positive (+) =  Tension  
 Negative (-) =  Compression  
   
-### Major axis bending moment M<sub>y</sub> and shear force F<sub>z</sub> 
+#### Major axis bending moment M<sub>y</sub> and shear force F<sub>z</sub> 
 As shown in the following diagram.
 
 <img src="/images/BHoM Structual conv Moment and shear dir.PNG" width=500> 
   
-### Minor axis bending moment M<sub>z</sub> and shear force F<sub>y</sub>  
+#### Minor axis bending moment M<sub>z</sub> and shear force F<sub>y</sub>  
 Same sign convention as for major axis.  
   
-### Torsional moment M<sub>x</sub>  
+#### Torsional moment M<sub>x</sub>  
 The torsional moment follows the [Right-hand rule](https://en.wikipedia.org/wiki/Right-hand_rule) convention.
 
 <img src="/images/BHoM Structual conv Torsion.PNG" width=250> 
@@ -81,7 +83,7 @@ The torsional moment follows the [Right-hand rule](https://en.wikipedia.org/wiki
 A test file to use on the adapters to check that the forces extracted matches the BHoM conventions can be [found here](NEED NEW LINK)
 --->
 
-## Bar offsets 
+### Bar offsets 
 Bar offsets specify a local vector from the bars node to where the bar is calculated from, with a rigid link between the Node object and the analysis bars end point.
 
 Hence:
