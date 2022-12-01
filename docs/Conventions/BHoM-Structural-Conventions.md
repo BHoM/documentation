@@ -2,8 +2,6 @@
 
 This page covers Structural and Geometrical conventions for the BHoM framework.
 
-For Unit conventions, see [this page](/documentation/BHoM-Units-conventions).
-
 
 ## 1D-elements
 
