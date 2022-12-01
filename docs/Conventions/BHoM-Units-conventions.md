@@ -2,7 +2,6 @@
 
 This page describes the Units conventions for the BHoM.
 
-For geometrical/structural conventions, refer to [this page](/documentation/BHoM-Structural-Conventions).
 
 ## General philosophy: use SI!
 The BHoM framework adheres as much as possible to the conventions of the [SI system](https://en.wikipedia.org/wiki/International_System_of_Units).
@@ -21,7 +20,6 @@ When some units (derived or not) are not explicitly covered by this Wiki page, i
 - Rotational constraints: [N*m/rad]
 - Temperature: [K]
 
-For conventions on forces and constraints directions, see [this page](/documentation/BHoM-Structural-Conventions).
 
 ## Localisation toolkit
 
