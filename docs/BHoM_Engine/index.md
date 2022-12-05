@@ -3,6 +3,7 @@
 The BHoM Engine repository contains all the functions and algorithms that process BHoM objects. 
 
 As we saw in the [introduction to the Object Model](/documentation/BHoM_oM), this structure gives us a few advantages, in particular:
+
 * we can see the BHoM object as a list of properties and their default values;
 * in the same way, **the BHoM Engine can be seen as a big collection of functions**.
 
