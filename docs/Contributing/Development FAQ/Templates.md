@@ -14,7 +14,7 @@ For more guidance on how to use the Toolkit template, please see [Toolkit Templa
 
 To get visual studio to detect the templates follow these steps:
 
-1. Download the template zip files from the links above.
+1. Download the template zip files from [here](https://github.com/BHoM/documentation/tree/master/templates/Engine%20method%20templates).
 1. Place the files in the visual studio templates folder. This will generally be:
    1. C:\Users\ _USERNAME_ \OneDrive\Documents\ _VISUAL STUDIO VERSION_ \Templates\ProjectTemplates\Visual C# for any _project template_ like the BHoM Adapter Template.
    1. C:\Users\ _USERNAME_ \OneDrive\Documents\ _VISUAL STUDIO VERSION_ \Templates\ItemTemplates\Visual C# for any _item template_ like Engine method templates.
