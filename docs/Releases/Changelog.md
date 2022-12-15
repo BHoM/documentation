@@ -10,10 +10,12 @@ To simplify the managing of the changelog it is best practice to note what has c
 The Pull Request Title should state, in a simple sentence, what the Pull Request is changing. For toolkits, this should not include the toolkit title, however, for multi-project repositories it should. For example:
 
 A Pull Request raised on the XML Toolkit to update Space Type will simply have the title of:
- - Update Space Type  
+ 
+ > Update Space Type  
 
 Whereas a Pull Request on the BHoM_Engine to update the Environment Engine panel query will have the title of:
- - Environment_Engine: Update panel query to use names
+ 
+ > Environment_Engine: Update panel query to use names
 
 If the changes are greater than a single sentence can describe, then in the Changelog section, describe the changes in a bulleted list. 
 The bullet points are required and no other information other than brief definition of changes should be made in this section. The `Additional Comments` section is then for any additional information or more verbose context.
