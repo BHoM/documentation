@@ -8,7 +8,7 @@
 
 ### Assembly Information
 
-This section is only valid for projects utilising the old-style CSProject files, where an `AssemblyInfo.cs` file is present. If an `AssemblyInfo.cs` file is not present, then the compliance of this information can be found [here](./Project-References-and-Build-Paths).
+This section is only valid for projects utilising the old-style CSProject files, where an `AssemblyInfo.cs` file is present. If an `AssemblyInfo.cs` file is not present, then the compliance of this information can be found [here](../Project-References-and-Build-Paths).
 
 Each DLL should have suitable assembly information to support automated processes and confirming the version of the code which the DLL was built against. This includes these three items:
 
