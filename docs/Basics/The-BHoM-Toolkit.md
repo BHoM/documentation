@@ -10,7 +10,6 @@ A Toolkit is set of tools that can contain one or more of the following:
 
 In order to implement a new Toolkit, we prepared a Toolkit Template that prepares a Visual Studio solution with all the scaffolding done for you: [create an new Toolkit using the BHoM Toolkit Template](https://github.com/BHoM/template-repository).
 
-Let's get started!
 
 ## Create a new software Toolkit using the BHoM Toolkit Template
 
