@@ -2,7 +2,7 @@ The IImmutable interface makes an object unmodifiable after it was instantiated.
 
 IImmutable should be implemented:
 
-a) if objects instantiated from a class should not be modifiable, by design, in some or all of its properties;
+a) if objects instantiated from a class should not be modifiable, by design, in some or all of its properties;  
 b) if objects contain properties that are **non-orthogonal**.
 
 Whilst reason (a) is self-explanatory, (b) is due to a specific problem that non-orthogonal properties expose.
