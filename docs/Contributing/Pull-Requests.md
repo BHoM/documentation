@@ -26,4 +26,7 @@ A pull request is a mark of coding resource that was used to try to solve a give
 
 To keep our review requirements focused on the latest workload, each milestone will have a Pull Request closure day if deemed necessary by DevOps.
 
-Pull requests which have not had any activity in 3 months are deemed to have gone stale. Pull requests which have not had any activity in 6 months will be closed to avoid drawing review resource if no activity has happened. Activity can be defined as committing code to the pull request, commenting on the pull request (even if just with an update stating the work is still desired but there's a lack of resource to close it out currently) or any activity which shows up on the pull request within the time period examined.
+### Stale Pull requests
+Pull requests which have not had any activity in 3 months are deemed to have gone stale. 
+
+Pull requests which have not had any activity in 6 months will be closed to avoid drawing review resource if no activity has happened. Activity can be defined as committing code to the pull request, commenting on the pull request (even if just with an update stating the work is still desired but there's a lack of resource to close it out currently) or any activity which shows up on the pull request within the time period examined.
