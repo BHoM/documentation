@@ -74,64 +74,7 @@ Board](Using-the-SCRUM-Board) - it's easy!
 
 See [the DevOps branching strategy](/documentation/DevOps/Branching-Strategy/#branch-naming-convention).
 
-Make sure to check [this
-page](Working-Together-‐-Avoiding-Conflicts)
-for the guidelines on when to create a branch and when not to.
-
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Issues_NewBranch1.png)
-
-You should see that your repo history has now switched to a new branch.
-
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Issues_NewBranch2.png)
-
-From there you are ready to work on your code. Any commit that you will do,
-  will be on that new branch.
-
 
 ## Breaking changes
 
-A breaking change is one that will make your code incompatible with existing
-uses of it. That could be a dependent project within the BHoM or a user's use
-of it from one of the UIs. Any change to a Method's signature (name, parameter
-types and return type) will be a breaking change, as is anything that changes
-the method's contract, that is: the things that a method expects of its inputs,
-even without changing their type, especially if the range of valid inputs is
-being made narrower; what it returns, especially if the constraints placed on
-its outputs are made looser; and any changes in side-effects. Custom data
-entires on `BHoMObject`s may be considered part of a contract so changes to how
-they are used should be considered breaking in most cases. Changes to a
-Method's implementation that do not modify the expectations a user has on its
-inputs or outputs are not breaking. Adding new methods is not breaking.
-
-Breaking changes should be avoided, mitigated or postponed in order to align a
-number of breaking changes into a new major release. Methods should be
-deprecated instead of being removed and also instead of having their signatures
-modified, this includes renaming. In the case of a need to rename a Method or
-make a trivial change to its input or output types then you should create a new
-method with the change, move the implementation into the new method, deprecate
-the old one and have it forward to the new, e.g.
-
-
-```cs
-[DeprecatedAttribute(...)]
-public static Point Misspelled(Vector a)
-{
-  return CorrectlySpelled(a);
-}
-
-public static Point CorrectlySpelled(Vector a)
-{
-  // do the thing
-}
-
-[DeprecatedAttribute(...)]
-public static Line Foo(Vector a, Vector b)
-{
-  return Foo(a.ToPoint(), b.ToPoint());
-}
-
-public static Line Foo(Point a, Point b)
-{
-  // do something
-}
-```
+See [our versioning strategy](/documentation/Versioning/) for more information on avoiding breaking changes.

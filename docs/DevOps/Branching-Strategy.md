@@ -10,7 +10,7 @@ If you are using GitHub desktop, you should make sure you are on the correct def
 
 Then create a new branch by clicking on the _Current branch_ button and select _New branch_.
 
-Make sure to check [this page](Working-Together-‐-Avoiding-Conflicts) for the guidelines on when to create a branch and when not to.
+Make sure to check [this page](/documentation/Contributing/Development%20FAQ/Coding-together-avoiding-conflicts/) for the guidelines on when to create a branch and when not to.
 
 ![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Issues_NewBranch1.png)
 
