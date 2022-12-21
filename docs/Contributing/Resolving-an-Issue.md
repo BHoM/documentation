@@ -72,25 +72,7 @@ Board](Using-the-SCRUM-Board) - it's easy!
 
 ## Branch naming conventions
 
-Branch from `main`. 
-
-If in GitHub desktop, you should make sure you are on the main branch and refresh it to ensure you have the latest version on your machine.
-
-Then create a new branch by clicking on the _Current branch_ button and select _New branch_. 
-
-Name that branch: 
-
-### _**RepoOrProjectName-#X-Description**_ 
-where _**X**_ is the issue number you are solving. 
-
-Both the Repo or Project name and the Issue number should refer to the _base issue being solved_.
-
-#### In particular note: Branches in dependant repos - MUST be named identically.
-
-For instance if a change in the BHoM will lead to a change needed in some sub-repos, _**all of those sub-repos **MUST** get the same branch name**._ This is essential for our Continous Integration (CI) process to correctly check changes spanning across multiple repo PRs.
-
-
-You should use the Repo name if the files modified will span across multiple projects in that base issue Repo. If isolated to a single Project, using just the Project Name is helpful for others.
+See [the DevOps branching strategy](/documentation/DevOps/Branching-Strategy/#branch-naming-convention).
 
 Make sure to check [this
 page](Working-Together-‐-Avoiding-Conflicts)

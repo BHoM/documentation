@@ -1,8 +1,26 @@
 # Branching Strategy
 
-The primary branch which forms our codebases single source of truth is the `main` branch across all repositories. Depending on the category of the repository, there may be protections in place for the development of code and merging to `main` branches. As a repository progresses through its lifecycle from prototype to beta, the level of protections change as appropriate. No code should be committed directly to the `main` branch of any repository, all code should be produced on an independent branch and deployed to `main` via a Pull Request.
+The primary branch which forms our codebases single source of truth is the `main` branch across all repositories. Depending on the category of the repository, there may be protections in place for the development of code and merging to `main` branches. As a repository progresses through its lifecycle from prototype to beta, the level of protections change as appropriate.
 
-## Branch naming convention
+## Creating branches
+
+No code should be committed directly to the `main` branch of any repository, all code should be produced on an independent branch and deployed to `main` via a Pull Request.
+
+If you are using GitHub desktop, you should make sure you are on the correct default (`main` or `develop` depending on the repository state - see below) branch and refresh it to ensure you have the latest version on your machine.
+
+Then create a new branch by clicking on the _Current branch_ button and select _New branch_.
+
+Make sure to check [this page](Working-Together-‐-Avoiding-Conflicts) for the guidelines on when to create a branch and when not to.
+
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Issues_NewBranch1.png)
+
+You should see that your repo history has now switched to a new branch.
+
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Issues_NewBranch2.png)
+
+From there you are ready to work on your code. Any commit that you will do, will be on that new branch.
+
+### Branch naming convention
 
 For all branches where code development is to take place, the following naming convention should be adopted.
 
@@ -18,7 +36,7 @@ If you're working on a repository with multiple disciplines, such as BHoM_Engine
 
 This branch naming convention is particularly important when producing development installers - BHoMBot will use the name of the branch to calculate where to place installer artefacts which are generated to aid in testing the Pull Request. If the branch is not named in this convention, BHoMBot will be unable to calculate this and you will lose out on CI benefits.
 
-### Branches in dependant repos - MUST be named identically
+#### Branches in dependant repos - MUST be named identically
 
 For instance if a change in the BHoM will lead to a change needed in some sub-repos, _**all of those sub-repos **MUST** get the same branch name**._ This is essential for our (CI) process to correctly check changes spanning across multiple repository Pull Requests.
 
@@ -28,11 +46,15 @@ Prototype repositories use only a `main` branch for their code development. The 
 
 There is no automatic deployments of Prototype repositories - the only way for code to be utilised is for it to be built from source or the DLLs shared between users.
 
+When creating a new branch for the addition of code to a Prototype repository, branch from an up to date version of the `main` branch.
+
 ## Alpha State
 
 Repositories deployed in an Alpha state use only a `main` branch for their code development. The `main` branch should be protected to the level that it requires a Pull Request with at least 1 approving review prior to the code being merged.
 
 Once code is merged to the `main` branch, the code will be deployed via alpha installers and available for more general consumption via Installers. Therefore code which is deployed to `main` must meet certain CI criteria before being able to merge the Pull Request.
+
+When creating a new branch for the addition of code to an Alpha repository, branch from an up to date version of the `main` branch.
 
 ## Beta State
 
@@ -49,6 +71,8 @@ For repositories which are undergoing large portions of work, perhaps large refa
 Additionally, separating the `main` Beta branch from the `develop` Alpha branch allows us to patch the Beta for critical bugs during a milestone of development, enabling the release of curated, up to standard code that resolves a specific bug without also deploying code which may be under ongoing development.
 
 All Pull Requests for Beta repositories should aim to merge into the `develop` branch unless authorised by DevOps to merge into the `main` branch to perform a Beta Patch.
+
+When creating a new branch for the addition of code to a Beta repository, you should branch from the branch where the code aims to end up. For example, if you are developing a new feature which will merge into the `develop` branch, then you must branch from an up to date version of the `develop` branch. However, if you are providing a bug fix for a Beta Patch, which aims to merge directly into the `main` branch, then you must branch from an up to date version of the `main` branch.
 
 ## Branch Protections
 
