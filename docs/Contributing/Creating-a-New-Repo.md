@@ -19,7 +19,7 @@ Following the clarification of the best location for different code above - inst
 
 2. Add a Team under Collaborators and teams
 
-1. Under Branches. Set the __master__ Branch as ___protected___ with the following settings (click edit on the right-hand side of the listed master branch)
+1. Under Branches. Set the __main__ Branch as ___protected___ with the following settings (click edit on the right-hand side of the listed main branch)
 
 ![image](https://user-images.githubusercontent.com/16853390/50325923-859a0000-0522-11e9-95ba-486c8e55dfe6.png)
 

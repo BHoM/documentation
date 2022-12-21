@@ -1,0 +1,71 @@
+# Branching Strategy
+
+The primary branch which forms our codebases single source of truth is the `main` branch across all repositories. Depending on the category of the repository, there may be protections in place for the development of code and merging to `main` branches. As a repository progresses through its lifecycle from prototype to beta, the level of protections change as appropriate.
+
+## Prototypes
+
+Prototype repositories use only a `main` branch for their code development. The `main` branch should be protected to the level that it requires a Pull Request to merge code, however, there is no requirement on Prototype Repositories for a Pull Request to receive a review. The Pull Request can be raised and merged instantly (depending on any required CI checks) without intervention from a reviewer. Reviews are still an option for Prototype repositories should people wish to discuss changes before a merge, but they are not a requirement.
+
+There is no automatic deployments of Prototype repositories - the only way for code to be utilised is for it to be built from source or the DLLs shared between users.
+
+## Alpha State
+
+Repositories deployed in an Alpha state use only a `main` branch for their code development. The `main` branch should be protected to the level that it requires a Pull Request with at least 1 approving review prior to the code being merged.
+
+Once code is merged to the `main` branch, the code will be deployed via alpha installers and available for more general consumption via Installers. Therefore code which is deployed to `main` must meet certain CI criteria before being able to merge the Pull Request.
+
+## Beta State
+
+Repositories deployed in a Beta state use both a `main` branch and a `develop` branch for their code development. The `develop` branch is set as the default branch.
+
+The `main` branch continues to serve as the repository's single source of truth and is the branch which is deployed via beta installers at the end of each milestone.
+
+The `develop` branch serves as a staging ground for development of features and larger pieces of work which is deployed via alpha installers.
+
+The difference here for Beta repositories is that the `main` branch should only be updated each milestone with code from the `develop` branch which has been suitable tested and reviewed and deemed to be fit for purpose for general deployment in the Beta installers available on [BHoM.xyz](https://bhom.xyz) and other platforms. Utilising a different branch for general development (`develop`) from the Beta deployed branch (`main`) grants us a degree of control over what is deployed at the end of each milestone and beta.
+
+For repositories which are undergoing large portions of work, perhaps large refactors or additional features, targeting new APIs, etc., it may not be suitable to deploy that work to a Beta where the work spans across multiple milestones of development. If this work was deployed to `main` for Alpha testing, it would then be automatically deployed to Beta at the end of the milestone when it may not be ready. Deploying to `develop` for Alpha testing then allows us to choose not to deploy that to `main` at the end of the milestone, allowing the Beta to contain only the deployable code that is up to the adequate standards without hindering development, or requiring Pull Requests to stay open for a lengthy time and take more resource to resolve when the time is right.
+
+Additionally, separating the `main` Beta branch from the `develop` Alpha branch allows us to patch the Beta for critical bugs during a milestone of development, enabling the release of curated, up to standard code that resolves a specific bug without also deploying code which may be under ongoing development.
+
+All Pull Requests for Beta repositories should aim to merge into the `develop` branch unless authorised by DevOps to merge into the `main` branch to perform a Beta Patch.
+
+## Branch Protections
+
+This table gives an overview of the protections required for each individual type of repository.
+
+| Protection Setting | Prototype | Alpha | Beta (`develop`) | Beta (`main`) |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Require a Pull Request before Merging | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Require Approvals | :x | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Minimum Number of Approvals | N/A | 1 | 1 | 1 |
+| Dismiss stale pull request approvals when new commits are pushed | :x | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Require review from Code Owners | :x | :x | :x | :x |
+| Restrict who can dismiss pull request reviews | :x | :x | :x | :x |
+| Allow specified actors to bypass required pull requests | :x | :x | :x | :x |
+| Require approval of the most recent push | :x | :x | :x | :heavy_check_mark: |
+| Require status checks to pass before merging | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Require branches to be up to date before merging | :x | :x | :x | :x |
+| Status Checks that are required | [See here](here) | [See here](here) | [See here](here) | [See here](here) |
+| Require conversation resolution before merging | :x | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Require signed commits | :x | :x | :x | :x |
+| Require linear history | :x | :x | :x | :x |
+| Require deployments to succeed before merging | :x | :x | :x | :x |
+| Lock branch | :x | :x | :x | :x |
+| Do not allow bypassing the above settings | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Restrict who can push to matching branches | :x | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Restrict pushes that create matching branches | :x | :x | :x | :x |
+| People, teams, or apps with push access | N/A | [Merge Team](MergeTeam) | [Merge Team](MergeTeam) | [DevOps Team](DevOpsTeaM) |
+| Allow force pushes | :x | :x | :x | :x |
+| Allow deletions | :x | :x | :x | :x |
+
+## Branching diagrams
+
+### `main` branch only
+
+![image](https://user-images.githubusercontent.com/18049174/208904774-af84bb35-0d97-4db4-8407-48a44acbaa86.png)
+
+
+### `main` branch with a `develop` branch
+
+![image](https://user-images.githubusercontent.com/18049174/208923966-9a63ffea-d797-4481-84c9-fc9c7995987b.png)
