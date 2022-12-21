@@ -8,7 +8,7 @@ The core of the rules however remains the same - that the code should be archite
 
 The rules, regulations, and guidelines set out in this section of the wiki are there to give us reference for writing sustainable, maintainable, and compliant code within the framework of BHoM. They are our standards by which we should all follow.
 
-The compliance laid out in the following pages does undergo periodic review by the Governance, Framework and CI/CD teams, as styles develop, and the guidance evolves, so if you feel something isn't quite right or is unclear, please feel free to open a discussion.
+The compliance laid out in the following pages does undergo periodic review by the DevOps team, as styles develop, and the guidance evolves, so if you feel something isn't quite right or is unclear, please feel free to open a discussion.
 
 ## Types of compliance
 
@@ -34,7 +34,7 @@ Correct at time of writing.
 
 | Check  | Severity | Compliance Type | 
 | ------------- | ------------- | ------------- |
-| [**Assembly Information**](/documentation/Code%20Compliance%20and%20CI/Compliance%20Checks/AssemblyInfo-compliance) | Fail | Project |
+| [**Assembly Information**](/documentation/DevOps/Code%20Compliance%20and%20CI/Compliance%20Checks/AssemblyInfo-compliance) | Fail | Project |
 | [**AttributeHasEndingPunctuation**](Compliance%20Checks/AttributeHasEndingPunctuation) | Warning | Documentation |
 | [**EngineClassMatchesFilePath**](Compliance%20Checks/EngineClassMatchesFilePath) | Fail | Code |
 | [**HasConstructor**](Compliance%20Checks/HasConstructor) | Fail | Code |
