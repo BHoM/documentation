@@ -1,6 +1,26 @@
 # Branching Strategy
 
-The primary branch which forms our codebases single source of truth is the `main` branch across all repositories. Depending on the category of the repository, there may be protections in place for the development of code and merging to `main` branches. As a repository progresses through its lifecycle from prototype to beta, the level of protections change as appropriate.
+The primary branch which forms our codebases single source of truth is the `main` branch across all repositories. Depending on the category of the repository, there may be protections in place for the development of code and merging to `main` branches. As a repository progresses through its lifecycle from prototype to beta, the level of protections change as appropriate. No code should be committed directly to the `main` branch of any repository, all code should be produced on an independent branch and deployed to `main` via a Pull Request.
+
+## Branch naming convention
+
+For all branches where code development is to take place, the following naming convention should be adopted.
+
+_**RepoOrProjectName-#X-Description**_
+
+where _**X**_ is the issue number you are solving. 
+
+Both the Repo or Project name and the Issue number should refer to the _base issue being solved_.
+
+For example, if you are working in IES Toolkit, aiming to resolve issue 99 (which fixes window placement), the branch name should be `IES_Toolkit-#99-FixingWindows`.
+
+If you're working on a repository with multiple disciplines, such as BHoM_Engine, then you can name the branch after the specific engine you are working on. For example, if you are working in the Environment Engine, aiming to resolve issue 103 (which fixes window creation), the branch name should be `Environment_Engine-#103-FixWindowCreation`.
+
+This branch naming convention is particularly important when producing development installers - BHoMBot will use the name of the branch to calculate where to place installer artefacts which are generated to aid in testing the Pull Request. If the branch is not named in this convention, BHoMBot will be unable to calculate this and you will lose out on CI benefits.
+
+### Branches in dependant repos - MUST be named identically
+
+For instance if a change in the BHoM will lead to a change needed in some sub-repos, _**all of those sub-repos **MUST** get the same branch name**._ This is essential for our (CI) process to correctly check changes spanning across multiple repository Pull Requests.
 
 ## Prototypes
 
