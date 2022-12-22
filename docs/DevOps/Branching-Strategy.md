@@ -14,7 +14,7 @@ Make sure to check [this page](/documentation/Contributing/Development%20FAQ/Cod
 
 ![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Issues_NewBranch1.png)
 
-You should see that your repo history has now switched to a new branch.
+You should see that your repository history has now switched to a new branch.
 
 ![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Issues_NewBranch2.png)
 
@@ -24,11 +24,11 @@ From there you are ready to work on your code. Any commit that you will do, will
 
 For all branches where code development is to take place, the following naming convention should be adopted.
 
-_**RepoOrProjectName-#X-Description**_
+_**RepositoryOrProjectName-#X-Description**_
 
 where _**X**_ is the issue number you are solving. 
 
-Both the Repo or Project name and the Issue number should refer to the _base issue being solved_.
+Both the Repository or Project name and the Issue number should refer to the _base issue being solved_.
 
 For example, if you are working in IES Toolkit, aiming to resolve issue 99 (which fixes window placement), the branch name should be `IES_Toolkit-#99-FixingWindows`.
 
@@ -36,9 +36,11 @@ If you're working on a repository with multiple disciplines, such as BHoM_Engine
 
 This branch naming convention is particularly important when producing development installers - BHoMBot will use the name of the branch to calculate where to place installer artefacts which are generated to aid in testing the Pull Request. If the branch is not named in this convention, BHoMBot will be unable to calculate this and you will lose out on CI benefits.
 
-#### Branches in dependant repos - MUST be named identically
+#### Branches in dependant repositories - MUST be named identically
 
-For instance if a change in the BHoM will lead to a change needed in some sub-repos, _**all of those sub-repos **MUST** get the same branch name**._ This is essential for our (CI) process to correctly check changes spanning across multiple repository Pull Requests.
+For instance if a change in the BHoM will lead to a change needed in some sub-repositories, _**all of those sub-repositories **MUST** get the same branch name**._ This is essential for our (CI) process to correctly check changes spanning across multiple repository Pull Requests.
+
+For example, if you are adding an object in BHoM, and adding a Query method for that method in BHoM_Engine, both repositories should share the same branch name, such as `Environment_oM-#103-AddLightObject` - this is to ensure when we run CI checks such as Installer and Versioning, the check can find both Pull Requests and run them together within the bot ecosystem.
 
 ## Prototypes
 
