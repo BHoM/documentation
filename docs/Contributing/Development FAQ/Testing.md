@@ -13,7 +13,7 @@ To store data for tests, you can use the [Test_Toolkit](https://github.com/BHoM/
 
 ### Procedure
 
-0. Compile the [Test_Toolkit](https://github.com/BHoM/Test_Toolkit) - it contains some useful methods that are not currently shipped in the BHoM installer.
+0. Compile the [Test_Toolkit](https://github.com/BHoM/Test_Toolkit) - it contains some useful methods that are not shipped in the BHoM installer.
 1. Drop a `Unit Test` component in a script.
 2. Right click the component and find the method you want to store test data for. 
 3. Produce the test data for the method. The test data should be any input object that you may want to feed to the Engine method. The test data should be representative of the general usage of the method.
