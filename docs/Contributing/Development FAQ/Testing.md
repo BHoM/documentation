@@ -5,7 +5,7 @@ BHoM has several ways to cover developed functionality with Tests.
 
 ## Storing tests data for Engine Methods
 
-Engine methods can be tested against regression via "Unit tests" that [can be run automatically via CI/CD](documentation/DevOps/Code Compliance and CI/CI Checks/Check-Unit-Tests.md). Unit tests in this context consists in running Engine methods with pre-stored input data and comparing their results with pre-stored output data. This way, it is possible to check that Engine methods keep behaving reliably.
+Engine methods can be tested against regression via "Unit tests" that [can be run automatically via CI/CD](/documentation/DevOps/Code Compliance and CI/CI Checks/Check-Unit-Tests.md). Unit tests in this context consists in running Engine methods with pre-stored input data and comparing their results with pre-stored output data. This way, it is possible to check that Engine methods keep behaving reliably.
 
 To store data for tests, you can use the [Test_Toolkit](https://github.com/BHoM/Test_Toolkit) and the `Unit Test` component.
 
