@@ -24,4 +24,4 @@ To store data for tests, you can use the [Test_Toolkit](https://github.com/BHoM/
 
 
 
-6. The `StoreUnitTests` function will save the test data in the `.ci` folder of the repository. Make sure to commit and push the data in your PR.
+The `StoreUnitTests` function will save the test data in the `.ci` folder of the repository. Make sure to commit and push the data in your PR.
