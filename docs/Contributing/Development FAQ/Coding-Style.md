@@ -14,13 +14,12 @@ BHoM code also adheres to customised rules and style guidelines. These are in pl
 - to ensure the functionality can be correctly exposed to the UIs;
 - to organise functionality and classes in a tidy, easy-to-find manner.
 
----
 ### Filenames, objects and methods
 - A `.cs` file can contain only 1 (one) `class`, and there is no concept as a `Helper` or `Utils` class.
 - For **oM objects** the name of the `.cs` file is the Name (excluding the namespace) of the Object (class), e.g. the `Line` class is in the `Line.cs` file.
 - For **engine methods**, a file can only contain methods whose name start or end with the name of their file file, e.g. `Flip(Line line)` and `Flip(Arc arc)` are in the same file `Flip.cs`, and `FilterPanels` and `FilterOpenings` can both reside inside a `Filter.cs` file.
 
----
+
 ### Folders and namespaces
 
 Namespaces and the folder structure that contains the `.cs` files have a close relationship. To define the correct folder structure helps keeping the relationship with the namespaces. This, in turn enables additional functionalities, such as deriving the [web address]() of the source code of a method.
@@ -35,7 +34,7 @@ For a `Class`, an `Attribute`, an `Enum`, and an `Interface`, the folder structu
   - `Attribute` => `Attributes`
   - `Interface` => `Interfaces`
 
----
+
 ### Enum ordering
 
 The order an Enum is written is the order in which it is displayed in the UI dropdown options. This order is therefore important to the UX of using the Enum within a workflow. The order should therefore follow one of the following conventions. There may be occasions when an Enum order does not follow the conventions below. These occasions should be clearly documented with the reasons why a different convention has been followed.
