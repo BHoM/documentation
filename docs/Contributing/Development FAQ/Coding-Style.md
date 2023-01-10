@@ -1,10 +1,18 @@
-### General standards: tour of C#
+# BHoM's coding style and conventions
+
+## General C# conventions
 
 Our coding style generally follows the [Microsoft guidelines on C#](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/).
 
 However, to attain a higher level of clarity and transparency, BHoM code also adheres to additional customised rules and style guidelines.
 
-These rules and guidelines are in place to help ensure the code matches what is seen in the UIs, enabling developers to quickly find the portions of code needing examining.
+## Additional conventions
+
+BHoM code also adheres to customised rules and style guidelines. These are in place for several reasons, mainly:
+
+- to make easier to read and contribute to the codebase;
+- to ensure the functionality can be correctly exposed to the UIs;
+- to organise functionality and classes in a tidy, easy-to-find manner.
 
 ---
 ### Filenames, objects and methods
