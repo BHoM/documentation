@@ -1,14 +1,8 @@
 ### General standards: tour of C#
 
-Our coding style generally follows the Microsoft guidelines:
+Our coding style generally follows the [Microsoft guidelines on C#](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/).
 
-https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/
-
-https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/classes-and-objects
-
-https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/types-and-variables
-
-Although, to attain a higher level of clarity and transparency, we also follow some additional rules and style guidelines.
+However, to attain a higher level of clarity and transparency, BHoM code also adheres to additional customised rules and style guidelines.
 
 These rules and guidelines are in place to help ensure the code matches what is seen in the UIs, enabling developers to quickly find the portions of code needing examining.
 
