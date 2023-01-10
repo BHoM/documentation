@@ -38,6 +38,7 @@ A good short guide on issues is available [here](https://guides.github.com/featu
 The two main categories of labels are **feature** and **bug**. **Features** are for requesting functionality that doesn't exist yet. If there is similar functionality already but not matching 100% what you need (e.g. missing inputs or outputs you would need), this is also a feature request. **Bug** is for when that functionality exists but provides an incorrect result or crashes.
 
 For both of those categories, we have 3 levels of importance:
+
 - **Critical**: It is simply impossible to continue without either that feature or fixing that bug. No workaround exists using alternative methods or a quick self-made script. 
 - **Regular**: This is slowing down progress. There is a workaround but it is not exactly ideal. 
 - **Minor**: You noticed a missing feature or a bug but it doesn't stop/slow you in your current work.
@@ -45,6 +46,7 @@ For both of those categories, we have 3 levels of importance:
 ![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Issues_Labels.PNG) 
 
 Outside of those two main groups, 4 more labels are provided:
+
 - **Compliance**: This is for people working directly within the code. You found some code that doesn't follow th rules we have in place for how the code should be structured and would like this to be fixed.
 - **Question**: When you don't have anything specific you need to be changed but would like some clarification on a specific point or would like to start a debate.
 - **Test_script**: You have created some new functionality and would like it to have its own set of automatic testing scripts to make sure it is regularly checked. Notice that you have to raise the issue where the test scripts will be written, NOT where the code to be tested is.
