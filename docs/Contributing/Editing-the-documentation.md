@@ -46,6 +46,22 @@ The first H1 header (`#`) of the page will be taken as the title of the correspo
 
 Each header will be reflected in the navigation menu on the right hand side of the page.
 
+## Linking to other documentation pages
+
+### Recommended way
+Links to other documentation pages should be relative URLs (starting with a `/`) where the first slash must be followed with the `documentation` folder. Some examples:
+
+- To link to the [Introduction to BHoM_Adapter](/documentation/BHoM_Adapter/Introduction-to-the-BHoM_Adapter) page, you can provide this link: `/documentation/BHoM_Adapter/Introduction-to-the-BHoM_Adapter`.
+- To link to the [IsValidDataset](/documentation/DevOps/Code%20Compliance%20and%20CI/Compliance%20Checks/IsValidDataset) page, you can provide this link: `/documentation/DevOps/Code%20Compliance%20and%20CI/Compliance%20Checks/IsValidDataset`.
+
+!!! note
+    This way of providing URL to pages is required because MkDocs reflects the markdown files starting from the root `documentation`.
+
+### Alternative (not recommended)
+If you are editing a specific nested page you can also use URLs relative to the current page. Some examples:
+- To link to the [Getting started for developers](../Getting-started-for-developers) page, relative to this current page (Editing-the-documentation), you can provide: `../Getting-started-for-developers`.
+
+
 ## Folders
 Folders behave as groups for sub-pages and are reflected into the left menu of the website.
 
