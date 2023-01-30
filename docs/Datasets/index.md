@@ -51,7 +51,7 @@ Remember that the menu system of the Dataset dropdown components are built up us
 
 ## Compliance
 
-Compliance regulations for Datasets are outlined in /IsValidDataset
+Compliance regulations for Datasets are outlined in [IsValidDataset](/documentation/DevOps/Code%20Compliance%20and%20CI/Compliance%20Checks/IsValidDataset).
 
 ## Source
 
