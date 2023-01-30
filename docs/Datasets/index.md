@@ -26,13 +26,13 @@ To generate a new dataset to be used with the BHoM the following steps should be
     ![Store json to file](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Datasets/SaveDatasetToFile.PNG)
 
 5. For personal use, do one of the following:
-   1. Place the file in the relevant subfolder of the C:\ProgramData\BHoM\Datasets folder. If no relevant subfolder already exists, a new one can be added. The folder will be used to generate the menus used to find the dataset in the menu system, and also makes a whole folder searchable using the [Library method.](https://github.com/BHoM/BHoM_Engine/blob/main/Library_Engine/Query/Library.cs) Remember that running an installer will reset the datasets folder so for this option backup the json file, or use option ii.
-   2. Place the json file in a subfolder of a folder of your own choice and use the [custom dataset folder](#Custom-dataset-folder) outlined below.
+    1. Place the file in the relevant subfolder of the C:\ProgramData\BHoM\Datasets folder. If no relevant subfolder already exists, a new one can be added. The folder will be used to generate the menus used to find the dataset in the menu system, and also makes a whole folder searchable using the [Library method.](https://github.com/BHoM/BHoM_Engine/blob/main/Library_Engine/Query/Library.cs) Remember that running an installer will reset the datasets folder so for this option backup the json file, or use option ii.
+    2. Place the json file in a subfolder of a folder of your own choice and use the [custom dataset folder](#Custom-dataset-folder) outlined below.
 6. For distribution of the Dataset to the BHoM community do the following:
-   1. Store the dataset in the appropriate repository folder:
-      - For a general dataset, such as standard materials etc, place the json file in an appropriate subfolder folder in [BHoM_Datasets](https://github.com/BHoM/BHoM_Datasets/tree/main/DataSets).
-      - For a toolkit specific dataset put the json file in a Dataset folder in the root folder of the toolkit to host the dataset. If no such folder exist, it should be created. Make sure that the oM project in the toolkit has the following post-build event code: `xcopy "$(SolutionDir)DataSets\*.*" "C:\ProgramData\BHoM\DataSets" /Y /I /E` that ensures that the dataset is copied over to the C:\ProgramData\BHoM\Datasets folder.
-   2. Raise a Pull request on github and ask for review from relevant parties.
+    1. Store the dataset in the appropriate repository folder:
+        - For a general dataset, such as standard materials etc, place the json file in an appropriate subfolder folder in [BHoM_Datasets](https://github.com/BHoM/BHoM_Datasets/tree/main/DataSets).
+        - For a toolkit specific dataset put the json file in a Dataset folder in the root folder of the toolkit to host the dataset. If no such folder exist, it should be created. Make sure that the oM project in the toolkit has the following post-build event code: `xcopy "$(SolutionDir)DataSets\*.*" "C:\ProgramData\BHoM\DataSets" /Y /I /E` that ensures that the dataset is copied over to the C:\ProgramData\BHoM\Datasets folder.
+    2. Raise a Pull request on github and ask for review from relevant parties.
 
 
 ## Custom dataset folder
