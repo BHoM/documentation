@@ -1,6 +1,6 @@
 # Check Copyright Compliance
 
-This check will confirm the `cs` files changed within a pull request are compliant to [the guidelines](Code-Compliance) for having valid copyright on their code files. This check will run only the compliance checks that have the Compliance Type of `copyright` in the table on the linked page.
+This check will confirm the `cs` files changed within a pull request are compliant to [the guidelines](../../Code-Compliance) for having valid copyright on their code files. This check will run only the compliance checks that have the Compliance Type of `copyright` in the table on the linked page.
 
 If the check is unsuccessful, you can trigger BHoMBot to make certain fixes for you. This can be accessed by viewing the details of the check and clicking the `Fix` button to trigger the process on the pull request.
 
