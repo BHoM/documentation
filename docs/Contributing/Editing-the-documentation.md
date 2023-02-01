@@ -55,6 +55,7 @@ Links to other documentation pages should be relative URLs (starting with a `/`)
 - To link to the [IsValidDataset](/documentation/DevOps/Code%20Compliance%20and%20CI/Compliance%20Checks/IsValidDataset) page, you can provide this link: `/documentation/DevOps/Code%20Compliance%20and%20CI/Compliance%20Checks/IsValidDataset`.
 
 !!! note
+
     This way of providing URL to pages is required because MkDocs reflects the markdown files starting from the root `documentation`.
 
 ### Alternative (not recommended)
