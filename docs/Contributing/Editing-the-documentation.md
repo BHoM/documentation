@@ -33,7 +33,7 @@ The documentation markdown can incorporate non-markdown content. You can embed:
 !!! tip
 
     Many more features are available to spice up the look of the documentation and help you convey information.
-    See the available customisations of [Material for Mkdocs](https://squidfunk.github.io/): [setup](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/) and [Markdocs extra elements](https://squidfunk.github.io/mkdocs-material/reference/).
+    See the available customisations of [Material for Mkdocs: setup](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/) and [Markdocs extra elements](https://squidfunk.github.io/mkdocs-material/reference/).
 
 ## Using a text editor to edit the documentation
 
