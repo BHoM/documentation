@@ -20,8 +20,10 @@ In order to edit the documentation, you need to:
 The documentation markdown can incorporate non-markdown content. You can embed:
 
 - HTML blocks with embedded functionality, e.g. (click on `details` to see!):
-  <details> 
-  <iframe height="500px" width="100% - 200px"  src="http://vowl.visualdataweb.org/webvowl-old/webvowl-old.html" frameborder="0" allowfullscreen></iframe>
+  <details>
+  
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.7281078492!2d-0.2416804375114147!3d51.52877184053824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2suk!4v1675252817914!5m2!1sen!2suk" width="100% - 200px" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  
   </details>
 
 - Latex/Mathjax, e.g. $f(x) = x^2$ (enclose the formula between single `$` for inline and double `$$` for block).
