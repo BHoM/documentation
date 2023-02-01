@@ -21,7 +21,7 @@ The documentation markdown can incorporate non-markdown content. You can embed:
 
 - HTML blocks with embedded functionality, e.g. (click on `details` to see!):
   <details> 
-  <iframe height="500px" width="100% - 200px"  src="https://service.tib.eu/webvowl/#url=https://raw.githubusercontent.com/BHoM/RDF_Prototypes/main/WebVOWLOntology/BH.oM.Base.json" frameborder="0" allowfullscreen></iframe>
+  <iframe height="500px" width="100% - 200px"  src="http://vowl.visualdataweb.org/webvowl-old/webvowl-old.html" frameborder="0" allowfullscreen></iframe>
   </details>
 
 - Latex/Mathjax, e.g. $f(x) = x^2$ (enclose the formula between single `$` for inline and double `$$` for block).
