@@ -1,6 +1,6 @@
 # Editing the documentation 
 
-This documentation is simply a set of Markdown documents, stored and organised in the [Documentation repository](https://github.com/BHoM/documentation).
+This documentation is simply a set of [Markdown documents](https://www.markdownguide.org/basic-syntax/), stored and organised in the [Documentation repository](https://github.com/BHoM/documentation).
 The markdown documents are then automatically mapped to a web page every time a Push to the main branch of the Documentation repository is done. See below for technical details on how this is achieved.
 
 Depending on your account permissions, you should be able to commit directly to `main`, or a Pull Request will be required to perform the changes.
