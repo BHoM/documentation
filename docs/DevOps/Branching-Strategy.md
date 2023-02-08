@@ -115,3 +115,10 @@ This table gives an overview of the protections required for each individual typ
 ### `main` branch with a `develop` branch
 
 ![image](https://user-images.githubusercontent.com/18049174/208923966-9a63ffea-d797-4481-84c9-fc9c7995987b.png)
+
+
+## Stale branches
+
+A stale branch is defined as a branch of code which has not had any commit activity in 6 months or longer from the date of the last commit or any discussion via a pull request (regardless of state) in those 6 months. Branches that are deemed to have gone stale may be subject to deletion during repository clean ups that occur during a milestone alongside pull request closures and other spring-cleaning tasks which help keep the code base clean from too much noise.
+
+If a branch is required for ongoing work, but does not have a pull request associated to it and has not had commit actiivty within 6 months, may be eligible to remain available if good reason can be provided for doing so. Good reason can be provided via an issue, or reaching out to the DevOps team directly.
