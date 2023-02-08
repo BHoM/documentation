@@ -10,7 +10,7 @@ A good short guide on issues is available [here](https://guides.github.com/featu
 
 * Click on the green _**New Issue**_ button on the top right corner.
 
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Issues_Step1.PNG)
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Issues_Step1.PNG)
 
 * Fill in the title. The name should be __Description__ or __ProjectName - Description__ depending on whether the issue needs changes in the entire repo or in a specific Visual studio project. If you don't know which one it is, just use the repository name. 
 
@@ -30,7 +30,7 @@ A good short guide on issues is available [here](https://guides.github.com/featu
 
 * If you request is linked to a very specific deadline, you can also pick a _**Milestone**_ from the list.
 
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Issues_CreateNew.png)
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Issues_CreateNew.png)
 
 
 ## Choose a Label
@@ -43,7 +43,7 @@ For both of those categories, we have 3 levels of importance:
 - **Regular**: This is slowing down progress. There is a workaround but it is not exactly ideal. 
 - **Minor**: You noticed a missing feature or a bug but it doesn't stop/slow you in your current work.
 
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Issues_Labels.PNG) 
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Issues_Labels.PNG) 
 
 Outside of those two main groups, 4 more labels are provided:
 

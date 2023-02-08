@@ -12,11 +12,11 @@ Then create a new branch by clicking on the _Current branch_ button and select _
 
 Make sure to check [this page](/documentation/Contributing/Development%20FAQ/Coding-together-avoiding-conflicts/) for the guidelines on when to create a branch and when not to.
 
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Issues_NewBranch1.png)
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Issues_NewBranch1.png)
 
 You should see that your repository history has now switched to a new branch.
 
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Issues_NewBranch2.png)
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Issues_NewBranch2.png)
 
 From there you are ready to work on your code. Any commit that you will do, will be on that new branch.
 

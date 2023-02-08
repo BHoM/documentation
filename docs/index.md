@@ -1,6 +1,6 @@
 # Welcome to the BHoM documentation!
 
-![image](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/logos/BHoM_Logo.png)
+![image](https://raw.githubusercontent.com/BHoM/documentation/main/Images/logos/BHoM_Logo.png)
 
 
 

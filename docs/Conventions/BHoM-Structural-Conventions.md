@@ -8,7 +8,7 @@ This page covers Structural and Geometrical conventions for the BHoM framework.
 ### Coordinate system
 The following local coordinate system is adopted for 1D-elements e.g. beams, columns etc:
 
-<img src="https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Coordinate axis bar.PNG" width=350>
+<img src="https://raw.githubusercontent.com/BHoM/documentation/main/Images/Coordinate axis bar.PNG" width=350>
 
 * x-axis along the centre line of the element from start to end
 * z-axis as the normal direction of the element  
@@ -49,7 +49,7 @@ A<sub>s,y</sub> - Shear area, minor axis
 
 The directions for the section forces in a cut of a beam can be seen in the image below:
 
-<img src="https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/BHoM Structual conv BeamForceConvArrows.png" width=550>
+<img src="https://raw.githubusercontent.com/BHoM/documentation/main/Images/BHoM Structual conv BeamForceConvArrows.png" width=550>
 
 This is:
 * Normal force positive along the local x-axis
@@ -65,7 +65,7 @@ Negative (-) =  Compression
 #### Major axis bending moment M<sub>y</sub> and shear force F<sub>z</sub> 
 As shown in the following diagram.
 
-<img src="https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/BHoM Structual conv Moment and shear dir.PNG" width=500> 
+<img src="https://raw.githubusercontent.com/BHoM/documentation/main/Images/BHoM Structual conv Moment and shear dir.PNG" width=500> 
   
 #### Minor axis bending moment M<sub>z</sub> and shear force F<sub>y</sub>  
 Same sign convention as for major axis.  
@@ -73,7 +73,7 @@ Same sign convention as for major axis.
 #### Torsional moment M<sub>x</sub>  
 The torsional moment follows the [Right-hand rule](https://en.wikipedia.org/wiki/Right-hand_rule) convention.
 
-<img src="https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/BHoM Structual conv Torsion.PNG" width=250> 
+<img src="https://raw.githubusercontent.com/BHoM/documentation/main/Images/BHoM Structual conv Torsion.PNG" width=250> 
 
 <!--- THIS HAS TO BE UPDATED 
 ### Test file
