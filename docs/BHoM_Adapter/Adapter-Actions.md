@@ -92,7 +92,7 @@ Let's see again how we described the Push mechanism in the previous page:
 >   - under some particular circumstances and for specific software, if some objects in the external software are deemed to be "old", the Push will delete those. 
 
 The determination of the object status (_new, old_ or _edited_) is done through a "Venn Diagram" mechanism:
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/VennDiagram.png)
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/VennDiagram.png)
 
 The [Venn Diagram](https://github.com/BHoM/BHoM_Engine/blob/master/Data_Engine/Create/VennDiagram.cs) is a BHoM object class that can be created with any `Comparer` that you might have for the objects. It compares the objects with the given rule (the `Comparer`) and returns the objects belonging to one of two groups, and the intersection (objects belonging to both groups).
 

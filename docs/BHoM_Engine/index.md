@@ -12,9 +12,9 @@ As we saw in the [introduction to the Object Model](/documentation/BHoM_oM), thi
 
 The BH.Engine repository is structured to reflect this strategy. The [Visual Studio Solution](https://docs.microsoft.com/en-us/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#solutions) contains several different [Projects](https://docs.microsoft.com/en-us/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#projects): 
 
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Project_List.png)
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Project_List.png)
 
-![img](/documentation/_images/Project_List.png)
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Project_List.png)
 
 Each of those projects takes care of a different type of functionality. The "main" project however is the **BHoM_Engine project**: this contains everything that allows for basic direct processing of BHoM objects. The other projects are designed around a set of algorithms focused on a specific area such as geometry, form finding, model laundry or even a given discipline such as structure. 
 
@@ -36,7 +36,7 @@ There are five possible **action types** that correspond to five different **fol
 
 Let's consider the Geometry_Engine project; we can see that it contains all of those folders:
 
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Folder_Structure.png) 
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Folder_Structure.png) 
 
 Those five action names should be the same in all projects; however **it's not mandatory that an Engine project should have all of them**. 
 
@@ -357,7 +357,7 @@ For the most experienced developers among you, some might worried about executio
 
 Thankfully, tests have shown that efficiency lost is minimal even for the smallest functions. Even a method that calculates the length of a vector (1 square root, 3 multiplications and 2 additions) is running at about 75% of the speed, which is perfectly acceptable. As soon as the method become bigger, the difference becomes negligible. Even a method as light as calculating the length of a short polyline doesn't show more than a few % in speed difference.
 
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/PolymorphicExtention_SpeedTest.png) 
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/PolymorphicExtention_SpeedTest.png) 
 
 ## RunExtensionMethod Pattern
 

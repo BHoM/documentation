@@ -17,7 +17,7 @@ Read the wiki pages on [naming conventions](Resolving-an-Issue#branch-naming-con
 
 If you are using a computer which runs on windows 10, you might find that when you reference dlls in a project, the path of those will be pointing to your OneDrive folder. This will obviously lead to the issue that the code will not compile for other people. 
 
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Wikidllpath.PNG)
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Wikidllpath.PNG)
 
 If this id the case, re-referencing the dlls might not solve the issue and then you will have to manually edit that in the project folder. You do this by opening the project file (.csproj) in a text-editor and you will find some of the dlls being referenced as 
 

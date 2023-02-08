@@ -4,7 +4,7 @@
 Across our industry, regardless of our discipline, we will generally have to work with multiple softwares during the course of any given project. Since there is rarely a simple solution to transfer the data from one software to another, we usually end up either doing it manually each time or writing some bespoke script to automate the transfer. Things get even more complex when we work across disciplines and with other collaborators. When the number of software to deal with becomes more than just a few, this one to one ad-hoc transfer solution quickly becomes intractable.
 
 
-![](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/InteropA.png)
+![](https://raw.githubusercontent.com/BHoM/documentation/main/Images/InteropA.png)
 
 This is where the BHoM comes in. It provides a single common language between all those applications. Instead of creating translators between every possible pair of software, you just have to write one single link per application to connect to all the others. So, at its core, the BHoM is really straightforward, it contains:
 - A collection of object definitions that we all agree on as a collective. Each definition is simply a list of properties that an object should have (e.g. wall, beam, speaker, panel,...). We call that collection the **BHoM (Buildings and Habitats object Model)**.

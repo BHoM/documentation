@@ -11,19 +11,19 @@ To generate a new dataset to be used with the BHoM the following steps should be
 
 1. Generate the objects to be stored in the new Dataset. This means creating the BHoMObject of the correct type in any of the supported UIs. See below for an example of how to create a handful of standard European steel materials in Grasshopper. Remember to give the created objects an easily identifiable name as the name is what will show up when using the data in the dropdowns. **Remember that all BHoM objects should be defined in [SI units](/documentation/BHoM-Units-conventions).**
 
-    ![Create Steel](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Datasets/Example%20generate%20data.PNG)
+    ![Create Steel](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/Example%20generate%20data.PNG)
 
 2. Store the created objects in a [Dataset](https://github.com/BHoM/BHoM/blob/main/Data_oM/Library/Dataset.cs) object and give the dataset an appropriate name. This is the name for the dataset - the name that appears in the UI is described the next step.
 
-    ![Assign objects to dataset](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Datasets/AssignObejctsToDataset.PNG)
+    ![Assign objects to dataset](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/AssignObejctsToDataset.PNG)
 
 3. Populate the source object and assign it to the dataset. See guidance [below](#Source) regarding the source.
 
-    ![Assign source](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Datasets/AssignSourceToDataset.PNG)
+    ![Assign source](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/AssignSourceToDataset.PNG)
 
 4. Convert the dataset object and store it to a single line json file. This is easiest done using the [FileAdapter](https://github.com/BHoM/File_Toolkit). The library engine relies on the json files to be a single line per object, while the default json output from the FileAdapter is putting the json over multiple lines. To make sure the produced json file is in the correct format for the library engine, provide a [FIle.PushConfig](https://github.com/BHoM/File_Toolkit/blob/main/File_oM/Config/PushConfig.cs) with `UseDatasetSerialization` set to true and `BeautifyJson` set to false to the push command. Name the file something clearly identifiable, as the name of the file will be what is used to identify the dataset by the library engine, and will be what it is called in the UI menu.
 
-    ![Store json to file](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Datasets/SaveDatasetToFile.PNG)
+    ![Store json to file](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/SaveDatasetToFile.PNG)
 
 5. For personal use, do one of the following:
     1. Place the file in the relevant subfolder of the C:\ProgramData\BHoM\Datasets folder. If no relevant subfolder already exists, a new one can be added. The folder will be used to generate the menus used to find the dataset in the menu system, and also makes a whole folder searchable using the [Library method.](https://github.com/BHoM/BHoM_Engine/blob/main/Library_Engine/Query/Library.cs) Remember that running an installer will reset the datasets folder so for this option backup the json file, or use option ii.
@@ -41,11 +41,11 @@ By default the Library_Engine scans the C:\ProgramData\BHoM\Datasets for all jso
 
 For these reasons it is possible to get the Library_Engine to scan other folders for datasets as well. This can easily be controlled via the [AddUserPath](https://github.com/BHoM/BHoM_Engine/blob/main/Library_Engine/Compute/AddUserPath.cs) and [RemoveUserPath](https://github.com/BHoM/BHoM_Engine/blob/main/Library_Engine/Compute/RemoveUserPath.cs) commands that can be called from any UI. After the AddUserPath command has been run _once_ for a particular folder, the library engine will store the information about this folder in its settings and will keep on looking in subfolders of that location for any json files to be used as dataset.
 
-![Add user path](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Datasets/AddUserPath.PNG)
+![Add user path](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/AddUserPath.PNG)
 
 To stop the Library_Engine from looking in this particular folder, use the RemoveUserPath command, providing a link to the folder you no longer want to be scanned by the Library_Engine.
 
-![Remove user path](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/Datasets/RemoveUserPath.PNG)
+![Remove user path](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/RemoveUserPath.PNG)
 
 Remember that the menu system of the Dataset dropdown components are built up using the subfolders, so even if only a single dataset is placed in this custom folder it might be a good idea to still put your json file in an appropriate subfolder.
 

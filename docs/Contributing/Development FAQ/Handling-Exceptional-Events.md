@@ -84,7 +84,7 @@ There are 3 levels of event you can record:
 
 In Grasshopper, they will look like this:
 
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/39418136-2796ab84-4c8b-11e8-9848-04628313bf95.png)
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/39418136-2796ab84-4c8b-11e8-9848-04628313bf95.png)
 
 So the UI components will automatically expose all the events that occurred during their execution.
 
@@ -136,7 +136,7 @@ As one can see, there is no very strict convention on when to use each level of 
 
 If you want to get the list of all the events that occurred since you started your script/program, you can use `BH.Engine.Reflection.Query.AllEvents()`. In Grasshopper, it will look something like this:
 
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/docs/_images/39418803-f4c1a25a-4c8e-11e8-8380-bf77bafc4611.png)
+![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/39418803-f4c1a25a-4c8e-11e8-8380-bf77bafc4611.png)
 
 As you can see, events are also BHoM object that you can explode as any other typical BHoM object.
 
