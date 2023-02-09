@@ -1,0 +1,7 @@
+COMPLIANCE CEHCK:
+
+- If we specify a name of a parameter in hte base adatper, that should be the same name in the implementation
+- Compliuance check on the PortSpecificProperties?
+- If you add your class *AdapterSettings, that must(?) be an input to your Adapter Constructor.
+- In general for all adapters (this is a general rule that was true since the dawn of days, even before I joined, AFAIK), please consider that all efforts should be made to move methods that do not fall in CRUD or Adapter Action (Push, Pull, ...) categories in the Engine project, if they can. I believe that the only case where such methods cannot be moved would be to avoid a looping dependency (e.g. they'd need the Adapter type to work).
+- Additionally, starting from this Refactoring, the *Adapter.cs file should only contain the constructor, fields and properties strictly related to the Adapter.

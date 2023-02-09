@@ -1,0 +1,8 @@
+| Object | Create | Read | Update |
+|-|-|-|-|
+| BH.oM.Adapters.File.FSDirectory | BH.Adapter.File.FileAdapter.CreateDirectory(FSDirectory dir, PushType pushType, PushConfig pushConfig)<br>BH.Adapter.File.FileAdapter.CreateFSFile(FSDirectory parentDirectory, String fullFileName, List<Object> content) | BH.Adapter.File.FileAdapter.ReadDirectory(String fullPath, Boolean inclHidDirs, Boolean inclSysDirs, Boolean includeFolderContent)<br>BH.Engine.Adapters.File.Convert.ToFiling(DirectoryInfo di) |  |
+| BH.oM.Adapters.File.FSFile | BH.Adapter.File.FileAdapter.CreateJson(FSFile file, PushType pushType, PushConfig pushConfig) | BH.Adapter.File.FileAdapter.ReadFile(FileRequest fr, PullConfig pc)<br>BH.Adapter.File.FileAdapter.ReadFile(String fullPath, Boolean inclFileContent, Boolean inclHidFiles, Boolean inclSysFiles)<br>BH.Engine.Adapters.File.Convert.ToFiling(FileInfo fi) |  |
+| BH.oM.Adapters.File.ILocatableResource | BH.Adapter.File.FileAdapter.Create(ILocatableResource resource, PushType pushType, PushConfig pushConfig)<br>BH.Engine.Adapters.File.Convert.ToFiling(ILocatableResource iLocRes) |  |  |
+| BH.oM.Adapters.File.IFSContainer | BH.Adapter.File.FileAdapter.Create(IFSContainer fileOrDir, PushType pushType, PushConfig pushConfig) | BH.Engine.Adapters.File.Convert.ToFiling(IContainer iContainer)<br>BH.Engine.Adapters.File.Convert.ToFiling(ILocatableResource iLocRes) |  |
+| BH.oM.Adapters.File.IContainer | BH.Engine.Adapters.File.Convert.ToFiling(IContainer iContainer) |  |  |
+| System.Void |  | BH.Adapter.File.FileAdapter.ReadAndAddContent(FSFile retrievedFile)<br>BH.Adapter.File.<>c.<Read>b__19_0(FSFile f) |  |

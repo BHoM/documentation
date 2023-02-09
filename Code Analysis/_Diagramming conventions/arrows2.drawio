@@ -1,0 +1,155 @@
+<mxfile>
+    <diagram id="1-NWJ6g8QpxjImaK5HhD" name="Page-1">
+        <mxGraphModel dx="688" dy="1620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="BH.oM.Geometry" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;rounded=0;gradientColor=none;fontFamily=Segoe UI;align=center;labelPosition=center;verticalLabelPosition=top;verticalAlign=bottom;fontColor=#000000;strokeColor=#000000;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="281" y="-980" width="109" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="BH.oM.Structure.Elements" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;rounded=0;gradientColor=none;fontFamily=Segoe UI;align=center;labelPosition=center;verticalLabelPosition=top;verticalAlign=bottom;fontColor=#000000;strokeColor=#000000;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="-980" width="152" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&amp;lt;&amp;lt;uses&amp;gt;&amp;gt;" style="endArrow=open;startArrow=none;endFill=0;startFill=0;endSize=10;html=1;verticalAlign=bottom;dashed=1;labelBackgroundColor=none;strokeColor=#000000;exitX=1;exitY=0.52;exitDx=0;exitDy=0;exitPerimeter=0;fontColor=#000000;" parent="1" source="4" target="3" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="341" y="-780" as="sourcePoint"/>
+                        <mxPoint x="501" y="-780" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="Dependency &lt;br&gt;&lt;br&gt;The entity or a set of elements requires, needs or depends on other system elements for specification or implementation." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="-900" width="380" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="«interface»&lt;br&gt;&lt;b&gt;IFramingElement&lt;/b&gt;" style="html=1;fontFamily=Segoe UI;fontColor=#000000;strokeColor=#000000;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="281" y="-820" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;dashed=1;endArrow=block;endFill=0;strokeColor=#000000;fontColor=#000000;startSize=10;endSize=10;" parent="1" target="8" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="100" y="-807.0344827586207" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="Beam" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;expand=0;fontFamily=Segoe UI;fontColor=#000000;strokeColor=#000000;fillColor=none;" parent="1" vertex="1" collapsed="1">
+                    <mxGeometry x="10" y="-816" width="90" height="26" as="geometry">
+                        <mxRectangle x="100" y="170" width="140" height="52" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="Implementation&lt;br&gt;&lt;br&gt;The entity implements an interface" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="-774" width="420" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="&lt;font face=&quot;Segoe UI&quot;&gt;Composition&lt;br&gt;&lt;br&gt;Indicate a relationship where the child cannot exist independent of the parent&lt;br&gt;&lt;/font&gt;&lt;span style=&quot;font-family: &amp;#34;segoe ui&amp;#34; ; background-color: transparent&quot;&gt;If a composite (whole) is deleted, all of its composite parts are &quot;normally&quot; deleted with it.&lt;/span&gt;&lt;font face=&quot;Segoe UI&quot; style=&quot;font-size: 12px&quot;&gt;&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="9" y="-620" width="380" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Aggregation&lt;br&gt;&lt;br&gt;&lt;span style=&quot;font-family: &amp;#34;segoe ui&amp;#34;&quot;&gt;Indicate a&amp;nbsp;&lt;/span&gt;relationship where the child can exist independently of the parent" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="11" y="-420" width="380" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Tail" style="html=1;fontFamily=Segoe UI;fontColor=#000000;strokeColor=#000000;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="-720" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;strokeColor=#000000;fontColor=#000000;startArrow=diamondThin;startFill=1;endSize=10;startSize=10;" parent="1" source="15" target="14" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="280" y="-690"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=diamondThin;startFill=1;startSize=10;endArrow=none;endFill=0;endSize=10;strokeColor=#000000;fontColor=#000000;" parent="1" source="15" target="17" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="280" y="-670"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="Dog" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;expand=0;fontFamily=Segoe UI;fontColor=#000000;strokeColor=#000000;fillColor=none;" parent="1" vertex="1" collapsed="1">
+                    <mxGeometry x="9" y="-700" width="90" height="36" as="geometry">
+                        <mxRectangle x="100" y="170" width="140" height="52" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="Paw" style="html=1;fontFamily=Segoe UI;fontColor=#000000;strokeColor=#000000;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="-670" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Dog" style="html=1;fontFamily=Segoe UI;fontColor=#000000;strokeColor=#000000;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="281" y="-530" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#000000;fontColor=#000000;startArrow=diamondThin;startFill=0;endSize=10;startSize=10;" parent="1" source="23" target="24" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="170" y="-480"/>
+                            <mxPoint x="170" y="-480"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=diamondThin;startFill=0;startSize=10;endArrow=none;endFill=0;endSize=10;strokeColor=#000000;fontColor=#000000;" parent="1" source="23" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="282" y="-500"/>
+                        </Array>
+                        <mxPoint x="282" y="-500" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="23" value="Doghouse" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;expand=0;fontFamily=Segoe UI;fontColor=#000000;strokeColor=#000000;fillColor=none;" parent="1" vertex="1" collapsed="1">
+                    <mxGeometry x="10" y="-510" width="90" height="36" as="geometry">
+                        <mxRectangle x="100" y="170" width="140" height="52" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="Blanket" style="html=1;fontFamily=Segoe UI;fontColor=#000000;strokeColor=#000000;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="281" y="-480" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#000000;fontColor=#000000;startArrow=diamondThin;startFill=0;endSize=10;startSize=10;entryX=0.042;entryY=-0.019;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="32" target="33">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="385" y="-141"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="32" value="Line" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;expand=0;fontFamily=Segoe UI;fontColor=#000000;strokeColor=#000000;fillColor=none;" vertex="1" collapsed="1" parent="1">
+                    <mxGeometry x="340" y="-240" width="90" height="36" as="geometry">
+                        <mxRectangle x="100" y="170" width="140" height="52" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="33" value="Point" style="html=1;fontFamily=Segoe UI;fontColor=#000000;strokeColor=#000000;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="-140" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#000000;fontColor=#000000;startArrow=diamondThin;startFill=0;endSize=10;startSize=10;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="37" target="38">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="105.5" y="-140"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="37" value="EngineInspection" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;expand=0;fontFamily=Segoe UI;fontColor=#000000;strokeColor=#000000;fillColor=none;" vertex="1" collapsed="1" parent="1">
+                    <mxGeometry x="50.5" y="-240" width="110" height="36" as="geometry">
+                        <mxRectangle x="100" y="170" width="140" height="52" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="38" value="Engine" style="html=1;fontFamily=Segoe UI;fontColor=#000000;strokeColor=#000000;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="100.5" y="-140" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;startArrow=diamondThin;startFill=0;strokeColor=#000000;endArrow=none;endFill=0;endSize=10;startSize=10;" edge="1" parent="1" source="39" target="38">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="210.5" y="-180"/>
+                            <mxPoint x="210.5" y="-180"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="39" value="Car" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;expand=0;fontFamily=Segoe UI;fontColor=#000000;strokeColor=#000000;fillColor=none;" vertex="1" collapsed="1" parent="1">
+                    <mxGeometry x="190" y="-240" width="90" height="36" as="geometry">
+                        <mxRectangle x="100" y="170" width="140" height="52" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.919;entryY=0.01;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=diamondThin;startFill=0;startSize=10;endArrow=none;endFill=0;endSize=10;strokeColor=#000000;" edge="1" parent="1" source="42" target="33">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="481" y="-170"/>
+                            <mxPoint x="481" y="-170"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="42" value="Circle" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;expand=0;fontFamily=Segoe UI;fontColor=#000000;strokeColor=#000000;fillColor=none;" vertex="1" collapsed="1" parent="1">
+                    <mxGeometry x="460" y="-240" width="90" height="36" as="geometry">
+                        <mxRectangle x="100" y="170" width="140" height="52" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

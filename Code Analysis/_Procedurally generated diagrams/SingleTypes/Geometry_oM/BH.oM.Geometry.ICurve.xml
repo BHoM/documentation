@@ -1,0 +1,15 @@
+﻿<mxfile host='Electron' modified='24/06/2021 15:05:22' agent='BHoM' type='device'>
+    <diagram id='f582b459-3a8b-42f2-bc64-f7eb651e6ca5'>
+        <mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+            <root>
+                <mxCell id="f1bafa26-c064-4b38-b1a5-bd2c1dbc99de" />
+                <mxCell id="a3ac94f2-46d3-441f-946c-26c8f7d1f1a3" parent="f1bafa26-c064-4b38-b1a5-bd2c1dbc99de" />
+                <mxCell id="59ddb984-08ac-4181-8f87-04236094c047" value="&lt;&lt;interface&gt;&gt;&#xD;&#xA;ICurve" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=42;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontSize=12;align=center;" vertex="1" collapsed="1" parent="a3ac94f2-46d3-441f-946c-26c8f7d1f1a3">
+                    <mxGeometry x="0" y="0" width="200" height="42" as="geometry">
+                        <mxRectangle x='0' y='0' width='230' height='192' as='alternateBounds' />
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+    </diagram id='f582b459-3a8b-42f2-bc64-f7eb651e6ca5'>
+</mxfile host='Electron' modified='24/06/2021 15:05:22' agent='BHoM' type='device'>
