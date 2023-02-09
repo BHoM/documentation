@@ -1,0 +1,45 @@
+﻿<mxfile host='Electron' modified='24/06/2021 15:05:32' agent='BHoM' type='device'>
+    <diagram id='56484f06-302a-4858-9a7c-18b6acf6cf8e'>
+        <mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+            <root>
+                <mxCell id="ec7d3501-a86e-498d-8a93-17f57b9f7750" />
+                <mxCell id="14a8f2d3-ca0e-4c9e-82f6-81b6547b866e" parent="ec7d3501-a86e-498d-8a93-17f57b9f7750" />
+                <mxCell id="1e1d9d96-2f70-4def-bb86-a84732a3b755" value="ExplodeNode" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontSize=12;align=left;spacingLeft=15;" vertex="1" collapsed="1" parent="14a8f2d3-ca0e-4c9e-82f6-81b6547b866e">
+                    <mxGeometry x="0" y="0" width="150" height="26" as="geometry">
+                        <mxRectangle x='0' y='0' width='230' height='176' as='alternateBounds' />
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ae0efd7f-08d9-45e4-b40d-26eccbdda8e9" value="Description : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="1e1d9d96-2f70-4def-bb86-a84732a3b755">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="882735e3-573f-42bb-9950-1f22e00b5680" value="Inputs : List&lt;ReceiverParam&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="1e1d9d96-2f70-4def-bb86-a84732a3b755">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="28a2b0dc-738f-42ac-ae89-096557af99a2" value="Outputs : List&lt;DataParam&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="1e1d9d96-2f70-4def-bb86-a84732a3b755">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="11a017cf-d1ec-4f08-9f2d-706c4f080b4d" value="IsInline : Boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="1e1d9d96-2f70-4def-bb86-a84732a3b755">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="f723763c-2a62-4420-88a6-fb7b37e6b96e" value="IsDeclaration : Boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="1e1d9d96-2f70-4def-bb86-a84732a3b755">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="6de99d77-b850-4f32-a5ba-341d628edb24" value="BHoM_Guid : Guid" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#707070" vertex="1" parent="1e1d9d96-2f70-4def-bb86-a84732a3b755">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="5a1b76d0-9f8d-4c11-9470-a8c0800aa0cc" value="Name : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#707070" vertex="1" parent="1e1d9d96-2f70-4def-bb86-a84732a3b755">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="6f0df633-006c-42f0-ae1b-776214780eb1" value="Fragments : FragmentSet" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#707070" vertex="1" parent="1e1d9d96-2f70-4def-bb86-a84732a3b755">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="46d82e2d-8aeb-496c-b246-ef711c2a26a7" value="Tags : HashSet&lt;String&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#707070" vertex="1" parent="1e1d9d96-2f70-4def-bb86-a84732a3b755">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="17453b38-4988-4ae3-a712-f03b217c14fc" value="CustomData : Dictionary&lt;String,Object&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#707070" vertex="1" parent="1e1d9d96-2f70-4def-bb86-a84732a3b755">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+            </root>
+        </mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+    </diagram id='56484f06-302a-4858-9a7c-18b6acf6cf8e'>
+</mxfile host='Electron' modified='24/06/2021 15:05:32' agent='BHoM' type='device'>

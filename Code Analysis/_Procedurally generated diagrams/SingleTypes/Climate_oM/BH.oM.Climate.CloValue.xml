@@ -1,0 +1,60 @@
+﻿<mxfile host='Electron' modified='24/06/2021 15:05:17' agent='BHoM' type='device'>
+    <diagram id='8f5f5ab7-3582-4772-8463-91cfffa0809a'>
+        <mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+            <root>
+                <mxCell id="50ab5f21-1328-436a-ad14-65b41a84769c" />
+                <mxCell id="9c1ba486-4764-49aa-8de9-8cdfc95c1db8" parent="50ab5f21-1328-436a-ad14-65b41a84769c" />
+                <mxCell id="2d9e3d13-4904-4c9c-b06c-c8d394356556" value="&lt;&lt;enumeration&gt;&gt;&#xD;&#xA;CloValue" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=42;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontSize=12;align=center;" vertex="1" collapsed="1" parent="9c1ba486-4764-49aa-8de9-8cdfc95c1db8">
+                    <mxGeometry x="0" y="0" width="200" height="42" as="geometry">
+                        <mxRectangle x='0' y='0' width='230' height='192' as='alternateBounds' />
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="940daa68-b894-4a7f-b418-1c07ebc8d4ee" value="Undefined" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="2d9e3d13-4904-4c9c-b06c-c8d394356556">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="1fe9de1e-58eb-4fc8-8972-1084da08dfe5" value="FirefightingClothes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="2d9e3d13-4904-4c9c-b06c-c8d394356556">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="bae100cb-1966-4d86-a6f7-ee3a849478df" value="HeavyPolarClothes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="2d9e3d13-4904-4c9c-b06c-c8d394356556">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="798ef51c-2116-4c2b-8ccc-9207acf57429" value="JacketTrousersLongSleeveShirt" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="2d9e3d13-4904-4c9c-b06c-c8d394356556">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="de84883d-4849-41fe-a7e8-972dd65d8e88" value="LightSummerClothes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="2d9e3d13-4904-4c9c-b06c-c8d394356556">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="e4f842c0-e564-4aa6-8460-3781c5144097" value="ShortsShortSleeveShirt" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="2d9e3d13-4904-4c9c-b06c-c8d394356556">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="51362d35-90eb-43a4-835f-53dc18ccb664" value="SkirtLongSleeveShirtFullSlip" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="2d9e3d13-4904-4c9c-b06c-c8d394356556">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="dcc0c5c5-80a3-4dc2-97cc-2ef8713cc0b6" value="SkirtShortSleeveShirtSandals" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="2d9e3d13-4904-4c9c-b06c-c8d394356556">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="2454ccb0-8a12-4c85-823a-b54c41d24134" value="SuitCottonCoat" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="2d9e3d13-4904-4c9c-b06c-c8d394356556">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="7a38a871-34cb-4a3d-b933-47a4a3ec9918" value="SweatpantsSweatshirt" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="2d9e3d13-4904-4c9c-b06c-c8d394356556">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="77461a8b-e26d-4460-a249-f596c471ab64" value="TrousersLongSleeveShirt" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="2d9e3d13-4904-4c9c-b06c-c8d394356556">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="a18493e7-e854-47d2-b729-0fe62157fb5a" value="TrousersShortSleeveShirtShoes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="2d9e3d13-4904-4c9c-b06c-c8d394356556">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="ad40d03f-24bd-4e49-ae39-c2ce505e6c2a" value="TypicalIndoorSummerClothes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="2d9e3d13-4904-4c9c-b06c-c8d394356556">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="28fd049d-5528-4121-a139-cf027157b133" value="TypicalIndoorWinterClothes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="2d9e3d13-4904-4c9c-b06c-c8d394356556">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="86c55431-cf40-4569-9d3f-17d61f97b2b8" value="WoolenSuitWithCoat" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="2d9e3d13-4904-4c9c-b06c-c8d394356556">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+            </root>
+        </mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+    </diagram id='8f5f5ab7-3582-4772-8463-91cfffa0809a'>
+</mxfile host='Electron' modified='24/06/2021 15:05:17' agent='BHoM' type='device'>

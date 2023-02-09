@@ -1,0 +1,30 @@
+﻿<mxfile host='Electron' modified='24/06/2021 15:05:18' agent='BHoM' type='device'>
+    <diagram id='293d9be5-aefe-48dd-825c-b7f0159aa9f7'>
+        <mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+            <root>
+                <mxCell id="c4771865-8f1d-4df0-ba5e-f0faa022d45e" />
+                <mxCell id="f0546e89-95a7-41c9-a916-b5d66b2d5a64" parent="c4771865-8f1d-4df0-ba5e-f0faa022d45e" />
+                <mxCell id="a555c45c-3b76-426d-b42f-cd43aeb2ce8b" value="&lt;&lt;enumeration&gt;&gt;&#xD;&#xA;SurfaceConvectionAlgorithmInsideMethod" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=42;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontSize=12;align=center;" vertex="1" collapsed="1" parent="f0546e89-95a7-41c9-a916-b5d66b2d5a64">
+                    <mxGeometry x="0" y="0" width="200" height="42" as="geometry">
+                        <mxRectangle x='0' y='0' width='230' height='192' as='alternateBounds' />
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2c34e5b0-d344-4ef9-b17f-3808ad6999d4" value="Undefined" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="a555c45c-3b76-426d-b42f-cd43aeb2ce8b">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="0f3ff723-63ee-457a-b331-7c5265021ac4" value="Simple" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="a555c45c-3b76-426d-b42f-cd43aeb2ce8b">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="202272ee-bcaf-404d-a489-9f5341e662b8" value="TARP" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="a555c45c-3b76-426d-b42f-cd43aeb2ce8b">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="7ba70e10-6ce3-4c91-967c-74089cd693f1" value="CeilingDiffuser" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="a555c45c-3b76-426d-b42f-cd43aeb2ce8b">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="e49c2ba2-e849-481d-8b33-f480f2e4776f" value="AdaptiveConvectionAlgorithm" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="a555c45c-3b76-426d-b42f-cd43aeb2ce8b">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+            </root>
+        </mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+    </diagram id='293d9be5-aefe-48dd-825c-b7f0159aa9f7'>
+</mxfile host='Electron' modified='24/06/2021 15:05:18' agent='BHoM' type='device'>

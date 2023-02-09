@@ -1,0 +1,33 @@
+﻿<mxfile host='Electron' modified='24/06/2021 15:05:18' agent='BHoM' type='device'>
+    <diagram id='7d26512a-6b82-4ba8-bd43-cbcd8ab64eb1'>
+        <mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+            <root>
+                <mxCell id="34292aff-4978-422c-bcec-d4be8ff495e7" />
+                <mxCell id="57ef223c-06f7-46de-9476-f47a34a66028" parent="34292aff-4978-422c-bcec-d4be8ff495e7" />
+                <mxCell id="707970c9-8b26-447e-9d6a-2eb711ed0022" value="&lt;&lt;enumeration&gt;&gt;&#xD;&#xA;Terrain" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=42;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontSize=12;align=center;" vertex="1" collapsed="1" parent="57ef223c-06f7-46de-9476-f47a34a66028">
+                    <mxGeometry x="0" y="0" width="200" height="42" as="geometry">
+                        <mxRectangle x='0' y='0' width='230' height='192' as='alternateBounds' />
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="b6138f7c-7989-42b7-aff1-846964b87ebe" value="Undefined" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="707970c9-8b26-447e-9d6a-2eb711ed0022">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="ac404641-7a8d-43f4-8d60-32efb1371bb2" value="Country" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="707970c9-8b26-447e-9d6a-2eb711ed0022">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="85281e3c-efcc-4cf8-8435-96603f19c2ea" value="Suburbs" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="707970c9-8b26-447e-9d6a-2eb711ed0022">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="95459f9f-b06b-4e55-a0db-ba2d8bfad661" value="City" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="707970c9-8b26-447e-9d6a-2eb711ed0022">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="4bd44bd5-2712-44e0-9198-0220c80f8ec1" value="Ocean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="707970c9-8b26-447e-9d6a-2eb711ed0022">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="73cbbecd-ad0a-4976-b59c-a41e79a3ed56" value="Urban" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="707970c9-8b26-447e-9d6a-2eb711ed0022">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+            </root>
+        </mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+    </diagram id='7d26512a-6b82-4ba8-bd43-cbcd8ab64eb1'>
+</mxfile host='Electron' modified='24/06/2021 15:05:18' agent='BHoM' type='device'>

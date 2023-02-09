@@ -1,0 +1,39 @@
+﻿<mxfile host='Electron' modified='24/06/2021 15:05:36' agent='BHoM' type='device'>
+    <diagram id='7a49d964-ccbe-4a45-a57c-55c856f2af82'>
+        <mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+            <root>
+                <mxCell id="c3008eb4-fd05-4b9d-815a-b534d6570e65" />
+                <mxCell id="c7129231-340d-4b4e-a9cb-e8bc5f53dc3c" parent="c3008eb4-fd05-4b9d-815a-b534d6570e65" />
+                <mxCell id="45bb454b-f5d7-47b8-9e6e-684f656be5b0" value="&lt;&lt;enumeration&gt;&gt;&#xD;&#xA;VolumeUnit" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=42;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontSize=12;align=center;" vertex="1" collapsed="1" parent="c7129231-340d-4b4e-a9cb-e8bc5f53dc3c">
+                    <mxGeometry x="0" y="0" width="200" height="42" as="geometry">
+                        <mxRectangle x='0' y='0' width='230' height='192' as='alternateBounds' />
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5f991c25-2a24-43b1-804f-a2e0c32e2083" value="CubicKilometers" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="45bb454b-f5d7-47b8-9e6e-684f656be5b0">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="f4b7604d-cc8f-4486-a913-59faa8f532b0" value="CubicMeters" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="45bb454b-f5d7-47b8-9e6e-684f656be5b0">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="dbd5517c-8783-468b-9dcf-d14ddd9851f3" value="CubicCentimeters" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="45bb454b-f5d7-47b8-9e6e-684f656be5b0">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="0f390e97-1df6-4aaf-b320-1bbfa7ad46f4" value="CubicMillimeters" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="45bb454b-f5d7-47b8-9e6e-684f656be5b0">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="59330eea-e632-4d87-ab79-df625555aa2a" value="CubicMiles" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="45bb454b-f5d7-47b8-9e6e-684f656be5b0">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="dc096b7e-adc7-4a00-bd8e-38f5e1731c9c" value="CubicYards" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="45bb454b-f5d7-47b8-9e6e-684f656be5b0">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="56d2cac6-082c-417e-b2f9-4e9369b930d5" value="CubicFeet" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="45bb454b-f5d7-47b8-9e6e-684f656be5b0">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="ea8bc402-67c5-4c7c-8ff4-265269892ba6" value="CubicInches" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="45bb454b-f5d7-47b8-9e6e-684f656be5b0">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+            </root>
+        </mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+    </diagram id='7a49d964-ccbe-4a45-a57c-55c856f2af82'>
+</mxfile host='Electron' modified='24/06/2021 15:05:36' agent='BHoM' type='device'>

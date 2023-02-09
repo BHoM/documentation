@@ -1,0 +1,90 @@
+﻿<mxfile host='Electron' modified='24/06/2021 15:05:31' agent='BHoM' type='device'>
+    <diagram id='1f5c0c63-8b26-4503-ac1c-a2be73b14bfb'>
+        <mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+            <root>
+                <mxCell id="6dc423c6-6850-4405-9963-59dbba5f5460" />
+                <mxCell id="6274eefa-3e8e-441d-9fb5-e36957980315" parent="6dc423c6-6850-4405-9963-59dbba5f5460" />
+                <mxCell id="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab" value="&lt;&lt;enumeration&gt;&gt;&#xD;&#xA;EnvironmentalProductDeclarationField" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=42;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontSize=12;align=center;" vertex="1" collapsed="1" parent="6274eefa-3e8e-441d-9fb5-e36957980315">
+                    <mxGeometry x="0" y="0" width="200" height="42" as="geometry">
+                        <mxRectangle x='0' y='0' width='230' height='192' as='alternateBounds' />
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2df6a72d-1719-4663-8534-e146b39fa7ae" value="Undefined" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="d16ca8b0-3bb3-4cd0-b11b-763972d1ab25" value="AcidificationPotential" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="b845dec6-74db-45ae-8dad-03c72e96e39f" value="BiogenicCarbon" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="96aef5c4-f147-4425-ac66-73a461b8ed70" value="DepletionOfAbioticResources" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="6270b215-b0d9-4f61-b978-8e3b8f53bbc1" value="DepletionOfAbioticResourcesFossilFuels" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="0c5680bb-06d7-43e1-984e-bda806df8326" value="EutrophicationPotential" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="51c8617b-7688-4819-a8b3-83a2b6b74c00" value="ExportedElectricalEnergy" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="76c33876-ecde-403f-964f-5c3c66a384e0" value="ExportedThermalEnergy" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="da219fa8-1137-4e3f-a258-5f841b457076" value="FreshWater" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="dc85b10e-37b5-4fdc-abbb-33224c959940" value="GlobalWarmingPotential" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="7ab08589-221f-4b8d-a9aa-24889054d154" value="HazardousWasteDisposed" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="71bb5b2c-c499-4a11-ae00-6376349d30d2" value="MaterialForEnergyRecovery" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="59af54ae-cf88-4f06-9122-af097a5c9160" value="NonHazardousWasteDisposed" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="fde85e98-a5a4-4855-928d-6888e7b52623" value="NonRenewableSecondaryFuels" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="4f257b46-85e4-4cf4-9b9a-693622c6acbc" value="OzoneDepletionPotential" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="0498663b-d452-4a36-baa0-f61de22ba2da" value="PhotochemicalOzoneCreationPotential" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="730b77c4-7f9b-4a6f-8e54-7107eb7280f5" value="PostConsumerRecycledContent" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="ed83fbab-3420-46ec-a835-96c7e3350605" value="PrimaryEnergyNonRenewableEnergy" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="78f59a7b-eb80-40bf-943e-120bfc20866b" value="PrimaryEnergyNonRenewableResource" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="56c55974-d6ae-4a1a-91eb-9d4033ae0e3b" value="PrimaryEnergyRenewableEnergy" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="cc453105-51a9-43a6-bb4c-b8baf2eece25" value="PrimaryEnergyRenewableTotal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="dfa774e5-1924-4969-b920-8845ea09fb3c" value="PrimaryEnergyResourcesRawMaterials" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="3f070e38-9a1c-4e37-a721-1e761f02aab5" value="RadioActiveWasteDisposed" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="5175cca9-4f90-4e62-ba52-52d5a73a1b59" value="RenewableSecondaryFuels" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+                <mxCell id="a89754a5-bc39-4d13-9a5b-454e9a14958f" value="SecondaryMaterial" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="fcc0810f-3d1b-4a54-8d90-c35a9b70e5ab">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+            </root>
+        </mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+    </diagram id='1f5c0c63-8b26-4503-ac1c-a2be73b14bfb'>
+</mxfile host='Electron' modified='24/06/2021 15:05:31' agent='BHoM' type='device'>

@@ -1,0 +1,18 @@
+﻿<mxfile host='Electron' modified='24/06/2021 15:05:19' agent='BHoM' type='device'>
+    <diagram id='b3f1c571-296c-46e1-80a8-99cacce23c4f'>
+        <mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+            <root>
+                <mxCell id="c7b8e8d8-bb55-4be0-9789-cff80e77f4a3" />
+                <mxCell id="95ff5e0d-335a-4d36-9ab3-28f8ad5b436f" parent="c7b8e8d8-bb55-4be0-9789-cff80e77f4a3" />
+                <mxCell id="d04721e9-a063-4ce7-af94-7c581d007025" value="&lt;&lt;enumeration&gt;&gt;&#xD;&#xA;PierAndSpandrelResultType" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=42;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontSize=12;align=center;" vertex="1" collapsed="1" parent="95ff5e0d-335a-4d36-9ab3-28f8ad5b436f">
+                    <mxGeometry x="0" y="0" width="200" height="42" as="geometry">
+                        <mxRectangle x='0' y='0' width='230' height='192' as='alternateBounds' />
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="0aad53dc-b4ca-4ef4-8416-6a4f8732b751" value="PierForce" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000" vertex="1" parent="d04721e9-a063-4ce7-af94-7c581d007025">
+                    <mxGeometry y='26' width='150' height='26' as='geometry' />
+                </mxCell>
+            </root>
+        </mxGraphModel dx='-1266' dy='2416' grid='1' gridSize='10' guides='1' tooltips='1' connect='1' arrows='1' fold='1' page='1' pageScale='1' pageWidth='1169' pageHeight='827' math='0' shadow='0'>
+    </diagram id='b3f1c571-296c-46e1-80a8-99cacce23c4f'>
+</mxfile host='Electron' modified='24/06/2021 15:05:19' agent='BHoM' type='device'>

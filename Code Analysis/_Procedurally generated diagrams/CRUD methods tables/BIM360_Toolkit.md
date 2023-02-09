@@ -1,0 +1,3 @@
+| Object | Create | Read | Update |
+|-|-|-|-|
+| BH.oM.Base.IBHoMObject |  | BH.Adapter.BIM360.BIM360Adapter.ReadViews(ViewsRequest viewsRequest)<br>BH.Adapter.BIM360.BIM360Adapter.ReadVersions(VersionsRequest versionsRequest)<br>BH.Adapter.BIM360.BIM360Adapter.ReadItems(ItemsRequest itemsRequest)<br>BH.Adapter.BIM360.BIM360Adapter.ReadFolders(FoldersRequest foldersRequest)<br>BH.Adapter.BIM360.BIM360Adapter.ReadProjects(ProjectsRequest projectsRequest)<br>BH.Adapter.BIM360.BIM360Adapter.ReadHubs(HubsRequest hubsRequest)<br>BH.Adapter.BIM360.BIM360Adapter.Read(IRequest request, ActionConfig actionConfig) |  |

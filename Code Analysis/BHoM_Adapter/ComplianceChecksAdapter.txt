@@ -1,0 +1,4 @@
+COMPLIANCE CEHCK:
+
+- If we specify a name of a parameter in hte base adatper, that should be the same name in the implementation
+- Compliuance check on the PortSpecificProperties?

@@ -1,0 +1,37 @@
+| Object | Create | Read | Update |
+|-|-|-|-|
+| BH.oM.Structure.Elements.Node | BH.Adapter.GSA.GSAAdapter.CreateObject(Node node)<br>BH.Adapter.GSA.Convert.GetAndCreateAxis(Node node, String& axisString)<br>BH.Adapter.GSA.Convert.ToGsaString(IElementLoad<Node> nodeLoad, Double[] unitFactors)<br>BH.Adapter.GSA.Convert.ToGsaString(Node node, String index) | BH.Adapter.GSA.GSAAdapter.ReadNodes(List<String> ids)<br>BH.Adapter.GSA.<>c__DisplayClass69_0.<ReadNodes>b__0(String x)<br>BH.Adapter.GSA.<>c__DisplayClass69_0.<ReadNodes>b__2(String x) |  |
+| BH.oM.Structure.SectionProperties.ISectionProperty | BH.Adapter.GSA.GSAAdapter.CreateObject(ISectionProperty prop)<br>BH.Adapter.GSA.Convert.CreateCatalogueString(ISectionProperty secProp)<br>BH.Adapter.GSA.Convert.CreateDescAndPropString(ISectionProperty secProp, String& desc, String& prop) | BH.Adapter.GSA.GSAAdapter.ReadSectionProperties(List<String> ids)<br>BH.Adapter.GSA.<>c__DisplayClass71_0.<ReadSectionProperties>b__1(String x)<br>BH.Adapter.GSA.<>c__DisplayClass71_0.<ReadSectionProperties>b__3(String x) |  |
+| BH.oM.Structure.Elements.RigidLink | BH.Adapter.GSA.GSAAdapter.CreateLinks(IEnumerable<RigidLink> links)<br>BH.Adapter.GSA.Convert.ToGsaString(RigidLink link, String index, Int32 secondaryIndex) | BH.Adapter.GSA.GSAAdapter.ReadRigidLink(List<String> ids) |  |
+| BH.oM.Structure.Elements.FEMesh | BH.Adapter.GSA.GSAAdapter.CreateFEMesh(FEMesh mesh)<br>BH.Adapter.GSA.<>c.<CreateIdListOrGroupNameAreaLoad>b__46_2(FEMesh x)<br>BH.Adapter.GSA.Convert.ToGsaString(FEMesh mesh, Int32 index, Int32 faceID) | BH.Adapter.GSA.GSAAdapter.ReadFEMesh(List<String> ids) | BH.Adapter.GSA.GSAAdapter.Update(IEnumerable<FEMesh> objects, ActionConfig actionConfig) |
+| BH.oM.Structure.Loads.LoadCombination | BH.Adapter.GSA.GSAAdapter.CreateObject(LoadCombination loadComb)<br>BH.Adapter.GSA.Convert.ToGsaString(LoadCombination loadComb) | BH.Adapter.GSA.GSAAdapter.ReadLoadCombinations(List<String> ids)<br>BH.Adapter.GSA.<>c__DisplayClass68_0.<ReadLoadCombinations>b__1(String x)<br>BH.Adapter.GSA.<>c__DisplayClass68_0.<ReadLoadCombinations>b__3(String x) |  |
+| BH.oM.Structure.Loads.Loadcase | BH.Adapter.GSA.GSAAdapter.CreateObject(Loadcase loadCase)<br>BH.Adapter.GSA.Convert.ToGsaString(Loadcase loadCase) | BH.Adapter.GSA.GSAAdapter.ReadLoadCases(List<String> ids)<br>BH.Adapter.GSA.<>c.<ReadLoadCases>b__66_0(String x)<br>BH.Adapter.GSA.<>c.<ReadLoadCases>b__66_2(String x) |  |
+| BH.oM.Structure.Loads.ILoad | BH.Adapter.GSA.GSAAdapter.CreateObject(ILoad load)<br>BH.Adapter.GSA.Convert.ToGsaString(ILoad load, Double[] unitFactors) |  |  |
+| BH.oM.Adapters.GSA.SurfaceProperties.FabricPanelProperty | BH.Adapter.GSA.GSAAdapter.CreateObject(FabricPanelProperty fabricProperty)<br>BH.Adapter.GSA.Convert.ToGsaStrings(FabricPanelProperty panProp, String index) |  |  |
+| BH.oM.Spatial.ShapeProfiles.AngleProfile | BH.Adapter.GSA.Convert.CreateDescString(AngleProfile dimensions, String& desc) |  |  |
+| BH.oM.Spatial.ShapeProfiles.TSectionProfile | BH.Adapter.GSA.Convert.CreateDescString(TSectionProfile dimensions, String& desc) |  |  |
+| BH.oM.Spatial.ShapeProfiles.ISectionProfile | BH.Adapter.GSA.Convert.CreateDescString(ISectionProfile dimensions, String& desc) |  |  |
+| BH.oM.Spatial.ShapeProfiles.FabricatedISectionProfile | BH.Adapter.GSA.Convert.CreateDescString(FabricatedISectionProfile dimensions, String& desc) |  |  |
+| BH.oM.Spatial.ShapeProfiles.CircleProfile | BH.Adapter.GSA.Convert.CreateDescString(CircleProfile dimensions, String& desc) |  |  |
+| BH.oM.Spatial.ShapeProfiles.TubeProfile | BH.Adapter.GSA.Convert.CreateDescString(TubeProfile dimensions, String& desc) |  |  |
+| BH.oM.Spatial.ShapeProfiles.RectangleProfile | BH.Adapter.GSA.Convert.CreateDescString(RectangleProfile dimensions, String& desc) |  |  |
+| BH.oM.Spatial.ShapeProfiles.IProfile | BH.Adapter.GSA.Convert.CreateDescString(IProfile profile, String& desc)<br>BH.Adapter.GSA.Convert.CreateDescString(IProfile dimensions, String& desc) |  |  |
+| BH.oM.Structure.SectionProperties.ExplicitSection | BH.Adapter.GSA.Convert.CreateDescAndPropString(ExplicitSection secProp, String& desc, String& prop) |  |  |
+| BH.oM.Structure.SectionProperties.CableSection | BH.Adapter.GSA.Convert.CreateDescAndPropString(CableSection secProp, String& desc, String& prop) |  |  |
+| BH.oM.Structure.SectionProperties.IGeometricalSection | BH.Adapter.GSA.Convert.CreateDescAndPropString(IGeometricalSection secProp, String& desc, String& prop) |  |  |
+| BH.oM.Spatial.ShapeProfiles.FabricatedBoxProfile | BH.Adapter.GSA.Convert.CreateDescString(FabricatedBoxProfile dimensions, String& desc) |  |  |
+| BH.oM.Spatial.ShapeProfiles.BoxProfile | BH.Adapter.GSA.Convert.CreateDescString(BoxProfile dimensions, String& desc) |  |  |
+| BH.oM.Spatial.ShapeProfiles.ChannelProfile | BH.Adapter.GSA.Convert.CreateDescString(ChannelProfile dimensions, String& desc) |  |  |
+| BH.oM.Structure.Constraints.Constraint6DOF | BH.Adapter.GSA.Convert.CreateReleaseString(Constraint6DOF nodeConstraint) |  |  |
+| BH.oM.Structure.Elements.IAreaElement | BH.Adapter.GSA.Convert.CreateIdListOrGroupNameAreaLoad(IElementLoad<IAreaElement> areaLoad)<br>BH.Adapter.GSA.<>c.<CreateIdListOrGroupNameAreaLoad>b__46_0(IAreaElement x)<br>BH.Adapter.GSA.<>c.<CreateIdListOrGroupNameAreaLoad>b__46_1(IAreaElement x)<br>BH.Adapter.GSA.Convert.ToGsaString(IElementLoad<IAreaElement> areaLoad, Double[] unitFactors) |  |  |
+| BH.oM.Structure.Elements.Panel | BH.Adapter.GSA.Convert.ToGsaString(Panel obj, String index) |  |  |
+| BH.oM.Structure.Loads.GravityLoad | BH.Adapter.GSA.Convert.ToGsaString(GravityLoad load, Double[] unitFactors) |  |  |
+| BH.oM.Adapters.GSA.Elements.Spacer | BH.Adapter.GSA.Convert.ToGsaString(Spacer spacer, String index) |  |  |
+| BH.oM.Structure.Elements.Bar | BH.Adapter.GSA.Convert.ToGsaString(IElementLoad<Bar> barLoad, Double[] unitFactors) | BH.Adapter.GSA.GSAAdapter.ReadBars(List<String> ids) |  |
+| BH.oM.Structure.Loads.BarPrestressLoad | BH.Adapter.GSA.Convert.ToGsaString(BarPrestressLoad load, Double[] unitFactors) |  |  |
+| BH.oM.Structure.Loads.BarUniformTemperatureLoad | BH.Adapter.GSA.Convert.ToGsaString(BarUniformTemperatureLoad load, Double[] unitFactors) |  |  |
+| BH.oM.Structure.SurfaceProperties.ISurfaceProperty |  | BH.Adapter.GSA.GSAAdapter.ReadProperty2d(List<String> ids)<br>BH.Adapter.GSA.<>c__DisplayClass72_0.<ReadProperty2d>b__1(String x)<br>BH.Adapter.GSA.<>c__DisplayClass72_0.<ReadProperty2d>b__3(String x) |  |
+| BH.oM.Structure.Constraints.LinkConstraint |  | BH.Adapter.GSA.GSAAdapter.ReadLinkConstraint(List<String> ids)<br>BH.Adapter.GSA.<>c.<ReadLinkConstraint>b__74_0(String x)<br>BH.Adapter.GSA.<>c.<ReadLinkConstraint>b__74_2(String x) |  |
+| BH.oM.Analytical.Results.IResult |  | BH.Adapter.GSA.GSAAdapter.ReadResults(IStructuralResultRequest request, ActionConfig actionConfig)<br>BH.Adapter.GSA.GSAAdapter.ReadResults(GlobalResultRequest request, ActionConfig actionConfig) |  |
+| BH.oM.Base.IBHoMObject |  | BH.Adapter.GSA.GSAAdapter.Read(Type type, IList indices, ActionConfig actionConfig) |  |
+| BH.oM.Structure.MaterialFragments.IMaterialFragment |  | BH.Adapter.GSA.GSAAdapter.ReadMaterials(List<String> ids)<br>BH.Adapter.GSA.GSAAdapter.ReadMaterials(List<String> ids, Boolean includeStandard)<br>BH.Adapter.GSA.<>c.<ReadMaterials>b__65_0(String x)<br>BH.Adapter.GSA.<>c.<ReadMaterials>b__65_3(String x) |  |
