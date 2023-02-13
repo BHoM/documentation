@@ -6,8 +6,8 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
-  logo: _images/logos/logo.png
-  favicon: _images/logos/favicon.ico
+  logo: _logos/logo.png
+  favicon: _logos/favicon.ico
   palette:
     primary: white
     accent: pink
