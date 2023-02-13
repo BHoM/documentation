@@ -10,3 +10,8 @@ Please remember that there are also other means of testing the code (e.g. code U
 - Zip your test script file.
 - Drag and drop the test script file in the body of the GitHub issue or PR.
 
+
+## Large test files
+The zipped test file must be less than 50 MB (GitHub size limit), and in general should be less than 10 MB.
+If your test file is larger than that, it means that you've embedded (internalised) too much testing data. You should simplify the test script to use the minimal amount of data necessary to reproduce the problem.
+If your test script purposedly targets a large model, then the script should only hold a reference to such model (e.g. a link to it) and the model should be uploaded via another file hosting service.
