@@ -45,3 +45,5 @@ Thanks to the BHoM being exposed in various UIs such as Grasshopper and Excel, y
 ## Linking people
 
 By sharing terminology, functionality, and connectivity to software, BHoM enables to shift the attention from "connecting data" to "connecting people together"!
+
+BHoM also embraces Open Source as a practice: there is infinite value in opening up development efforts to the larger AEC community. Sharing efforts pays up big time!
