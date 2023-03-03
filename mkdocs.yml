@@ -43,7 +43,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.tabbed: # enables Content tabs.
-    alternate_style: true 
+      alternate_style: true 
   - pymdownx.superfences # allows to add markdown to Content tabs. See https://squidfunk.github.io/mkdocs-material/reference/content-tabs/#embedded-content
 
   # Mathjax support
