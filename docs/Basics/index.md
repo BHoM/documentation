@@ -10,13 +10,13 @@ So, at its core, the BHoM contains a collection of object definitions that we al
 
 ## Linking Software
 
-Across the AEC industry, regardless of our discipline, we have to work with multiple softwares during the course of any given project. Since there is rarely a simple solution to transfer the data from one software to another, we usually end up either doing it manually each time or writing some bespoke script to automate the transfer. Things get even more complex when we work across disciplines and with other collaborators. When the number of software to deal with becomes more than just a few, this one to one ad-hoc transfer solution quickly becomes intractable.
+Across the AEC industry, regardless of our discipline, we have to work with multiple softwares during the course of any given project. Since there is rarely a simple solution to transfer the data from one software to another, we usually end up either doing it manually each time or writing some bespoke script to automate the transfer. Things get even more complex when we work across disciplines and with other collaborators. When the number of software to deal with becomes more than just a few, this one-to-one translation solution quickly becomes intractable.
 
+This is where the BHoM comes in. Thanks to the central common language, it is possible to interoperate between many different software. Instead of creating translators between every possible pair of software, you just have to write one single translator between BHoM and a target software, to then connect to all the others software. 
+We call those translators **Adapter**s.
 
 ![](https://raw.githubusercontent.com/BHoM/documentation/main/Images/InteropA.png)
 
-This is where the BHoM comes in. It provides a single common language between all those applications. Instead of creating translators between every possible pair of software, you just have to write one single link per application to connect to all the others. 
-- A collection of translators to convert objects between the BHoM and the external software. We call those translators **Adapter**s. 
 
 
 ## Linking functionality
@@ -42,3 +42,6 @@ Thanks to the BHoM being exposed in various UIs such as Grasshopper and Excel, y
 ![](https://user-images.githubusercontent.com/16853390/50327328-8c784100-0529-11e9-85d0-3ea7285eb794.png)
 
 
+## Linking people
+
+By sharing terminology, functionality, and connectivity to software, BHoM enables to shift the attention from "connecting data" to "connecting people together"!
