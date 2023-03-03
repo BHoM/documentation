@@ -132,12 +132,15 @@ Now, let's see the remaining "more advanced" Adapter Actions.
 
 ### Move, Remove and Execute
 
-Again taking Grasshopper as our UI of choice, they look like this:
+Slightly more advanced Actions. Again taking Grasshopper as our UI of choice, they look like this:
 ![image](https://user-images.githubusercontent.com/6352844/74932261-480c5d80-53d9-11ea-9487-d84ba7e59a37.png)
 
 Let's see what they do:
+
 * **Move**: This will copy objects over from a `source` connected software to another `target` software. It basically does a Pull and then a Push, without flooding the UI memory with the model you are transferring (which would happen if you were to manually Pull the objects, and then input them into a Push – between the two actions, they would have to be stored in the UI).
+
 * **Remove**: This will delete all the objects that match a specific request (essentially, a query). You can read more about the requests in the [Adapter Actions - advanced parameters](#adapter-actions-advanced-parameters) section.
+
 * **Execute**: This is used to ask the external software to execute a specific command such as _Run analysis_, for example. Different adapters have different compatible commands: try searching the CTRL+SHIFT+B menu for "[yourSoftwareName] Command" to see if there is any available one.
 
 ## Adapter Actions advanced parameters
