@@ -1,6 +1,8 @@
-## Introduction
+# The BHoM code organisation
 
-When you arrive on Github, what you will see is a fairly long list of things called Repositories. Most of them will have a name finishing with **"_Toolkit"**. Foundational repositories are instead called `BHoM`, `BHoM_Engine`, `BHoM_Adapter`, `BHoM_UI`, among others.
+The programming code of BHoM is hosted under a GitHub organisation: https://github.com/BHoM.
+
+The organisation hosts long list of things called Repositories. Most of them will have a name finishing with **"_Toolkit"**. Foundational repositories are instead called `BHoM`, `BHoM_Engine`, `BHoM_Adapter`, `BHoM_UI`, among others. The Toolkits are the things that host the actual code, with specific terminologies (object Models, oMs), functionalities (Engines) and translators (Adapters).
 
 ![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/MainRepoList.png)
 
