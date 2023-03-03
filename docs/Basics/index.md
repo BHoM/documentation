@@ -6,7 +6,9 @@ The variety of AEC (Architecture, Engineering and Construction) commercial softw
 
 BHoM proposes a central Object Model, which is a _schema_ (in other words, a dictionary of terms) on which functionality can be built. By agreeing on common terminology, the output of a script created by one person can easily be used as the input for another script. 
 
-So, at its core, the BHoM contains a collection of object definitions that we all agree on. The definitions are created by the same domain experts that use them everyday (e.g. Structural Engineers, Electrical Engineers, Architects...), and they are categorised per discipline (e.g. Structure, Architecture, ...). Each definition is simply a list of properties that an object should have (e.g. wall, beam, speaker, panel,...). We call this collection of definition the **BHoM (Buildings and Habitats object Model)**. By extension, we also call BHoM the collection of functionality built on top of such terminology.
+So, at its core, the BHoM contains a collection of object definitions that we all agree on. The definitions are created by the same domain experts that use them everyday (e.g. Structural Engineers, Electrical Engineers, Architects...), and they are categorised per discipline (e.g. Structure, Architecture, ...). Each definition is simply a list of properties that an object should have (e.g. wall, beam, speaker, panel,...). We call this collection of definition the **object Model**s (oMs). 
+
+By extension, the BHoM (Building and Habitats object Model) is the collection terminologies and of the functionality built on top of such terminology.
 
 ## Linking Software
 
