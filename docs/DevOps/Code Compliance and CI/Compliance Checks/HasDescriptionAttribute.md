@@ -14,11 +14,10 @@ You can add a `Description` attribute with the following syntax sitting above th
 
 If you have not used any attributes in your file previously, you may need to add the following usings:
 
-`using BH.oM.Reflection.Attributes;`
+`using BH.oM.Base.Attributes;`
 
 `using System.ComponentModel;`
 
-You may also need to add a reference to the `Reflection_oM` to your project if you have not previously used it.
 
 ---
 
