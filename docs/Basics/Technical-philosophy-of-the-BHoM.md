@@ -53,7 +53,7 @@ By leveraging [dynamic binding](https://en.wikipedia.org/wiki/Late_binding) – 
 
 ## The approach to coding
 	
-The above code structure therefore enables **extensibility** and **flexibility**.
+The above code structure therefore enables **flexibility**, **extensibility**, **transparency** and **readability**.
 
 <br/>
 
