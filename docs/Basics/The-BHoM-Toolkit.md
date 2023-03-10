@@ -1,10 +1,19 @@
-# What is a BHoM Toolkit?
+# The BHoM Toolkit
 
-A Toolkit is set of tools that can contain one or more of the following:
+A Toolkit is a set of tools (_definitions_, _functionality_, and _connectivity_) used for a specific purpose. 
 
-- A [BHoM_Adapter](/documentation/BHoM_Adapter) project, that allows to implement the connection with an external software.
-- A [BHoM_Engine](/documentation/BHoM_Engine) project, that should contain the Engine methods specific to your Toolkit.
-- A [BHoM_oM](/documentation/BHoM_oM) project, that should contain any oM class (the types, or the _schema_) specific to your Toolkit.
+For example, you will find a [Robot_Toolkit](https://github.com/BHoM/Robot_Toolkit) to do structural analysis with Autodesk Robot; similarly, you can find a [Revit_Toolkit](https://github.com/BHoM/Revit_Toolkit), a [LifeCycleAssessment_Toolkit](https://github.com/BHoM/LifeCycleAssessment_Toolkit), and many many others.
+
+## Structure of a Toolkit
+In short, a Toolkit can contain **one or more** of the following projects:
+
+- A [BHoM_oM](/documentation/BHoM_oM) project, that contains the _definitions_ specific to your Toolkit (the types, or the _schema_, needed for your purposes).
+- A [BHoM_Engine](/documentation/BHoM_Engine) project, that contains the _functionality_ specific to your Toolkit.
+- A [BHoM_Adapter](/documentation/BHoM_Adapter) project, that contains the _connectivity_ required to interface with an external software.
+
+If you are an User, head to one of the sections linked above to learn more (oM, Engine, Adapter).
+
+If you are interested in programming, creating your own new Toolkit, or contributing to the code of an existing one, keep reading.
 
 ## Implementing a new Toolkit
 
