@@ -6,7 +6,7 @@ The UI layer has been designed so that it will automatically pick everything imp
 
 ![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/GH_Menu.png)
 
-As you can see, this mirror [the structure of the BHoM](Structure-of-the-BHoM) with a section for **oM**, for **Engine**, and for **Adapter**. So, the **oM** section is for creating object, the **Engine** section is for manipulating them or running some form of calculation, and the **Adapter** section is for exchanging data with external softwares.
+In a few words, the **oM** section is for creating object, the **Engine** section is for manipulating objects, using them to derive information, or running some form of calculation, and the **Adapter** section is for exchanging data with external softwares.
 
 ## Key Concept
 
