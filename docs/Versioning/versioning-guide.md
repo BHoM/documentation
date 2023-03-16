@@ -319,53 +319,59 @@ Updating the path to a Dataset works in a similar manner to changes to names of 
 - An additional folder has been added to the path
 - A folder has been removed from the path
 
-When this has happened, the `Dataset` part of the versioning file should be modified. An example is shown below for versioning required for moving all structural materials to a super-folder called `Structure`
+When this has happened, the `Dataset` part of the versioning file should be modified. 
 
-```
-{
-  "Dataset": {
-    "ToNew": {
-      "Materials\\MaterialsEurope\\Concrete": "Structure\\Materials\\MaterialsEurope\\Concrete",
-      "Materials\\MaterialsEurope\\Rebar": "Structure\\Materials\\MaterialsEurope\\Rebar",
-      "Materials\\MaterialsEurope\\Steel(Grade)": "Structure\\Materials\\MaterialsEurope\\Steel(Grade)",
-      "Materials\\MaterialsEurope\\Steel": "Structure\\Materials\\MaterialsEurope\\Steel",
-      "Materials\\MaterialsUSA\\Concrete": "Structure\\Materials\\MaterialsUSA\\Concrete",
-      "Materials\\MaterialsUSA\\Steel": "Structure\\Materials\\MaterialsUSA\\Steel",
-    },
-    "ToOld": {
-      "Structure\\Materials\\MaterialsEurope\\Concrete": "Materials\\MaterialsEurope\\Concrete",
-      "Structure\\Materials\\MaterialsEurope\\Rebar": "Materials\\MaterialsEurope\\Rebar",
-      "Structure\\Materials\\MaterialsEurope\\Steel(Grade)": "Materials\\MaterialsEurope\\Steel(Grade)",
-      "Structure\\Materials\\MaterialsEurope\\Steel": "Materials\\MaterialsEurope\\Steel",
-      "Structure\\Materials\\MaterialsUSA\\Concrete": "Materials\\MaterialsUSA\\Concrete",
-      "Structure\\Materials\\MaterialsUSA\\Steel": "Materials\\MaterialsUSA\\Steel",
+In the example below, the Versioning json file specifies the move of some structural material files to a parent folder called `Structure`.
+
+!!! example "Changes in a Dataset name or location"
+
+    ```
+    {
+      "Dataset": {
+        "ToNew": {
+          "Materials\\MaterialsEurope\\Concrete": "Structure\\Materials\\MaterialsEurope\\Concrete",
+          "Materials\\MaterialsEurope\\Rebar": "Structure\\Materials\\MaterialsEurope\\Rebar",
+          "Materials\\MaterialsEurope\\Steel(Grade)": "Structure\\Materials\\MaterialsEurope\\Steel(Grade)",
+          "Materials\\MaterialsEurope\\Steel": "Structure\\Materials\\MaterialsEurope\\Steel",
+          "Materials\\MaterialsUSA\\Concrete": "Structure\\Materials\\MaterialsUSA\\Concrete",
+          "Materials\\MaterialsUSA\\Steel": "Structure\\Materials\\MaterialsUSA\\Steel",
+        },
+        "ToOld": {
+          "Structure\\Materials\\MaterialsEurope\\Concrete": "Materials\\MaterialsEurope\\Concrete",
+          "Structure\\Materials\\MaterialsEurope\\Rebar": "Materials\\MaterialsEurope\\Rebar",
+          "Structure\\Materials\\MaterialsEurope\\Steel(Grade)": "Materials\\MaterialsEurope\\Steel(Grade)",
+          "Structure\\Materials\\MaterialsEurope\\Steel": "Materials\\MaterialsEurope\\Steel",
+          "Structure\\Materials\\MaterialsUSA\\Concrete": "Materials\\MaterialsUSA\\Concrete",
+          "Structure\\Materials\\MaterialsUSA\\Steel": "Materials\\MaterialsUSA\\Steel",
+        }
+      }
     }
-  }
-}
-```
+    ```
 
 When versioning Dataset the `ToNew` segment is required, and not optional. This is for the BHoM_UI to be able to update components linking to the Dataset.
 
-The `ToOld`versioning of Dataset is optional, but shouold be done if the developer wants to ensure that the Dataset still is acessible from the same serach paths as before, for calls to the methods in the Library_Engine to still work. This could for example be to ensure the call `BH.Engine.Library.Libraries("Materials\\MaterialsEurope\\Concrete")` still returns the same Dataset as before the change was made. It is strongly recomended that calls like the above from  code is updated at the same time as the change to the dataset is made, but generally recomended that the `ToOld` versioning is done to ensure calls from any UI and that code calls to the methods outside the control of the developer making the change is still functions as before.
+The `ToOld`versioning of Dataset is optional, but should be done if the developer wants to ensure that the Dataset still is acessible from the same serach paths as before, for calls to the methods in the Library_Engine to still work. This could for example be to ensure the call `BH.Engine.Library.Libraries("Materials\\MaterialsEurope\\Concrete")` still returns the same Dataset as before the change was made. It is strongly recomended that calls like the above from  code is updated at the same time as the change to the dataset is made, but generally recomended that the `ToOld` versioning is done to ensure calls from any UI and that code calls to the methods outside the control of the developer making the change is still functions as before.
 
 ### Removed Dataset
 
 When a dataset is removed without a replacement, a message should be provided, similar to how it is done for objects and methods. For datasets this is done via the MessageForDeleted section of the Dataset part of the upgrade. Example below showcasing a case where the European concrete and rebar materials have been removed:
 
-```
-{
-  "Dataset": {
-    "ToNew": {
-    },
-    "ToOld": {
+!!! example "Removed Dataset"
+
+    ```
+    {
+      "Dataset": {
+        "ToNew": {
+        },
+        "ToOld": {
+        }
+        "MessageForDeleted": {
+          "Materials\\MaterialsEurope\\Concrete": "Clear message why this dataset has been removed. Point of contact (could be a github repository) where the user can ask questions about why this was removed.",
+          "Materials\\MaterialsEurope\\Rebar": "Clear message why this dataset has been removed. Point of contact (could be a github repository) where the user can ask questions about why this was removed.",
+        }
+      }
     }
-    "MessageForDeleted": {
-      "Materials\\MaterialsEurope\\Concrete": "Clear message why this dataset has been removed. Point of contact (could be a github repository) where the user can ask questions about why this was removed.",
-      "Materials\\MaterialsEurope\\Rebar": "Clear message why this dataset has been removed. Point of contact (could be a github repository) where the user can ask questions about why this was removed.",
-    }
-  }
-}
-```
+    ```
 
 
 ## Items that cannot be versioned: deletions or foundational changes
@@ -377,24 +383,25 @@ In some cases, an upgrade/downgrade of a method or object is simply not possible
 
 In such cases, it is important to inform the user and provide them with as much information as possible to facilitate the transition to the new version of the code. Here are a few example of how this can be achieved:
 
-```
-{
-  ...
-  "MessageForDeleted": {
-    "BH.oM.Adapters.DIALux.Furnishing": "This object was provided to build up DIALux models within a BHoM UI, but was deemed to be unnecessary with the suitable conversions between existing Environmental objects and DIALux provided by the DIALux Adapter. To avoid confusion, this object has been removed. If further assistance is needed, please raise an issue on https://github.com/BHoM/DIALux_Toolkit/issues",
-    "BH.Engine.Grasshopper.Compute.IRenderMeshes(BH.oM.Geometry.IGeometry, Grasshopper.Kernel.GH_PreviewMeshArgs)": "The method was made internal to the Grasshopper Toolkit. If you still need to render objects, consider using one of the Render methods from BH.Engine.Representation instead",
-    "BH.Engine.Adapters.Revit.Query.Location(BH.oM.Adapters.Revit.Elements.ModelInstance)": "This method was a duplicate of GetProperty method, please use the latter instead.",
-    "BH.Engine.BuildingEnvironment.Convert.ToConstruction(BH.oM.Base.CustomObject)": "This method was providing a highly specific conversion between a specific custom data schema and Environment Materials that is no longer relevant to the workflows provided in Environments. It is advised to create materials manually using the Solid or Gas types as appropriate. For more assistance please raise an issue for discussion on https://github.com/BuroHappoldEngineering/BuildingEnvironments_Toolkit/issues",
-  },
-  "MessageForNoUpgrade": {
-    "BH.oM.Structure.Loads.BarVaryingDistributedLoad": "The object has been redefined in such a way that automatic versioning is not possible. To reinstate the objects you could try exploding the CustomObject that will have been returned and make use of the BH.Enigne.Structure.Create.BarVaryingDistributedLoadDistanceBothEnds method from the Structures_Engine. If doing this, treat DistanceFromA as startToStartDistance and DistanceFromB as endToEndDistance. Also, treat ForceA and MomentA as ForceAtStart and MomentAtStart, and ForceB and MomentB as ForceAtEnd and MomentAtEnd. If you have any issues with the above, please feel free to raise an issue at https://github.com/BHoM/BHoM_Engine/issues.",
-    "BH.Engine.Reflection.Modify.SetPropertyValue(System.Collections.Generic.List<BH.oM.Base.IBHoMObject>, System.Type, System.String, System.Object)": "Please use BH.Engine.Reflection.Modify.SetPropertyValue(object obj, string propName, object value) instead.",
-    "BH.Engine.Base.Compute.Hash(BH.oM.Base.IObject, System.Collections.Generic.List<System.String>, System.Collections.Generic.List<System.String>, System.Collections.Generic.List<System.String>, System.Collections.Generic.List<System.Type>, System.Int32)": "This method's functionality has changed deeply with respect to an older version of BHoM. Please replace this component with BH.Engine.Base.Query.Hash(), then plug the inputs as needed.",
-    "BH.Engine.Adapters.Revit.Create.ViewPlan": "This method is not available any more. To reinstate the object, please use BH.Engine.Adapters.Revit.Create(string, string) instead.",
-    "BH.oM.LifeCycleAssessment.MEPScope": "This object has been updated to include new features to enhance calculations for LifeCycleAssesment workflows. Please update the object on the canvas using the default create component to update this component. For further assistance, please raise an issue on https://github.com/BHoM/LifeCycleAssessment_Toolkit/issues",
-  }
-}
-```
+!!! example "Items that cannot be versioned"
+    ```
+    {
+      ...
+      "MessageForDeleted": {
+        "BH.oM.Adapters.DIALux.Furnishing": "This object was provided to build up DIALux models within a BHoM UI, but was deemed to be unnecessary with the suitable conversions between existing Environmental objects and DIALux provided by the DIALux Adapter. To avoid confusion, this object has been removed. If further assistance is needed, please raise an issue on https://github.com/BHoM/DIALux_Toolkit/issues",
+        "BH.Engine.Grasshopper.Compute.IRenderMeshes(BH.oM.Geometry.IGeometry, Grasshopper.Kernel.GH_PreviewMeshArgs)": "The method was made internal to the Grasshopper Toolkit. If you still need to render objects, consider using one of the Render methods from BH.Engine.Representation instead",
+        "BH.Engine.Adapters.Revit.Query.Location(BH.oM.Adapters.Revit.Elements.ModelInstance)": "This method was a duplicate of GetProperty method, please use the latter instead.",
+        "BH.Engine.BuildingEnvironment.Convert.ToConstruction(BH.oM.Base.CustomObject)": "This method was providing a highly specific conversion between a specific custom data schema and Environment Materials that is no longer relevant to the workflows provided in Environments. It is advised to create materials manually using the Solid or Gas types as appropriate. For more assistance please raise an issue for discussion on https://github.com/BuroHappoldEngineering/BuildingEnvironments_Toolkit/issues",
+      },
+      "MessageForNoUpgrade": {
+        "BH.oM.Structure.Loads.BarVaryingDistributedLoad": "The object has been redefined in such a way that automatic versioning is not possible. To reinstate the objects you could try exploding the CustomObject that will have been returned and make use of the BH.Enigne.Structure.Create.BarVaryingDistributedLoadDistanceBothEnds method from the Structures_Engine. If doing this, treat DistanceFromA as startToStartDistance and DistanceFromB as endToEndDistance. Also, treat ForceA and MomentA as ForceAtStart and MomentAtStart, and ForceB and MomentB as ForceAtEnd and MomentAtEnd. If you have any issues with the above, please feel free to raise an issue at https://github.com/BHoM/BHoM_Engine/issues.",
+        "BH.Engine.Reflection.Modify.SetPropertyValue(System.Collections.Generic.List<BH.oM.Base.IBHoMObject>, System.Type, System.String, System.Object)": "Please use BH.Engine.Reflection.Modify.SetPropertyValue(object obj, string propName, object value) instead.",
+        "BH.Engine.Base.Compute.Hash(BH.oM.Base.IObject, System.Collections.Generic.List<System.String>, System.Collections.Generic.List<System.String>, System.Collections.Generic.List<System.String>, System.Collections.Generic.List<System.Type>, System.Int32)": "This method's functionality has changed deeply with respect to an older version of BHoM. Please replace this component with BH.Engine.Base.Query.Hash(), then plug the inputs as needed.",
+        "BH.Engine.Adapters.Revit.Create.ViewPlan": "This method is not available any more. To reinstate the object, please use BH.Engine.Adapters.Revit.Create(string, string) instead.",
+        "BH.oM.LifeCycleAssessment.MEPScope": "This object has been updated to include new features to enhance calculations for LifeCycleAssesment workflows. Please update the object on the canvas using the default create component to update this component. For further assistance, please raise an issue on https://github.com/BHoM/LifeCycleAssessment_Toolkit/issues",
+      }
+    }
+    ```
 
 # Troubleshooting on Versioning
 
