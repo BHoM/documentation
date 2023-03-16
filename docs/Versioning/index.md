@@ -14,11 +14,16 @@ Versioning fixes this by updating the old json text before using it to find the 
 
 Upgrading/downgrading of the following modifications:
 
-- BHoM methods (e.g. saved in a script): changes in the method name
-- BHoM methods (e.g. saved in a script): changes in input/outputs names and types
-- BHoM objects (e.g. internalised in a script or stored in a file or database): changes in their properties
-- BHoM objects (e.g. internalised in a script or stored in a file or database): changes in their name
-- Changes in Namespaces
+- Changes on BHoM methods (e.g. saved in a script): 
+    - changes in the method name
+    - changes in their input/outputs names and types.
+- Changes on BHoM objects (e.g. internalised in a script or stored in a file or database): 
+    - changes in class properties
+    - changes in their name
+    - complex structural changes
+- Changes in Namespaces:
+    - renaming namespaces
+    - general modification to namespaces 
 
 ## Ok, tell me how to do versioning for my changes! 🚀
 To implement versioning when you do your changes, see [Versioning guide](versioning-guide.md).
