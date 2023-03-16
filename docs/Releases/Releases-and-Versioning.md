@@ -1,4 +1,4 @@
-### Releasing and Versioning the BHoM
+## BHoM releases
 
 The BHoM is released as a complete package, with the individual BHoM libraries and its toolkits all versioned together. This is to ensure ease of tracking compatibility across the number of dependant repositories. 
 
