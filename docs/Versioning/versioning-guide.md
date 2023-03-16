@@ -18,7 +18,7 @@ We recommend to simply add a `PreviousVersion` attribute on top of the method yo
 - The first argument of the attribute is the current version of BHoM, e.g. `6.1`. 
 - The second argument is _the method's Versioning key_, [obtainable as explained in its dedicated section](#obtaining-a-versioning-key).
 
-#### Example: `PreviousVersion` attribute applied to a regular method that is being renamed
+##### Example: `PreviousVersion` attribute applied to a regular method that is being renamed
 
 In this example, a method whose full name was `FilterFamilyTypesOfFamily`, located in the namespace `BH.Engine.Adapters.Revit` and hosted under the static class `Create`, is renamed to `FilterTypesOfFamily`.
 
@@ -37,7 +37,7 @@ In this example, a method whose full name was `FilterFamilyTypesOfFamily`, locat
         }
     ```
 
-#### Example: `PreviousVersion` attribute applied to a method whose inputs are being changed
+##### Example: `PreviousVersion` attribute applied to a method whose inputs are being changed
 
 In this example, a method inputs are being changed: an input (the second one) is being removed.  
 The method in the example is a [constructor](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/constructors), but the same example applies to any method. Constructors are rarely used in BHoM – we prefer `Create` Engine methods, which get exposed to UIs – but some types, in particular `BHoM_Adapter` implementations, make use of them.
