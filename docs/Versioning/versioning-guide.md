@@ -14,6 +14,7 @@ This section addresses how to do Versioning for code changes done to methods, wh
 ### Via the `PreviousVersion` attribute
 
 We recommend to simply add a `PreviousVersion` attribute on top of the method you are modifying. This attribute takes two arguments:
+
 - The first argument of the attribute is the current version of BHoM, e.g. `6.1`. 
 - The second argument is _the method's Versioning key_, [obtainable as explained in its dedicated section](#obtaining-a-versioning-key).
 
@@ -61,7 +62,7 @@ The method in the example is a [constructor](https://learn.microsoft.com/en-us/d
 
 This alternative is trickier and not required in most cases.
 
-The way to do it is to provide a `Method` section in the `VersioningXX.json` file. 
+The way to do it is to provide a `Method` section in the `VersioningXX.json` file:
 
 - Add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
 - [Create a Versioning key as explained here](#obtaining-a-versioning-key). 
@@ -124,6 +125,7 @@ In the example below, we show how the Versioning json file looks like for two cl
 This applies to the case where an entire namespace is renamed. This means all the elements inside that namespace will now belong to a new namespace. 
 
 To record that change:
+
 - Add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
 - provide the old namespace as key and the new namespace as value to the `Namespace.ToNew` section of the json file. 
 
