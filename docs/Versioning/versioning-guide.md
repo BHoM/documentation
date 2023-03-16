@@ -5,9 +5,28 @@ Versioning can be implemented in one or two ways, depending on the situation:
 1. by adding the required information to a `Versioning_XX.json` file; and/or
 2. by adding a `PreviousVersion` attribute to your changed method.
 
-The choice of the appropriate one depends on the change you are doing, as explained in detail in the following sections. Head to the section below that is the most relevant to your case.
+The choice of the appropriate one depends on the change you are doing, as explained in detail in the following sections. BHoM Versioning supports:
 
-## Changes on methods
+- Changes to methods (e.g. saved in a script): 
+    - changes in the method name
+    - changes in their input/outputs names and types.
+   
+- Changes to Namespaces:
+    - renaming namespaces
+    - general modification to namespaces 
+   
+- Changes to classes (object types): 
+    - changes in class properties
+    - changes in their name
+    - complex structural changes
+
+- Changes to Datasets:
+    - renaming or moving of location
+    - deletion 
+  
+Head to the section below that is the most relevant to your case.
+
+## Changes to methods
 
 This section addresses how to do Versioning for code changes done to methods, which are probably the most common. There are two possibilites here, and the first is simpler and to be preferred. Both options apply to either method renamings and/or changes in method inputs.
 
@@ -91,7 +110,36 @@ The way to do it is to provide a `Method` section in the `VersioningXX.json` fil
     ```
 
 
-## Changes on names of object types
+## Changes to namespaces
+
+This applies to the case where an entire namespace is renamed. This means all the elements inside that namespace will now belong to a new namespace. 
+
+To record that change:
+
+- Add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
+- provide the old namespace as key and the new namespace as value to the `Namespace.ToNew` section of the json file. 
+
+In order to make the change backward compatible (i.e. to allow downgrading, i.e. to open a newer BHoM script from a machine running an older version of BHoM), you can fill the `ToOld` section with mirrored information.
+
+!!! Example "Change in namespace"
+
+    ```json
+    {
+      "Namespace": {
+        "ToNew": {
+          "BH.oM.XML":  "BH.oM.External.XML",
+        },
+        "ToOld": {
+          "BH.oM.External.XML": "BH.oM.XML",
+        }
+      },
+      ...
+    }
+    ```
+
+## Changes to objects
+
+### Changes on names of object types
 
 Modifying the name of a type (i.e. of a class, an object's type) requires to:
 
@@ -120,38 +168,9 @@ In the example below, we show how the Versioning json file looks like for two cl
     }
     ```
 
-## Changes in namespaces
-
-This applies to the case where an entire namespace is renamed. This means all the elements inside that namespace will now belong to a new namespace. 
-
-To record that change:
-
-- Add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
-- provide the old namespace as key and the new namespace as value to the `Namespace.ToNew` section of the json file. 
-
-In order to make the change backward compatible (i.e. to allow downgrading, i.e. to open a newer BHoM script from a machine running an older version of BHoM), you can fill the `ToOld` section with mirrored information.
-
-!!! Example "Change in namespace"
-
-    ```json
-    {
-      "Namespace": {
-        "ToNew": {
-          "BH.oM.XML":  "BH.oM.External.XML",
-        },
-        "ToOld": {
-          "BH.oM.External.XML": "BH.oM.XML",
-        }
-      },
-      ...
-    }
-    ```
-
-## Changes in objects
-
 ### Changes in an object's property names
 
-For the case where an object type was only modified by renaming some of its property, we have a simple solution, similar the one for namespaces and type names. 
+For the case where an object type was only modified by renaming some of its property, we have a simple solution relying on the Versioning json file.
 It requires to:
 
 - add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
@@ -248,7 +267,9 @@ A few things to notice:
 - Make sure to provide the new object type in the dictionary by defining the "_t" property.
 
 
-## Changes in a Dataset name or location
+## Changes to Datasets
+
+### Changes to a Dataset name or location
 
 Updating the path to a Dataset works in a similar manner to changes to names of types. The path to a dataset is changed the path from C:\ProgramData\BHoM\Datasets leading up to the json file has been changed in any way. This could be for example be one or more of the following:
 
@@ -293,7 +314,7 @@ When versioning Dataset the `ToNew` segment is required, and not optional. This 
 
 The `ToOld`versioning of Dataset is optional, but should be done if the developer wants to ensure that the Dataset still is acessible from the same serach paths as before, for calls to the methods in the Library_Engine to still work. This could for example be to ensure the call `BH.Engine.Library.Libraries("Materials\\MaterialsEurope\\Concrete")` still returns the same Dataset as before the change was made. It is strongly recomended that calls like the above from  code is updated at the same time as the change to the dataset is made, but generally recomended that the `ToOld` versioning is done to ensure calls from any UI and that code calls to the methods outside the control of the developer making the change is still functions as before.
 
-### Removed Dataset
+### Deletion of a Dataset
 
 When a dataset is removed without a replacement, a message should be provided, similar to how it is done for objects and methods. For datasets this is done via the MessageForDeleted section of the Dataset part of the upgrade. Example below showcasing a case where the European concrete and rebar materials have been removed:
 
