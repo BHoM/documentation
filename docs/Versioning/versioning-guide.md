@@ -336,6 +336,7 @@ When a dataset is removed without a replacement, a message should be provided, s
 ## Items that cannot be versioned: deletions or foundational changes
 
 In some cases, an upgrade/downgrade of a method or object is simply not possible:
+
 - The item was deleted without replacement
 - A replacement exists but is so different from the original that an automatic conversion is impossible.
 
