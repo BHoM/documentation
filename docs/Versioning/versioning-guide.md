@@ -1,48 +1,65 @@
 # Versioning guide: implementing versioning for your changes
 
-Versioning can be implemented in one or two ways, depending on the change you are doing, which are explained in detail in the following sections:
+Versioning can be implemented in one or two ways, as explained in detail in the following sections:
+
 1. By adding a `Versioning_XX.json` file to your project, where XX is the current version of BHoM.
 2. By adding a `PreviousVersion` attribute to your changed method.
 
-Let's now go into details on how to record a change on the code for the various possible aspects that can be modified.
+The choice of the appropriate one depends on the change you are doing. Let's go through the code changes that BHoM Versioning can address.
 
 
-## Modifying methods
+## Changes on methods
+
+This section addresses how to do Versioning for code changes done to methods, which are probably the most common. There are two possibilites here, and the first is simpler and to be preferred.
 
 ### Via the `PreviousVersion` attribute
 
-We recommend to simply use a `PreviousVersion` attribute on the method you are modifying. 
-The first argument is the current version of BHoM, e.g. `6.1`. The second argument is the method's [Versioning key, obtainable as explained in its dedicated section](#obtaining-a-versioning-key).
+We recommend to simply add a `PreviousVersion` attribute on top of the method you are modifying. This attribute takes two arguments:
+- The first argument of the attribute is the current version of BHoM, e.g. `6.1`. 
+- The second argument is _the method's Versioning key_, [obtainable as explained in its dedicated section](#obtaining-a-versioning-key).
 
-For example, here's what it looks like for a constructor and a regular method:
+Some examples of its usage below.
 
-```c#
-public partial class XMLAdapter : BHoMAdapter
-{
-    [PreviousVersion("3.2", "BH.Adapter.XML.XMLAdapter(BH.oM.Adapter.FileSettings, BH.oM.XML.Settings.XMLSettings)")]
-    [Description("Specify XML file and properties for data transfer")]
-    [Input("fileSettings", "Input the file settings to get the file name and directory the XML Adapter should use")]
-    [Input("xmlSettings", "Input the additional XML Settings the adapter should use. Only used when pushing to an XML file. Default null")]
-    [Output("adapter", "Adapter to XML")]
-    public XMLAdapter(BH.oM.Adapter.FileSettings fileSettings = null)
+
+#### Example: `PreviousVersion` attribute applied to a regular method that is being renamed
+
+In this example, a method whose full name was `FilterFamilyTypesOfFamily`, located in the namespace `BH.Engine.Adapters.Revit` and hosted under the static class `Create`, is renamed to `FilterTypesOfFamily`.
+
+!!! example "Versioning for a method being renamed"
+
+    ```c#
+    public static partial class Create
     {
-        //....
-    }
-```
+        [PreviousVersion("3.2", "BH.Engine.Adapters.Revit.Create.FilterFamilyTypesOfFamily(BH.oM.Base.IBHoMObject)")]
+        [Description("Creates an IRequest that filters Revit Family Types of input Family.")]
+        [Input("bHoMObject", "BHoMObject that contains ElementId of a correspondent Revit element under Revit_elementId CustomData key - usually previously pulled from Revit.")]
+        [Output("F", "IRequest to be used to filter Revit Family Types of a Family.")]
+        public static FilterTypesOfFamily FilterTypesOfFamily(IBHoMObject bHoMObject)
+        {
+            //....
+        }
+    ```
 
-```c#
-public static partial class Create
-{
-    [PreviousVersion("3.2", "BH.Engine.Adapters.Revit.Create.FilterFamilyTypesOfFamily(BH.oM.Base.IBHoMObject)")]
-    [Description("Creates an IRequest that filters Revit Family Types of input Family.")]
-    [Input("bHoMObject", "BHoMObject that contains ElementId of a correspondent Revit element under Revit_elementId CustomData key - usually previously pulled from Revit.")]
-    [Output("F", "IRequest to be used to filter Revit Family Types of a Family.")]
-    public static FilterTypesOfFamily FilterTypesOfFamily(IBHoMObject bHoMObject)
+#### Example: `PreviousVersion` attribute applied to a method whose inputs are being changed
+
+In this example, a method inputs are being changed: an input (the second one) is being removed.  
+The method in the example is a [constructor](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/constructors), but the same example applies to any method. Constructors are rarely used in BHoM – we prefer `Create` Engine methods, which get exposed to UIs – but some types, in particular `BHoM_Adapter` implementations, make use of them.
+
+!!! example "Versioning for a method whose inputs are being changed"
+
+    ```c#
+    public partial class XMLAdapter : BHoMAdapter
     {
-        //....
-    }
-
-```
+        [PreviousVersion("3.2", "BH.Adapter.XML.XMLAdapter(BH.oM.Adapter.FileSettings, BH.oM.XML.Settings.XMLSettings)")]
+        [Description("Specify XML file and properties for data transfer")]
+        [Input("fileSettings", "Input the file settings to get the file name and directory the XML Adapter should use")]
+        [Input("xmlSettings", "Input the additional XML Settings the adapter should use. Only used when pushing to an XML file. Default null")]
+        [Output("adapter", "Adapter to XML")]
+        public XMLAdapter(BH.oM.Adapter.FileSettings fileSettings = null)
+        {
+            //....
+        }
+    ```
 
 ### Via the versioning json file
 
