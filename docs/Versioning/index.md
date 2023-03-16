@@ -12,18 +12,24 @@ Versioning fixes this by updating the old json text before using it to find the 
 
 ## What does BHoM versioning support?
 
-Upgrading/downgrading of the following modifications:
+BHoM versioning supports the following changes:
 
-- Changes on BHoM methods (e.g. saved in a script): 
+- Changes to methods (e.g. saved in a script): 
     - changes in the method name
     - changes in their input/outputs names and types.
-- Changes on BHoM objects (e.g. internalised in a script or stored in a file or database): 
+   
+- Changes to Namespaces:
+    - renaming namespaces
+    - general modification to namespaces 
+   
+- Changes to classes (object types): 
     - changes in class properties
     - changes in their name
     - complex structural changes
-- Changes in Namespaces:
-    - renaming namespaces
-    - general modification to namespaces 
+
+- Changes to Datasets:
+    - renaming or moving of location
+    - deletion 
 
 ## Ok, tell me how to do versioning for my changes! 🚀
 To implement versioning when you do your changes, see [Versioning guide](versioning-guide.md).
