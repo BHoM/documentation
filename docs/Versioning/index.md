@@ -13,6 +13,7 @@ Versioning fixes this by updating the old json text before using it to find the 
 ## What does BHoM versioning support?
 
 Upgrading/downgrading of the following modifications:
+
 - BHoM methods (e.g. saved in a script): changes in the method name
 - BHoM methods (e.g. saved in a script): changes in input/outputs names and types
 - BHoM objects (e.g. internalised in a script or stored in a file or database): changes in their properties
