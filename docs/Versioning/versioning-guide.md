@@ -25,7 +25,7 @@ Some examples of its usage below.
 
 In this example, a method whose full name was `FilterFamilyTypesOfFamily`, located in the namespace `BH.Engine.Adapters.Revit` and hosted under the static class `Create`, is renamed to `FilterTypesOfFamily`.
 
-!!! example "Versioning for a method being renamed"
+!!! example "Versioning using the `PreviousVersion` attribute for a method being renamed"
 
     ```c#
     public static partial class Create
@@ -45,7 +45,7 @@ In this example, a method whose full name was `FilterFamilyTypesOfFamily`, locat
 In this example, a method inputs are being changed: an input (the second one) is being removed.  
 The method in the example is a [constructor](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/constructors), but the same example applies to any method. Constructors are rarely used in BHoM – we prefer `Create` Engine methods, which get exposed to UIs – but some types, in particular `BHoM_Adapter` implementations, make use of them.
 
-!!! example "Versioning for a method whose inputs are being changed"
+!!! example "Versioning using the `PreviousVersion` attribute for a method whose inputs are being changed"
 
     ```c#
     public partial class XMLAdapter : BHoMAdapter
@@ -72,23 +72,26 @@ The way to do it is to provide a `Method` section in the `VersioningXX.json` fil
 - Get a representational string of the method, [like this](https://user-images.githubusercontent.com/16853390/82109755-2964fb00-976b-11ea-838e-ad9b80ff2455.png). If you are changing a constructor method, just leave the `methodName` input empty.
 - Add the following to the `Method` section of the `VersioningXX.json` file, as shown in the below example; make sure to place your changing method's Versioning key and representational string.
 
-```
-  "Method": {
-    "ToNew": {
-      "BH.Adapter.XML.XMLAdapter(BH.oM.Adapter.FileSettings, BH.oM.XML.Settings.XMLSettings)": {
-        "_t": "System.Reflection.MethodBase",
-        "TypeName": "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.Adapter.XML.XMLAdapter, XML_Adapter, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null\" }",
-        "MethodName": ".ctor",
-        "Parameters": [
-          "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.oM.Adapter.FileSettings\" }"
-        ]
+
+!!! example "Versioning using the `Versioning.json` file for a method whose inputs are being changed"
+
+    ```json
+      "Method": {
+        "ToNew": {
+          "BH.Adapter.XML.XMLAdapter(BH.oM.Adapter.FileSettings, BH.oM.XML.Settings.XMLSettings)": {
+            "_t": "System.Reflection.MethodBase",
+            "TypeName": "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.Adapter.XML.XMLAdapter, XML_Adapter, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null\" }",
+            "MethodName": ".ctor",
+            "Parameters": [
+              "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.oM.Adapter.FileSettings\" }"
+            ]
+          }
+        },
+        "ToOld": {
+
+        }
       }
-    },
-    "ToOld": {
-      
-    }
-  }
-```
+    ```
 
 
 ## Changes on names of object types
@@ -132,7 +135,7 @@ In order to make the change backward compatible (i.e. to allow downgrading, i.e.
 
 !!! Example "Change in namespace"
 
-    ```
+    ```json
     {
       "Namespace": {
         "ToNew": {
@@ -227,7 +230,7 @@ In the following example, two properties of the object `Bar` that lives in the n
 
 !!! example "Changes in an object's property names"
 
-    ```
+    ```json
     "Property": {
         "ToNew": {
             "BH.oM.Structure.Elements.Bar.StartNode": "Start",
@@ -325,7 +328,7 @@ In the example below, the Versioning json file specifies the move of some struct
 
 !!! example "Changes in a Dataset name or location"
 
-    ```
+    ```json
     {
       "Dataset": {
         "ToNew": {
@@ -358,7 +361,7 @@ When a dataset is removed without a replacement, a message should be provided, s
 
 !!! example "Removed Dataset"
 
-    ```
+    ```json
     {
       "Dataset": {
         "ToNew": {
@@ -384,7 +387,8 @@ In some cases, an upgrade/downgrade of a method or object is simply not possible
 In such cases, it is important to inform the user and provide them with as much information as possible to facilitate the transition to the new version of the code. Here are a few example of how this can be achieved:
 
 !!! example "Items that cannot be versioned"
-    ```
+
+    ```json
     {
       ...
       "MessageForDeleted": {
