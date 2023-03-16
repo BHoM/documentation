@@ -91,29 +91,34 @@ The way to do it is to provide a `Method` section in the `VersioningXX.json` fil
 ```
 
 
-## Modifying names of objects
+## Changes on names of object types
 
-Modifying the name of a type requires:
-- Add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
-- Add versioning information to the Versioning json file: provide the full name of the old type (namespace + type name) as key and the full name of the new type as value. If you want the change to be backward compatible, you can also fill the `ToOld` section with the mirrored information. See the example below.
+Modifying the name of a type (i.e. of a class, an object's type) requires to:
 
-Example:
+- add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
+- add versioning information to the Versioning json file: provide the full name of the old type (namespace + type name) as key and the full name of the new type as value. 
+ 
+In order to make the change backward compatible (i.e. to allow downgrading, i.e. to open a newer BHoM script from a machine running an older version of BHoM), you can fill the `ToOld` section with mirrored information. 
 
-```json
-{
-  ...
-  "Type": {
-    "ToNew": {
-      "BH.oM.XML.Settings.XMLSettings": "BH.oM.External.XML.Settings.GBXMLSettings",
-      "BH.oM.XML.Environment.DocumentBuilder": "BH.oM.External.XML.GBXML.GBXMLDocumentBuilder"
-    },
-    "ToOld": {
-      "BH.oM.External.XML.Settings.GBXMLSettings": "BH.oM.XML.Settings.XMLSettings",
-      "BH.oM.External.XML.GBXML.GBXMLDocumentBuilder": "BH.oM.XML.Environment.DocumentBuilder"
+In the example below, we show how the Versioning json file looks like for two classes being renamed, respectively from `DocumentBuilder` to `GBXMLDocumentBuilder` and from `XMLSettings` to `GBXMLSettings`.
+
+!!! example "Adding information to the `Versioning.json` file regarding two classes being renamed"
+
+    ```json
+    {
+      ...
+      "Type": {
+        "ToNew": {
+          "BH.oM.XML.Settings.XMLSettings": "BH.oM.External.XML.Settings.GBXMLSettings",
+          "BH.oM.XML.Environment.DocumentBuilder": "BH.oM.External.XML.GBXML.GBXMLDocumentBuilder"
+        },
+        "ToOld": {
+          "BH.oM.External.XML.Settings.GBXMLSettings": "BH.oM.XML.Settings.XMLSettings",
+          "BH.oM.External.XML.GBXML.GBXMLDocumentBuilder": "BH.oM.XML.Environment.DocumentBuilder"
+        }
+      }
     }
-  }
-}
-```
+    ```
 
 ## Changes in namespaces
 
@@ -121,23 +126,25 @@ This applies to the case where an entire namespace is renamed. This means all th
 
 To record that change:
 - Add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
-- provide the old namespace as key and the new namespace as value to the `Namespace.ToNew` section of the json file. If you want the change to be backward compatible, you can also fill the `ToOld` section with the mirrored information.
+- provide the old namespace as key and the new namespace as value to the `Namespace.ToNew` section of the json file. 
 
-Example:
+In order to make the change backward compatible (i.e. to allow downgrading, i.e. to open a newer BHoM script from a machine running an older version of BHoM), you can fill the `ToOld` section with mirrored information.
 
-```
-{
-  "Namespace": {
-    "ToNew": {
-      "BH.oM.XML":  "BH.oM.External.XML",
-    },
-    "ToOld": {
-      "BH.oM.External.XML": "BH.oM.XML",
+!!! Example "Change in namespace"
+
+    ```
+    {
+      "Namespace": {
+        "ToNew": {
+          "BH.oM.XML":  "BH.oM.External.XML",
+        },
+        "ToOld": {
+          "BH.oM.External.XML": "BH.oM.XML",
+        }
+      },
+      ...
     }
-  },
-  ...
-}
-```
+    ```
 
 ## Obtaining a Versioning Key
 
@@ -207,90 +214,101 @@ The information related to the changes to the current BHoM version are stored lo
 
 ## Changes in objects
 
-So far, we have focused on upgrading items that are used to save and restore components in the UI. But what about actual objects stored in a database or a file ? Well, if only their namespace or type name was modified, the solutions above will be enough. But what if you completely redesigned that type of object and changed the Properties that define it ?
+### Changes in an object's property names
 
-This case cannot be solved by a simple replacement of a string and will most likely require some calculations to go from the old object to the new one. This means we need a method that takes the old object in and return the new. Two things about that: 
-- The old object definition will not exist anymore so we cannot use that as the input of the conversion method. Instead we will use a Dictionary containing the properties for both input and output of that conversion method. The other benefit is that the upgrader will not have to depend on BHoM dlls to be able to do the conversion.
+For the case where an object type was only modified by renaming some of its property, we have a simple solution, similar the one for namespaces and type names. 
+It requires to:
+- add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
+- add versioning information to the Versioning json file under the `Property.ToNew` entry. As a key, provide the full name of the type that contains the property you are renaming (namespace + type name) followed by the old property name. The value must be the new property name. 
+
+In order to make the change backward compatible (i.e. to allow downgrading, i.e. to open a newer BHoM script from a machine running an older version of BHoM), you can fill the `ToOld` section with mirrored information. 
+
+In the following example, two properties of the object `Bar` that lives in the namespace `BH.oM.Structure.Elements` are being renamed repectively from `StartNode` to `Start` and from `EndNode` to `End`.
+
+!!! example "Changes in an object's property names"
+
+    ```
+    "Property": {
+        "ToNew": {
+            "BH.oM.Structure.Elements.Bar.StartNode": "Start",
+            "BH.oM.Structure.Elements.Bar.EndNode": "End"
+        },
+        "ToOld": {
+            "BH.oM.Structure.Elements.Bar.Start": "StartNode",
+            "BH.oM.Structure.Elements.Bar.End": "End",
+        }
+      }
+    ```
+
+### Structural changes to an object
+
+What if you completely redesigned a type of object and changed the properties that define it?
+
+This case cannot be solved by a simple replacement of a string and will most likely require some calculations to go from the old object to the new one. This means we need a method that takes the old object in and return the new. This fact presents two challenges: 
+
+- The old object definition will not exist anymore, so we cannot use that as the input of the conversion method. Instead we will use a Dictionary containing the properties for both input and output of that conversion method. The other benefit is that the upgrader will not have to depend on BHoM dlls to be able to do the conversion.
 - The conversion method needs to be compile and the upgrader needs to be able to access it. While there are ways to keep the conversion method decentralised, it is way simpler to have it in the versioning toolkit directly. This means this is the only case where you cannot just write the upgrade from your own repo. Luckily, this case is less frequent than the others.
 
-So what do you need to do to cover the upgrade then ?
+So what do you need to do to cover the upgrade?
 - First, locate the `Converter.cs` file int the project of the current upgrader.
 - In that file, write a conversion method with the following signature: `public static Dictionary<string, object> UpgradeOldClassName(Dictionary<string, object> old)`. 
 - In the `Converter` constructor, add that method to the `ToNewObject` Dictionary. the key is that object type full name (namespace + type name) and the value is the method.
 - If you want to cover backward compatibility, you can also write a `DowngradeNewClassName` method and add it to the `ToOldObject` dictionary.
 
-Here's an example:
+Here's an example.
 
-```c#
-public class Converter : Base.Converter
-{
-    /***************************************************/
-    /**** Constructors                              ****/
-    /***************************************************/
+!!! example "Structural changes to an object"
 
-    public Converter() : base()
+    ```c#
+    public class Converter : Base.Converter
     {
-        PreviousVersion = "";
+        /***************************************************/
+        /**** Constructors                              ****/
+        /***************************************************/
 
-        ToNewObject.Add("BH.oM.Versioning.OldVersion", UpgradeOldVersion); 
-    }
-
-
-    /***************************************************/
-    /**** Private Methods                           ****/
-    /***************************************************/
-
-
-    public static Dictionary<string, object> UpgradeOldVersion(Dictionary<string, object> old)
-    {
-        if (old == null)
-            return null;
-
-        double A = 0;
-        if (old.ContainsKey("A")) 
-            A = (double)old["A"];
-
-        double B = 0;
-        if (old.ContainsKey("B"))
-            B = (double)old["B"];
-
-        return new Dictionary<string, object>
+        public Converter() : base()
         {
-            { "_t",  "BH.oM.Versioning.NewVersion" },
-            { "AplusB", A + B },
-            { "AminusB", A - B }
-        };
-    }
+            PreviousVersion = "";
 
-    /***************************************************/
-}
-```
+            ToNewObject.Add("BH.oM.Versioning.OldVersion", UpgradeOldVersion); 
+        }
+
+
+        /***************************************************/
+        /**** Private Methods                           ****/
+        /***************************************************/
+
+
+        public static Dictionary<string, object> UpgradeOldVersion(Dictionary<string, object> old)
+        {
+            if (old == null)
+                return null;
+
+            double A = 0;
+            if (old.ContainsKey("A")) 
+                A = (double)old["A"];
+
+            double B = 0;
+            if (old.ContainsKey("B"))
+                B = (double)old["B"];
+
+            return new Dictionary<string, object>
+            {
+                { "_t",  "BH.oM.Versioning.NewVersion" },
+                { "AplusB", A + B },
+                { "AminusB", A - B }
+            };
+        }
+
+        /***************************************************/
+    }
+    ```
 
 A few things to notice:
 - You are working from a Dictionary so make sure that the properties exist before using them
 - You will also need to cast them since the dictionary values are all objects
 - Make sure to provide the new object type in the dictionary by defining the "_t" property.
 
-### Modifying property names
-
-For the case where an object type was only modified by renaming some of its property, we have a simpler solution. One very similar to what was done for namespaces and type names actually. 
-
-As a key, provide the full name of the containing type (namespace + type name) followed by the old property name. As a value as key, do the same but with the new property name. If you want the change to be backward compatible, you can also fill the `ToOld` section with the mirrored information.
-
-Example:
-
-```
-"Property": {
-    "ToNew": {
-        "BH.oM.Structure.Elements.Bar.StartNode": "Start",
-        "BH.oM.Structure.Elements.Bar.EndNode": "End"
-    },
-    "ToOld": {
-        "BH.oM.Structure.Elements.Bar.Start": "StartNode",
-        "BH.oM.Structure.Elements.Bar.End": "End",
-    }
-  }
-```
 
 ## Changes in a Dataset name or location
 
