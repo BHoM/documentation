@@ -352,29 +352,29 @@ In such cases, it is important to inform the user and provide them with as much 
 ## Obtaining a Versioning Key
 
 A versioning key is like a signature identifying a method or object. 
-You can obtain it by using the `BH.Engine.Versioning.VersioningKey()` method, like explained below.
+You can obtain it by using the `BH.Engine.Versioning.VersioningKey()` method, as explained below.
 
-!!! warning 
+!!! warning "Important: get the versioning key _before_ the change"
 
-    You need to get the versioning key of the object/method _before_ it was changed.  
-    If you have already done your code changes, you can simply commit your changes on your branch, then switch back to the `develop` branch and recompile, then use the `BH.Engine.Versioning.VersioningKey()` as explained below.
+    You need to get the versioning key of the object/method **_before_** it was changed.  
+    If you have already done your code changes, no worries: you can simply commit your changes on your branch, then switch back to the `develop` branch and recompile, then use the `BH.Engine.Versioning.VersioningKey()` as explained below.
 
-### Versioning key for objects and Adapters
+### Get the Versioning key for objects
 
 Use the method `BH.Engine.Versioning.VersioningKey()` and just provide the input `declaringType`, which is the Full Name of the object that you are modifying (i.e. the name of the class preceded by its namespace).
 
-!!! example
+!!! example "Get the Versioning key for objects"
 
     ![image](https://user-images.githubusercontent.com/6352844/225602151-6c27ee73-288c-440c-bfef-e94226f7a72c.png)
 
 
-### Versioning key for methods
-Provide both:
+### Get the Versioning key for methods
+Use the method `BH.Engine.Versioning.VersioningKey()` and provide both:
 
 - the input `declaringType`, which is the Full Name of the Query/Compute/Create/Modify/Convert class (i.e. the name of the class, preceded by its namespace) which contains the method that you are modifying;
 - the input `methodName`, which is the name of the method that you are modifying (in case you are renaming the method, this needs to be its name _before_ the rename).
 
-!!! example
+!!! example "Get the Versioning key for methods"
 
     ![image](https://user-images.githubusercontent.com/6352844/225602396-491f351c-2cf3-498e-bc9c-347e1667c71d.png)
 
