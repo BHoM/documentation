@@ -139,7 +139,7 @@ In order to make the change backward compatible (i.e. to allow downgrading, i.e.
 
 ## Changes to objects
 
-### Changes on names of object types
+### Changes to class name
 
 Modifying the name of a type (i.e. of a class, an object's type) requires to:
 
@@ -168,9 +168,9 @@ In the example below, we show how the Versioning json file looks like for two cl
     }
     ```
 
-### Changes in an object's property names
+### Changes to class property names
 
-For the case where an object type was only modified by renaming some of its property, we have a simple solution relying on the Versioning json file.
+For the case where an object type (i.e. class) was only modified by renaming some of its property, we have a simple solution relying on the Versioning json file.
 It requires to:
 
 - add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
@@ -195,7 +195,7 @@ In the following example, two properties of the object `Bar` that lives in the n
       }
     ```
 
-### Structural changes to an object
+### Structural changes to a a class
 
 What if you completely redesigned a type of object and changed the properties that define it?
 
