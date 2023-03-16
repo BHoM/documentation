@@ -1,144 +1,101 @@
 # Versioning BHoM objects and methods
 
-## Why do we need versioning?
+## What does BHoM versioning do?
 
-When a script created in one of our supported UI is saved, all the BHoM components save information about themselves so they can initialise properly when the script is re-opened. That information is simply kept in a string format (more precisely Json format) and contains details such as the component/method name, it's argument types, output types, ... 
+BHoM versioning provides a system to correctly load a method or component stored in a script that has had its code changed.
 
-If someone modifies a method definition in the code, it will become impossible to find that method based on outdated information and the initialisation of the component will fail. Unless, of course, we provide to the system a way to update that old json before using it to find the method.
+### Why is Versioning needed?
 
-The same logic applies for saved types (e.g. types of input/output of a component) and saved objects (e.g. objects stored in a database or file).
+When you save a script that contains BHoM stuff, all of the BHoM components save information about themselves so they can initialise properly when the script is re-opened. This information is about things like the component/method name, its inputs and outputs types and names; the information is simply stored in a text (Json serialised).
 
-## How does it work ?
+If someone changes a BHoM method or object that was stored in a script, upon reopening of the script it will be impossible to reload that same method or object: the method initialisation will fail and the old component in the script will throw a warning or error, unable to work. 
 
-Alongside the dlls installed in `AppData\Roaming\BHoM\Assemblies`, you can find in the `bin` sub-folder a series of `BHoMUpgrader` exe programs. When a type/method/object fails to deserialise from its string representation (json), those upgrader are called to the rescue.
+Versioning fixes this by updating the old json text before using it to find the method. 
 
-Every quarter, when we release a new beta installer, we also produce a new upgrader named `BHoMUpgrader` with the version number attached at the end (e.g. `BHoMUpgrader32` for version 3.2). That upgrader contains all the changes to the code that occurred during the quarter.
+### What does BHoM versioning support?
 
-When deserialisation fails in the BHoM, the BHoM version used to serialise the object is retrieved from the json. The json is then upgraded to the following version repeatedly until it reaches the current version where it can finally be deserialised into a BHoM object.
+Upgrading/downgrading of the following modifications:
+- BHoM methods (e.g. saved in a script): changes in the method name
+- BHoM methods (e.g. saved in a script): changes in input/outputs names and types
+- BHoM objects (e.g. internalised in a script or stored in a file or database): changes in their properties
+- BHoM objects (e.g. internalised in a script or stored in a file or database): changes in their name
+- Changes in Namespaces
 
-![image](https://user-images.githubusercontent.com/16853390/120576933-23b18480-c456-11eb-9a1c-c1ebf8995257.png)
+## Implementing versioning for your changes
 
-## Decentralisation of the upgrade information
+Versioning can be implemented in one or two ways, depending on the change you are doing, which are explained in detail in the following sections:
+1. By adding a `Versioning_XX.json` file to your project, where XX is the current version of BHoM.
+2. By adding a `PreviousVersion` attribute to your changed method.
 
-We will go in details on how the upgrade information is stored inside an upgrader in the remaining sections. There is however one aspect worth mentioning already. Once a quarter is finished, an upgrader is never modified again and simply redistributed alongside the others. During that quarter however, the current upgrader is constantly updated to reflect the new changes. For everyone working on the BHoM to have to modify the exact same files inside the Versioning_Toolkit would be inconvenient and a frequent source of clashes. For that reason, the information related to the upgraded of the current quarter are stored locally at the root of each project where the change occurred. 
+Let's now go into details on how to record a change on the code for the various possible aspects that can be modified.
 
- ![image](https://user-images.githubusercontent.com/16853390/82024761-dcc5e500-96c2-11ea-86fc-53a6df0f14f5.png)
 
-Notice that the file name ends with the version of the BHoM it applies to.
+## Modifying methods
 
-The content of an empty `Versioning_XX.json` file is as follow:
+### Via the `PreviousVersion` attribute
 
-```json
+We recommend to simply use a `PreviousVersion` attribute on the method you are modifying. 
+The first argument is the current version of BHoM, e.g. `6.1`. The second argument is the method's [Versioning key, obtainable as explained in its dedicated section](#Obtaining-a-Versioning-Key).
+
+For example, here's what it looks like for a constructor and a regular method:
+
+```c#
+public partial class XMLAdapter : BHoMAdapter
 {
-  "Namespace": {
-    "ToNew": {
-    },
-    "ToOld": {
+    [PreviousVersion("3.2", "BH.Adapter.XML.XMLAdapter(BH.oM.Adapter.FileSettings, BH.oM.XML.Settings.XMLSettings)")]
+    [Description("Specify XML file and properties for data transfer")]
+    [Input("fileSettings", "Input the file settings to get the file name and directory the XML Adapter should use")]
+    [Input("xmlSettings", "Input the additional XML Settings the adapter should use. Only used when pushing to an XML file. Default null")]
+    [Output("adapter", "Adapter to XML")]
+    public XMLAdapter(BH.oM.Adapter.FileSettings fileSettings = null)
+    {
+        //....
     }
-  },
-  "Type": {
-    "ToNew": {
-
-    },
-    "ToOld": {
-    }
-  },
-  "Property": {
-    "ToNew": {
-    },
-    "ToOld": {
-    }
-  },
-  "MessageForDeleted": {
-  },
-  "MessageForNoUpgrade": {
-  }
-}
 ```
 
-When the UI_PostBuild process that copies all the BHoM assemblies to the Roaming folder is ran (i.e. when BHoM_UI is compiled), the information from all the `Versioning_XX.json` files is collected and compiled in to a single json file copied to the roaming folder next to the BHoMUpgrader executable. It's content will look similar to the local json files with an extra section for the methods (more onto that later):
-
-```json
+```c#
+public static partial class Create
 {
-  "Namespace": {
-    "ToNew": {
-      "BH.Engine.XML": "BH.Engine.External.XML",
-      "BH.oM.XML": "BH.oM.External.XML"
-    },
-    "ToOld": {
-      "BH.Engine.External.XML": "BH.Engine.XML",
-      "BH.oM.External.XML": "BH.oM.XML"
+    [PreviousVersion("3.2", "BH.Engine.Adapters.Revit.Create.FilterFamilyTypesOfFamily(BH.oM.Base.IBHoMObject)")]
+    [Description("Creates an IRequest that filters Revit Family Types of input Family.")]
+    [Input("bHoMObject", "BHoMObject that contains ElementId of a correspondent Revit element under Revit_elementId CustomData key - usually previously pulled from Revit.")]
+    [Output("F", "IRequest to be used to filter Revit Family Types of a Family.")]
+    public static FilterTypesOfFamily FilterTypesOfFamily(IBHoMObject bHoMObject)
+    {
+        //....
     }
-  },
-  "Type": {
-    "ToNew": {
-      "BH.oM.Base.IBHoMFragment": "BH.oM.Base.IFragment",
-      "BH.oM.Adapters.ETABS.EtabsConfig": "BH.oM.Adapters.ETABS.EtabsSettings", 
-    },
-    "ToOld": {
-      "BH.oM.Base.IFragment": "BH.oM.Base.IBHoMFragment",
-      "BH.oM.Adapters.ETABS.EtabsSettings":"BH.oM.Adapters.ETABS.EtabsConfig" 
-    }
-  },
+
+```
+
+#### Via the versioning json file
+
+This alternative is trickier and not required in most cases.
+
+The way to do it is to provide a `Method` section in the `VersioningXX.json` file. 
+
+- Add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, as explained here.
+- [Create a Versioning key as explained here](#Obtaining-a-Versioning-Key). 
+- Get a representational string of the method, [like this](https://user-images.githubusercontent.com/16853390/82109755-2964fb00-976b-11ea-838e-ad9b80ff2455.png). If you are changing a constructor method, just leave the `methodName` input empty.
+- Add the following to the `Method` section of the `VersioningXX.json` file, as shown in the below example; make sure to place your changing method's Versioning key and representational string.
+
+```
   "Method": {
     "ToNew": {
-        "BH.Adapter.XML.XMLAdapter(BH.oM.Adapter.FileSettings, BH.oM.XML.Settings.XMLSettings)": {
-            "_t": "System.Reflection.MethodBase", 
-            "TypeName": "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.Adapter.XML.XMLAdapter, XML_Adapter, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null\" }",
-            "MethodName": ".ctor",
-            "Parameters": [ "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.oM.Adapter.FileSettings\" }" ]
-        },
-        "BH.Engine.Geometry.Compute.ClipPolylines(BH.oM.Geometry.Polyline, BH.oM.Geometry.Polyline)": {
-            "_t": "System.Reflection.MethodBase",
-            "TypeName": "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.Engine.Geometry.Compute, Geometry_Engine, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null\" }",
-            "MethodName": "BooleanIntersection",
-            "Parameters": [ "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.oM.Geometry.Polyline\" }", "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.oM.Geometry.Polyline\" }", "{ \"_t\" : \"System.Type\", \"Name\" : \"System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\" }" ]
-        }
+      "BH.Adapter.XML.XMLAdapter(BH.oM.Adapter.FileSettings, BH.oM.XML.Settings.XMLSettings)": {
+        "_t": "System.Reflection.MethodBase",
+        "TypeName": "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.Adapter.XML.XMLAdapter, XML_Adapter, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null\" }",
+        "MethodName": ".ctor",
+        "Parameters": [
+          "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.oM.Adapter.FileSettings\" }"
+        ]
+      }
     },
     "ToOld": {
       
     }
-  },
-  "Property": {
-    "ToNew": {
-        "BH.oM.Structure.Elements.Bar.StartNode": "BH.oM.Structure.Elements.Bar.Start",
-        "BH.oM.Structure.Elements.Bar.EndNode": "BH.oM.Structure.Elements.Bar.End"
-    },
-    "ToOld": {
-        "BH.oM.Structure.Elements.Bar.Start": "BH.oM.Structure.Elements.Bar.StartNode",
-        "BH.oM.Structure.Elements.Bar.End": "BH.oM.Structure.Elements.Bar.End",
-    }
-  },
-  "MessageForDeleted": {
-  },
-  "MessageForNoUpgrade": {
   }
-}
 ```
 
-Let's now go into details on how to record a change on the code for the various possible aspects that can be modified.
-
-## Modifying namespaces
-
-This applies to the case where an entire namespace is renamed. This means all the elements inside that namespace will now belong to a new namespace. 
-
-To record that change, simply provide the old namespace as key and teh new namespace as value to the `Namspace.ToNew` section of the json file. If you want the change to be backward compatible, you can also fill the `ToOld` section with the mirrored information.
-
-Example:
-
-```
-{
-  "Namespace": {
-    "ToNew": {
-      "BH.oM.XML":  "BH.oM.External.XML",
-    },
-    "ToOld": {
-      "BH.oM.External.XML": "BH.oM.XML",
-    }
-  },
-  ...
-}
-```
 
 ## Modifying names of types
 
@@ -162,72 +119,93 @@ Example:
 }
 ```
 
-## Modifying methods
+## Changes in namespaces
 
-Technically, we could the exact same thing for methods as we have done for types and namespaces. The content to provide is a bit more complex though. See for example
+This applies to the case where an entire namespace is renamed. This means all the elements inside that namespace will now belong to a new namespace. 
+
+To record that change, simply provide the old namespace as key and teh new namespace as value to the `Namspace.ToNew` section of the json file. If you want the change to be backward compatible, you can also fill the `ToOld` section with the mirrored information.
+
+Example:
 
 ```
-  "Method": {
+{
+  "Namespace": {
     "ToNew": {
-      "BH.Adapter.XML.XMLAdapter(BH.oM.Adapter.FileSettings, BH.oM.XML.Settings.XMLSettings)": {
-        "_t": "System.Reflection.MethodBase",
-        "TypeName": "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.Adapter.XML.XMLAdapter, XML_Adapter, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null\" }",
-        "MethodName": ".ctor",
-        "Parameters": [
-          "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.oM.Adapter.FileSettings\" }"
-        ]
-      }
+      "BH.oM.XML":  "BH.oM.External.XML",
     },
     "ToOld": {
-      
+      "BH.oM.External.XML": "BH.oM.XML",
     }
+  },
+  ...
+}
+```
+
+## Obtaining a Versioning Key
+
+A versioning key is like a signature identifying a method or object. 
+You can obtain it by using the `BH.Engine.Versioning.VersioningKey()` method, like explained below.
+
+❗ **NOTE**⚠️ you need to get the versioning key of the object/method _before_ it was modified. If you have already done your code changes, you can simply commit your changes on your branch, then switch back to the `develop` branch and recompile.
+
+#### Versioning key for objects and Adapters
+
+Just provide the input `declaringType`, which is the Full Name of the object that you are modifying (i.e. the name of the class preceded by its namespace).
+![image](https://user-images.githubusercontent.com/6352844/225602151-6c27ee73-288c-440c-bfef-e94226f7a72c.png)
+
+
+#### Versioning key for methods
+Provide both:
+- the input `declaringType`, which is the Full Name of the Query/Compute/Create/Modify/Convert class (i.e. the name of the class, preceded by its namespace) which contains the method that you are modifying;
+- the input `methodName`, which is the name of the method that you are modifying (in case you are renaming the method, this needs to be its name _before_ the rename).
+
+Example: 
+![image](https://user-images.githubusercontent.com/6352844/225602396-491f351c-2cf3-498e-bc9c-347e1667c71d.png)
+
+## Adding a `Versioning_XX.json` file to the project
+
+Adding a `Versioning_XX.json` file to the project is needed for certain versioning scenarios, but not all. In some cases (e.g. changes in a method) it may be sufficient to use the `PreviousVersion` attribute.
+
+This is as simple as adding an empty json file to the project, named `Versioning_XX.json`, where the `XX` must be replaced with the current BHoM version. For example:
+
+![image](https://user-images.githubusercontent.com/6352844/225606913-3f6a767d-5111-4fee-87c3-1d88e1727f8a.png)
+
+The empty file should then be immediately populated with the following content (copy-paste it!):
+
+```json
+{
+  "Namespace": {
+    "ToNew": {
+    },
+    "ToOld": {
+    }
+  },
+  "Type": {
+    "ToNew": {
+
+    },
+    "ToOld": {
+    }
+  },
+  "Property": {
+    "ToNew": {
+    },
+    "ToOld": {
+    }
+  },
+  "MessageForDeleted": {
+  },
+  "MessageForNoUpgrade": {
   }
+}
 ```
 
-_**IF**_ you want to go that route, you can simply provide a `Method` section in the `VersioningXX.json` file and it will be picked up with the rest during the `UI_PostBuild` process. To create the key, you can use the `VersionKey` component _**before doing the change on your method**_:
+Then you can fill it in as described by the relevant "changes" section.
 
-![image](https://user-images.githubusercontent.com/16853390/82109653-52d15700-976a-11ea-9da5-cb60df287dcb.png)
+### Why having a `Versioning_XX.json` file?
+BHoM Versioning is implemented via a specific, stand-alone mechanism, hosted in the Versioning_Toolkit.
 
-If you update a constructor, just leave the `methodName` input empty.
-
-The representation of the new method is simply the json string.
-
-![image](https://user-images.githubusercontent.com/16853390/82109755-2964fb00-976b-11ea-838e-ad9b80ff2455.png)
-
-But that's messy and admittedly difficult to read of you need to come back to it and check what is in the upgraded methods section.
-
-_**SO**_, instead we recommend you use a `PreviousVersion` attribute on the method you have modified. For example, here's what it looks like for a constructor and a regular method:
-
-```c#
-public partial class XMLAdapter : BHoMAdapter
-{
-    [Description("Specify XML file and properties for data transfer")]
-    [Input("fileSettings", "Input the file settings to get the file name and directory the XML Adapter should use")]
-    [Input("xmlSettings", "Input the additional XML Settings the adapter should use. Only used when pushing to an XML file. Default null")]
-    [Output("adapter", "Adapter to XML")]
-    [PreviousVersion("3.2", "BH.Adapter.XML.XMLAdapter(BH.oM.Adapter.FileSettings, BH.oM.XML.Settings.XMLSettings)")]
-    public XMLAdapter(BH.oM.Adapter.FileSettings fileSettings = null)
-    {
-        //....
-    }
-```
-
-```c#
-public static partial class Create
-{
-    [PreviousVersion("3.2", "BH.Engine.Adapters.Revit.Create.FilterFamilyTypesOfFamily(BH.oM.Base.IBHoMObject)")]
-    [Description("Creates an IRequest that filters Revit Family Types of input Family.")]
-    [Input("bHoMObject", "BHoMObject that contains ElementId of a correspondent Revit element under Revit_elementId CustomData key - usually previously pulled from Revit.")]
-    [Output("F", "IRequest to be used to filter Revit Family Types of a Family.")]
-    public static FilterTypesOfFamily FilterTypesOfFamily(IBHoMObject bHoMObject)
-    {
-        //....
-    }
-
-```
-
-Notice that you still have to create the key using the `VersionKey` component but at least you don't have to deal with raw json.
-
+The information related to the changes to the current BHoM version are stored locally at the root of each project where the change occurred, so that everyone can independently change BHoM objects or methods without the need to modify the Versioning_Toolkit.
 
 ## Upgrading objects
 
@@ -420,6 +398,116 @@ You should now have command windows popping up as soon as the upgrader are neede
 
 If you want to know about how the upgrader does its job, this section is for you. Otherwise, feel free to skip it.
 
+### How does BHoM Versioning work?
+
+Alongside the dlls installed in `AppData\Roaming\BHoM\Assemblies`, you can find in the `bin` sub-folder a series of `BHoMUpgrader` exe programs. When a type/method/object fails to deserialise from its string representation (json), those upgrader are called to the rescue.
+
+Every quarter, when we release a new beta installer, we also produce a new upgrader named `BHoMUpgrader` with the version number attached at the end (e.g. `BHoMUpgrader32` for version 3.2). That upgrader contains all the changes to the code that occurred during the quarter.
+
+When deserialisation fails in the BHoM, the BHoM version used to serialise the object is retrieved from the json. The json is then upgraded to the following version repeatedly until it reaches the current version where it can finally be deserialised into a BHoM object.
+
+![image](https://user-images.githubusercontent.com/16853390/120576933-23b18480-c456-11eb-9a1c-c1ebf8995257.png)
+
+### Decentralisation of the upgrade information
+
+We will go in details on how the upgrade information is stored inside an upgrader in the remaining sections. There is however one aspect worth mentioning already. Once a quarter is finished, an upgrader is never modified again and simply redistributed alongside the others. During that quarter however, the current upgrader is constantly updated to reflect the new changes. For everyone working on the BHoM to have to modify the exact same files inside the Versioning_Toolkit would be inconvenient and a frequent source of clashes. For that reason, the information related to the upgraded of the current quarter are stored locally at the root of each project where the change occurred. 
+
+ ![image](https://user-images.githubusercontent.com/16853390/82024761-dcc5e500-96c2-11ea-86fc-53a6df0f14f5.png)
+
+Notice that the file name ends with the version of the BHoM it applies to.
+
+The content of an empty `Versioning_XX.json` file is as follow:
+
+```json
+{
+  "Namespace": {
+    "ToNew": {
+    },
+    "ToOld": {
+    }
+  },
+  "Type": {
+    "ToNew": {
+
+    },
+    "ToOld": {
+    }
+  },
+  "Property": {
+    "ToNew": {
+    },
+    "ToOld": {
+    }
+  },
+  "MessageForDeleted": {
+  },
+  "MessageForNoUpgrade": {
+  }
+}
+```
+
+When the UI_PostBuild process that copies all the BHoM assemblies to the Roaming folder is ran (i.e. when BHoM_UI is compiled), the information from all the `Versioning_XX.json` files is collected and compiled in to a single json file copied to the roaming folder next to the BHoMUpgrader executable. It's content will look similar to the local json files with an extra section for the methods (more onto that later):
+
+```json
+{
+  "Namespace": {
+    "ToNew": {
+      "BH.Engine.XML": "BH.Engine.External.XML",
+      "BH.oM.XML": "BH.oM.External.XML"
+    },
+    "ToOld": {
+      "BH.Engine.External.XML": "BH.Engine.XML",
+      "BH.oM.External.XML": "BH.oM.XML"
+    }
+  },
+  "Type": {
+    "ToNew": {
+      "BH.oM.Base.IBHoMFragment": "BH.oM.Base.IFragment",
+      "BH.oM.Adapters.ETABS.EtabsConfig": "BH.oM.Adapters.ETABS.EtabsSettings", 
+    },
+    "ToOld": {
+      "BH.oM.Base.IFragment": "BH.oM.Base.IBHoMFragment",
+      "BH.oM.Adapters.ETABS.EtabsSettings":"BH.oM.Adapters.ETABS.EtabsConfig" 
+    }
+  },
+  "Method": {
+    "ToNew": {
+        "BH.Adapter.XML.XMLAdapter(BH.oM.Adapter.FileSettings, BH.oM.XML.Settings.XMLSettings)": {
+            "_t": "System.Reflection.MethodBase", 
+            "TypeName": "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.Adapter.XML.XMLAdapter, XML_Adapter, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null\" }",
+            "MethodName": ".ctor",
+            "Parameters": [ "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.oM.Adapter.FileSettings\" }" ]
+        },
+        "BH.Engine.Geometry.Compute.ClipPolylines(BH.oM.Geometry.Polyline, BH.oM.Geometry.Polyline)": {
+            "_t": "System.Reflection.MethodBase",
+            "TypeName": "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.Engine.Geometry.Compute, Geometry_Engine, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null\" }",
+            "MethodName": "BooleanIntersection",
+            "Parameters": [ "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.oM.Geometry.Polyline\" }", "{ \"_t\" : \"System.Type\", \"Name\" : \"BH.oM.Geometry.Polyline\" }", "{ \"_t\" : \"System.Type\", \"Name\" : \"System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\" }" ]
+        }
+    },
+    "ToOld": {
+      
+    }
+  },
+  "Property": {
+    "ToNew": {
+        "BH.oM.Structure.Elements.Bar.StartNode": "BH.oM.Structure.Elements.Bar.Start",
+        "BH.oM.Structure.Elements.Bar.EndNode": "BH.oM.Structure.Elements.Bar.End"
+    },
+    "ToOld": {
+        "BH.oM.Structure.Elements.Bar.Start": "BH.oM.Structure.Elements.Bar.StartNode",
+        "BH.oM.Structure.Elements.Bar.End": "BH.oM.Structure.Elements.Bar.End",
+    }
+  },
+  "MessageForDeleted": {
+  },
+  "MessageForNoUpgrade": {
+  }
+}
+```
+
+### How does the upgrader work?
+
 The diagram below show the chains of calls between the 3 main upgrade methods:
 - UpgradeMethod
 - UpgradeType
@@ -430,6 +518,7 @@ Note that `UpgradeType` is actually covering both the namespace replacement and 
 Also note that those three are the 3 places where an older upgrader can be called if needed.
 
 ![image](https://user-images.githubusercontent.com/16853390/82113415-7905ef80-9788-11ea-8d77-53c153286a2f.png)
+
 ## Example walk throughs
 * [How to check your versioned changes are working](/documentation/How-to-check-your-versioned-changes-are-working-%3F)
 * [Property name change](/documentation/Change-to-a-property-name)
