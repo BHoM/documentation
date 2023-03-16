@@ -149,78 +149,13 @@ In order to make the change backward compatible (i.e. to allow downgrading, i.e.
     }
     ```
 
-## Obtaining a Versioning Key
-
-A versioning key is like a signature identifying a method or object. 
-You can obtain it by using the `BH.Engine.Versioning.VersioningKey()` method, like explained below.
-
-❗ **NOTE**⚠️ you need to get the versioning key of the object/method _before_ it was modified. If you have already done your code changes, you can simply commit your changes on your branch, then switch back to the `develop` branch and recompile.
-
-### Versioning key for objects and Adapters
-
-Just provide the input `declaringType`, which is the Full Name of the object that you are modifying (i.e. the name of the class preceded by its namespace).
-![image](https://user-images.githubusercontent.com/6352844/225602151-6c27ee73-288c-440c-bfef-e94226f7a72c.png)
-
-
-### Versioning key for methods
-Provide both:
-- the input `declaringType`, which is the Full Name of the Query/Compute/Create/Modify/Convert class (i.e. the name of the class, preceded by its namespace) which contains the method that you are modifying;
-- the input `methodName`, which is the name of the method that you are modifying (in case you are renaming the method, this needs to be its name _before_ the rename).
-
-Example: 
-![image](https://user-images.githubusercontent.com/6352844/225602396-491f351c-2cf3-498e-bc9c-347e1667c71d.png)
-
-## Adding a `Versioning_XX.json` file to the project
-
-Adding a `Versioning_XX.json` file to the project is needed for certain versioning scenarios, but not all. In some cases (e.g. changes in a method) it may be sufficient to use the `PreviousVersion` attribute.
-
-This is as simple as adding an empty json file to the project, named `Versioning_XX.json`, where the `XX` must be replaced with the current BHoM version. For example:
-
-![image](https://user-images.githubusercontent.com/6352844/225606913-3f6a767d-5111-4fee-87c3-1d88e1727f8a.png)
-
-The empty file should then be immediately populated with the following content (copy-paste it!):
-
-```json
-{
-  "Namespace": {
-    "ToNew": {
-    },
-    "ToOld": {
-    }
-  },
-  "Type": {
-    "ToNew": {
-
-    },
-    "ToOld": {
-    }
-  },
-  "Property": {
-    "ToNew": {
-    },
-    "ToOld": {
-    }
-  },
-  "MessageForDeleted": {
-  },
-  "MessageForNoUpgrade": {
-  }
-}
-```
-
-Then you can fill it in as described by the relevant "changes" section.
-
-### Why having a `Versioning_XX.json` file?
-BHoM Versioning is implemented via a specific, stand-alone mechanism, hosted in the Versioning_Toolkit.
-
-The information related to the changes to the current BHoM version are stored locally at the root of each project where the change occurred, so that everyone can independently change BHoM objects or methods without the need to modify the Versioning_Toolkit.
-
 ## Changes in objects
 
 ### Changes in an object's property names
 
 For the case where an object type was only modified by renaming some of its property, we have a simple solution, similar the one for namespaces and type names. 
 It requires to:
+
 - add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
 - add versioning information to the Versioning json file under the `Property.ToNew` entry. As a key, provide the full name of the type that contains the property you are renaming (namespace + type name) followed by the old property name. The value must be the new property name. 
 
@@ -322,7 +257,10 @@ Updating the path to a Dataset works in a similar manner to changes to names of 
 - An additional folder has been added to the path
 - A folder has been removed from the path
 
-When this has happened, the `Dataset` part of the versioning file should be modified. 
+When this has happened, you will need to:
+
+- add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
+- add versioning information to the Versioning json file under the `Dataset` entries, as shown in the example below.
 
 In the example below, the Versioning json file specifies the move of some structural material files to a parent folder called `Structure`.
 
@@ -384,7 +322,11 @@ In some cases, an upgrade/downgrade of a method or object is simply not possible
 - The item was deleted without replacement
 - A replacement exists but is so different from the original that an automatic conversion is impossible.
 
-In such cases, it is important to inform the user and provide them with as much information as possible to facilitate the transition to the new version of the code. Here are a few example of how this can be achieved:
+In such cases, it is important to inform the user and provide them with as much information as possible to facilitate the transition to the new version of the code. You will need to:
+
+- add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
+- add versioning information to the Versioning json file under the `MessageForDeleted` and/or `MessageForNoUpgrade` entries. As shown in the example below.
+
 
 !!! example "Items that cannot be versioned"
 
@@ -406,6 +348,73 @@ In such cases, it is important to inform the user and provide them with as much 
       }
     }
     ```
+
+## Obtaining a Versioning Key
+
+A versioning key is like a signature identifying a method or object. 
+You can obtain it by using the `BH.Engine.Versioning.VersioningKey()` method, like explained below.
+
+❗ **NOTE**⚠️ you need to get the versioning key of the object/method _before_ it was modified. If you have already done your code changes, you can simply commit your changes on your branch, then switch back to the `develop` branch and recompile.
+
+### Versioning key for objects and Adapters
+
+Just provide the input `declaringType`, which is the Full Name of the object that you are modifying (i.e. the name of the class preceded by its namespace).
+![image](https://user-images.githubusercontent.com/6352844/225602151-6c27ee73-288c-440c-bfef-e94226f7a72c.png)
+
+
+### Versioning key for methods
+Provide both:
+- the input `declaringType`, which is the Full Name of the Query/Compute/Create/Modify/Convert class (i.e. the name of the class, preceded by its namespace) which contains the method that you are modifying;
+- the input `methodName`, which is the name of the method that you are modifying (in case you are renaming the method, this needs to be its name _before_ the rename).
+
+Example: 
+![image](https://user-images.githubusercontent.com/6352844/225602396-491f351c-2cf3-498e-bc9c-347e1667c71d.png)
+
+## Adding a `Versioning_XX.json` file to the project
+
+Adding a `Versioning_XX.json` file to the project is needed for certain versioning scenarios, but not all. In some cases (e.g. changes in a method) it may be sufficient to use the `PreviousVersion` attribute.
+
+This is as simple as adding an empty json file to the project, named `Versioning_XX.json`, where the `XX` must be replaced with the current BHoM version. For example:
+
+![image](https://user-images.githubusercontent.com/6352844/225606913-3f6a767d-5111-4fee-87c3-1d88e1727f8a.png)
+
+The empty file should then be immediately populated with the following content (copy-paste it!):
+
+```json
+{
+  "Namespace": {
+    "ToNew": {
+    },
+    "ToOld": {
+    }
+  },
+  "Type": {
+    "ToNew": {
+
+    },
+    "ToOld": {
+    }
+  },
+  "Property": {
+    "ToNew": {
+    },
+    "ToOld": {
+    }
+  },
+  "MessageForDeleted": {
+  },
+  "MessageForNoUpgrade": {
+  }
+}
+```
+
+Then you can fill it in as described by the relevant "changes" section.
+
+### Why having a `Versioning_XX.json` file?
+BHoM Versioning is implemented via a specific, stand-alone mechanism, hosted in the Versioning_Toolkit.
+
+The information related to the changes to the current BHoM version are stored locally at the root of each project where the change occurred, so that everyone can independently change BHoM objects or methods without the need to modify the Versioning_Toolkit.
+
 
 # Troubleshooting on Versioning
 
