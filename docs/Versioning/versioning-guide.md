@@ -186,6 +186,7 @@ This case cannot be solved by a simple replacement of a string and will most lik
 - The conversion method needs to be compile and the upgrader needs to be able to access it. While there are ways to keep the conversion method decentralised, it is way simpler to have it in the versioning toolkit directly. This means this is the only case where you cannot just write the upgrade from your own repo. Luckily, this case is less frequent than the others.
 
 So what do you need to do to cover the upgrade?
+
 - First, locate the `Converter.cs` file int the project of the current upgrader.
 - In that file, write a conversion method with the following signature: `public static Dictionary<string, object> UpgradeOldClassName(Dictionary<string, object> old)`. 
 - In the `Converter` constructor, add that method to the `ToNewObject` Dictionary. the key is that object type full name (namespace + type name) and the value is the method.
@@ -241,6 +242,7 @@ Here's an example.
     ```
 
 A few things to notice:
+
 - You are working from a Dictionary so make sure that the properties exist before using them
 - You will also need to cast them since the dictionary values are all objects
 - Make sure to provide the new object type in the dictionary by defining the "_t" property.
