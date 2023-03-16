@@ -360,6 +360,7 @@ Just provide the input `declaringType`, which is the Full Name of the object tha
 
 ### Versioning key for methods
 Provide both:
+
 - the input `declaringType`, which is the Full Name of the Query/Compute/Create/Modify/Convert class (i.e. the name of the class, preceded by its namespace) which contains the method that you are modifying;
 - the input `methodName`, which is the name of the method that you are modifying (in case you are renaming the method, this needs to be its name _before_ the rename).
 
