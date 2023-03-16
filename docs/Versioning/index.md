@@ -1,16 +1,5 @@
 # Versioning BHoM objects and methods
 
-* [Why do we need versioning ?](#why-do-we-need-versioning-)
-* [How does it work ?](#how-does-it-work-)
-* [Decentralisation of the upgrade information](#decentralisation-of-the-upgrade-information)
-* [Modifying namespaces](#modifying-namespaces)
-* [Modifying methods](#modifying-methods)
-* [Upgrading objects](#upgrading-objects)
-* [Message for deleted items or items without upgrades](#message-for-deleted-items-or-items-without-upgrades)
-* [The upgrade doesn't happen - How can I debug ?](#the-upgrade-doesnt-happen---how-can-i-debug-)
-* [Technical details](#technical-details)
-* [Example walk throughs](#example-walk-throughs)
-
 ## Why do we need versioning?
 
 When a script created in one of our supported UI is saved, all the BHoM components save information about themselves so they can initialise properly when the script is re-opened. That information is simply kept in a string format (more precisely Json format) and contains details such as the component/method name, it's argument types, output types, ... 
