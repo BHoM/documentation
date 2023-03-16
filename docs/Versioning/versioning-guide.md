@@ -1,25 +1,21 @@
 # Versioning guide: implementing versioning for your changes
 
-Versioning can be implemented in one or two ways, as explained in detail in the following sections:
+Versioning can be implemented in one or two ways, depending on the situation:
 
-1. By adding a `Versioning_XX.json` file to your project, where XX is the current version of BHoM.
-2. By adding a `PreviousVersion` attribute to your changed method.
+1. by adding the required information to a `Versioning_XX.json` file; and/or
+2. by adding a `PreviousVersion` attribute to your changed method.
 
-The choice of the appropriate one depends on the change you are doing. Let's go through the code changes that BHoM Versioning can address.
-
+The choice of the appropriate one depends on the change you are doing, as explained in detail in the following sections. Head to the section below that is the most relevant to your case.
 
 ## Changes on methods
 
-This section addresses how to do Versioning for code changes done to methods, which are probably the most common. There are two possibilites here, and the first is simpler and to be preferred.
+This section addresses how to do Versioning for code changes done to methods, which are probably the most common. There are two possibilites here, and the first is simpler and to be preferred. Both options apply to either method renamings and/or changes in method inputs.
 
 ### Via the `PreviousVersion` attribute
 
 We recommend to simply add a `PreviousVersion` attribute on top of the method you are modifying. This attribute takes two arguments:
 - The first argument of the attribute is the current version of BHoM, e.g. `6.1`. 
 - The second argument is _the method's Versioning key_, [obtainable as explained in its dedicated section](#obtaining-a-versioning-key).
-
-Some examples of its usage below.
-
 
 #### Example: `PreviousVersion` attribute applied to a regular method that is being renamed
 
