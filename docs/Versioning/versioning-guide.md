@@ -5,7 +5,10 @@ Versioning can be implemented in one or two ways, depending on the situation:
 1. by adding the required information to a `Versioning_XX.json` file; and/or
 2. by adding a `PreviousVersion` attribute to your changed method.
 
-The choice of the appropriate one depends on the change you are doing, as explained in detail in the following sections. BHoM Versioning supports:
+The choice of the appropriate one depends on the change you are doing, as explained in detail in the following sections. 
+
+## Supported changes
+BHoM Versioning supports:
 
 - Changes to methods (e.g. saved in a script): 
     - changes in the method name
@@ -440,9 +443,9 @@ The empty file should then be immediately populated with the following content (
 Then you can fill it in as described by the relevant "changes" section.
 
 ### Why having a `Versioning_XX.json` file?
-BHoM Versioning is implemented via a specific, stand-alone mechanism, hosted in the Versioning_Toolkit.
+BHoM Versioning is implemented via a specific, stand-alone mechanism, hosted in the [Versioning_Toolkit](https://github.com/BHoM/Versioning_Toolkit).
 
-The information related to the changes to the current BHoM version are stored locally at the root of each project where the change occurred, so that everyone can independently change BHoM objects or methods without the need to modify the Versioning_Toolkit.
+By adding a `Versioning_XX.json` file, the information related to code changes are stored locally in each project where the change occurred. This enables _decentralisation_, i.e. many people can independently code and change BHoM objects or methods in different Toolkits without the need to modify the Versioning_Toolkit, avoiding clashes.
 
 
 # Troubleshooting on Versioning
