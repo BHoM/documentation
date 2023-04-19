@@ -1,3 +1,5 @@
+# Diffing and Hashing: guide for developers
+
 This page gives a more in-depth technical explanation about some diffing methods, and also serves as a guide for developers to build functionality on top of existing diffing code.  
 See the [Diffing](/documentation/Diffing:-tracking-changes-in-your-BHoM-objects) and the [Hash](/documentation/Hash:-an-object's-identity) wiki pages for a more quick-start guide.
 

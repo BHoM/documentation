@@ -1,3 +1,5 @@
+# Diffing: tracking changes between objects
+
 Diffing is the process of determining what changed between two sets of objects. 
 
 Typically, the two sets of objects are two versions of the same thing (of a pulled Revit model, of a Structural Model that we want to Push to an Adapter, etc), in which case Diffing can effectively be used as a Version Control tool.
@@ -10,7 +12,7 @@ Typically, the two sets of objects are two versions of the same thing (of a pull
 The [Diffing_Engine](https://github.com/BHoM/BHoM_Engine/tree/main/Diffing_Engine) gives many ways to perform diffing on sets of objects. Let's see them.
 
 
-# IDiffing method
+## IDiffing method
 
 The most versatile method for diffing is the [`BH.Engine.Diffing.Compute.Diffing()` method](https://github.com/BHoM/BHoM_Engine/blob/main/Diffing_Engine/Compute/IDiffing.cs), also called `IDiffing`. Ideally, you should always use this Diffing method, although other alternatives exist for specific cases (see [Other diffing methods](/documentation/Diffing%3A-tracking-changes-in-your-BHoM-objects/#other-diffing-methods) below). A detailed technical explanation of the IDiffing can be found in the guide for developers.
 
@@ -30,7 +32,7 @@ In case no Identifier can be found on the objects, the IDiffing attempts other d
 
 The output of every diffing method is always a **`diff` object**, which we will describe in a section below.
 
-## `DiffingConfig` (and `ComparisonConfig`)
+### `DiffingConfig` (and `ComparisonConfig`)
 
 The `DiffingConfig` object can be attached to any Diffing method and allows you to specify options for the Diffing comparison. 
 
@@ -75,7 +77,7 @@ An example of a DisplayName could be `StartNode.Position.X` (given a modified ob
 - `FollowingValue`: the modified value in the `FollowingObject`.
 - `FullName`: this is the modified property **Full Name**. An object difference can always be linked to a precise object property that is different; this is given in the Full Name form, which includes the namespace. An example of this could be `BH.oM.Structure.Elements.Bar.StartNode.Position.X`. Note that this FullName can be significantly different from `DisplayName` (as happens for `RevitParameter`s, where the Full Name will be something like e.g. `BH.oM.Adapters.Revit.Parameters[3].RevitParameter.Value`).
 
-# Other Diffing methods
+## Other Diffing methods
 
 In addition to the main Diffing method `IDiffing()`, there are several other methods that can be used to perform Diffing. These are a bit more advanced and should be used only for specific cases. The additional diffing methods can be found in the [Compute folder of Diffing_Engine](https://github.com/BHoM/BHoM_Engine/tree/main/Diffing_Engine/Compute). 
 
@@ -83,7 +85,7 @@ Other than these, _Toolkit-specific_ diffing methods exist to deal with the subt
 
 
 
-## `DiffWithFragmentId()` and `DiffWithCustomDataKeyId()`
+### `DiffWithFragmentId()` and `DiffWithCustomDataKeyId()`
 
 These two methods are "ID-based" diffing methods. They simply retrieve an Identifier associated to the input objects, and use it to match objects from the `pastObjs` set to objects in the `followingObjs` set, deciding who should be compared to who.
 
@@ -92,7 +94,7 @@ These two methods are "ID-based" diffing methods. They simply retrieve an Identi
 
 Both method then call the `DiffWithCustomIds()` to perform the comparison with the extracted Ids, see below.
 
-## `DiffWithCustomIds()`
+### `DiffWithCustomIds()`
 
 The [`DiffWithCustomIds()` method](https://github.com/BHoM/BHoM_Engine/blob/82c1276ecb10d3d773a6a8e28643787f742e6a43/Diffing_Engine/Compute/DiffWithCustomIds.cs#L52) allows you to provide:
 - Two input objects sets that you want to compare, `pastObjs` and `followingObjs`;
@@ -106,13 +108,13 @@ The IDs are then used to match the objects from the `pastObjs` set to objects in
 - If an object in the `pastObjs` matches by ID an object in the `followingObjs`, then it is identified as "Modified" (it changed between the two versions). This means that the two objects will be compared and all their differences will be found. This is done by invoking the `ObjectDifferences()` method, that is [explained in detail here](/documentation/Diffing-and-Hashing:-guide-for-developers#objectdifferences-method-inner-workings).
 
 
-## DiffOneByOne()
+### DiffOneByOne()
 
 The [`DiffOneByOne()`](https://github.com/BHoM/BHoM_Engine/blob/82c1276ecb10d3d773a6a8e28643787f742e6a43/Diffing_Engine/Compute/DiffOneByOne.cs#L52) method simply takes two input lists, `pastObjs` and `followingObjects`, and these have the objects in the same identical order. It then simply compares each object one-by-one. If matched objects are equal, they are "Unchanged", otherwise, they are "Modified" and their property difference is returned. 
 
 For this reason, this method is not able to discover "Added" (new) or "Removed" (old) objects.
 
-## DiffWithHash()
+### DiffWithHash()
 
 The [`DiffWithHash()`](https://github.com/BHoM/BHoM_Engine/blob/main/Diffing_Engine/Compute/DiffWithHash.cs) method simply does a Venn Diagram of the input objects' [Hashes](/documentation/Hash:-an-object's-identity):
 
@@ -126,7 +128,7 @@ The Hash is leveraged by this method so you are able to customise how the diffin
 
 
 
-## DiffRevisions
+### DiffRevisions
 
 This method was designed for the [AECDeltas workflow](https://github.com/aecdeltas/aec-deltas-spec) and is currently not widely used. 
 
