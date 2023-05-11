@@ -4,7 +4,7 @@ This check will confirm the pull request is ready to merge based on the followin
 
  - Any requested changes have been addressed (changed to an approving review) or dismissed
  - The pull request does not have a `status:do-not-merge` label
- - The pull request has suitable labels for the change log
+ - The pull request has suitable labels for the change log - labels should be starting with `type:` to denote the type of pull request
  - The pull request has at least one approving review
  - The pull request has passed `check-core` and `check-installer` from BHoMBot
 
