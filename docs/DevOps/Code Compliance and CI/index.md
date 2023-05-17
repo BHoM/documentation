@@ -38,7 +38,7 @@ Correct at time of writing.
 | [**AttributeHasEndingPunctuation**](Compliance%20Checks/AttributeHasEndingPunctuation) | Warning | Documentation |
 | [**EngineClassMatchesFilePath**](Compliance%20Checks/EngineClassMatchesFilePath) | Fail | Code |
 | [**HasConstructor**](Compliance%20Checks/HasConstructor) | Fail | Code |
-| [**HasDescriptionAttribute**](Compliance%20Checks/HasDescriptionAttribute) | Warning | Documentation |
+| [**HasDescriptionAttribute**](Compliance%20Checks/HasDescriptionAttribute) | Fail | Documentation |
 | [**HasOneConstructor**](Compliance%20Checks/HasOneConstructor) | Fail | Code |
 | [**HasOutputAttribute**](Compliance%20Checks/HasOutputAttribute) | Warning | Documentation |
 | [**HasPublicGet**](Compliance%20Checks/HasPublicGet) | Fail | Code |
@@ -54,7 +54,7 @@ Correct at time of writing.
 | [**InputAttributeHasMatchingParameter**](Compliance%20Checks/InputAttributeHasMatchingParameter) | Fail | Documentation |
 | [**InputAttributeIsUnique**](Compliance%20Checks/InputAttributeIsUnique) | Fail | Documentation |
 | [**InputParameterStartsLower**](Compliance%20Checks/InputParameterStartsLower) | Fail | Code |
-| [**IsDocumentationURLValid**](IsDocumentationURLValid) | Fail | Documentation |
+| [**IsDocumentationURLValid**](Compliance%20Checks/IsDocumentationURLValid) | Fail | Documentation |
 | [**IsExtensionMethod**](Compliance%20Checks/IsExtensionMethod) | Fail | Code |
 | [**IsInputAttributePresent**](Compliance%20Checks/IsInputAttributePresent) | Warning | Documentation |
 | [**IsPublicClass**](Compliance%20Checks/IsPublicClass) | Fail | Code |
