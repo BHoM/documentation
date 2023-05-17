@@ -10,17 +10,17 @@
 
 In order to aid people working on BHoM repositories across multiple platforms, and to avoid conflict between BHoM DLLs, project references to other BHoM repositories (for example, the `Environment_oM` from BHoM itself, or the `Environment_Engine` from BHoM_Engine) need to be set to a certain path.
 
-This path should be to the `ProgramData` folder in the `C:/` drive of the machine. BHoM installs to the location `C:/ProgramData/BHoM` folder, and all project files inside a toolkit have a postbuild event (see below) to copy their DLLs to the `C:/ProgramData/BHoM/Assemblies` folder. By referencing DLLs in this location, it means people can install BHoM using an installer, clone a toolkit and begin developing without needing to clone and build the dependencies.
+This path should be to the `ProgramData` folder in the default drive of the machine. BHoM installs to the location `:/ProgramData/BHoM` folder, and all project files inside a toolkit have a postbuild event (see below) to copy their DLLs to the `:/ProgramData/BHoM/Assemblies` folder. By referencing DLLs in this location, it means people can install BHoM using an installer, clone a toolkit and begin developing without needing to clone and build the dependencies.
 
 Therefore, DLL references should be set to:
 
-`C:/ProgramData/BHoM/Assemblies/TheDLL.dll`
+`$(ProgramData)/BHoM/Assemblies/TheDLL.dll`
 
 For example, if we want to reference `Environment_oM` from BHoM, our project reference should look like:
 
-`C:/ProgramData/BHoM/Assemblies/Environment_oM.dll`
+`$(ProgramData)/BHoM/Assemblies/Environment_oM.dll`
 
-If the project reference is set to a copy of the `Environment_oM` DLL from another location, there is a risk that the DLL will be out of date to the `master` and you could therefore be building on top of an out of date framework.
+If the project reference is set to a copy of the `Environment_oM` DLL from another location, there is a risk that the DLL will be out of date to the `main` and you could therefore be building on top of an out of date framework.
 
 If the project reference is not set to the example above, then this check will highlight that, and provide a suggestion of the path the DLL reference should have.
 
@@ -33,6 +33,10 @@ References to DLLs within your own solution file should be made as Project Refer
 In order to prevent duplicate DLLs, some of which may be out of date, being placed in your repositories `Build` folder, and risk ending up in your Assesmblies folder run building `BHoM_UI`, the `copy local` property for all BHoM references should be set to `false`.
 
 This check will also ensure this and flag any DLLs which do not have their `copy local` property set to `false`.
+
+#### Exemptions
+
+References can be set to `copy local true` if the project file is within the `.ci/unit-tests` folder path. DLLs referenced for NUnit unit tests require the DLLs to be copied locally and so this is valid.
 
 ### Specific Version
 
