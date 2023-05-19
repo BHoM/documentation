@@ -51,6 +51,7 @@ Correct at time of writing.
 | [**HasValidOutputAttribute**](Compliance%20Checks/HasValidOutputAttribute) | Fail | Documentation |
 | [**HasValidMultiOutputAttributes**](Compliance%20Checks/HasValidMultiOutputAttributes) | Fail | Documentation |
 | [**HasValidPreviousVersionAttribute**](Compliance%20Checks/HasValidPreviousVersionAttribute) | Fail | Documentation |
+| [**HiddenInputsAreLast**](Compliance%20Checks/HiddenInputsAreLast) | Warning | Documentation |
 | [**InputAttributeHasMatchingParameter**](Compliance%20Checks/InputAttributeHasMatchingParameter) | Fail | Documentation |
 | [**InputAttributeIsUnique**](Compliance%20Checks/InputAttributeIsUnique) | Fail | Documentation |
 | [**InputParameterStartsLower**](Compliance%20Checks/InputParameterStartsLower) | Fail | Code |
@@ -76,3 +77,4 @@ Correct at time of writing.
 | [**PreviousInputNamesAttributeIsUnique**](Compliance%20Checks/PreviousInputNamesAttributeIsUnique) | Fail | Documentation |
 | [**Project References and Build Paths**](Compliance%20Checks/Project-References-and-Build-Paths) | Fail | Project |
 | [**PropertyAccessorsHaveNoBody**](Compliance%20Checks/PropertyAccessorsHaveNoBody) | Fail | Code |
+| [**UIExposureHasDefaultValue**](Compliance%20Checks/UIExposureHasDefaultValue) | Fail | Documentation |
