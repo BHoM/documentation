@@ -2,7 +2,7 @@
 
 **Severity** - Fail
 
-**Check method** - [Here](https://github.com/BHoM/Test_Toolkit/blob/master/CodeComplianceTest_Engine/Query/Checks/InputAttributesAreInOrder.cs)
+**Check method** - [Here](https://github.com/BHoM/Test_Toolkit/blob/main/CodeComplianceTest_Engine/Query/Checks/InputAttributesAreInOrder.cs)
 
 ## Details
 
