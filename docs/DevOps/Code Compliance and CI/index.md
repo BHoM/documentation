@@ -54,6 +54,7 @@ Correct at time of writing.
 | [**HiddenInputsAreLast**](Compliance%20Checks/HiddenInputsAreLast) | Warning | Documentation |
 | [**InputAttributeHasMatchingParameter**](Compliance%20Checks/InputAttributeHasMatchingParameter) | Fail | Documentation |
 | [**InputAttributeIsUnique**](Compliance%20Checks/InputAttributeIsUnique) | Fail | Documentation |
+| [**InputAttributesAreInOrder**](Compliance%20Checks/InputAttributsAreInOrder) | Fail | Documentation |
 | [**InputParameterStartsLower**](Compliance%20Checks/InputParameterStartsLower) | Fail | Code |
 | [**IsDocumentationURLValid**](Compliance%20Checks/IsDocumentationURLValid) | Fail | Documentation |
 | [**IsExtensionMethod**](Compliance%20Checks/IsExtensionMethod) | Fail | Code |
