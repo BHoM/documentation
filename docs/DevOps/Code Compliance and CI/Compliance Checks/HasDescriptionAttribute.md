@@ -1,6 +1,6 @@
 ## Summary
 
-**Severity** - Warning
+**Severity** - Fail
 
 **Check method** - [Here](https://github.com/BHoM/Test_Toolkit/blob/master/CodeComplianceTest_Engine/Query/Checks/HasDescriptionAttribute.cs)
 
