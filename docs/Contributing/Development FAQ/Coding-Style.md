@@ -18,7 +18,7 @@ BHoM code also adheres to customised rules and style guidelines. These are in pl
 ### Access Modifiers
 Access modifiers specify the accessibility level of type and type members. They denote whether a type or member can be used by other code in the same assembly, and in other assemblies.
 - In line with BHoM's focus on claity and trasparency, we generally use the `public` access modifier, which allows a type or member to be accessed by any other code in the same assembly or other assembly that refernces it.
-- When absolutely necessary, we use the `private` access modifier to limit the access of a type and member to only code in the same class or sturcut.
+- When absolutely necessary, we use the `private` access modifier to limit the access of a type or member to only code in the same class.
 - Although C# provides many [access modifiers](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers), we limit our use to the two mentioned above.
 
 ### Filenames, objects and methods
