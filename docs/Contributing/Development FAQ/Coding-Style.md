@@ -14,6 +14,13 @@ BHoM code also adheres to customised rules and style guidelines. These are in pl
 - to ensure the functionality can be correctly exposed to the UIs;
 - to organise functionality and classes in a tidy, easy-to-find manner.
 
+
+### Access Modifiers
+Access modifiers specify the accessibility level of type and type members. They denote whether if a type or member can be used from other code in the same assembly, and in other assemblies.
+- In line with BHoM's focus on claity and trasparency, we generally use the `public` access modifier, which allows a type or member to be accessed by any other code in the same assembly or other assembly that refernces it.
+- When absolutely necessary, we use the `private` access modifier to limit the access of a type and member to only code in the same class or sturcut.
+- Although C# provides many [access modifiers](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers), we limit our use to the two mentioned above.
+
 ### Filenames, objects and methods
 - A `.cs` file can contain only 1 (one) `class`, and there is no concept as a `Helper` or `Utils` class.
 - For **oM objects** the name of the `.cs` file is the Name (excluding the namespace) of the Object (class), e.g. the `Line` class is in the `Line.cs` file.
