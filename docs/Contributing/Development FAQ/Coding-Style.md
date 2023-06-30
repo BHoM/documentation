@@ -73,3 +73,17 @@ ExtraLarge
 ```
 
 This order for the Enum makes logical sense and provides a good UX where users will have context from the name of the Enum that the order might be different to alphabetical (e.g. the name might be `UnitSize`).
+
+### Yoda condition
+ 
+For conditional statements, the variable expression should be placed in front of the constant expression. When this order is reversed, it is referred to as a "[Yoda condition](https://en.wikipedia.org/wiki/Yoda_conditions)". For readability, we avoid using Yoda conditions in our code base. An example of both is given below.
+
+```c#
+
+string str = "hello world" 
+
+if (str == "BHoM") { /* … */} //most common convention
+
+else if ("BHoM" == str) {/* … */} //Yoda style, as the constant "BHoM" precedes the string variable
+
+```
