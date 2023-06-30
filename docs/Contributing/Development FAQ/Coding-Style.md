@@ -82,7 +82,7 @@ For conditional statements, the variable expression should be placed in front of
 
 string str = "hello world" 
 
-if (str == "BHoM") { /* … */} //most common convention
+if (str == "BHoM") { /* … */} //most common convention - preferred for BHoM development
 
 else if ("BHoM" == str) {/* … */} //Yoda style, as the constant "BHoM" precedes the string variable
 
