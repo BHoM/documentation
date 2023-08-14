@@ -20,3 +20,11 @@ If the errors of your branch are more than the errors of the `master` result the
 >`@BHoMBot check versioning`
 
 ***
+
+### Arguments
+
+`-force` - if provided, this will force the versioning check to run even if it could be bypassed. If no `.cs` files have been changed by the pull request, it will bypass the versioning check to save time (as only changes to `.cs` files typically introduce versioning issues). Use this flag to force versioning to be checked regardless of whether `.cs` files have changed.
+
+`-quick` - if provided, this will only compile the code in the request pull request and any immediate upstream dependencies. Without this flag, all the code in the installer is compiled to then check versioning against.
+
+***
