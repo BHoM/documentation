@@ -34,7 +34,7 @@ The pages within this section detail the CI checks we currently have operating, 
 
 ## Optional arguments
 
-The following flags may be provided when requesting a check to request specific behaviour from the bot when running your requested check. One or more flags may be used at any one time - for example to trigger a full, forced, versioning check, you could use the command `@BHoMBot check versioning -force -full`. All flags are prepended by a dash (`-`).
+The following flags may be provided when requesting a check to request specific behaviour from the bot when running your requested check. One or more flags may be used at any one time - for example to trigger a full, forced, versioning check, you could use the command `@BHoMBot check versioning -force -full`. All flags are prepended by a dash (`-`). To see how an argument will affect a check, see the individual check page.
 
 | Flag | Action | Example |
 | ------------- | ------------- | ------------- |
