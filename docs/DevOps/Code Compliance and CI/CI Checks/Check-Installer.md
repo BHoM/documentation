@@ -17,3 +17,9 @@ For BHoMBot, if you have dependant pull requests linked as part of a series, run
 > `@BHoMBot check installer`
 
 ***
+
+### Arguments
+
+`-quick` - if this flag is provided, then only the code changed by the pull request and its immediate dependencies (upstream) will be compiled. If not provided, the default of compiling all the code in the installer will be used instead.
+
+***
