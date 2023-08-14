@@ -32,6 +32,17 @@ The pages within this section detail the CI checks we currently have operating, 
 
 ***
 
+## Optional arguments
+
+The following flags may be provided when requesting a check to request specific behaviour from the bot when running your requested check. One or more flags may be used at any one time - for example to trigger a full, forced, versioning check, you could use the command `@BHoMBot check versioning -force -full`. All flags are prepended by a dash (`-`).
+
+| Flag | Action | Example |
+| ------------- | ------------- | ------------- |
+| -force | Requires a check to run even if it could be bypassed. For example, if a pull request does not change any `CS` or `CSProj` files, then the Versioning check may not run as it is time intensive. However, if you want to force the check to run, append `-force` to your request and it will run even if it could be bypassed. | `@BHoMBot check versioning -force` |
+| -full | Requires a check to run in its entirety, without any speed up mechanisms. For example, the Versioning check by default will only compile the code which has changed in the pull request requesting it. However, with the `-full` flag, it will compile all the code included within the installer, resulting in a slower check, but it will check all the codebase at the same time to reduce risk of introducing versioning issues. | `@BHoMBot check versioning -full` |
+
+***
+
 ## Use of CI checks
 
 Not all checks are required on all repositories or on all branches, depending on the lifecycle state of the repository. The table below indicates which checks are required for a given repository state.
