@@ -39,7 +39,7 @@ The following flags may be provided when requesting a check to request specific 
 | Flag | Action | Example |
 | ------------- | ------------- | ------------- |
 | -force | Requires a check to run even if it could be bypassed. For example, if a pull request does not change any `CS` or `CSProj` files, then the Versioning check may not run as it is time intensive. However, if you want to force the check to run, append `-force` to your request and it will run even if it could be bypassed. | `@BHoMBot check versioning -force` |
-| -full | Requires a check to run in its entirety, without any speed up mechanisms. For example, the Versioning check by default will only compile the code which has changed in the pull request requesting it. However, with the `-full` flag, it will compile all the code included within the installer, resulting in a slower check, but it will check all the codebase at the same time to reduce risk of introducing versioning issues. | `@BHoMBot check versioning -full` |
+| -quick | Requests that the check run in a shortened format if available. For example, the Versioning check can opt to only compile the code in the pull request if no other repositories are depending on the work, allowing for a quicker versioning check compared to the default which will compile all the code used by the installers. | `@BHoMBot check versioning -quick` |
 
 ***
 
