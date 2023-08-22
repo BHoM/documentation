@@ -1,6 +1,6 @@
-## General
+# BHoM Attributes
 
-The BHoM framework makes use of [attributes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/) to annotate and explain classes, methods and properties. Attributes used is a combination custom attributes created in the BHoM and the one provided by the core C# libraries.
+The BHoM framework makes use of [C# Attributes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/) to annotate and explain classes, methods and properties. Attributes used is a combination custom attributes created in the BHoM and the one provided by the core C# libraries.
 
 The information provided in the attributes will be used by the UI and help control what is exposed as well as give the end user a better understanding of what your method is supposed to do.
 

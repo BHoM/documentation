@@ -1,3 +1,5 @@
+# Extension methods required for the IElement interface
+
 The following points outlines the use of the dimensional interfaces as well as extension methods required to be implemented by them for them to function correctly in the Spatial_Engine methods.
 
 Please note that for classes that implement any of the following analytical interfaces, an default implementation already exists in the [Analytical_Engine](https://github.com/BHoM/BHoM_Engine/tree/master/Analytical_Engine) and for those classes an implementation is only needed if any extra action needs to be taken for that particular case. The analytical interfaces with default support are:

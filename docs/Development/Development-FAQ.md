@@ -1,4 +1,4 @@
-## List of questions
+# Development FAQ
 
 - [What does it mean when a piece of code is _locked_? How do I lock code?](FAQ#what-does-it-mean-when-a-piece-of-code-is-locked-how-do-i-lock-code)
 - [I am using Windows 10. Is anything different for me ?](FAQ#i-am-using-windows-10-is-anything-different-for-me-)

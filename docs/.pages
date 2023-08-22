@@ -5,6 +5,8 @@ nav:
     - BHoM_Engine
     - BHoM_Adapter
     - BHoM_UI
-    - Contributing
+    - Feature-specific guides
     - Conventions
-    - ...
+    - Contributing
+    - Development
+    - DevOps

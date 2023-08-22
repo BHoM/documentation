@@ -1,3 +1,5 @@
+# Null handling
+
 Null Handling is the practice of protecting against `null` inputs to methods within the engines and adapters.
 
 `Null` inputs can throw errors that are unhelpful to the user, typically a `object is not set to an instance of an object` exception, which does not provide the user with much information on how to resolve this problem within their chosen UI.
