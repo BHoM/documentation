@@ -54,10 +54,61 @@ Repeat the same project for all the Toolkit's projects, e.g. the Engine and Adap
 ![image](https://github.com/BHoM/documentation/assets/6352844/9c35d93d-9632-4b05-851e-30270f10232f)
 
 
-### Create a new a test project targeting specific functionality
+### Add a Solution Configuration for more efficient testing
 
-At this point, you should decide what kind of test you want to write.
-Because BHoM functionality only resides in Engine and Adapter projects (not oM projects), we can have one test project corresponding to each Engine/Adapter project.
+After adding the existing Toolkit project to the Test solution, you can add a new "Test" Solution Configuration that can be used when running tests. Doing allows to avoid having the Build Events to fail when a user interface has BHoM loaded in the background, and you only want to compile and run tests.
+
+Go in the Configuration Manager as below:
+
+![image](https://github.com/BHoM/documentation/assets/6352844/269954e2-7df3-49ef-8e1b-0ce85aca7ee5)
+
+Then select "New":
+
+![image](https://github.com/BHoM/documentation/assets/6352844/f494fb79-80c8-4e22-ac16-348efa7254b2)
+
+And do the following:
+
+![image](https://github.com/BHoM/documentation/assets/6352844/97a0ed93-2fa6-4ca1-948a-d6fe8a2d5322)
+
+This will create a new Solution Configuration called "Test". Make sure it's always selected when running tests from the Test solution:
+
+![image](https://github.com/BHoM/documentation/assets/6352844/556e465f-2b30-4d28-a73f-5fb3d425b0da)
+
+In order to get the benefits from this, we will need to edit the Post-build events of every project in the Toolkit. Let's take the example of Robot_oM. The post-build events can be accessed by right-clicking the project, selecting Properties, then looking for "Post-build Events". 
+
+![image](https://github.com/BHoM/documentation/assets/6352844/ff94e8fa-a3ab-41ce-813f-e5587d852088)
+
+The post build events should look something like this:
+```
+xcopy "$(TargetDir)$(TargetFileName)" "C:\ProgramData\BHoM\Assemblies" /Y
+```
+
+This instructs the MSBuild process to copy the compiled assembly to the BHoM central folder, from where they can be loaded by e.g. UIs like Grasshopper. We do not want this copy process to happen when we are only testing via NUnit. Therefore, we can modify the post build event by replacing it with:
+
+```
+if not "$(ConfigurationName)" == "Test" (xcopy "$(TargetDir)$(TargetFileName)" "C:\ProgramData\BHoM\Assemblies" /Y)
+```
+
+This means that the post-build event is going to be triggered only when the Solution Configuration is _not_ set to "Test". 
+
+!!! warning "Solution Configuration"
+
+    Make sure that the Solution Configuration is always set to "Test" when you are in the Test solution (e.g. `GitHub/Robot_Toolkit/.ci/unit-tests/Robot_Toolkit_Tests.sln`) and **not selected** when you are in the normal toolkit solution (e.g. `GitHub/Robot_Toolkit/Robot_Toolkit.sln`).
+    
+    If you have followed the guide so far, this will work fine.
+    
+    The only thing that this changes is that the DLLs are not copied in the BHoM central location if the "Test" configuration is selected: in you are developing some new functionalty and you want the change to appear in e.g. a UI like Grasshopper, you need to make sure to compile the solution with the "Debug" configuration!
+    
+
+
+
+
+## Create a new a test project targeting specific functionality
+
+At this point, you should have a Test solution `.sln` file in your Toolkit's `.ci` folder, e.g. something like `GitHub/Robot_Toolkit/.ci/unit-tests/Robot_Toolkit_Tests.sln`. You now want to create a Test project where we can write tests.
+
+### Decide what the Test project should target
+In order to create a new test project, you should decide what kind of functionality you will want to test there. Because BHoM functionality only resides in Engine and Adapter projects (not oM projects), we can have one test project corresponding to each Engine/Adapter project.
 
 For example, say you want to write tests to verify the functionality that is contained in some Robot_Engine method, for example, [`Robot.Query.GetStringFromEnum()`](https://github.com/BHoM/Robot_Toolkit/blob/5e04c82a081e3dafab3213c6f89363f0840ad3cf/Robot_Engine/Query/GetStringFromEnum.cs#L32-L49). Because this method resides in the Robot_Engine, we will need to place it into a Test project that is dedicated to testing Robot_Engine functionality.
 
@@ -93,7 +144,7 @@ We end up with this situation:
 ![image](https://github.com/BHoM/documentation/assets/6352844/7e08268c-72e3-42b2-9102-ee0d41ddb414)
 
 
-### Configure the default namespace for the tests
+### Configure the default namespace for the test project
 
 We want to set up the default namespace for tests included in this project. To do so, right click the test project and go in Properties:
 
@@ -105,9 +156,9 @@ Type "default namespace" in the search bar at the top, then replace the text int
 
 
 
-## Adding references to a Test Project
+### Adding references to a Test Project
 
-### Add existing project references
+#### Add existing project references
 Because the test will verify some functionality placed in another project, namely the Robot_Engine, we need to add a reference to it. Right click the project's dependencies and do "add project reference":
 
 ![image](https://github.com/BHoM/documentation/assets/6352844/27821c22-76fa-448c-b38d-747684f1daa5)
@@ -116,7 +167,7 @@ Then add the target project and any upstream dependency to the target project. F
 
 ![image](https://github.com/BHoM/documentation/assets/6352844/949e84bb-f5eb-4228-b069-735117dddfdc)
 
-### Add other references
+#### Add other BHoM assemblies dependencies
 
 Most likely you will need to reference also other assemblies in order to write unit tests. Again, right click the project's dependencies and do "add project reference", then click on "Browse" and "Browse" again:
 
@@ -134,7 +185,13 @@ Once you have added the assemblies, please select all of them as in the image ab
 
 This is required to make sure that NUnit can correctly grab the assemblies.
 
-### Adding the FluentAssertions Nuget dependency
+### Adding extra NuGet packages
+
+We can leverage some other NuGet packages to make tests simpler and nicer. 
+
+If you want your Unit test to be automatically invocable by CI/CD mechanisms, you should check with the DevOps lead if the NuGet packages you want to use are already supported or can be added to the CI/CD pipeline. The following packages are already supported.
+
+#### Add FluentAssertions
 
 We use the FluentAssertions NuGet package for easier testing and logging.
 Please add it by right clicking the Project's Packages and do "Manage NuGet packages":
@@ -146,6 +203,7 @@ Click "Browse", then type "fluentAssertions" in the search bar. Select the first
 ![image](https://github.com/BHoM/documentation/assets/6352844/83410ddb-7820-4a10-976c-acb2c5d2c442)
 
 We will provide some examples on how to use this library below. Please refer to the [FluentAssertions documentation](https://fluentassertions.com/introduction) to see all the nice and powerful features of this library.
+
 
 ## Write unit tests
 
@@ -188,10 +246,6 @@ In particular, note that:
 - we edited the name of the class appending `Tests`
 - We added an empty test method called as the Engine method we want to verify (`GetStringFromEnum`). The test method is decorated with the `[Test]` attribute.
 
-!!! note
-We may get an error stating that `FluentAssertions` is not found. In this case, please add it [as shown in the section above](#adding-the-fluentassertions-nuget-dependency).
-
-
 
 ### Write a test functionality
 
@@ -221,7 +275,7 @@ public void GetStringFromEnum()
 }
 ```
 
-Note that we use FluentAssertions (`Should().Be()`) to verify that the value of the result is equal to the string `BS5950`, as it should be when calling the GetStringFromEnum engine method with `DesignCode_Steel.BS5950`.
+Note that we use [FluentAssertions'](#fluentassertions) `Should().Be()` method to verify that the value of the result is equal to the string `BS5950`, as it should be when calling the GetStringFromEnum engine method with `DesignCode_Steel.BS5950`.
 
 Also note that a good practice is to add a test `[Description]` too! This is very helpful in case the test fails, so you get an explanation of what kind of functionality verification failed and what how it was supposed to work.
 
@@ -325,20 +379,19 @@ public void PushBarsWithTagTwice()
 ```
 
 
-### Leveraging the NUnit test framework and other libraries
+### Leveraging the NUnit test framework: setup and teardown
 
 When writing unit tests, you should leverge the NUnit test framework and other libraries in order to write clear, simple and understandable tests.
 
-#### NUnit setup and teardown methods
 You may want to define NUnit "startup" methods like [`[OneTimeSetup]`](https://docs.nunit.org/articles/nunit/writing-tests/attributes/onetimesetup.html) or [`[Setup]`](https://docs.nunit.org/articles/nunit/writing-tests/attributes/setup.html?q=setup) in order to execute some functionality when a test starts, for example starting up an adapter connection to a software. Similarly, you can define "teardown" methods to define some functionality that must be executed when a test finishes, for example  closing some adapter connection. 
 
 Please refer to the [NUnit guide](https://docs.nunit.org/articles/nunit/writing-tests/setup-teardown/index.html) to learn how to define startup and teardown methods.
 
 For example, [we defined such methods for the Robot_Adapter_Tests test project](https://github.com/BHoM/Robot_Toolkit/blob/5e04c82a081e3dafab3213c6f89363f0840ad3cf/.ci/unit-tests/Robot_Adapter_Tests/PushTests.cs#L44-L76).
 
-#### FluentAssertions
 
-As shown previously, we leverage the [FluentAssertions NuGet package](#adding-the-fluentassertions-nuget-dependency) in order to get nice error messages when a test fails and also in order to write simple, understandable statements in the "Assert" section of a test.
+## Run Unit tests
 
-Please refer to the [FluentAssertions documentation](https://fluentassertions.com/introduction) to see the nice and powerful features of this library.
+All tests existing in a Test solution can be found in the Test Explorer. If you can't find the Test Explorer, use the search bar at the top and type "Test Explorer":
 
+![image](https://github.com/BHoM/documentation/assets/6352844/a3785c42-8531-4fe0-aeee-411a896cf80f)
