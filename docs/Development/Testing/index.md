@@ -49,14 +49,16 @@ Navigate to the Toolkit's repository and select the Toolkit's oM project, if it 
 
 This will add the Toolkit's oM project to the Test solution.
 
-Repeat the same project for all the Toolkit's projects, e.g. the Engine and Adapter ones, if they exist. You will end up with this:
+Repeat for all of the Toolkit's projects, e.g. the Engine and Adapter ones, if they exist. In out example for the Robot_Toolkit, you will end up with this:
 
 ![image](https://github.com/BHoM/documentation/assets/6352844/9c35d93d-9632-4b05-851e-30270f10232f)
 
 
 ### Add a Solution Configuration for more efficient testing
 
-After adding the existing Toolkit project to the Test solution, you can add a new "Test" Solution Configuration that can be used when running tests. Doing allows to avoid having the Build Events to fail when a user interface has BHoM loaded in the background, and you only want to compile and run tests.
+After adding the Toolkit's existing projects to the Test solution, you can add a new "Test" _Solution Configuration_ that can be used when running tests.
+
+Doing this allows to avoid time consuming situations, like when you need to close software that locks the centralised assmeblies (e.g. Rhino Grasshopper, Excel) whenever you want to compile or run Unit Tests. This is because BHoM relies on post-Build Events to copy assemblies in the ProgramData/BHoM folder, and if a software locks them, the project cannot build successfully. 
 
 Go in the Configuration Manager as below:
 
@@ -70,11 +72,11 @@ And do the following:
 
 ![image](https://github.com/BHoM/documentation/assets/6352844/97a0ed93-2fa6-4ca1-948a-d6fe8a2d5322)
 
-This will create a new Solution Configuration called "Test". Make sure it's always selected when running tests from the Test solution:
+This will create a new _Solution Configuration_ called "Test". Make sure it's always selected when running tests from the Test solution:
 
 ![image](https://github.com/BHoM/documentation/assets/6352844/556e465f-2b30-4d28-a73f-5fb3d425b0da)
 
-In order to get the benefits from this, we will need to edit the Post-build events of every project in the Toolkit. Let's take the example of Robot_oM. The post-build events can be accessed by right-clicking the project, selecting Properties, then looking for "Post-build Events". 
+In order to get the benefits from this, we will need to edit the Post-build events of every non-test project in the Toolkit (in our example for the Robot_Toolkit, these are only 3: the Robot_oM, the Robot_Engine, and the Robot_Adapter). Let's take the example of Robot_oM. The post-build events can be accessed by right-clicking the project, selecting Properties, then looking for "Post-build Events". 
 
 ![image](https://github.com/BHoM/documentation/assets/6352844/ff94e8fa-a3ab-41ce-813f-e5587d852088)
 
