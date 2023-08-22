@@ -248,20 +248,23 @@ In particular, note that:
 - we edited the name of the class appending `Tests`
 - We added an empty test method called as the Engine method we want to verify (`GetStringFromEnum`). The test method is decorated with the `[Test]` attribute.
 
+### Unit test sections: Arrange, Act, Assert
 
-### Your first unit test: a simplistic example
-
-Every unit test is composed by these main sections (please refer to [Microsoft's Unit testing best practices](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices#arranging-your-tests) for some great explanation with examples):
+Every good unit test should be composed by these 3 clearly identifiable main sections (please refer to [Microsoft's Unit testing best practices](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices#arranging-your-tests) for more info and examples):
 
 - **Arrange**: any statement that defines the inputs and configurations required to do the verification;
 - **Act**: execute the functionality that we want to verify, given the Arrange setup;
 - **Assert**: statements that make sure that the result of the Act is as it should be.
 
-For example, we could write the following for the `GetStringFromEnum()` test method:
+The test structure should always be clear and follow this structure. Each test should only verify a specific functionality. You can have multiple assertion statements if they all concur to test the same functionality, but it can be a red flag if you have more than two or three: it often means that you should split (or parameterise) the test.
+
+### Your first unit test: a simplistic example
+
+Following the example so far, we could write this code for the `GetStringFromEnum()` test method:
 
 ```cs
 [Test]
-[Description("Verify that the GetStringFromEnum() method returs the correct string for a specific DesignCode_Steel enum value.")]
+[Description("Verify that the GetStringFromEnum() method returns the correct string for a specific DesignCode_Steel enum value.")]
 public void GetStringFromEnum()
 {
     // Arrange
@@ -278,7 +281,7 @@ public void GetStringFromEnum()
 }
 ```
 
-Note that we use [FluentAssertions'](#fluentassertions) `Should().Be()` method to verify that the value of the result is equal to the string `BS5950`, as it should be when calling the GetStringFromEnum engine method with `DesignCode_Steel.BS5950`.
+Note that we use [FluentAssertions'](#fluentassertions) `Should().Be()` method to verify that the value of the result is equal to the string `BS5950`, as it is supposed to be when calling the GetStringFromEnum engine method with the input `DesignCode_Steel.BS5950`.
 
 Also note that a good practice is to add a test `[Description]` too! This is very helpful in case the test fails, so you get an explanation of what kind of functionality verification failed and what how it was supposed to work.
 
