@@ -247,9 +247,10 @@ In particular, note that:
 - We added an empty test method called as the Engine method we want to verify (`GetStringFromEnum`). The test method is decorated with the `[Test]` attribute.
 
 
-### Write a test functionality
+### Your first unit test: a simplistic example
 
 Every unit test is composed by these main sections (please refer to [Microsoft's Unit testing best practices](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices#arranging-your-tests) for some great explanation with examples):
+
 - **Arrange**: any statement that defines the inputs and configurations required to do the verification;
 - **Act**: execute the functionality that we want to verify, given the Arrange setup;
 - **Assert**: statements that make sure that the result of the Act is as it should be.
@@ -282,9 +283,11 @@ Also note that a good practice is to add a test `[Description]` too! This is ver
 !!! warning "Why this unit test example is a bad example of unit test"
 
     This example is simplistic and shown for illustrative purposes. It's not a good unit test for several reasons:
+
     - we are not testing every possible combination of inputs to the `GetStringFromEnum()` engine method and related outputs. 
     - it hard-codes the value `BS5950`. We took that value by copying it from the body of the `GetStringFromEnum()` method and copying it in the Assert statement. This effectively duplicates that value in two places. If the string in the engine method was modified, you would need to modify the test method too. You should avoid this kind of situation and limit yourself to verifying things variables defined as part of the "Arrange" step.
 
+    See below for a better example of a good unit test.
 
 ### Better examples of good unit tests
 Some better example of a good unit test is in the [`IsNumericIntegralTypeTests`](https://github.com/BHoM/BHoM_Engine/blob/f18a175c2c14f703f7f62e7cdee7658e8c4618c9/.ci/unit-tests/Base_Engine_Tests/Query/IsNumericIntegralType.cs#L31-L52) test class, which looks like this (edited and with additional comments for illustrative puposes):
@@ -326,9 +329,9 @@ namespace BH.Tests.Engine.Base.Query
 
 ```
 
-Why are these test a better example of good unit tests?
+Why are these tests better examples of good unit tests?
 
-- The expected output data is lightweight and limited to True/False boolean; it can be "hard-coded" safely in the unit test itself.
+- The expected output data is lightweight and limited to True/False boolean; it can be "hard-coded" safely in the unit test itself. Writing `result.ShouldBe(true)` makes sense, as opposed to `result.ShouldBe(someVerySpecificString)` or `result.ShouldBe(someHugeDataset)`.
 - Because the output data has only a limited set of outcomes (True/False), the target method is well suited to be verified with an Unit test like this rather than a [Data-driven test](./Data-Driven-Tests).
 
 
@@ -395,3 +398,13 @@ For example, [we defined such methods for the Robot_Adapter_Tests test project](
 All tests existing in a Test solution can be found in the Test Explorer. If you can't find the Test Explorer, use the search bar at the top and type "Test Explorer":
 
 ![image](https://github.com/BHoM/documentation/assets/6352844/a3785c42-8531-4fe0-aeee-411a896cf80f)
+
+You can run a single test by right clicking the test and selcting Run or Debug. If you choose "debug", you will be able to hit [break points](https://learn.microsoft.com/en-us/visualstudio/debugger/using-breakpoints?view=vs-2022) placed anywhere in the code.
+
+By running tests often, you will be able to quickly develop new functionality while making sure you are not breaking any existing functionality.
+
+### Test Driven Development (TDD)
+
+A good practice is Test Driven Development (TDD), which consists in writing tests first, and implement the functionality in the "Act" step later. You can create a stub of the implmentation that does nothing, write the tests that should verify that it works fine, and then develop the functionality by adding code to the body of the stub.
+
+Doing so allows to focus on the "what" first, and the "how" later. You can develop several unit tests to verify the new functionality that you want to develop. This helps focusing on the requirements and the target result that you want to achieve. In many cases, the implementation will then almost "write itself", and you will also end up with a nice collection of unit tests that can be reused to verify that everything keeps working also years later!
