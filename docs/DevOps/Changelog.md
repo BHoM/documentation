@@ -1,4 +1,4 @@
-## Introduction
+# BHoM change log
 
 The change log is made by aggregating the notes from Pull Requests for each repository within the organisation. They are available [here](https://github.com/BHoM/documentation/releases)
 

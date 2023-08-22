@@ -1,13 +1,15 @@
-## TL;DR
+# Logging and exceptions
+
+## BHoM Logging
 
 You can record events in the Log by using 
-- `BH.Engine.Reflection.Compute.RecordError(string message)`
-- `BH.Engine.Reflection.Compute.RecordWarning(string message)`
-- `BH.Engine.Reflection.Compute.RecordNote(string message)`
+- `BH.Engine.Base.Compute.RecordError(string message)`
+- `BH.Engine.Base.Compute.RecordWarning(string message)`
+- `BH.Engine.Base.Compute.RecordNote(string message)`
 
-You can access all event logged since the UI was started by calling `BH.Engine.Reflection.Query.AllEvents()`
+You can access all event logged since the UI was started by calling `BH.Engine.Base.Query.AllEvents()`.
 
-## Introduction
+## Dealing with errors
 
 Things don't always run according to plan. Two typical situations can occur:
 - The input value your method received are invalid or insufficient to generate the output. 
@@ -57,7 +59,7 @@ This is why we have added a log system to the BHoM so all exceptional events can
 If we use the log, the code above would look like this:
 
 ```c#
-using BH.Engine.Reflection;
+using BH.Engine.Base;
 
 public List<object> MyMethod(List<BHoMObject> elements)
 {
@@ -96,7 +98,7 @@ public static Point Centroid(this PolyCurve curve, double tolerance)
 {
   if (!curve.IsClosed(tolerance))
   {
-    Reflection.Compute.RecordError("Input curve is not closed. Cannot calculate centroid.");
+    Base.Compute.RecordError("Input curve is not closed. Cannot calculate centroid.");
     return null;
   }
   [...]
@@ -110,7 +112,7 @@ Note that errors most often go with returning `null` (or `.NaN` in case of doubl
 public static Vector Normal(this PolyCurve curve, double tolerance)
 {
   if (curve.IsSelfIntersecting(tolerance))
-    Reflection.Compute.RecordWarning("Input curve is self-intersecting. Resulting normal vector might be flipped.");
+    Base.Compute.RecordWarning("Input curve is self-intersecting. Resulting normal vector might be flipped.");
 
   [...]
 }
@@ -123,7 +125,7 @@ public override List<object> Push([...])
   [...]
   if (pushConfig == null)
   {
-    BH.Engine.Reflection.Compute.RecordNote("Revit Push Config has not been specified. Default Revit Push Config is used.");
+    BH.Engine.Base.Compute.RecordNote("Revit Push Config has not been specified. Default Revit Push Config is used.");
     pushConfig = new RevitPushConfig();
   }
   [...]
