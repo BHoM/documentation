@@ -14,7 +14,8 @@ The content of this page can be roughly summarised as:
 
 ## Tests Solution setup
 
-BHoM operates a separation between tests and functionality. This is achieved by placing the test solution in a separate folder called `unit-tests`.  
+BHoM operates a separation between tests and functionality/object models. This is achieved by placing the tests in a different solution from the main repository solution.
+
 In this page, we will make an example where we want to create tests for the Robot_Toolkit.
 
 ### Create a new `unit-tests` directory
@@ -27,7 +28,7 @@ If a `.ci` folder does not exist in your Toolkit yet, create that first.
 
 ### Create a new test solution
 
-You can create a new Unit Test solution from Visual Studio from the File menu as shown below.
+You can create a new Test solution in Visual Studio from the File menu as shown below.
 
 ![2023-08-22 13_16_15-Diffing_Tests - Microsoft Visual Studio](https://github.com/BHoM/documentation/assets/6352844/4e6e299b-5ad8-4c74-9fee-14e1fca34d5c)
 
