@@ -3,3 +3,5 @@
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qimage\\E$"}
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qwarning \"Why this unit test example is a bad example of unit test\"\\E$"}
 {"rule":"NNS_OF_SINGULAR_AGREEMENT","sentence":"^\\QBetter examples of good unit tests\nA good example of a simple unit test can be found in another repository, the Base BHoM_Engine.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qwarning \"Why this is a bad example of unit test\"\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qinfo \"unit test as an umbrella term\"\\E$"}

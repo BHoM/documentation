@@ -367,6 +367,15 @@ Larger functionality verifications are also possible, in which case we talk abou
 
 In some cases, as mentioned [in the section above](#better-examples-of-good-unit-tests), the verification may need to target a complex set of data. For example, you may want to test your method against a "realistic" set of object, for example, many different input objects that cannot be generated easily from the code itself but can be easily generated in e.g. Grasshopper. In these cases, you should rely on **Data-driven tests** rather than unit tests. See the [Data-driven tests section](./Data-Driven-Tests) for more information.
 
+!!! info "_unit test_ as an umbrella term"
+
+    Sometimes, people use the term "_unit tests_" as an umbrella term for all kinds of tests. 
+    This is incorrect, as the only really generic umbrella term should be "test". However, it's a common misconception that it's often done in development.  
+    In BHoM we mistakenly perpetrate it in a couple of places:
+    
+    - in the setup of the Test Solution parent folder (which is in the `.ci/unit-test` folder; a more appropriate name should be `.ci/test`)
+    - in the name of the [Data-Driven test component](./Data-Driven-Tests.md) (which is called "unit test", but could be called "data driven test").
+
 #### A Functional test example
 Examples of Functional tests can be seen in the `Robot_Adapter_Tests` project. Adapter Test projects will likely contain lots of functional tests, as we care about testing complex behaviours like Push and Pull. 
 
