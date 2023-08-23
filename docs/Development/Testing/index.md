@@ -285,17 +285,17 @@ Note that we use [FluentAssertions'](#fluentassertions) `Should().Be()` method t
 
 Also note that a good practice is to add a test `[Description]` too! This is very helpful in case the test fails, so you get an explanation of what kind of functionality verification failed and what how it was supposed to work.
 
-!!! warning "Why this unit test example is a bad example of unit test"
+!!! warning "Why this is a bad example of unit test"
 
     This example is simplistic and shown for illustrative purposes. It's not a good unit test for several reasons:
 
     - we are not testing every possible combination of inputs to the `GetStringFromEnum()` engine method and related outputs. 
     - it hard-codes the value `BS5950`. We took that value by copying it from the body of the `GetStringFromEnum()` method and copying it in the Assert statement. This effectively duplicates that value in two places. If the string in the engine method was modified, you would need to modify the test method too. You should avoid this kind of situation and limit yourself to verifying things variables defined as part of the "Arrange" step.
 
-    See below for a better example of a good unit test.
+    See below for better examples of unit tests.
 
 ### Better examples of good unit tests
-A good example of a simple unit test can be found in another repository, the Base BHoM_Engine. This test is in the [`IsNumericIntegralTypeTests`](https://github.com/BHoM/BHoM_Engine/blob/f18a175c2c14f703f7f62e7cdee7658e8c4618c9/.ci/unit-tests/Base_Engine_Tests/Query/IsNumericIntegralType.cs#L31-L52) test class, which looks like this (edited and with additional comments for illustrative purposes):
+To illustrate good unit tests, let's look at another repository, the Base BHoM_Engine. Let's look at the test in the [`IsNumericIntegralTypeTests`](https://github.com/BHoM/BHoM_Engine/blob/f18a175c2c14f703f7f62e7cdee7658e8c4618c9/.ci/unit-tests/Base_Engine_Tests/Query/IsNumericIntegralType.cs#L31-L52) class, which looks like this (edited and with additional comments for illustrative purposes):
 
 ```cs
 namespace BH.Tests.Engine.Base.Query
