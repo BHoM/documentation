@@ -1,0 +1,5 @@
+{"rule":"ALLOW_TO","sentence":"^\\QBHoM allows to create tests of several types.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qwarning \"Solution Configuration\"\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qimage\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qwarning \"Why this unit test example is a bad example of unit test\"\\E$"}
+{"rule":"NNS_OF_SINGULAR_AGREEMENT","sentence":"^\\QBetter examples of good unit tests\nA good example of a simple unit test can be found in another repository, the Base BHoM_Engine.\\E$"}
