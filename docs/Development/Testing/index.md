@@ -373,7 +373,7 @@ In some cases, as mentioned [in the section above](#better-examples-of-good-unit
     This is incorrect, as the only really generic umbrella term should be "test". However, it's a common misconception that it's often done in development.  
     In BHoM we mistakenly perpetrate it in a couple of places:
     
-    - in the setup of the [Test Solution parent folder](#create-a-new-unit-tests-directory) (which is in the `.ci/unit-test` folder; a more appropriate name should be `.ci/test`)
+    - in the setup of the Test Solution parent folder (which is in the `.ci/unit-test` folder; a more appropriate name should be `.ci/test`)
     - in the name of the [Data-Driven test component](./Data-Driven-Tests.md) (which is called "unit test", but could be called "data driven test").
 
 #### A Functional test example
