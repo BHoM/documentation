@@ -362,11 +362,15 @@ For more examples of good tests, keep reading.
 
 ### Unit tests VS Functional tests VS Data-Driven tests
 
-The example above is simple, as unit tests are supposed to be. The power of unit tests comes by creating many simple unit tests that verify the smallest possible functionality. You should always strive to write simple unit tests. 
+The example above is simple, as unit tests are supposed to be. The power of unit tests comes by creating many simple unit tests that verify the smallest possible functionality. You should always strive to write small, simple unit tests. Please refer to [Microsoft's Unit testing best practices](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices) for more information and examples.
 
-Larger functionality verifications are also possible, in which case we talk about _Functional tests_. However, functional tests are slow to execute and, when they fail, they do not give good understanding of the possible causes for the failure, because they encompass too many things. A good practice is to have a good mix of functional tests and unit tests. Please refer to [Microsoft's Unit testing best practices](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices) for more information.
+Larger functionality verifications are also possible, in which case we talk about _Functional tests_. Often, Functional test take the perspective of a user using a large piece of software, like Pushing or Pulling objects via a BHoM_Adapter (in the next section you can an example of this).  
+However, Functional tests are slow to execute and, when they fail, they do not always give good understanding of the possible causes for the failure, because they encompass many things.  
+Still, Functional tests can be very helpful to verify that large, complex pieces of functionality work as expected under precise conditions. See this [SO post](https://stackoverflow.com/a/2741845/3873799) for more info.
 
-In some cases, as mentioned [in the section above](#better-examples-of-good-unit-tests), the verification may need to target a complex set of data. For example, you may want to test your method against a "realistic" set of object, for example, many different input objects that cannot be generated easily from the code itself but can be easily generated in e.g. Grasshopper. In these cases, you should rely on **Data-driven tests** rather than unit tests. See the [Data-driven tests section](./Data-Driven-Tests) for more information.
+In some cases, as mentioned [in the section above](#better-examples-of-good-unit-tests), the verification in a unit test may need to target a complex set of data. For example, you may want to test your method against a "realistic" set of object, for example, many different input objects that cannot be generated easily from the code itself but can be easily generated in e.g. Grasshopper. In these cases, you should rely on **Data-driven tests** rather than unit tests. See the [Data-driven tests section](./Data-Driven-Tests) for more information. It's true that Data-driven tests are generally a specific type of unit tests, simply executed with stored data that is compared against new data.
+
+In many cases, the best practice is to have a good mix of unit, functional and data-driven tests.
 
 !!! info "_unit test_ as an umbrella term"
 
@@ -375,7 +379,7 @@ In some cases, as mentioned [in the section above](#better-examples-of-good-unit
     In BHoM we mistakenly perpetrate it in a couple of places:
     
     - in the setup of the [Test Solution parent folder](#create-a-new-unit-tests-directory) (the `.ci/unit-tests` folder; we should have `.ci/tests`)
-    - in the name of the [Data-Driven test component](./Data-Driven-Tests.md) (which is called "unit test", but could be called "data driven test").
+    - in the name of the [Data-Driven test component](./Data-Driven-Tests.md) (which is called "unit test", but could be called "data driven test"). BHoM's data-driven tests are simply a type of unit test (equality assertion on the stored output data of a single method).
 
 #### A Functional test example
 Examples of Functional tests can be seen in the `Robot_Adapter_Tests` project. Adapter Test projects will likely contain lots of functional tests, as we care about testing complex behaviours like Push and Pull. 
