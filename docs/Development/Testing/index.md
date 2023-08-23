@@ -303,11 +303,11 @@ Also note that a good practice is to add a test `[Description]` too! This is ver
     This example is simplistic and shown for illustrative purposes. It's not a good unit test for several reasons:
 
     - we are not testing every possible combination of inputs to the `GetStringFromEnum()` engine method and related outputs. 
-    - it hard-codes the value `BS5950`. We took that value by copying it from the body of the `GetStringFromEnum()` method and copying it in the Assert statement. This effectively duplicates that value in two places. If the string in the engine method was modified, you would need to modify the test method too. You should avoid this kind of situation and limit yourself to verifying things variables defined as part of the "Arrange" step.
+    - it hard-codes the value `BS5950`. We took that value by copying it from the body of the `GetStringFromEnum()` method and putting it in the Assert statement. This effectively duplicates that value in two places. If the string in the engine method was modified, you would need to modify the test method too. You should avoid this kind of situation and limit yourself to verifying things variables defined as part of the "Arrange" step. If you need to verify multiple output value possibilities, you should be using a [Data-Driven approach](#unit-tests-vs-data-driven-vs-functional-tests).
 
     See below for better examples of unit tests.
 
-### Better examples of good tests
+### Better examples of tests
 To illustrate good unit tests, let's look at another repository, the Base BHoM_Engine. Let's look at the test in the [`IsNumericIntegralTypeTests`](https://github.com/BHoM/BHoM_Engine/blob/f18a175c2c14f703f7f62e7cdee7658e8c4618c9/.ci/unit-tests/Base_Engine_Tests/Query/IsNumericIntegralType.cs#L31-L52) class, which looks like this (edited and with additional comments for illustrative purposes):
 
 ```cs
@@ -349,13 +349,16 @@ namespace BH.Tests.Engine.Base.Query
 
 As you can see, this class contains 2 tests: `AreEnumsIntegral()` and `AreIntsIntegral()`. A single test class should test the same "topic", in this case the `BH.Engine.Base.Query.IsNumericIntegralType()` method, but it can (and should) do so with as many tests as needed.  
 The first test checks that C# Enums are recognised as integers by the method `IsNumericIntegralType` (they should be). The second test checks that the same method also recognises C# Integers are recognised as integers.  
-A good idea would be to add a test that verifies that a non-integral numerical value is recognised as _not an integer_, for example a `double` like `0.15`. Another test could be verifying that a non-numerical type is also recognised as _not an integer_, for example a `string`.  
-Test should be "atomical" like this, because if something goes wrong, there is going to be a specific test telling you what did go wrong!
 
 Why are these tests better examples of good unit tests than the one in the previous section?
 
-- The expected output data is lightweight and limited to True/False boolean; it can be "hard-coded" safely in the unit test itself. Writing `result.ShouldBe(true)` makes sense, as opposed to `result.ShouldBe(someVerySpecificString)` or `result.ShouldBe(someHugeDataset)`.
-- Because the output data has only a limited set of outcomes (True/False), the target method is well suited to be verified with a Unit test like this rather than a [Data-driven test](./Data-Driven-Tests).
+- Test should be "atomical" like this, because if something goes wrong, there is going to be a specific test telling you what did go wrong.
+- The possible outcomes are limited to True/False; it can be acceptable to "hard-code" True/False in the unit test itself. Writing `result.ShouldBe(true)` makes sense, as opposed to `result.ShouldBe(someVerySpecificString)` or `result.ShouldBe(someHugeDataset)`.
+
+A good idea would be to add a test that verifies that a non-integral numerical value is recognised as _not an integer_, for example a `double` like `0.15`. Another test could be verifying that a non-numerical type is also recognised as _not an integer_, for example a `string`.  
+
+If the possible outcomes of the output data were not limited to True/False, the target method would have been better suited to be verified with a [Data-driven test](./Data-Driven-Tests). However, in certain situations, like when doing [Test Driven Development](#test-driven-development-tdd), it can be acceptable to write tests that verify complex output data, although it's likely that a full test [_coverage_](https://en.wikipedia.org/wiki/Code_coverage) will only be reached with [Data-driven tests](./Data-Driven-Tests).
+
 
 For more examples of good tests, keep reading.
 
@@ -364,6 +367,9 @@ For more examples of good tests, keep reading.
 
 **Unit tests** verify that a particular piece of code, generally a function, works as expected. The perspective of a unit test is often that of the developer who authored the target function and that wants to make sure it works properly.  
 The power of unit tests comes by creating many of them that verify the smallest possible functionality with many different input combinations. You should always strive to write small, simple unit tests. Please refer to [Microsoft's Unit testing best practices](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices) for more information and examples.
+
+In some cases, as mentioned [in the section above](#better-examples-of-tests), the verification in a unit test may need to target a complex set of data. For example, you may want to test your method against a "realistic" set of object, for example, many different input objects that cannot be generated easily from the code itself, but that can be easily generated in e.g. Grasshopper. In these cases, you should rely on [**Data-driven testing**](./Data-Driven-Tests). Data-driven testing provides for more robustness against changes, because it verifies that the target function always performs in the same way. If the test function needs to change, you will have to re-write also the expected output, and this procedure increases robustness.   
+However, in certain situations, like when doing [Test Driven Development (TDD)](#test-driven-development-tdd), it can be acceptable and even extremely helpful to write tests that verify against complex data. For example, _Functional tests_ may well rely on complex set of data, and it's common to write them when doing TDD. In this scenario, it's still likely that a full test [_coverage_](https://en.wikipedia.org/wiki/Code_coverage) will only be obtainable by also doing some [Data-driven testing](./Data-Driven-Tests).
 
 Test that verify larger functionality are also possible, in which case we talk about [**Functional tests**](https://stackoverflow.com/a/2741845/3873799). Often, Functional test take the perspective of a user using a piece of software that does many things in the background, like Pushing or Pulling objects via a BHoM_Adapter (in the next section you can an example of this).  
 Functional tests can be slow to execute and, when they fail, they do not always give good understanding of the possible causes for the failure, because they encompass many things. However, Functional tests can be very helpful to verify that large, complex pieces of functionality work as expected under precise conditions. They are also amazingly helpful when developing new pieces of functionality using the [TDD approach](#test-driven-development-tdd). 
