@@ -4,7 +4,7 @@ BHoM allows to create tests of several types. We mainly distinguish between Unit
 
 The content of this page can be roughly summarised as:
 
-- [Setting up a Toolkit with a Test solution](#unit-tests-solution-setup)
+- [Setting up a Toolkit with a Test solution](#tests-solution-setup)
 - [Creating Test projects](#create-a-new-a-test-project)
 - [Writing tests](#writing-tests)
     - [Differences between Unit tests, Functional tests and Data-Driven tests](#unit-tests-vs-functional-tests-vs-data-driven-tests)
@@ -12,7 +12,7 @@ The content of this page can be roughly summarised as:
 - [Running tests](#running-tests)
 - [Good practices like Test Driven Development (TDD)](#test-driven-development-tdd)
 
-## Unit Tests Solution setup
+## Tests Solution setup
 
 BHoM operates a separation between tests and functionality. This is achieved by placing the test solution in a separate folder called `unit-tests`.  
 In this page, we will make an example where we want to create tests for the Robot_Toolkit.
