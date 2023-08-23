@@ -7,7 +7,7 @@ The content of this page can be roughly summarised as:
 - [Setting up a Toolkit with a Test solution](#tests-solution-setup)
 - [Creating Test projects](#create-a-new-a-test-project)
 - [Writing tests](#writing-tests)
-    - [Differences between Unit tests, Functional tests and Data-Driven tests](#unit-tests-vs-functional-tests-vs-data-driven-tests)
+    - [Differences between Unit, Data-Driven and Functional tests](#unit-tests-vs-data-driven-vs-functional-tests)
     - [Leveraging NUnit](#leveraging-the-nunit-test-framework-setup-and-teardown)
 - [Running tests](#running-tests)
 - [Good practices like Test Driven Development (TDD)](#test-driven-development-tdd)
@@ -261,9 +261,9 @@ In particular, note that:
 - we edited the name of the class appending `Tests`
 - We added an empty test method called as the Engine method we want to verify (`GetStringFromEnum`). The test method is decorated with the `[Test]` attribute.
 
-### Unit test sections: Arrange, Act, Assert
+### Test sections: Arrange, Act, Assert
 
-Every good unit test should be composed by these 3 clearly identifiable main sections (please refer to [Microsoft's Unit testing best practices](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices#arranging-your-tests) for more info and examples):
+Every good test should be composed by these 3 clearly identifiable main sections (please refer to [Microsoft's Unit testing best practices](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices#arranging-your-tests) for more info and examples):
 
 - **Arrange**: any statement that defines the inputs and configurations required to do the verification;
 - **Act**: execute the functionality that we want to verify, given the Arrange setup;
@@ -271,7 +271,7 @@ Every good unit test should be composed by these 3 clearly identifiable main sec
 
 The test structure should always be clear and follow this structure. Each test should only verify a specific functionality. You can have multiple assertion statements if they all concur to test the same functionality, but it can be a red flag if you have more than two or three: it often means that you should split (or parameterise) the test.
 
-### Your first unit test: a simplistic example
+### Your first test: a simplistic example
 
 Following the example so far, we could write this code for the `GetStringFromEnum()` test method:
 
@@ -307,7 +307,7 @@ Also note that a good practice is to add a test `[Description]` too! This is ver
 
     See below for better examples of unit tests.
 
-### Better examples of good unit tests
+### Better examples of good tests
 To illustrate good unit tests, let's look at another repository, the Base BHoM_Engine. Let's look at the test in the [`IsNumericIntegralTypeTests`](https://github.com/BHoM/BHoM_Engine/blob/f18a175c2c14f703f7f62e7cdee7658e8c4618c9/.ci/unit-tests/Base_Engine_Tests/Query/IsNumericIntegralType.cs#L31-L52) class, which looks like this (edited and with additional comments for illustrative purposes):
 
 ```cs
@@ -360,17 +360,15 @@ Why are these tests better examples of good unit tests than the one in the previ
 For more examples of good tests, keep reading.
 
 
-### Unit tests VS Functional tests VS Data-Driven tests
+### Unit tests VS Data-Driven VS Functional tests
 
-The example above is simple, as unit tests are supposed to be. The power of unit tests comes by creating many simple unit tests that verify the smallest possible functionality. You should always strive to write small, simple unit tests. Please refer to [Microsoft's Unit testing best practices](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices) for more information and examples.
+**Unit tests** verify that a particular piece of code, generally a function, works as expected. The perspective of a unit test is often that of the developer who authored the target function and that wants to make sure it works properly.  
+The power of unit tests comes by creating many of them that verify the smallest possible functionality with many different input combinations. You should always strive to write small, simple unit tests. Please refer to [Microsoft's Unit testing best practices](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices) for more information and examples.
 
-Larger functionality verifications are also possible, in which case we talk about _Functional tests_. Often, Functional test take the perspective of a user using a large piece of software, like Pushing or Pulling objects via a BHoM_Adapter (in the next section you can an example of this).  
-However, Functional tests are slow to execute and, when they fail, they do not always give good understanding of the possible causes for the failure, because they encompass many things.  
-Still, Functional tests can be very helpful to verify that large, complex pieces of functionality work as expected under precise conditions. See this [SO post](https://stackoverflow.com/a/2741845/3873799) for more info.
+Test that verify larger functionality are also possible, in which case we talk about [**Functional tests**](https://stackoverflow.com/a/2741845/3873799). Often, Functional test take the perspective of a user using a piece of software that does many things in the background, like Pushing or Pulling objects via a BHoM_Adapter (in the next section you can an example of this).  
+Functional tests can be slow to execute and, when they fail, they do not always give good understanding of the possible causes for the failure, because they encompass many things. However, Functional tests can be very helpful to verify that large, complex pieces of functionality work as expected under precise conditions. They are also amazingly helpful when developing new pieces of functionality using the [TDD approach](#test-driven-development-tdd). 
 
-In some cases, as mentioned [in the section above](#better-examples-of-good-unit-tests), the verification in a unit test may need to target a complex set of data. For example, you may want to test your method against a "realistic" set of object, for example, many different input objects that cannot be generated easily from the code itself but can be easily generated in e.g. Grasshopper. In these cases, you should rely on **Data-driven tests** rather than unit tests. See the [Data-driven tests section](./Data-Driven-Tests) for more information. It's true that Data-driven tests are generally a specific type of unit tests, simply executed with stored data that is compared against new data.
-
-In many cases, the best practice is to have a good mix of unit, functional and data-driven tests.
+In many cases, the best practice is to have a good balance of Unit, Functional and Data-driven tests. This comes with experience, just start with something and you'll get there!
 
 !!! info "_unit test_ as an umbrella term"
 
@@ -465,8 +463,43 @@ You can run a single test by right-clicking the test and selecting Run or Debug.
 
 By running tests often, you will be able to quickly develop new functionality while making sure you are not breaking any existing functionality.
 
-### Test Driven Development (TDD)
+## Test Driven Development (TDD)
 
-A good practice is Test Driven Development (TDD), which consists in writing tests first, and implement the functionality in the "Act" step later. You can create a stub of the implementation that does nothing, write the tests that should verify that it works fine, and then develop the functionality by adding code to the body of the stub.
+A good practice is Test Driven Development (TDD), which consists in writing tests first, and implement the functionality in the "Act" step later. You can create a stub of the implementation that does nothing, write the tests that should verify that it works fine, and then develop the functionality by adding code to the body of the stub. In other words:
 
-Doing so allows focusing on the "what" first, and the "how" later. You can develop several unit tests to verify the new functionality that you want to develop. This helps to focus on the requirements and the target result that you want to achieve. In many cases, the implementation will then almost "write itself", and you will also end up with a nice collection of unit tests that can be reused to verify that everything keeps working also years later!
+1. Write one or, better, many tests that verify a piece of functionality. They should have [Arrange, Act and Assert](#test-sections-arrange-act-assert) phases. 
+   - In the "Act" phase, just write a function call to the new function you want to define. Get inspired by the Arrange step to define the signature of the function call. Don't be bothered by the compiler complaining that the function doesn't exist!
+
+    ```cs
+    [Test]
+    public void ()
+    {
+        // Arrange
+        var input = someData; // data that I know I will want to use.
+
+        // Act
+        // DoSomething() does't exist yet!
+        var output = BH.Engine.Something.Compute.DoSomething(input); 
+
+        // Assert
+        output.Should().Be(expectedValue);
+    }
+    ```
+2. Write a stub for the target function:
+```cs
+public partial class Compute
+{
+    public static object DoSomething(object input)
+    {
+        // You will implement this later. Don't do anything.
+        return null;
+    }
+}
+```
+
+3. Run the tests. _Make sure they all fail_! Add as many tests you can think of: they should describe well the functionality you want to develop.
+4. Write the target function until all the tests pass!
+
+
+Doing this allows focusing on the "what" first, and the "how" later.  
+It helps to focus on the requirements and the target result that you want to achieve with the new function. In many cases, the implementation will then almost "write itself", and you will also end up with a nice collection of unit tests that can be re-run later to verify that everything keeps working ([_regression testing_](https://en.wikipedia.org/wiki/Regression_testing)).
