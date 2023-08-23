@@ -2,9 +2,20 @@
 
 BHoM allows to create tests of several types. We mainly distinguish between Unit Tests and Data-Driven Tests. This section explains in detail how to write Unit Tests for BHoM in Visual Studio. For [Data-Driven Tests](./Data-Driven-Tests), please refer to their section; in this page you will also find [a section dedicated to their comparison](#unit-tests-vs-functional-tests-vs-data-driven-tests).
 
-## Unit tests setup
+The content of this page can be roughly summarised as:
 
-BHoM operates a separation between tests and functionality. This is achieved by placing the test solution in a separate folder called `unit-tests`. In this page, we will make an example where we want to create unit tests for the Robot_Toolkit.
+- [Setting up a Toolkit with a Test solution](#unit-tests-solution-setup)
+- [Creating Test projects](#create-a-new-a-test-project)
+- [Writing tests](#writing-tests)
+    - [Differences between Unit tests, Functional tests and Data-Driven tests](#unit-tests-vs-functional-tests-vs-data-driven-tests)
+    - [Leveraging NUnit](#leveraging-the-nunit-test-framework-setup-and-teardown)
+- [Running tests](#running-tests)
+- [Good practices like Test Driven Development (TDD)](#test-driven-development-tdd)
+
+## Unit Tests Solution setup
+
+BHoM operates a separation between tests and functionality. This is achieved by placing the test solution in a separate folder called `unit-tests`.  
+In this page, we will make an example where we want to create tests for the Robot_Toolkit.
 
 ### Create a new `unit-tests` directory
 
@@ -105,9 +116,10 @@ This means that the post-build event is going to be triggered only when the Solu
 
 
 
-## Create a new a test project targeting specific functionality
+## Create a new a test project
 
-At this point, you should have a Test solution `.sln` file in your Toolkit's `.ci` folder, e.g. something like `GitHub/Robot_Toolkit/.ci/unit-tests/Robot_Toolkit_Tests.sln`. You now want to create a Test project where we can write tests.
+At this point, you should have a Test solution `.sln` file in your Toolkit's `.ci` folder, e.g. something like `GitHub/Robot_Toolkit/.ci/unit-tests/Robot_Toolkit_Tests.sln`.  
+You will now want to create a Test project where we can write tests.
 
 ### Decide what the Test project should target
 In order to create a new test project, you should decide what kind of functionality you will want to test there. Because BHoM functionality only resides in Engine and Adapter projects (not oM projects), we can have one test project corresponding to each Engine/Adapter project.
@@ -207,7 +219,7 @@ Click "Browse", then type "FluentAssertions" in the search bar. Select the first
 We will provide some examples on how to use this library below. Please refer to the [FluentAssertions documentation](https://fluentassertions.com/introduction) to see all the nice and powerful features of this library.
 
 
-## Write unit tests
+## Writing tests
 
 Let's image we want to write some test functionality for the Robot Query method called [`Robot.Query.GetStringFromEnum()`](https://github.com/BHoM/Robot_Toolkit/blob/5e04c82a081e3dafab3213c6f89363f0840ad3cf/Robot_Engine/Query/GetStringFromEnum.cs#L32-L49). Because this method resides in the Robot_Engine, we will need to place it into the `Robot_Engine_Tests` project (created as explained above).
 
@@ -429,7 +441,7 @@ Here, we use the OneTimeSetup method to define a behaviour that should be execut
 Check the [Robot_Adapter_Tests test project](https://github.com/BHoM/Robot_Toolkit/blob/5e04c82a081e3dafab3213c6f89363f0840ad3cf/.ci/unit-tests/Robot_Adapter_Tests/PushTests.cs#L44-L76) for more examples of Setup and Teardown methods, and refer to the [NUnit guide](https://docs.nunit.org/articles/nunit/writing-tests/setup-teardown/index.html) for more examples and info.
 
 
-## Run Unit tests
+## Running tests
 
 All tests existing in a Test solution can be found in the Test Explorer. If you can't find the Test Explorer, use the search bar at the top and type "Test Explorer":
 
