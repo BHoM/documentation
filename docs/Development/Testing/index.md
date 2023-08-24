@@ -1,8 +1,8 @@
 # BHoM Testing
 
-BHoM allows to create tests of several types. We mainly distinguish between Unit/Functional Tests and Data-Driven Tests. This section explains in detail how to write Unit/Functional Tests for BHoM in Visual Studio. For [Data-Driven Tests](./Data-Driven-Tests), please refer to their section; in this page you will also find [a section dedicated to their comparison](#unit-tests-vs-functional-tests-vs-data-driven-tests).
+BHoM allows to create tests of several types. We mainly distinguish between Unit/Functional Tests and Data-Driven Tests. This section explains in detail how to write Unit/Functional Tests for BHoM in Visual Studio. For Data-Driven Tests, please refer to [their page](./Data-Driven-Tests); among other things, in this page you will also find [a section dedicated to their comparison](#unit-tests-vs-functional-tests-vs-data-driven-tests).
 
-The content of this page can be roughly summarised as:
+The main sections of this page are:
 
 - [Setting up a Toolkit with a Test solution](#tests-solution-setup)
 - [Creating Test projects](#create-a-new-a-test-project)
