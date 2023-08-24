@@ -31,7 +31,7 @@ Please note that the default implementations do _not_ cover the mass interface `
     | `IElement1D` | <ul><li>`Geometry()`</li> <li>`SetGeometry(ICurve curve)`</li><li>`HasMergeablePropertiesWith(IElement1D)`</li></ul> | <ul><li>`Elements0D()`</li> <li>`SetElements0D(`<br>`List<IElement0D> newElements0D)`</li> <li>`NewElement0D(Point point)`</li></ul> | `IElement1D` which endpoints are defined by `IElement0D` |
     | `IElement2D` | <ul><li>`OutlineElements1D()`</li> <li>`SetOutlineElements1D(`<br>`List<IElement1D> outlineElements1D)`</li> <li>`NewElement1D(ICurve curve)`</li> <li>`HasMergeablePropertiesWith(IElement2D)`</li>  </ul> |<ul><li>`InternalElements2D()`</li>  <li>`NewInternalElement2D()`</li> <li>`SetInternalElements2D(`<br>`List<IElement2D> internalElements2D)`</li></ul> | If the `IElement2D` has internal elements |
     | |
-    | `IElementM` | <ul><li>`MaterialComposition()`</li> <li>`SolidVolume()`</li></ul> | | |
+    | `IElementM` | <ul><li>`MaterialComposition()`</li> <li>`SolidVolume()`</li></ul>  <b>or </b> <ul><li>`VolumetricMaterialTakeoff()`</li></ul> | | |
 
 3. `Spatial_Engine` contains a default `Transform` method for all `IElementXD`s. This implementation only covers the transformation of the base geometry, and does not handle any additional parameters, such as local orientations of the element. For an object that contains this additional layer of information, a object specific `Transform` method must be implemented.
 <br/><br/>
