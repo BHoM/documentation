@@ -141,7 +141,7 @@ Because this test project will target functionality in the Robot_Engine, let's n
 
 ![image](https://github.com/BHoM/documentation/assets/6352844/e78e5a1f-be13-474f-915b-290489c5c6c3)
 
-Click next and accept `.NET 6` as the target framework, then click "Create".
+Click next and accept `.NET Standard 2.0` as the target framework, then click "Create".
 
 ![image](https://github.com/BHoM/documentation/assets/6352844/997cc2da-1e51-44b5-a9ed-45704294dad4)
 
