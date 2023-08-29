@@ -4,7 +4,7 @@ BHoM allows to create tests of several types. We mainly distinguish between Unit
 
 The main sections of this page are:
 
-- [Setting up a Toolkit with a Test solution](#tests-solution-setup)
+- [Setting up a Toolkit with a Test solution](#test-solution-setup)
 - [Creating Test projects](#create-a-new-a-test-project)
 - [Writing tests](#writing-tests)
     - [Differences between Unit, Data-Driven and Functional tests](#unit-tests-vs-data-driven-vs-functional-tests)
@@ -12,7 +12,7 @@ The main sections of this page are:
 - [Running tests](#running-tests)
 - [Good practices like Test Driven Development (TDD)](#test-driven-development-tdd)
 
-## Tests Solution setup
+## Test Solution setup
 
 BHoM operates a separation between tests and functionality/object models. This is achieved by placing the tests in a different solution from the main repository solution.
 
@@ -141,7 +141,7 @@ Because this test project will target functionality in the Robot_Engine, let's n
 
 ![image](https://github.com/BHoM/documentation/assets/6352844/e78e5a1f-be13-474f-915b-290489c5c6c3)
 
-Click next and accept `.NET Standard 2.0` as the target framework, then click "Create".
+Click next and accept `.NET 6.0` as the target framework, then click "Create".
 
 ![image](https://github.com/BHoM/documentation/assets/6352844/997cc2da-1e51-44b5-a9ed-45704294dad4)
 
