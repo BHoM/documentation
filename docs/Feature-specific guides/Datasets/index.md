@@ -65,25 +65,25 @@ Access the Reference Manager in the C# project where you want to add the depende
 Go to the "Browse" tab and click the "Browse" button in the bottom-right corner.
 
 <!-- ![BrowseTab](../../../Images/Datasets/CallDatasetFromVS/BrowsTab.PNG) -->
-![BrowseTab](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/BrowsTab.PNG)
+![BrowseTab](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/BrowsTab.png)
 
 
 Navigate to the BHoM assemblies folder using the File Explorer window. The folder is usually located at C:\ProgramData\BHoM\Assemblies. Select Data_oM.dll and press "Add."
 
 <!-- ![addDataEngineDLL](../../../Images/Datasets/CallDatasetFromVS/addDataEngineDLL.PNG) -->
-![addDataEngineDLL](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/addDataEngineDLL.PNG)
+![addDataEngineDLL](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/addDataEngineDLL.png)
 
 ### Step 3: Add Dependency
 Make sure to check the box next to Data_oM.dll in the Reference Manager window and press "OK."
 
 <!-- ![CheckBoxAndOK](../../../Images/Datasets/CallDatasetFromVS/CheckBoxAndOK.PNG) -->
-![CheckBoxAndOK](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/CheckBoxAndOK.PNG)
+![CheckBoxAndOK](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/CheckBoxAndOK.png)
 
 ### Step 4: Modify File Path
 Open the project file of your specific C# project by double-clicking it with the left mouse button. Locate the line responsible for loading Data_oM.dll and modify the file path as shown in the image below.
 
 <!-- ![ModifyPathInProjectFile](../../../Images/Datasets/CallDatasetFromVS/ModifyPathInProjectFile.PNG) -->
-![ModifyPathInProjectFile](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/ModifyPathInProjectFile.PNG)
+![ModifyPathInProjectFile](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/ModifyPathInProjectFile.png)
 
 
 ### Step 5: Get the Dataset data
