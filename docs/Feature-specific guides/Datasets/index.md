@@ -50,20 +50,18 @@ To stop the Library_Engine from looking in this particular folder, use the Remov
 Remember that the menu system of the Dataset dropdown components are built up using the subfolders, so even if only a single dataset is placed in this custom folder it might be a good idea to still put your json file in an appropriate subfolder.
 
 
-## How to Access Datasets from Visual Studio
-Accessing various datasets, such as material or section datasets, can be highly beneficial when working in Visual Studio. This access allows you to utilize tested and standardized objects without having to redefine them, offering advantages in both quality and efficiency.
+## How to access BHoM Datasets programmatically
+Accessing various datasets, such as material or section datasets, can be useful when coding for BHoM. For example, you may need datasets when coding C# Unit Tests, or when programming some particular Engine function. 
 
-To make these datasets accessible in a Visual Studio project, you need to ensure the correct dependencies are added to your bespoke project.
+Access BHoM Datasets from a C# program, you need to ensure the correct dependencies are added to your project. The following steps will guide you through the process of adding the appropriate dependencies and demonstrate a few methods for accessing your desired dataset.
 
-The following steps will guide you through the process of adding the appropriate dependencies and demonstrate a few methods for accessing your desired dataset.
-
-### Step 1:Access Reference Manager
+### Step 1: Access Reference Manager
 Access the Reference Manager in the C# project where you want to add the dependency.
 
 <!-- ![ProjectFolderReference](../../../Images/Datasets/CallDatasetFromVS/ProjectFolderReference.png) -->
 ![ProjectFolderReference](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/ProjectFolderReference.png)
 
-### Step 2:Browse for the DLL
+### Step 2: Browse for the DLL
 Go to the "Browse" tab and click the "Browse" button in the bottom-right corner.
 
 <!-- ![BrowseTab](../../../Images/Datasets/CallDatasetFromVS/BrowsTab.PNG) -->
@@ -72,29 +70,31 @@ Go to the "Browse" tab and click the "Browse" button in the bottom-right corner.
 
 Navigate to the BHoM assemblies folder using the File Explorer window. The folder is usually located at C:\ProgramData\BHoM\Assemblies. Select Data_oM.dll and press "Add."
 
-![addDataEngineDLL](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/addDataEngineDLL.PNG)
 <!-- ![addDataEngineDLL](../../../Images/Datasets/CallDatasetFromVS/addDataEngineDLL.PNG) -->
+![addDataEngineDLL](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/addDataEngineDLL.PNG)
 
-### Step 3:Add Dependency
+### Step 3: Add Dependency
 Make sure to check the box next to Data_oM.dll in the Reference Manager window and press "OK."
 
 <!-- ![CheckBoxAndOK](../../../Images/Datasets/CallDatasetFromVS/CheckBoxAndOK.PNG) -->
 ![CheckBoxAndOK](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/CheckBoxAndOK.PNG)
 
-### Step 4:Modify File Path
+### Step 4: Modify File Path
 Open the project file of your specific C# project by double-clicking it with the left mouse button. Locate the line responsible for loading Data_oM.dll and modify the file path as shown in the image below.
 
 <!-- ![ModifyPathInProjectFile](../../../Images/Datasets/CallDatasetFromVS/ModifyPathInProjectFile.PNG) -->
 ![ModifyPathInProjectFile](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/ModifyPathInProjectFile.PNG)
 
 
-### Step 5:Use Dataset In Practice
-The following example demonstrates how to access the Section Library from BHoM, specifically the EU_SteelSectionLibrary.
+### Step 5: Get the Dataset data
+The following example demonstrates how to access the Section Library from BHoM, specifically the .
 
-To access the library, use the Match method as shown below:
+To access the library, use the `Match` method as shown in the example below. This returns the `HE1000M` section defined in the `EU_SteelSectionLibrary` dataset.
+
 ```csharp
-ISteelSection steelSection = BH.Engine.Library.Query.Match("EU_SteelSections", "HE1000M", true, true).DeepClone() as ISteelSection;
+var steelSection = BH.Engine.Library.Query.Match("EU_SteelSections", "HE1000M", true, true) as ISteelSection;
 ```
+
 The Match method takes four arguments:
 
 1. Library Name: "EU_SteelSections"
@@ -104,14 +104,14 @@ The Match method takes four arguments:
 
 The boolean values allow you to specify whether your search should be case-sensitive and whether to consider spaces within the object name.
 
-### Step 6: Find Existing Libraries
-If you're unsure about the available datasets, consider browsing the BHoM_Datasets repository. Under BHoM_Datasets\DataSets, you'll find multiple folders and subfolders containing numerous .json files. These .json files are predefined datasets. Each folder acts as a library, hosting one or more .json files that contain definitions of object instances.
+### Find Existing Libraries
 
-For example, in the folder:
-```csharp
-C:\[Your_BHoM_Git_Folder]\BHoM_Datasets\DataSets\Structure\SectionProperties\EU_SteelSections
-```
-you will find the following .json files:
+If you're unsure about the available datasets, check the [BHoM_Datasets](https://github.com/BHoM/BHoM_Datasets) repository. 
+
+Under BHoM_Datasets\DataSets, you'll find multiple folders and subfolders containing numerous `json` files. Each json is a dataset, and each folder acts as a dataset library. 
+
+For example, in the folder `[BHoM_Datasets repo folder]\BHoM_Datasets\DataSets\Structure\SectionProperties\EU_SteelSections
+` you will find the following json files:
 
 <!-- ![jsonFilesSteelSections](../../../Images/Datasets/CallDatasetFromVS/jsonFilesSteelSections.PNG) -->
 ![jsonFilesSteelSections](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/jsonFilesSteelSections.PNG)
