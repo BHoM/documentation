@@ -49,44 +49,114 @@ To stop the Library_Engine from looking in this particular folder, use the Remov
 
 Remember that the menu system of the Dataset dropdown components are built up using the subfolders, so even if only a single dataset is placed in this custom folder it might be a good idea to still put your json file in an appropriate subfolder.
 
+
+## How to Acess Datasets from Visual Studio
+Accessing various datasets, such as material or section datasets, can be highly beneficial when working in Visual Studio. This access allows you to utilize tested and standardized objects without having to redefine them, offering advantages in both quality and efficiency.
+
+To make these datasets accessible in a Visual Studio project, you need to ensure the correct dependencies are added to your bespoke project.
+
+The following steps will guide you through the process of adding the appropriate dependencies and demonstrate a few methods for accessing your desired dataset.
+
+### Step 1:Access Reference Manager
+Access the Reference Manager in the C# project where you want to add the dependency.
+
+<!-- ![ProjectFolderReference](../../../Images/Datasets/CallDatasetFromVS/ProjectFolderReference.png) -->
+![ProjectFolderReference](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/ProjectFolderReference.png)
+
+### Step 2:Browse for the DLL
+Go to the "Browse" tab and click the "Browse" button at the bottom-right corner.
+
+<!-- ![BrowseTab](../../../Images/Datasets/CallDatasetFromVS/BrowsTab.PNG) -->
+![BrowseTab](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/BrowsTab.PNG)
+
+
+Navigate to the BHoM assemblies folder using the File Explorer window. The folder is usually located at C:\ProgramData\BHoM\Assemblies. Select Data_oM.dll and press "Add."
+
+![addDataEngineDLL](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/addDataEngineDLL.PNG)
+<!-- ![addDataEngineDLL](../../../Images/Datasets/CallDatasetFromVS/addDataEngineDLL.PNG) -->
+
+### Step 3:Add Dependency
+Make sure to check the box next to Data_oM.dll in the Reference Manager window and press "OK."
+
+<!-- ![CheckBoxAndOK](../../../Images/Datasets/CallDatasetFromVS/CheckBoxAndOK.PNG) -->
+![CheckBoxAndOK](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/CheckBoxAndOK.PNG)
+
+### Step 4:Modify File Path
+Open the project file of your specific C# project by double-clicking it with the left mouse button. Locate the line responsible for loading Data_oM.dll and modify the file path as shown in the image below.
+
+<!-- ![ModifyPathInProjectFile](../../../Images/Datasets/CallDatasetFromVS/ModifyPathInProjectFile.PNG) -->
+![ModifyPathInProjectFile](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/ModifyPathInProjectFile.PNG)
+
+
+### Step 5:Use Dataset In Practice
+The following example demonstrates how to access the Section Library from BHoM, specifically the EU_SteelSectionLibrary.
+
+To access the library, use the Match method as shown below:
+```csharp
+ISteelSection steelSection = BH.Engine.Library.Query.Match("EU_SteelSections", "HE1000M", true, true).DeepClone() as ISteelSection;
+```
+The Match method takes four arguments:
+
+1. Library Name: "EU_SteelSections"
+2. Object Name: "HE1000M"
+3. Case Sensitivity: true or false
+4. Consider Spaces: true or false
+
+The boolean values allow you to specify whether your search should be case-sensitive and whether to consider spaces within the object name.
+
+### Step 6: Find Existing Libraries
+If you're unsure about the available datasets, consider browsing the BHoM_Datasets repository. Under BHoM_Datasets\DataSets, you'll find multiple folders and subfolders containing numerous .json files. These .json files are predefined datasets. Each folder acts as a library, hosting one or more .json files that contain definitions of object instances.
+
+For example, in the folder:
+```csharp
+C:\[Your_BHoM_Git_Folder]\BHoM_Datasets\DataSets\Structure\SectionProperties\EU_SteelSections
+```
+you will find the following .json files:
+
+<!-- ![jsonFilesSteelSections](../../../Images/Datasets/CallDatasetFromVS/jsonFilesSteelSections.PNG) -->
+![jsonFilesSteelSections](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/CallDatasetFromVS/jsonFilesSteelSections.PNG)
+
+
+These .json files contain multiple objects. To extract objects from these datasets, you'll need the name of the desired object. This can be found as an attribute within the .json file. To locate these names, you can open the .json file in an editor like Visual Studio Code and search for the object name you need.
+
 ## Compliance
 
 Compliance regulations for Datasets are outlined in [IsValidDataset](/documentation/DevOps/Code%20Compliance%20and%20CI/Compliance%20Checks/IsValidDataset).
 
-## Source
+### Source
 
 For users of the data to be able to verify where it is coming from, it is important to populate the [Source](https://github.com/BHoM/BHoM/blob/main/Data_oM/Library/Source.cs) object for the dataset. As many of the properties of the source as available should generally be populated, with an emphasis on the following:
 
-### Title
+#### Title
 The title of the publication/paper/website/... from which the data has been taken.
 
-### SourceLink
+#### SourceLink
 A http link to the source. Important to allow users of the data to easily identify where the data is coming from.
 
-### Confidence
+#### Confidence
 Level of confidence both in the source as well as how well the serialised data in the BHoM dataset has been ensured to match the source. It should be noted that, independent of the confidence level on the Dataset, all Datasets distributed with the BHoM are subject to the [General Disclaimer](https://github.com/BHoM/BHoM_Engine/blob/main/Library_Engine/Query/GeneralDisclaimer.cs).
 
 The confidence is split into 5 distinct categories, and the creator/distributor/maintainer of the dataset should always aim for the highest level of confidence as is achievable.
 
 
-#### Undefined
+##### Undefined
 Default value - assume no fidelity and no source.
 
 Should generally be avoided when adding a new Dataset for distribution with the BHoM - one of the levels below should be explicitly defined.
 
-#### None
+##### None
 The Dataset may not have a reliable source and/or fidelity to the source has not been tested.
 
 To be used for prototype Datasets where no reliable data is available, and not for general distribution within the BHoM. 
-#### Low
+##### Low
 The Dataset comes from an unreliable source but the data matches the source based on initial checks.
 
 For cases where no reliable source for the data type is available. Can be allowed to be distributed with the BHoM in circumstances where no reliable source can be found and the data still can be deemed useful.
-#### Medium
+##### Medium
 The Dataset comes from a reliable source and matches the source based on initial checks.
 
 For most cases the minimum required level of confidence for distribution of a Dataset with the BHoM. To reach this level of confidence, the Source object should be properly filled in, and a substantial spot checking of the data should have been made. If at all possible, maintainers of a Medium confidence level Dataset should strive to fulfil the requirements of High confidence.
-#### High
+##### High
 The Dataset comes from a reliable source and matches the source based on extensive review and testing.
 
 Highest level of confidence for BHoM datasets, and should generally be the aspiration for all Datasets included with the BHoM.
