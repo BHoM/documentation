@@ -10,23 +10,23 @@ A BHoM installer is released quarterly and is subject to thorough testing.
 
 !!! example "Check if BHoM is correctly installed"
 
- === "Grasshopper"
+=== "Grasshopper"
      
-     Open Grasshopper and verify that the BHoM tab is present.
-     ![image](https://github.com/BHoM/documentation/assets/6352844/cd826376-5319-4388-bbdf-a8fe0fcb85e2)
+    Open Grasshopper and verify that the BHoM tab is present.
+    ![image](https://github.com/BHoM/documentation/assets/6352844/cd826376-5319-4388-bbdf-a8fe0fcb85e2)
+    
+    Click in any empty spot, then press CTRL+Shift+B. This should open up the BHoM menu.
+    Try typing something there, like "Point". You should see a list of components.
+    ![image](https://github.com/BHoM/documentation/assets/6352844/22a3217b-ebaf-4a71-bdc0-c109db8ab4dd)
 
-     Click in any empty spot, then press CTRL+Shift+B. This should open up the BHoM menu.
-     Try typing something there, like "Point". You should see a list of components.
-     ![image](https://github.com/BHoM/documentation/assets/6352844/22a3217b-ebaf-4a71-bdc0-c109db8ab4dd)
+=== "Excel"
 
- === "Excel"
+    Open Excel and verify if the BHoM tab is present:
+    ![image](https://github.com/BHoM/documentation/assets/6352844/1dfeb5a2-0851-4540-9af7-5bfc215a1b90)
 
-     Open Excel and verify if the BHoM tab is present:
-     ![image](https://github.com/BHoM/documentation/assets/6352844/1dfeb5a2-0851-4540-9af7-5bfc215a1b90)
-
-     Click on any cell, then press CTRL+Shift+B. This should open up the BHoM menu.
-     Try typing something there, like "Point". You should see a list of components.
-     ![image](https://github.com/BHoM/documentation/assets/6352844/e79fa6dc-19dd-4b81-abb4-26b6cdf20216)
+    Click on any cell, then press CTRL+Shift+B. This should open up the BHoM menu.
+    Try typing something there, like "Point". You should see a list of components.
+    ![image](https://github.com/BHoM/documentation/assets/6352844/e79fa6dc-19dd-4b81-abb4-26b6cdf20216)
    
 
 ## Developers and contributors 🤖
