@@ -21,19 +21,19 @@ This method can be found in any UI by simply looking for `diffing`. See the belo
 !!! example "Diffing main method"
 
     === "Grasshopper"
-
-    Example file (right click -> download): [DiffingExample-00-RevitDiffing.zip](https://github.com/BHoM/documentation/files/13124871/DiffingExample-00-RevitDiffing.zip)
-
     
-    ![image](https://user-images.githubusercontent.com/6352844/146007504-68efd77b-2cf7-4448-95a8-cd43a0a0bab8.png)
-    ![image](https://user-images.githubusercontent.com/6352844/146008541-427c9f36-e55f-453e-b84d-fd381ecd0b9a.png)
+        Example file (right click -> download): [DiffingExample-00-RevitDiffing.zip](https://github.com/BHoM/documentation/files/13124871/DiffingExample-00-RevitDiffing.zip)
+    
+        
+        ![image](https://user-images.githubusercontent.com/6352844/146007504-68efd77b-2cf7-4448-95a8-cd43a0a0bab8.png)
+        ![image](https://user-images.githubusercontent.com/6352844/146008541-427c9f36-e55f-453e-b84d-fd381ecd0b9a.png)
 
     === "Excel"
-
-    Example file (right click -> download): [DiffingInExcel.xlsx](https://github.com/BHoM/documentation/files/13123142/DiffingInExcel.xlsx)
-
     
-    ![image](https://github.com/BHoM/documentation/assets/6352844/00417bfb-4f6d-4e60-9e56-bafd5ef7ef8d)
+        Example file (right click -> download): [DiffingInExcel.xlsx](https://github.com/BHoM/documentation/files/13123142/DiffingInExcel.xlsx)
+    
+        
+        ![image](https://github.com/BHoM/documentation/assets/6352844/00417bfb-4f6d-4e60-9e56-bafd5ef7ef8d)
 
 
 The method takes three inputs:
@@ -66,16 +66,16 @@ The output of any Diffing method is an object of type [`Diff`](https://github.co
 !!! example "the Diff object"
 
     === "Grasshopper"
-
-    Example file (right click -> download): [DiffingExample-00-RevitDiffing.zip](https://github.com/BHoM/documentation/files/13124871/DiffingExample-00-RevitDiffing.zip)
-    
-    ![image](https://user-images.githubusercontent.com/6352844/146033707-f4b7c1a1-063e-4c0e-8bcd-c415afd732e6.png)
+        
+        Example file (right click -> download): [DiffingExample-00-RevitDiffing.zip](https://github.com/BHoM/documentation/files/13124871/DiffingExample-00-RevitDiffing.zip)
+        
+        ![image](https://user-images.githubusercontent.com/6352844/146033707-f4b7c1a1-063e-4c0e-8bcd-c415afd732e6.png)
 
     === "Excel"
-
-    Example file (right click -> download): [DiffingInExcel.xlsx](https://github.com/BHoM/documentation/files/13123142/DiffingInExcel.xlsx)
-
-    ![image](https://github.com/BHoM/documentation/assets/6352844/6bb91d0f-58a8-4041-9d89-b225b25eee16)
+        
+        Example file (right click -> download): [DiffingInExcel.xlsx](https://github.com/BHoM/documentation/files/13123142/DiffingInExcel.xlsx)
+    
+        ![image](https://github.com/BHoM/documentation/assets/6352844/6bb91d0f-58a8-4041-9d89-b225b25eee16)
 
 
 
@@ -91,16 +91,16 @@ The `ModifiedObjectDifferences` output contains a List of  [`ObjectDifferences` 
 !!! example "The Diff object's properties"
 
     === "Grasshopper"
-
-    Example file (right click -> download): [DiffingExample-00-RevitDiffing.zip](https://github.com/BHoM/documentation/files/13124871/DiffingExample-00-RevitDiffing.zip)
-    
-    ![image](https://user-images.githubusercontent.com/6352844/146036787-2ecddb03-86bf-4a63-aad8-1b72c99a7e69.png)
+        
+        Example file (right click -> download): [DiffingExample-00-RevitDiffing.zip](https://github.com/BHoM/documentation/files/13124871/DiffingExample-00-RevitDiffing.zip)
+        
+        ![image](https://user-images.githubusercontent.com/6352844/146036787-2ecddb03-86bf-4a63-aad8-1b72c99a7e69.png)
 
     === "Excel"
-
-    Example file (right click -> download): [DiffingInExcel.xlsx](https://github.com/BHoM/documentation/files/13123142/DiffingInExcel.xlsx)
-
-    ![image](https://github.com/BHoM/documentation/assets/6352844/6bb91d0f-58a8-4041-9d89-b225b25eee16)
+        
+        Example file (right click -> download): [DiffingInExcel.xlsx](https://github.com/BHoM/documentation/files/13123142/DiffingInExcel.xlsx)
+    
+        ![image](https://github.com/BHoM/documentation/assets/6352844/6bb91d0f-58a8-4041-9d89-b225b25eee16)
 
 
 
@@ -113,17 +113,17 @@ Finally, exploding the `Differences` object, we find:
 !!! example "The *Differences* property"
 
     === "Grasshopper"
-
-    Example file (right click -> download): [DiffingExample-00-RevitDiffing.zip](https://github.com/BHoM/documentation/files/13124871/DiffingExample-00-RevitDiffing.zip)
-    
-    ![image](https://user-images.githubusercontent.com/6352844/146034910-62c8bded-4024-4fc7-a2bc-0b960fd307b6.png)
+        
+        Example file (right click -> download): [DiffingExample-00-RevitDiffing.zip](https://github.com/BHoM/documentation/files/13124871/DiffingExample-00-RevitDiffing.zip)
+        
+        ![image](https://user-images.githubusercontent.com/6352844/146034910-62c8bded-4024-4fc7-a2bc-0b960fd307b6.png)
 
     === "Excel"
-
-    Example file (right click -> download): [DiffingInExcel.xlsx](https://github.com/BHoM/documentation/files/13123142/DiffingInExcel.xlsx)
-
-    (Sorry, missing a more accurate screenshot here -- just keep exploding as in the grasshopper example)
-    ![image](https://github.com/BHoM/documentation/assets/6352844/6bb91d0f-58a8-4041-9d89-b225b25eee16)
+        
+        Example file (right click -> download): [DiffingInExcel.xlsx](https://github.com/BHoM/documentation/files/13123142/DiffingInExcel.xlsx)
+    
+        (Sorry, missing a more accurate screenshot here -- just keep exploding as in the grasshopper example)
+        ![image](https://github.com/BHoM/documentation/assets/6352844/6bb91d0f-58a8-4041-9d89-b225b25eee16)
 
 
 - `DisplayName`: name given to the difference found. This is generally the PropertyName (name of the property that changed), but it can also indicate other things. For example, if a `ComparisonInclusion()` extension method is defined for some of the input objects ([like it happens for Revit's `RevitParameter`s](https://github.com/BHoM/Revit_Toolkit/blob/a71d99fa93ab5fbad0c01ac14885e090c186ab91/Revit_Engine/Query/ComparisonInclusion.cs#L39-L77)), then the `DisplayName` may also contain some specific naming useful to identify the difference (in the case of `RevitParameter`, this is the name of the RevitParameter that changed in the modified object).  
