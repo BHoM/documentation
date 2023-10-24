@@ -22,6 +22,7 @@ This method can be found in any UI by simply looking for `diffing`:
 
 
 The method takes three inputs:
+
 - `pastObject`: objects belonging to a past version, a version that precedes the `followingObjects`'s version.
 - `followingObjects`: objects belonging to a following version, a version that was created after the `pastObject`'s version.
 - `diffingConfig`: configurations for the diffing, where you can set your `ComparisonConfig` object, see below.
@@ -62,7 +63,6 @@ The `ModifiedObjectDifferences` output contains a List of  [`ObjectDifferences` 
 
 ![image](https://user-images.githubusercontent.com/6352844/146036787-2ecddb03-86bf-4a63-aad8-1b72c99a7e69.png)
 
-
 - `PastObject`: the object in the `pastObjs` set that was identified as modified (i.e., a different version of the same object was found in the `followingObjs` set).
 - `FollowingObject`: the object in the `followingObjs` set that was identified as modified (i.e., a different version of the same object was found in the `pastObjs` set).
 - `Differences`: all the differences found between the two versions of the modified object. This is a List of [`PropertyDifference` objects](https://github.com/BHoM/BHoM/blob/5ec4a0ec34f95382f64530779aafda34252dbbfa/Diffing_oM/PropertyDifference.cs#L34-L48), one for each difference found on the modified object.
@@ -97,12 +97,14 @@ Both method then call the `DiffWithCustomIds()` to perform the comparison with t
 ### `DiffWithCustomIds()`
 
 The [`DiffWithCustomIds()` method](https://github.com/BHoM/BHoM_Engine/blob/82c1276ecb10d3d773a6a8e28643787f742e6a43/Diffing_Engine/Compute/DiffWithCustomIds.cs#L52) allows you to provide:
+
 - Two input objects sets that you want to compare, `pastObjs` and `followingObjs`;
 - Two input identifiers sets, `pastObjsIds` and `followingObjsIds`, with the Ids associated to the `pastObjs` and `followingObjs`.
 
 You can specify some `null` Ids in the `pastObjsIds` and `followingObjsIds`; however these two lists must have the same number of elements as `pastObjs` and `followingObjs`, respectively.
 
 The IDs are then used to match the objects from the `pastObjs` set to objects in the `followingObjs` set, to decide who should be compared to who:
+
 - If an object in the `pastObjs` does not have a corresponding object in the `followingObjs` set, it means that it has been deleted in the following version, so it is identified as "Removed" (old).
 - If an object in the `followingObjs` does not have a corresponding object in the `pastObjs` set, it means that it has been deleted in the past version, so it is identified as "Added" (new).
 - If an object in the `pastObjs` matches by ID an object in the `followingObjs`, then it is identified as "Modified" (it changed between the two versions). This means that the two objects will be compared and all their differences will be found. This is done by invoking the `ObjectDifferences()` method, that is [explained in detail here](/documentation/Diffing-and-Hashing:-guide-for-developers#objectdifferences-method-inner-workings).
