@@ -27,7 +27,21 @@ A BHoM installer is released quarterly and is subject to thorough testing.
         Click on any cell, then press CTRL+Shift+B. This should open up the BHoM menu.  
         Try typing something there, like "Point". You should see a list of components.  
         ![image](https://github.com/BHoM/documentation/assets/6352844/e79fa6dc-19dd-4b81-abb4-26b6cdf20216)
-   
+
+## Installation troubleshooting / FAQ
+
+### Can't install – _Error writing to file XXX: Verify you have access_
+
+If you get an error such as:
+
+![image](https://github.com/BHoM/documentation/assets/6352844/234a043c-8413-4cff-a385-f5d14c1ed4ee)
+
+This can happen on Windows multi-user machines where a previous user had installed an old version of BHoM, and the current user that is trying to install it for himself does not have admin rights.
+
+The solution is to delete the `C:\ProgramData\BHoM` folder.  
+Unfortunately, if you don't have admin rights, the only way to do this is to ask your Administrator to delete it.
+
+Once the folder has been deleted, any user (also without admin rights) will be able to install BHoM correctly.
 
 ## Developers and contributors 🤖
 Developers, general contributors, as well as those who need a special version of a toolkit, may need to compile the source code themselves.  
