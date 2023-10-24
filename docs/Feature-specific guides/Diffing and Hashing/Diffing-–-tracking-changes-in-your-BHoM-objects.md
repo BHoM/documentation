@@ -16,9 +16,24 @@ The [Diffing_Engine](https://github.com/BHoM/BHoM_Engine/tree/main/Diffing_Engin
 
 The most versatile method for diffing is the [`BH.Engine.Diffing.Compute.Diffing()` method](https://github.com/BHoM/BHoM_Engine/blob/main/Diffing_Engine/Compute/IDiffing.cs), also called `IDiffing`. Ideally, you should always use this Diffing method, although other alternatives exist for specific cases (see [Other diffing methods](/documentation/Diffing%3A-tracking-changes-in-your-BHoM-objects/#other-diffing-methods) below). A detailed technical explanation of the IDiffing can be found in the guide for developers.
 
-This method can be found in any UI by simply looking for `diffing`:
-![image](https://user-images.githubusercontent.com/6352844/146007504-68efd77b-2cf7-4448-95a8-cd43a0a0bab8.png)
-![image](https://user-images.githubusercontent.com/6352844/146008541-427c9f36-e55f-453e-b84d-fd381ecd0b9a.png)
+This method can be found in any UI by simply looking for `diffing`. See the below for an example file:
+
+!!! example "Diffing main method"
+
+    === "Grasshopper"
+
+    Example file (right click -> download): [DiffingExample-00-RevitDiffing.zip](https://github.com/BHoM/documentation/files/13124871/DiffingExample-00-RevitDiffing.zip)
+
+    
+    ![image](https://user-images.githubusercontent.com/6352844/146007504-68efd77b-2cf7-4448-95a8-cd43a0a0bab8.png)
+    ![image](https://user-images.githubusercontent.com/6352844/146008541-427c9f36-e55f-453e-b84d-fd381ecd0b9a.png)
+
+    === "Excel"
+
+    Example file (right click -> download): [DiffingInExcel.xlsx](https://github.com/BHoM/documentation/files/13123142/DiffingInExcel.xlsx)
+
+    
+    ![image](https://github.com/BHoM/documentation/assets/6352844/00417bfb-4f6d-4e60-9e56-bafd5ef7ef8d)
 
 
 The method takes three inputs:
