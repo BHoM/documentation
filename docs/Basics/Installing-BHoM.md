@@ -39,7 +39,7 @@ If you get an error such as:
 This can happen on Windows multi-user machines where a previous user had installed an old version of BHoM, and the current user that is trying to install it for himself does not have admin rights.
 
 The solution is to delete the `C:\ProgramData\BHoM` folder.  
-Unfortunately, if you don't have admin rights, the only way to do this is to ask your Administrator to delete it.
+Unfortunately, if you don't have admin rights, the only way is to ask your Administrator to delete it.
 
 Once the folder has been deleted, any user (also without admin rights) will be able to install BHoM correctly.
 
