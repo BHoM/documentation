@@ -27,23 +27,20 @@ The method takes three inputs:
 - `followingObjects`: objects belonging to a following version, a version that was created after the `pastObject`'s version.
 - `diffingConfig`: configurations for the diffing, where you can set your `ComparisonConfig` object, see below.
 
-The IDiffing, like all diffing methods, relies on an **identifier** assigned to each object, which can be used to match objects, so it knows which to compare to which even across multiple versions of the objects. The identifer is generally a unique number assigned to each object, and this number is assumed to remain always the same even if the object is modified. The identifier looked for is of type `IPersistentAdapterId`, searched in the object's Fragments; this is typically stored on objects when they are Pulled from an Adapter. This means that the IDiffing works best with objects pulled from a BHoM Adapter that stores the object Id on the object (most of them do).
+The output of every diffing method is always a **`diff` object**, which we will describe in a [section below](#the-diffing-output-the-diff-object).
 
-In case no Identifier can be found on the objects, the IDiffing attempts other diffing methods on the objects; this is explained in more detail in the diffing guide for developers.
+!!! note "How diffing works: identifiers"
 
-The output of every diffing method is always a **`diff` object**, which we will describe in a section below.
+      The IDiffing, like all diffing methods, relies on an **identifier** assigned to each object, which can be used to match objects, so it knows which to compare to which.
+      
+      The identifer is generally a unique "signature" assigned to each object, and this signature is assumed to remain always the same even if the object is modified. 
+      
+      The identifier is typically stored on objects after they have been Pulled from an Adapter. This means that the IDiffing works best with objects pulled from a BHoM Adapter that stores the object Id on the object (most of them do).
 
-### `DiffingConfig` (and `ComparisonConfig`)
+      In case no Identifier can be found on the objects, the IDiffing attempts to use [alternative methods](#other-diffing-methods) e.g. compare [one-by-one](#diffonebyone) the objects; it will give you a note if this happens. 
 
-The `DiffingConfig` object can be attached to any Diffing method and allows you to specify options for the Diffing comparison. 
+      (Technical sidenote: the identifier object is of a type called `IPersistentAdapterId`, searched in the object's Fragments. More on this in the diffing guide for developers.) 
 
-![New Project (12)](https://user-images.githubusercontent.com/6352844/146351680-1617c046-9507-47d6-a202-7bd213c43ffa.png)
-The Diffing config has the following inputs:
-
-- **`ComparisonConfig`** allows you to specify all the object comparison options; **see [its dedicated page](/documentation/Configuring-objects-comparison:-%60ComparisonConfig%60)**.
-- `EnablePropertyDiffing`: optional, defaults to `true`. If disabled, Diffing does not checks all the property-level differences, running much faster but potentially ignoring important changes.
-- `IncludedUnchangedObjects`: optional, defaults to `true`. When diffing large sets of objects, you may want to not include the objects that did not change in the diffing output, to save RAM.
-- `AllowDuplicateIds`: optional, defaults to `false`. The diffing generally uses identifiers to track "who is who" and decide which objects to compare; in such operations, duplicates should never be allowed, but there could be edge cases where it is useful to keep them.
 
 ## The Diffing output: the `Diff` object
 
@@ -76,6 +73,20 @@ An example of a DisplayName could be `StartNode.Position.X` (given a modified ob
 - `PastValue`: the modified value in the `PastObject`.
 - `FollowingValue`: the modified value in the `FollowingObject`.
 - `FullName`: this is the modified property **Full Name**. An object difference can always be linked to a precise object property that is different; this is given in the Full Name form, which includes the namespace. An example of this could be `BH.oM.Structure.Elements.Bar.StartNode.Position.X`. Note that this FullName can be significantly different from `DisplayName` (as happens for `RevitParameter`s, where the Full Name will be something like e.g. `BH.oM.Adapters.Revit.Parameters[3].RevitParameter.Value`).
+
+
+## Options for the diffing: `DiffingConfig` (and `ComparisonConfig`)
+
+The `DiffingConfig` object can be attached to any Diffing method and allows you to specify options for the Diffing comparison. 
+
+![New Project (12)](https://user-images.githubusercontent.com/6352844/146351680-1617c046-9507-47d6-a202-7bd213c43ffa.png)
+The Diffing config has the following inputs:
+
+- **`ComparisonConfig`** allows you to specify all the object comparison options; it has many settings, please **see [its dedicated page](/documentation/Configuring-objects-comparison:-%60ComparisonConfig%60)**.
+- `EnablePropertyDiffing`: optional, defaults to `true`. If disabled, Diffing does not checks all the property-level differences, running much faster but potentially ignoring important changes.
+- `IncludedUnchangedObjects`: optional, defaults to `true`. When diffing large sets of objects, you may want to not include the objects that did not change in the diffing output, to save RAM.
+- `AllowDuplicateIds`: optional, defaults to `false`. The diffing generally uses identifiers to track "who is who" and decide which objects to compare; in such operations, duplicates should never be allowed, but there could be edge cases where it is useful to keep them.
+
 
 ## Other Diffing methods
 
