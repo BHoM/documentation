@@ -18,11 +18,15 @@ To store data for tests, you can use the [Test_Toolkit](https://github.com/BHoM/
 
 0. Compile the [Test_Toolkit](https://github.com/BHoM/Test_Toolkit) - it contains some useful methods that are not shipped in the BHoM installer.
 1. Drop a `Unit Test` component in a script.
-2. Right click the component and use the search field to find the method you want to store test data for. 
-3. Produce the test data for the method. The test data should be any input object that you may want to feed to the Engine method. The test data should be representative of the general usage of the method.
-4. Connect the test data to the `Unit Test` component. The compnent will execute the target method in the backend with the provided data, and it will return one or more _Unit Test objects_, which contain the input and outputs related to the method execution.
-5. The _Unit Test objects_ should now be stored in the `.ci` folder of the repository that defines the method being tested. We store the objects as json. In order to do this reliably, you can use the Test_Toolkit's `StoreUnitTests` function, like so:
+2. Right click the component. Use the search field to find and select method you want to store test data for. Once done, the component Unit test will transform into a `UT:MethodName` component.
+   For example, if you want to test the method called `BaseTypes()`, type and select its name. The component will transform into a `UT:BaseType` component. See screenshot below.  
+   This component will have as many input as the selected method. What it will do is simply run the selected method with any provided input data.
+4. Produce some input test data for the method. The test data should cover as many input combinations and "particular inputs" as possible, in order to have good [test coverage](https://en.wikipedia.org/wiki/Fault_coverage#Test_coverage_(computing)).
+5. Connect the test data to the `Unit Test` component. The component will execute the target method with the provided data, and it will return one or more _Unit Test objects_, which contain the input and outputs related to the method execution.
+6. At this point, we will want to store the  _Unit Test objects_ as a json somewhere where the automation can find them, so future testing can be done automatically. Our place of choice is the `.ci` folder of the repository where the method being tested can be found.
+   In order to do this easily and reliably, you can use the Test_Toolkit's `StoreUnitTests` function. Please refer to the screenshot below.  
+   The `StoreUnitTests` function will save the test data in the `.ci` folder of the repository. 
 
    ![image](https://user-images.githubusercontent.com/6352844/210527902-53bdf492-d305-405b-9f2b-3be671204519.png)
 
-The `StoreUnitTests` function will save the test data in the `.ci` folder of the repository. Make sure to commit and push the data in your PR.
+8. Make sure to commit and push the data in your PR.
