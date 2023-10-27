@@ -50,6 +50,7 @@ You will have this:
 ![Alt text](examplescript.png)
 
 Press OK, and voila, a BHoM point is created! You can also check its values with the `Explode` component:
+
 ![Alt text](examplescript_output.png)
 
 
