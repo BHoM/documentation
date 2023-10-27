@@ -18,6 +18,7 @@ If you can't find a `netstandard.dll` in your disk, you can download it from [he
 ## Reference the assemblies in the C# Script component
 
 To start coding let's create a "C# Script" component in Grasshopper where we will reference the required DLLs.
+
 1. Drop a "C# Script" component in the canvas.
 2. Right click it, do "Manage Assemblies". A window will pop up.
 3. Click "Add". A File Explorer window will pop up.
