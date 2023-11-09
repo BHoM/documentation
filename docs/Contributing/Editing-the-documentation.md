@@ -79,9 +79,18 @@ You may want to preview how your markdown documents will appear in the automatic
 
 You need to:
 
-1. Have Python and PIP installed on your machine. Install `mkdocs` by running `pip install mkdocs`.
-2. Navigate to your locally cloned `documentation` repository folder.
-3. In that location, invoke from command line:  
+1. Have Python and PIP installed on your machine. Install `mkdocs` by running 
+```
+pip install mkdocs
+```
+2. You will also need to ensure you have the MkDocs extensions and plugins that we are utilising installed. These can also be installed using `pip` by running the following: 
+```
+pip install mkdocs-material 
+pip install mkdocs-awesome-pages-plugin
+pip install mkdocs-git-revision-date-localized-plugin
+```
+3. Navigate to your locally cloned `documentation` repository folder.
+4. In that location, invoke from command line:  
   `python -m mkdocs serve`.
 
 Mkdocs should spin up a local server and you should be able to connect to `http://localhost:8000/` in your browser to display the documentation website. Any change to your local file will be hot-reloaded into the webpage.
