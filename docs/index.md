@@ -1,9 +1,16 @@
-# Welcome to the BHoM documentation!
+---
+title: Welcome
+---
 
-![image](https://raw.githubusercontent.com/BHoM/documentation/main/Images/logos/BHoM_Logo.png)
+# 
 
+<p align="center">
+  <img width="500" src="https://raw.githubusercontent.com/BHoM/documentation/main/Images/logos/BHoM_Logo.png">
+</p>
 
-## So - what exactly is the BHoM?
+<br/><br/>
+
+### So - what exactly is the BHoM?
 
 The **BHoM** (**Buildings and Habitats object Model**) is a collaborative computational development project for the built environment.  
 BHoM aims to standardise the data and functionality that AEC domain experts use to design across all disciplines.
