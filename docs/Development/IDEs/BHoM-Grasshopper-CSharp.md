@@ -12,7 +12,7 @@ You can generally find the .NET Standard assembly somewhere in your C: drive. Se
 Once found, get its location by right-clicking on it and doing "Open location", then copy the location in Explorer. Take note of it.
 
 ### If you can't find the .NET Standard assembly
-If you can't find a `netstandard.dll` in your disk, you can download it from [here](https://www.nuget.org/packages/NETStandard.Library). Click on "download package". Open the downloaded `.npckg` file with a Zip archiver like 7zip. Go in the folder `build/netstandard2.0/ref/` and you will find `netstandard.dll`. Place the `netstandard.dll` somewhere in your C: drive where you will be able to find it. You could place it in the BHoM ProgramData directory, but be aware that if you reinstall or update BHoM it will get deleted.
+If you can't find a `netstandard.dll` in your disk, you can download it from [here](https://www.nuget.org/packages/NETStandard.Library). Click on "download package". Open the downloaded `.npckg` file with a Zip archiver like 7zip. Go in the folder `build/netstandard2.0/ref/` and you will find `netstandard.dll`. Place the `netstandard.dll` somewhere in your C: drive where you will be able to find it. You could place it in the BHoM installation directory (normally `C:\ProgramData\BHoM\`), but be aware that if you reinstall or update BHoM it will get deleted.
 
 
 ## Reference the assemblies in the C# Script component
@@ -23,7 +23,7 @@ To start coding let's create a "C# Script" component in Grasshopper where we wil
 2. Right click it, do "Manage Assemblies". A window will pop up.
 3. Click "Add". A File Explorer window will pop up.
 4. Add a reference to the `netstandard.dll` file, found as explained above. Select it and do "Open". You will see that it appears in the Referenced Assemblies section.
-5. Click "Add" again. Navigate to the BHoM installation directory (`C:\ProgramData\BHoM\Assemblies`). There you will find all BHoM DLLs. As a minimum, we will want to include `BHoM.dll` and `BHoM_Engine.dll`. We can add as many as we need, but don't add them all together. You will come back to add more in case the script complains that some are missing.
+5. Click "Add" again. Navigate to the BHoM assemblies directory (normally `C:\ProgramData\BHoM\Assemblies`). There you will find all BHoM DLLs. As a minimum, we will want to include `BHoM.dll` and `BHoM_Engine.dll`. We can add as many as we need, but don't add them all together. You will come back to add more in case the script complains that some are missing.
 
 ![Referenced assemblies](referenced_assemblies01.png)
 
