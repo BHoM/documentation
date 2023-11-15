@@ -6,14 +6,26 @@ BHoM can be referenced and used in a Grasshopper "C# Script" component. The only
 
 Currently, a reference to the .NET Standard assembly is required to use BHoM from a C# script component in Grasshopper. 
 
-You can generally find the .NET Standard assembly somewhere in your C: drive. Search for `netstandard.dll` in Explorer from your C: drive.
-![Alt text](image-2.png)
+### Download (or find on your drive) the .NET Standard assembly
 
-Once found, get its location by right-clicking on it and doing "Open location", then copy the location in Explorer. Take note of it.
+You can download the right version of `netstandard.dll` (currently, 2.0.3 is the one used in BHoM) from [here](https://www.nuget.org/packages/NETStandard.Library):
+1. Click on "download package".
+2. Open the downloaded `.npckg` file with a Zip archiver like 7zip.
+3. Go in the folder `build/netstandard2.0/ref/` and you will find `netstandard.dll`.
+4. Place the `netstandard.dll` somewhere in your C: drive where you will be able to find it, and remember that location. You could place it in the BHoM installation directory (normally `C:\ProgramData\BHoM\`), but be aware that if you reinstall or update BHoM it will get deleted.
 
-### If you can't find the .NET Standard assembly
-If you can't find a `netstandard.dll` in your disk, you can download it from [here](https://www.nuget.org/packages/NETStandard.Library). Click on "download package". Open the downloaded `.npckg` file with a Zip archiver like 7zip. Go in the folder `build/netstandard2.0/ref/` and you will find `netstandard.dll`. Place the `netstandard.dll` somewhere in your C: drive where you will be able to find it. You could place it in the BHoM installation directory (normally `C:\ProgramData\BHoM\`), but be aware that if you reinstall or update BHoM it will get deleted.
+!!! note
 
+    If you downloaded `netstandard.dll` previously but you can't remember where you placed it, you can search for a copy of `netstandard.dll` in your disk. 
+    ⚠️ _However_, there could be multiple copies/versions of a `netstandard.dll` file on your drive. If you find multiple files called `netstandard.dll`, then it's better to re-download it from the link above to make sure you are using the right version. ⚠️
+    
+    Search for `netstandard.dll` in Explorer from your C: drive:
+    
+    ![Alt text](image-2.png)
+
+    Once found, get its location by right-clicking on it and doing "Open location", then copy the location in Explorer. Take note of it.
+    
+    
 
 ## Reference the assemblies in the C# Script component
 
