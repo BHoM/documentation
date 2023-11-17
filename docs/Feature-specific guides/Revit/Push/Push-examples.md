@@ -1,8 +1,9 @@
 # Revit Push examples 
 
-- It is worth having a look at [Using the BHoM](https://github.com/BHoM/documentation/wiki/Using-the-BHoM) section and the rest of Revit_Toolkit Wiki before reading this page.
-- Most of the scripts are presented in both [Grasshopper](Push-in-Grasshopper). All source files are available in [samples](https://github.com/BHoM/samples/tree/master/Revit_Toolkit).
-
+!!! note
+    - It's worth having a look at [Using the BHoM](https://github.com/BHoM/documentation/wiki/Using-the-BHoM) section and the rest of Revit_Toolkit Wiki before reading this page.
+    - Most of the scripts are presented in [Grasshopper](Pull-in-Grasshopper). All source files are available in [samples](https://github.com/BHoM/samples/tree/master/Revit_Toolkit).
+  
 ### Pushing elements
 As mentioned in [Push to Revit basics](Push-to-Revit-basics#objects) section, Revit element types are name matched BHoM object properties. Therefore, the only property that is relevant for `Construction` of BHoM walls and floors as well as `Property` of BHoM framing elements is their name - all others will be simply ignored on Push.
 
