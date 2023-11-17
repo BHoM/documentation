@@ -31,6 +31,7 @@ First category that could be distinguished, are Requests that force parsing all 
 
 ### Filtering Revit elements of given feature
 Another specific group of Requests are the ones parsing only elements that have a given feature, e.g. are families or model elements. Names of such requests start with a prefix _Filter[FeatureName]_.
+
 | Request | Description |
 |----------------|--------------|
 | `FilterActiveView` | Filters the active view in Revit. |
@@ -46,6 +47,7 @@ Another specific group of Requests are the ones parsing only elements that have 
 
 ### Special Requests
 Last group of Requests are the special ones that do not fall into neither of the above categories.
+
 | Request | Description |
 |----------------|--------------|
 | `EnergyAnalysisModelRequest` | Filters all elements that are contained in Revit's energy analysis model. |
