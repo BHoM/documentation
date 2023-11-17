@@ -91,7 +91,7 @@ pip install mkdocs-git-revision-date-localized-plugin
 ```
 3. Navigate to your locally cloned `documentation` repository folder.
 4. In that location, invoke from command line:  
-  `python -m mkdocs serve`.
+  `python -m mkdocs serve`
 
 Mkdocs should spin up a local server and you should be able to connect to `http://localhost:8000/` in your browser to display the documentation website. Any change to your local file will be hot-reloaded into the webpage.
 
