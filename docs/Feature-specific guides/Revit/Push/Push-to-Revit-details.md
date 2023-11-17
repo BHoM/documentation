@@ -1,13 +1,20 @@
 # Revit push: advanced usage details
 
-This chapter explains in detail the Push action - it is recommended to read [Revit Adapter details](Revit-Adapter-Details) section first for the information about mechanics of the adapter itself.
+This chapter explains in detail the Push action.
 
+!!! note 
+    It's recommended to read [Revit Adapter details](Revit-Adapter-Details) section first for the information about mechanics of the adapter itself.
+
+## Main inputs to the Push action
 As explained in [Push to Revit basics](Push-to-Revit-basics), there are three action-specific inputs that drive Push:
+
 - **Objects**, an `IEnumerable<IBHoMObject>` to be pushed to Revit
-- **Push type** of type `BH.oM.Adapter.PushType` explained in more detail in a [dedicated section](Push-types)
+- **Push type** of type `BH.oM.Adapter.PushType` explained in more detail below.
 - **Action config** of type `RevitPushConfig`
 
 They are specified as arguments of the `Push` method of `RevitAdapter`. Depending on the thread on which the `Push` method is executed, they will be either sent via Sockets as a data package (if `Push` is executed outside of Revit thread) or passed directly to `RevitUIAdapter` (if everything is run on a single Revit thread).
+
+### PushType
 
 Next, `RevitUIAdapter` triggers Push action, which, depending on `PushType`, points to a combination of `Delete`, `Create` and `Update` [CRUD methods](https://github.com/BHoM/documentation/wiki/Adapter-Actions#the-crud-paradigm), as explained below. 
 
@@ -20,6 +27,8 @@ Next, `RevitUIAdapter` triggers Push action, which, depending on `PushType`, poi
     The above are being dispatched by `BH.Revit.Engine.Core.Modify.IUpdate` and `BH.Revit.Engine.Core.Modify.ISetLocation` respectively. If type-specific `Update` method does not exist, only the parameter values will be copied over to the Revit element, as explained [here](https://github.com/BHoM/Revit_Toolkit/wiki/Handling-of-Parameters).
 
 Finally, the successfully pushed BHoM objects are returned to `RevitAdapter` (using a Sockets bypass if `RevitAdapter` and `RevitUIAdapter` do not run on the same thread).
+
+## Flow-chart explanation (for coders)
 
 The diagram below maps out the above workflow - it should be read as an action-specific variation of the _Adapter action_ stage of the [general Adapter flowchart](Revit-Adapter-Details).
 

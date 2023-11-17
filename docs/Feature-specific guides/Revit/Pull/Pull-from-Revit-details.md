@@ -5,12 +5,14 @@ This chapter explains in detail the Pull action - it is recommended to read [Rev
 ## Pull options: Requests and RevitPullConfig
 
 As explained in [Pull from Revit basics](Pull-from-Revit-basics), there are two action-specific inputs that drive Pull:
+
 - **Request** of type deriving from `IRequest` explained in more detail in a [dedicated section](Requests-and-filtering)
 - **Action config** of type `RevitPullConfig`
 
 They are specified as arguments of the `Pull` method of `RevitAdapter`. Depending on the thread on which the `Pull` method is executed, they will be either sent via Sockets as a data package (if `Pull` is executed outside of Revit thread) or passed directly to `RevitUIAdapter` (if everything is run on a single Revit thread).
 
 Next, `RevitUIAdapter` triggers Pull action, which points directly to `Read` [CRUD method](https://github.com/BHoM/documentation/wiki/Adapter-Actions#the-crud-paradigm). `Read` executes following tasks:
+
 1. Collects ElementIds of Revit elements that meet requirements set by the Request (done in `BH.Revit.Engine.Core.Query.ElementIds`).
 2. Checks discipline enforced by:
     - Request - this happens e.g. when the filter is `FilterRequest` with `Type` property equal to `BH.oM.Structure.Elements.Bar` - pulling of elements of given type is possible only for structural discipline
