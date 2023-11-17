@@ -1,6 +1,6 @@
 ## Overview
 
-For this introduction, we will be using Grasshopper as a model but be aware that the same general principles will apply to other UIs (Dynamo, Excel, ...) too. 
+For this introduction, we will be using Grasshopper as a model but be aware that the same general principles will apply to other UIs (Excel, ...) too. 
 
 The UI layer has been designed so that it will automatically pick everything implemented in the BHoM, the Engines and the Adapters without the need to change anything on the code of the UI. This means that, instead of having one component for every single piece of functionality, it will group them under common components. This way, the number of component there doesn't have to change when more functionality is added to the rest of the code. Here's what it looks like in Grasshopper:
 

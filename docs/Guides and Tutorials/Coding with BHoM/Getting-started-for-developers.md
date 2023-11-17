@@ -18,7 +18,7 @@ We recommend [Visual Studio Community](https://visualstudio.microsoft.com/vs/com
     
     You must pick all the _Mandatory_ repos.
 
-!!! note "Rebuilding and seeing changes in the UIs (Grasshopper/Dynamo/Excel)"
+!!! note "Rebuilding and seeing changes in the UIs (Grasshopper, Excel, ...)"
 
     When building in visual studio, the compiled assemblies will go in the `./Build` folder of your Repo; additionally, there is a **Post-Build event** that copies the files in the **central BHoM folder: `C:\ProgramData\BHoM\Assemblies`**.
 
@@ -57,7 +57,6 @@ Compile **one or more of the following** - depending on the User interface softw
 
 1. [Rhinoceros_Toolkit](https://github.com/BHoM/Rhinoceros_Toolkit) and then [Grasshopper_Toolkit](https://github.com/BHoM/Grasshopper_Toolkit) (requires Rhinoceros_Toolkit)
 2. [Excel_Toolkit](https://github.com/BHoM/Excel_Toolkit)
-3. [Dynamo_Toolkit](https://github.com/BHoM/Dynamo_Toolkit)
 
 
 The following repos are optional.
@@ -103,6 +102,6 @@ Some examples:
 Sometimes you might encounter [this error](https://user-images.githubusercontent.com/6352844/74666820-1e192800-519a-11ea-9c4e-340ea8cedbc9.png). Although Visual Studio "Rebuild All" command should take care of Restoring the NuGet packages for you, to solve this just run that manually.  
 Right click the solution → `Restore NuGet Packages`.
 
-### I have done some changes to my code, but when I open Grasshopper (or Dynamo, or Excel) the code still behaves as before! Why it is not updated?
+### I have done some changes to my code, but when I open Grasshopper (or Excel, or ...) the code still behaves as before! Why it is not updated?
 After compiling, check that the Build was successful, by looking in the "Output" tab at the bottom of the VS interface; make sure no errors are there, and also that the Post-build event worked successfully. See the notes above.
 

@@ -10,13 +10,13 @@ Before we discuss in more details what is a repository and what it contains, let
 
 ## The 4 categories of code
 
-If you ever have created your own tool or script, you must must have been exposed to the two dual aspects of computation: _data_ and _functionality_. In excel, data would be the value of your cells and functionality would be the formulas or VB scripts. In Grasshopper and Dynamo, the functionality is made by the components, and the data is stored within parameters.
+If you ever have created your own tool or script, you must have been exposed to the two dual aspects of computation: _data_ and _functionality_. In Excel, data would be the value of your cells and functionality would be the formulas or VB scripts. In Grasshopper, the functionality is made by the components, and the data is stored within parameters.
 
-Data is generally representing specific _concepts_. For example, Grasshopper and Dynamo provide definitions for Points, Lines, etc., which are geometrical concepts. There are however a lot of objects that we manipulate regularly as engineers that are not defined out of the box in any of those programs. So our first category of code will focus on that: providing a list of properties that fully define each type of object we use. For example, we can all agree that a point would have three properties (X,Y, and Z) each representing to position of the point along one axis. This applies similarly to agree on the definitions of elements such as walls, spaces, speakers,...
+Data is generally representing specific _concepts_. For example, Grasshopper provides definitions for Points, Lines, etc., which are geometrical concepts. There are however a lot of objects that we manipulate regularly as engineers that are not defined out of the box in any of those programs. So our first category of code will focus on that: providing a list of properties that fully define each type of object we use. For example, we can all agree that a point would have three properties (X,Y, and Z) each representing to position of the point along one axis. This applies similarly to agree on the definitions of elements such as walls, spaces, speakers,...
 
 Manipulators are the bespoke scripts, algorithms, equations, ... that we had to write ourselves to provide calculations not readily available. As engineers we have all had some of those custom made solutions lying around on our computer. Here we simply provide a central place to collect and store them in an organised way so we can all benefit from it.
 
-The two categories above are called respectively **oM** (stands for object model) and **Engine**. They are all we need to extent our internal computational capability. That being said, we have no intention to reinvent the wheel by replacing external software like Revit, Robot, Tas, IES,... We are also keen to keep using the user interfaces that we already know like Excel, Grasshopper and Dynamo. We are therefore adding two more categories to our central code. **Adapters** to allow the exchange of data between our internal code and external softwares. **UI** plugins to typical programs like Grasshopper and Dynamo that expose all our code directly.
+The two categories above are called respectively **oM** (stands for object model) and **Engine**. They are all we need to extend our internal computational capability. That being said, we have no intention to reinvent the wheel by replacing external software like Revit, Robot, Tas, IES,... We are also keen to keep using the user interfaces that we already know like Excel, Grasshopper. We are therefore adding two more categories to our central code. **Adapters** to allow the exchange of data between our internal code and external softwares. **UI** plugins to typical programs like Grasshopper that expose all our code directly.
 
 ![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/BHoM_Anatomy_02a.png)
 
@@ -28,7 +28,7 @@ In summary, the 4 categories of code, you will find among those repositories are
 
 * **Adapters**: Connections between the BHoM and engineering tools such as Revit, GSA, Tas, IES,... This is where BHoM objects are translated to and from the proprietary representation used in each of those tools.
 
-* **UI**: Expose the BHoM functionality through user interfaces such as Grasshopper, Dynamo and Excel.
+* **UI**: Expose the BHoM functionality through user interfaces such as Grasshopper and Excel.
 
 ## Dependency chain
 

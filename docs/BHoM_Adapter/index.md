@@ -53,7 +53,7 @@ Depending on the UI Software you are using, you can create an Adapter component 
  
 The **Adapter Actions** are the way to communicate with an external software via an Adapter. 
 
-Adapter Actions are BHoM components that you connect to a specific Adapter (e.g. Robot Adapter). Like any other BHoM component, are always look the same no matter what User Interface program you are using (Grasshopper, Excel, Dynamo...). In Grasshopper, there will be a component representing each action; in Dynamo, a node for each of them; in Excel, a _formula_ will let you use them. You can find the Adapter Actions in the *Adapter* subcategory:
+Adapter Actions are BHoM components that you connect to a specific Adapter (e.g. Robot Adapter). Like any other BHoM component, are always look the same no matter what User Interface program you are using (Grasshopper, Excel, ...). In Grasshopper, there will be a component representing each action; in Excel, a _formula_ will let you use them. You can find the Adapter Actions in the *Adapter* subcategory:
 
 !!! example "Adapter Actions"
 
@@ -67,10 +67,10 @@ Adapter Actions are BHoM components that you connect to a specific Adapter (e.g.
 
     === "Excel"
 
-        1. Select an Actions from the "Adapter" category, e.g. `Push`:
+        3. Select an Actions from the "Adapter" category, e.g. `Push`:
         ![image](https://user-images.githubusercontent.com/6352844/222767005-bfe0cf04-d1a2-4316-bb52-0a5f3fb70b6b.png)
 
-        2. The selected action is instantiated as a formula to which an adapter can be connected. You will need to specify also the objects and possibly other inputs; keep reading.
+        4. The selected action is instantiated as a formula to which an adapter can be connected. You will need to specify also the objects and possibly other inputs; keep reading.
         ![image](https://user-images.githubusercontent.com/6352844/222779644-87182236-57b4-40f4-bcb8-381d11a96a0f.png)
 
 
@@ -110,7 +110,7 @@ The last input to any Adapter action is an `active` Boolean, that can be True or
 ### Push and Pull
 
 The most commonly used actions are the Push and the Pull. You can think of Push and Pull as Export and Import: they are your "portal" towards external software.  
-Again, taking Grasshopper UI as an example, they look like this (but they always have the same inputs and outputs, even if you are using Excel or Dynamo): 
+Again, taking Grasshopper UI as an example, they look like this (but they always have the same inputs and outputs, even if you are using Excel): 
 ![image](https://user-images.githubusercontent.com/6352844/74932145-04195880-53d9-11ea-88a0-c91af87b9920.png)
 
 #### Push
