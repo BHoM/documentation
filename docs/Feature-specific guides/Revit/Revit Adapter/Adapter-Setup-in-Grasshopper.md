@@ -1,3 +1,5 @@
+# Revit Adapter setup in Grasshopper
+
 **Note:** Before reading this page, it is recommended to have a look at [Using the BHoM](https://github.com/BHoM/documentation/wiki/Using-the-BHoM) section.
 
 In Grasshopper, Revit Adapter with different values can be set up in literally few clicks. The adapter component can either be created based on _CreateAdapter_ component or with **Ctrl+Shift+B** menu. Once the Adapter component is placed on canvas, its `active` input needs to be set to `true` - that is the moment when the connection between Revit and the Adapter is being established. `IsValid` query allows to check if the adapter has been set up correctly on the BHoM side. 

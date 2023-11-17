@@ -1,3 +1,5 @@
+# Revit-BHoM conversion compatibility
+
 Revit_Toolkit provides bi-directional conversion between Revit and BHoM. This conversion is an integral part of Push and Pull Adapter actions - besides simply translating Revit elements into BHoM objects, it ensures [correctness of the units](Conventions#unit-conventions) and, in general, allows representing Revit objects outside of Revit context.
 
 Sections below explain the practicalities of that process, while its code mechanics is discussed in [Push details](Push-to-Revit-details) and [Pull details](Pull-from-Revit-details) sections.

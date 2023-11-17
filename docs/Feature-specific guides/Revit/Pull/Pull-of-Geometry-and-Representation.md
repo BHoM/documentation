@@ -1,3 +1,5 @@
+# Revit: Pull geometry and object representations
+
 By default, Revit elements are pulled and converted to the BHoM objects as explained in [Revit BHoM conversion](Revit-BHoM-conversion). However, on top of that, it is possible to extract additional information about the actual geometry of an element in Revit, as well as its representation including colours. Instruction about that extra information to pull is passed to the adapter via `GeometryConfig` and `RepresentationConfig` properties of [`RevitPullConfig`](Pull-from-Revit-basics#action-config).
 
 `PullGeometryConfig` object allows to set following geometry-related instructions:

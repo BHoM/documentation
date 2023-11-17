@@ -1,4 +1,4 @@
-### Matching Revit elements with BHoM objects
+# Matching Revit elements with BHoM objects
 Exchange of information between Revit and BHoM often requires linking the objects from both sides with each other, e.g. when querying the model for changes or updating it. The mutual relationship is being created and maintained as follows:
 - On **Pull**, the identifiers of pulled Revit element are stored in `RevitIdentifiers` fragment attached to the resultant BHoM object.
 - On **Push**, Revit element is being considered correspondent to a BHoM object when the latter contains a `RevitIdentifiers` fragment with value of `ElementId` property equal to the ElementId of the former.

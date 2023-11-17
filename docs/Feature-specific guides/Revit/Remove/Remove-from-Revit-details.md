@@ -1,3 +1,5 @@
+# Revit remove advanced usage information
+
 This chapter explains in detail the Remove action - it is recommended to read [Revit Adapter details](Revit-Adapter-Details) section first for the information about mechanics of the adapter itself.
 
 As explained in [Remove from Revit basics](Remove-from-Revit-basics), there are two action-specific inputs that drive Remove:

@@ -1,4 +1,5 @@
-### Introduction
+# Revit Push
+
 Pushing from BHoM to Revit can be simply explained as creation of Revit elements based on BHoM objects. In order to perform that action, the adapter needs to be [set up correctly](https://github.com/BHoM/Revit_Toolkit/wiki/Revit-Adapter-basics) first. Once this is done, the user needs to specify two basic Push inputs:
 - **Objects** (which BHoM objects are meant to be pushed?)
 - **Push type** (should the existing Revit elements be replaced by the new ones, updated etc.)

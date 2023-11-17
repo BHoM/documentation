@@ -1,3 +1,13 @@
+# Revit_Toolkit documentation
+
+Welcome to the [Revit_Toolkit](https://github.com/BHoM/Revit_Toolkit/) documentation! 
+
+Here you will find information on what Revit_Toolkit can do for you as well as how to make that (and even more) happen. 
+
+Feel free to explore and raise an [issue](https://github.com/BHoM/Revit_Toolkit/issues) if you need or do not like something. Enjoy!
+
+## Revit_Toolkit overview
+
 Revit_Toolkit is a set of tools that enable and support exchange of information between BHoM and Revit. The heart of the process is [the Adapter](Revit-Adapter-basics) that links Revit with BHoM. It allows for the following actions:
 - [Pull from Revit to BHoM](Pull-from-Revit-basics)
 - [Push from BHoM to Revit and update Revit elements](Push-to-Revit-basics)

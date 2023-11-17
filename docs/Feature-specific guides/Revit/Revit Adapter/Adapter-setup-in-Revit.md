@@ -1,3 +1,5 @@
+# Revit Adapter setup in Revit plugin
+
 BHoM is communicating with Revit via a dedicated plugin. Once BHoM is installed (or Revit_Toolkit compiled, if built from source), it should automatically load on startup of Revit 2018, 2019, 2020 and 2021. 
 
 Activation of the plugin may be required upon starting Revit for the first time after BHoM installation. Simply click _Always Load_ not to see the popup again:
