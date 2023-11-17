@@ -1,3 +1,5 @@
+# Revit requests and data filtering for Pull (and Remove)
+
 Requests are used to filter the elements in Revit document that are meant to be processed (e.g. pulled or removed). Currently there is over 20 requests available in Revit_Toolkit that could be divided into three categories presented below. Practical implementation of the requests is discussed in [Pull examples](Pull-examples).
 
 ### Filtering all Revit elements by properties

@@ -1,3 +1,5 @@
+# Pull from Revit Link documents
+
 It is possible to pull elements directly from Revit link documents, in the coordinate system of the host model. This can be achieved using `FilterByLink` request combined with other filters using the `LogicalAndRequest`. For example, the script below would pull all beams from the link named _MyLinkDocument_.
 
 [![Pull from link in Grasshopper](https://user-images.githubusercontent.com/26874773/112680469-b38eed00-8e6d-11eb-8864-7bc54962edd0.png)](https://user-images.githubusercontent.com/26874773/112680469-b38eed00-8e6d-11eb-8864-7bc54962edd0.png)
