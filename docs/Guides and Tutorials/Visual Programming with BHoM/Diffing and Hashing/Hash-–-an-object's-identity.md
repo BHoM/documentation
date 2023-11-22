@@ -31,7 +31,7 @@ This method's most parameters are:
 
 ## Hash `ComparisonConfig`: options to compute the Hash
 
-The real potential of the Hash algorithm is given by its customisation options, which we call [_ComparisonConfig_](/documentation/Configuring-objects-comparison%3A-%60ComparisonConfig%60) (comparison configurations).
+The real potential of the Hash algorithm is given by its customisation options, which we call [_ComparisonConfig_](Configuring-objects-comparison-(ComparisonConfig).md) (comparison configurations).
 
 For example, you may want to configure the Hash algorithm so it only considers numerical properties that changed within a certain tolerance. This way, you can determine if an object changed by looking at changes in the Hash, and you will be alerted only if the change was a numerical change greater than the given tolerance.
 
@@ -39,9 +39,9 @@ For this reasons, we expose many configurations in a `ComparisonConfig` object:
 
 ![image](https://user-images.githubusercontent.com/6352844/146352031-edcebdcc-b6db-49d1-8a1b-903c1c2ae6ce.png)
 
-See the [Wiki page dedicated to `ComparisonConfig`](/documentation/Configuring-objects-comparison%3A-%60ComparisonConfig%60) for details on it.
+See the [page dedicated to `ComparisonConfig`](Configuring-objects-comparison-(ComparisonConfig).md) for details on it.
 
-Note that some ComparisonConfig options may slow down the computation of the Hash, which becomes particularly noticeable when hashing large sets of objects. An option that may have particular negative impact when computing the Hash is `PropertiesToConsider`, as explained [here](/documentation/Configuring-objects-comparison:-%60ComparisonConfig%60#note-hash-performance-when-using-propertiestoconsider).
+Note that some ComparisonConfig options may slow down the computation of the Hash, which becomes particularly noticeable when hashing large sets of objects. An option that may have particular negative impact when computing the Hash is `PropertiesToConsider`, as explained [here](Configuring-objects-comparison-(ComparisonConfig).md#note-hash-performance-when-using-propertiestoconsider).
 
 <br></br>
 
@@ -49,6 +49,6 @@ Note that some ComparisonConfig options may slow down the computation of the Has
 >
 > If you want a specific object to be Hashed in a particular way, you can implement a specific `HashString()` method for that object in your Toolkit.
 > 
-> Here is an example [for Revit's `RevitParameter` object](https://github.com/BHoM/Revit_Toolkit/blob/main/Revit_Engine/Query/HashString.cs). The `HashString()` method will get invoked [hen computing the Hash(). 
+> Here is an example [for Revit's `RevitParameter` object](https://github.com/BHoM/Revit_Toolkit/blob/main/Revit_Engine/Query/HashString.cs). The `HashString()` method will get invoked when computing the Hash(). 
 >
-> More info in the [Diffing and Hash: guide for developers](/documentation/Diffing-and-Hashing:-guide-for-developers#customising-the-hash-hashstring-extension-method) wiki page.
+> More info in the [Diffing and Hash: guide for developers](../../Coding with BHoM/Diffing and Hashing/Diffing-and-Hashing-–-guide-for-developers.md) wiki page.
