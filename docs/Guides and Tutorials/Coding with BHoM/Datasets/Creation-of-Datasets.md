@@ -1,7 +1,7 @@
 # Creation of Datasets
 
 
-Datasets are a way to store and distribute BHoMObjects for use by others. For example, a list of standard [structural materials](https://github.com/BHoM/BHoM_Datasets/tree/main/DataSets/Materials) or [section properties](https://github.com/BHoM/BHoM_Datasets/tree/main/DataSets/SectionProperties) as well as [global warming potential](https://github.com/BHoM/LifeCycleAssessment_Toolkit/tree/main/DataSets) for various materials.
+Datasets are a way to store and distribute BHoMObjects for use by others. For example, a list of standard [structural materials](https://github.com/BHoM/BHoM_Datasets/tree/main/DataSets/Structure/Materials) or [section properties](https://github.com/BHoM/BHoM_Datasets/tree/main/DataSets/Structure/SectionProperties) as well as [global warming potential](https://github.com/BHoM/LifeCycleAssessment_Toolkit/tree/main/DataSets) for various materials.
 
 The data should be serialised in a [Dataset](https://github.com/BHoM/BHoM/blob/main/Data_oM/Library/Dataset.cs) object, and the relevant `.csproj` file in the repo, in which the Dataset is stored, should have a post build event implemented that ensures that the Dataset is copied to the `C:\ProgramData\BHoM\Datasets folder`. This will allow it to be picked up by the `Library_Engine`.
 
