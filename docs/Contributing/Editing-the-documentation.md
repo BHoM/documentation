@@ -60,6 +60,12 @@ Links to other documentation pages should be relative URLs (starting with a `/`)
 
     This way of providing URL to pages is required because MkDocs reflects the markdown files starting from the root `documentation`.
 
+
+!!! tip
+    
+    
+    If using Visual Studio Code, enable Error Reporting on Markdown files and Link Validation in settings. VS Code will then check the validity of local links and cross referencing across your Markdown files, flagging warnings where links are invalid. [VS Code Link Validation](https://code.visualstudio.com/docs/languages/markdown#_link-validation)
+
 ### Alternative (not recommended)
 If you are editing a specific nested page you can also use URLs relative to the current page. Some examples:
 - To link to the [Getting started for developers](../Getting-started-for-developers) page, relative to this current page (Editing-the-documentation), you can provide: `../Getting-started-for-developers`.
