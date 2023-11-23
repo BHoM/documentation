@@ -19,5 +19,5 @@ To implement the `IImmutable` interface, you need to make two actions:
 1. It must implement only **one** constructor, whose parameters are types of all the immutable properties of the object.
 
 For an example, you can check the `BH.oM.Structure.SectionProperties.SteelSection` from the `Structure_oM`:
-https://github.com/BHoM/BHoM/blob/master/Structure_oM/SectionProperties/SteelSection.cs
+[Steel Section example](https://github.com/BHoM/BHoM/blob/main/Structure_oM/SectionProperties/SteelSection.cs)
 
