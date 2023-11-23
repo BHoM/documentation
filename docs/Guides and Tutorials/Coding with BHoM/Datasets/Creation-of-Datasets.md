@@ -9,7 +9,7 @@ The data should be serialised in a [Dataset](https://github.com/BHoM/BHoM/blob/m
 
 To generate a new dataset to be used with the BHoM the following steps should be taken.
 
-1. Generate the objects to be stored in the new Dataset. This means creating the BHoMObject of the correct type in any of the supported UIs. See below for an example of how to create a handful of standard European steel materials in Grasshopper. Remember to give the created objects an easily identifiable name as the name is what will show up when using the data in the dropdowns. **Remember that all BHoM objects should be defined in [SI units](/documentation/BHoM-Units-conventions).**
+1. Generate the objects to be stored in the new Dataset. This means creating the BHoMObject of the correct type in any of the supported UIs. See below for an example of how to create a handful of standard European steel materials in Grasshopper. Remember to give the created objects an easily identifiable name as the name is what will show up when using the data in the dropdowns. **Remember that all BHoM objects should be defined in [SI units](../../../BHoM_oM/BHoM-Units-conventions.md).**
 
     ![Create Steel](https://raw.githubusercontent.com/BHoM/documentation/main/Images/Datasets/Example%20generate%20data.PNG)
 
