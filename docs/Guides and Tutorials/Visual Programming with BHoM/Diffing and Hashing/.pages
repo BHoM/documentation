@@ -3,5 +3,3 @@ nav:
     - Hash-–-an-object's-identity.md
     - Configuring-objects-comparison-(ComparisonConfig).md
     - Configuring-Revit-objects-comparison-(RevitComparisonConfig).md
-    - ...
-    - Diffing-and-Hashing-–-guide-for-developers.md

@@ -45,7 +45,7 @@ Once the folder has been deleted, any user (also without admin rights) will be a
 
 ## Developers and contributors 🤖
 Developers, general contributors, as well as those who need a special version of a toolkit, may need to compile the source code themselves.  
-Please read [Getting started for developers](/documentation/Contributing/Getting-started-for-developers) for more info.
+Please read [Getting started for developers](<../Guides and Tutorials/Coding with BHoM/Getting-started-for-developers.md>) for more info.
 
 !!! note "Alpha installer"
 
