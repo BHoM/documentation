@@ -1,4 +1,4 @@
-# Geometry_oM 
+# Geometry oM 
 
 Geometry_oM is the core library, on which all engineering BHoM objects are based. It provides a common foundation that allows to store and represent spatial information about any type of object in any scale: building elements, their properties and others, both physical and abstract.
 
