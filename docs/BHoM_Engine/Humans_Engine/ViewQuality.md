@@ -11,14 +11,14 @@ Jump to the section of interest:
 * [Background Information](#background-information)
 
 ## Measure Cvalues
-[Method in Humans_Engine](https://github.com/BHoM/BHoM_Engine/blob/master/Humans_Engine/Query/CvalueAnalysis.cs)
+[Method in Humans_Engine](https://github.com/BHoM/BHoM_Engine/blob/main/Humans_Engine/Query/CvalueAnalysis.cs)
 ![cvalue calculation](https://user-images.githubusercontent.com/6618854/111189354-e69fc980-85ad-11eb-8a18-4a2bb901d7d9.png)
 ### Find focal points
 [Method in Humans_Engine](https://github.com/BHoM/BHoM_Engine/blob/1210c894accd9b6e9539ca8a7fd3b91302b33356/Humans_Engine/Query/CvalueAnalysis.cs#L102)
 ![focalpoint](https://user-images.githubusercontent.com/6618854/111189362-e8698d00-85ad-11eb-8d5a-d691733b146f.png)
 
 ## Measure Avalues
-[Method in Humans_Engine](https://github.com/BHoM/BHoM_Engine/blob/master/Humans_Engine/Query/AvalueAnalysis.cs)
+[Method in Humans_Engine](https://github.com/BHoM/BHoM_Engine/blob/main/Humans_Engine/Query/AvalueAnalysis.cs)
 
 Avalue is the percentage of the spectator's view cone filled with the playing area.
 ![overview](https://user-images.githubusercontent.com/6618854/117262086-cb806600-ae48-11eb-9ad5-dcf2107fb587.jpg)
@@ -31,7 +31,7 @@ Occlusion is the percentage of the spectator's view occluded by the heads of spe
 ![occlusion](https://user-images.githubusercontent.com/6618854/114209869-07fa9800-9957-11eb-9e6b-f16d7b5c73f8.jpg)
 
 ## Measure Evalues
-[Method in Humans_Engine](https://github.com/BHoM/BHoM_Engine/blob/master/Humans_Engine/Query/EvalueAnalysis.cs)
+[Method in Humans_Engine](https://github.com/BHoM/BHoM_Engine/blob/main/Humans_Engine/Query/EvalueAnalysis.cs)
 
 Description coming soon...
 
