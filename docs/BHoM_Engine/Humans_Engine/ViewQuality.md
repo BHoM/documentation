@@ -1,4 +1,4 @@
-# View quality conventions
+# View Quality Conventions
 This page describes the view quality conventions that are used within the BHoM. 
 The description is intended to be a non-technical guide and provide universal access to understanding the methods of calculation of different view quality metrics. Links to the relevant methods are provided for those who wish to view the C# implementation.
 
