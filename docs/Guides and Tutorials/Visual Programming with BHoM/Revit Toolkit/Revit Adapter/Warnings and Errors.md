@@ -1,0 +1,4 @@
+# Warnings and Errors
+It is likely that the adapter will generate warnings on converts. This is related to the fact that each Revit object consists of a multitude of information that often cannot be translated to BHoM one to one. It is important to read warning messages as they usually explain what issue has been found.
+
+Error messages, on the other hand, usually mean that a serious issue occurred on convert: either the object has not been converted due to an error in the method, or the conversion method simply does not exist. Same as with warnings, error messages should provide detailed information about the problem.

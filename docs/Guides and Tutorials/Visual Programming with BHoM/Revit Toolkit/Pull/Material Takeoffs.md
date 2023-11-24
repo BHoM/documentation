@@ -1,0 +1,2 @@
+# Pull of material takeoffs
+It is possible to pull a material take-off of any Revit element on `Pull`. It can be achieved by using [`RevitPullConfig` with `PullMaterialTakeOff` property set to `true`](../Action Config). Once that is done, `RevitMaterialTakeOff` fragment will be added to each pulled BHoM object, which can then be converted into an `ExplicitBulk` using `MaterialTakeoff` query.
