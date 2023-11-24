@@ -1,0 +1,2 @@
+# Programmatic filtering
+On code level, each Revit-applicable type that inherits from `IRequest` is coupled with a `BH.Revit.Engine.Core.ElementIds` method that extracts the ElementIds of Revit elements that match the requirements it imposes. These methods can be used without prior creation of `IRequest`.
