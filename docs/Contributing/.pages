@@ -3,4 +3,5 @@ nav:
     - Editing-the-documentation.md
     - Submitting-an-Issue.md
     - Resolving-an-Issue.md
-    - ...
+    - Pull-Requests.md
+    - Best-practices

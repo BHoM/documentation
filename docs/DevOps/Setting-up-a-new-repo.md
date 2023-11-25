@@ -1,12 +1,4 @@
-# Creating a new repository
-
-All of the repositories within the BHoM organisation contain only ___curated and strongly controlled code___. 
-The aim is to provide a coherent set of tools that are all compatible with each other. As well as clear and robust quality control, review and testing procedures - enabling release across a wider part of the practice.
-
-__For more details on the organisation of the BHoM repos See [Overview of the Structure of the BHoM](/documentation/Basics/Structure-of-the-BHoM) and the other links from within [What is the BHoM?]()__
-
-
-## Setting up a new Repo
+# Setting up a new Repo
 Following the clarification of the best location for different code above - instructions on how to create a new BHoM Repo with the correct settings:
 
 1. Name the Repo _SoftwareNameOrFocus_ _Toolkit. It will always end in Toolkit see explaination [here](/documentation/Basics/Structure-of-the-BHoM)
