@@ -22,17 +22,18 @@ You can get more information on how to use one of the BHoM UI [on this page](/do
 If a geometry representation can be extracted, either from one of its properties, or as a result of their manipulation, it can be used to automatically render the object in the GUIs. The only action to enable that, is to create a `Query.Geometry` method, whose only parameter is the object you want to display, and place it in the `Engine` namespace that corresponds to the `oM` of the object. The method has to return an `IGeometry` or one of its assignable types.
 
 For example, let's assume I want to automatically display a `BH.oM.Structure.Elements.Bar`. I'd do as follows:
+
 1. Go into the correspondent Engine - i.e. `BH.Engine.Structure`
 1. Go into the `Query` folder - i.e. `BH.Engine.Structure.Query`
 1. If it does not exist yet, create a `Geometry.cs` file
 1. Add an extension method name `Geometry`, whose only parameter is the object you want to display:
-```c#
-public static Line Geometry(this BH.oM.Structure.Elements.Bar bar)
-{
-  // Extract your geometry
-  return calculatedGeoemtry
-}
-```
+  ```c#
+  public static Line Geometry(this BH.oM.Structure.Elements.Bar bar)
+  {
+    // Extract your geometry
+    return calculatedGeoemtry
+  }
+  ```
 
 ## Creating a new UI
 
