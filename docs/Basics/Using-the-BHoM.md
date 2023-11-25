@@ -15,4 +15,5 @@ Two great places to start are therefore our introductry guides:
 2. [Getting started with coding in the BHoM for developers](<../Guides and Tutorials/Coding with BHoM/Getting-started-for-developers.md>) The BHoM has been designed as an open framework, ready to be be built on top of, extended and customisied. Being open source all the code is fully explorable on GitHub. So if you are a coder this is a great We can't wait to see what you build! 
 
 
+If you are already experimenting with the BHoM we would love to know about it. See our [Getting started with contributing](../Contributing/index.md) page.
 
