@@ -1,6 +1,8 @@
 # Technical philosophy of the BHoM 
 
-The Buildings and Habitats object Model (BHoM) is designed to be compatible with both visual flow-based programming (e.g. Grasshopper, Excel) and with proper programming (e.g. coding in C#). 
+The Buildings and Habitats object Model \[BHoM] has been designed as a hybrid model for code architecture - integrating a number of concepts from across existing languages/platforms. 
+
+The Buildings and Habitats object Model (BHoM) is designed to be compatible with both visual flow-based programming (e.g. Grasshopper, Excel) and with text based functional and imperative programming (e.g. coding in C#). 
  
 This is to integrate well in the workflow of any professional in the AEC industry, regardless of their level of computational proficiency: BHoM is a platform for combining the efforts of the _professional programmer_ with those of any enthusiastic _scripter/computational designer/engineer/architect_, all in the same ecosystem.
 
@@ -11,7 +13,7 @@ The Buildings and Habitats object Model is organised as four distinct categories
 
 <br/>
 
-***1. The object model [oM] is nothing more than structured data - a collection of schemas.***
+***1. The object model \[oM] is nothing more than structured data - a collection of schemas.***
 
 The _oM_ is defined as naturally type strong C# classes, but comprising of only simple public Get Set Properties, with all methods excluded from the class definition including even the requirement for default constructors.<sup>1</sup>  
 Ultimately, they are very close to C type structures with the added benefit of inheritance and polymorphism that a C# class provides.

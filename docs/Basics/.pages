@@ -2,5 +2,6 @@ nav:
     - index.md
     - Installing-BHoM.md
     - Using-the-BHoM.md
-    - ...
-    - Coding fundamentals
+    - The-BHoM-Toolkit.md
+    - The-BHoM-code-organisation.md
+    - Technical-philosophy-of-the-BHoM.md
