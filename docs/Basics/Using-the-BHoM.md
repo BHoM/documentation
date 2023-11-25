@@ -1,96 +1,18 @@
-## Overview
+The BHoM has been built from the ground with the aim to enable use of BHoM tools and participation in computational design across both the broadest of skill sets as well as the most diverse areas of expertise.
 
-For this introduction, we will be using Grasshopper as a model but be aware that the same general principles will apply to other UIs (Excel, ...) too. 
+This means there are a number of different entry points to get started with using the BHoM depending on what you want to acheive, and what your background is.
 
-The UI layer has been designed so that it will automatically pick everything implemented in the BHoM, the Engines and the Adapters without the need to change anything on the code of the UI. This means that, instead of having one component for every single piece of functionality, it will group them under common components. This way, the number of component there doesn't have to change when more functionality is added to the rest of the code. Here's what it looks like in Grasshopper:
+The BHoM is all about thinking about our design as workflows and data models: inputs, processes and outputs. BHoM therefore loves flow based visual programming! 
 
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/GH_Menu.png)
+The BHoM has two community developed and supported plugins giving access to BHoM functionality in our favourite computational design environments:
+BHoM for Grasshopper and BHoM for Excel 
 
-In a few words, the **oM** section is for creating object, the **Engine** section is for manipulating objects, using them to derive information, or running some form of calculation, and the **Adapter** section is for exchanging data with external softwares.
 
-## Key Concept
+Two great places to start are therefore our introductry guides:
 
-In order to explain how most of those components work, let's start with the **Create BHoM Object** that can be found in the **oM** section:
+1. [Getting started with the BHoM in visual programming](<../Guides and Tutorials/Visual Programming with BHoM/index.md>) This is a great entry point to explore many of the basic concepts
 
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/GH_CreateComponent.gif)
+2. [Getting started with coding in the BHoM for developers](<../Guides and Tutorials/Coding with BHoM/Getting-started-for-developers.md>) The BHoM has been designed as an open framework, ready to be be built on top of, extended and customisied. Being open source all the code is fully explorable on GitHub. So if you are a coder this is a great We can't wait to see what you build! 
 
-As you can see, you first drop a dummy component on the canvas that has no input nor output. You then select in its menu what you want it to be to turn it into its final form.
 
-The principle is exactly the same for the **Compute**, **Convert**, **Modify**, and **Query** components in the **Engine** section as well as for the **Create Adapter** and **Create Query** components in the **Adapter** section. Here's the example for the **Create** and **Create Adapter** components:
-
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/GH_QueryComponent.png)
-
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/GH_AdapterComponent.png)
-
-## Search Menus
-
-Notice that there are a couple more ways to create the final component you need: 
-
-* Use the search menu from the component:
-
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/GH_ComponentSearchMenu.gif)
-
-* Use the Ctrl+Shift+B shortcut and then do a search from that menu
-
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/GH_CtrlBSearchMenu.gif)
-
-If you want to search for something that include a series of words, just separate them by a space like done above.
-
-## Create Custom Objects
-
-We have seen how to Create BHoM objects using the **Create BHoMObject** component. There will be situations where you need a type of object that is not part of the BHoM (yet?). For this, we have the **CustomObject** component:
-
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/GH_CustomObjComponent.gif)
-
-This component allows you to define your own objects with a custom set of properties. You will notice that the Component start with two inputs: Name and Tags. This is because a **CustomObject** is also a **BHoMObject** and every **BHoMObject** has a property for Name and a property for Tags. IF you don't want to use those two, just remove them.
-
-Usually, that component is automatically figuring out the type of each property based on the data plugged in its inputs. There might be times when it got it wrong. For that reason, you can always specify manually the type of each input from its context menu. This is especially useful when the input is a list. In that case, just tick the box for **List** to tell Grasshopper you want that list as a single input instead of one value in the list per object.
-
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/GH_TypeHint.png)
-
-## Alternative Ways to Create Known Types of Objects
-
-The CreateObject component provides a series of recommended ways to create known objects. Those correspond to the methods defined in the Create section of the BHoM_Engine. There might be rare cases where you cannot find a constructor that suits your needs. In that situation, you can use the CreateCustom component to define your own way to build a known object, just select the type of object you want to create from the contextual menu and select your own inputs. Inputs that are not properties of the object will be stored in CustomData.
-
-![](https://user-images.githubusercontent.com/16853390/50468221-95618a80-09e1-11e9-8c31-f6dec30f93b8.gif)
-
-## Other Types of Objects
-
-Sometimes, you will find a component requiring an input that is not a BHoM object and not something you can create in Grasshopper either. The **Enum**, **Type** and **Dictionary** components are exactly there to cover those situations. One case you will probably encounter soon is when using the **FilterQuery** component from the **Adapter** section. 
-
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/GH_TypeComponent.gif)
-
-The **Dictionary** and **Enum** work from the same principle: you select their final form from their menu. 
-
-The **Enum** component has a slightly different form though:
-
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/GH_EnumAndData.gif)
-
-The **Data** component shown above is allowing you to select data from one of our static databases. Its output type will therefore vary based on the data you select. Those will generally be a **BHoM object** though.
-
-## Engine components
-
-The 4 components on the left correspond to the 4 categories of methods you can find in the **Engine**: **Compute**, **Convert**, **Modify**, and **Query** (**Create** being in the **oM** section). 
-
-The 3 components in the middle are for extracting or updating properties of BHoM objects. The one you will probably use most of the time is the **Explode** component:
-
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/GH_ExplodeComponent.gif)
-
-The last two components are for converting any BHoM object to and from [JSON](https://en.wikipedia.org/wiki/JSON). This stand for **J**ava**S**cript **O**bject **N**otation. This is the langage we use when we represent BHoM objects as string. Unless you see straight away how those components can be of used to you, you can safely ignore them.
-
-## Adapter components
-
-We have already mentioned the **Create Adapter** and the **Create Query** components from the right part of the **Adapter** section. The 6 components on the left part correspond to the 6 operations provided by the interface of every BHoM adapter: **Push**, **Pull**, **UpdateProperty**, **Delete**, **Excecute** and **Move**. Most likely than not, you will generally use the **Push** and **Pull** components so we'll show how those two work here. 
-
-![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/GH_PushPullComponents.gif)
-
-Here we have the Socket adapter to send data across and get it back. Obviously, you would use sockets to send data between two different UIs or computers instead of just within Grasshopper but this example is just to show how the **Push** and **Pull** components are working.
-
-## Things to Remember
-
-While we have shown quite a few things here, the main thing to remember is that most of the components in our UIs require you to select something from their menu before they switch to their final state. You can do that by either navigation the menu tree or using the search box. Those menu trees are organised exactly the same way has the code you will find on GitHub. You can also use **Ctrl+Shift+B** to create the final component directly. 
-
-On top of that concept, remember the **CustomObject** and **Explode** components. They are a very convenient way to pack and unpack groups of data.
-
-From there, the best way to learn how to use those tools is to play with them in your UI of choice or to browse the documentation provided on the Wiki of each repository.
 
