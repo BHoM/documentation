@@ -2,7 +2,7 @@ The BHoM has been built from the ground up with the aim of enabling participatio
 
 This means there are a number of different entry points to get started with using the BHoM depending on what you want to acheive and what your background is.
 
-## The BHoM Visual Programming Plugins
+## BHoM Visual Programming Plugins
 
 BHoM encourages thinking about design as simple workflows and data models:
 
@@ -21,7 +21,7 @@ One great place to start is therefore our introductory guide:
 This is also a good entry point to explore many of the basic concepts of BHoM.
 
 
-## The BHoM as a Framework to build your own tools
+## BHoM as a Framework to build your own tools
 
 The BHoM has been designed as an open framework, ready to be be built on top of, extended and customisied. Being open source all the code is fully explorable on GitHub. So if you are a coder see our guide to [Getting started with coding in the BHoM for developers](<../Guides and Tutorials/Coding with BHoM/Getting-started-for-developers.md>).
 
