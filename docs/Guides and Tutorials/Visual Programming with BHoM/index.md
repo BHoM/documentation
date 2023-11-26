@@ -2,13 +2,20 @@
 
 For this introduction, we will be using Grasshopper as a model but be aware that the same general principles will apply to other UIs (Excel, ...) too. 
 
+!!! Question "Have you already installed the BHoM?"
+
+    Not yet? To follow along with the examples below you might want to first get the BHoM Plugins. 
+    
+    See our [Guide to installing the BHoM](../../Basics/Installing-BHoM.md)
+
+
+## Key Concept
+
 The UI layer has been designed so that it will automatically pick everything implemented in the BHoM, the Engines and the Adapters without the need to change anything on the code of the UI. This means that, instead of having one component for every single piece of functionality, it will group them under common components. This way, the number of component there doesn't have to change when more functionality is added to the rest of the code. Here's what it looks like in Grasshopper:
 
 ![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/GH_Menu.png)
 
 In a few words, the **oM** section is for creating object, the **Engine** section is for manipulating objects, using them to derive information, or running some form of calculation, and the **Adapter** section is for exchanging data with external softwares.
-
-## Key Concept
 
 In order to explain how most of those components work, let's start with the **Create BHoM Object** that can be found in the **oM** section:
 
