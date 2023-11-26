@@ -1,4 +1,4 @@
-◀️ Previous read: _[The BHoM Toolkit](/documentation/Basics/The-BHoM-Toolkit)_ and _[Adapter Actions](./Adapter-Actions)_
+◀️ Previous read: _[The BHoM Toolkit](../Basics/BHoM-Toolkits.md)_ and _[Adapter Actions](Adapter-Actions.md)_
 
 ___________________________________________________________________
 
@@ -15,7 +15,7 @@ Their scope has to be well defined, as explained below.
 
 Note that **the Base Adapter is constellated with comments ([example](https://github.com/BHoM/BHoM_Adapter/blob/b5b35b8177901a4f1b1399ab86f7a21f7ffc9668/BHoM_Adapter/CRUD/IRead.cs#L35-L46)) that can greatly help you out**.
 
-Also **the [BHoM_Toolkit Visual Studio template](/documentation/The-BHoM-Toolkit) contains lots of comments** that can help you.
+Also **the [BHoM_Toolkit Visual Studio template](../Contributing/Implementing-a-new-Toolkit.md) contains lots of comments** that can help you.
 
 
 # Create
@@ -23,7 +23,7 @@ Create must take care only of Creating, or exporting, the objects.
 Anything else is out of its scope. 
 
 For example, a logic that takes care of checking whether some object already exists in the External model – and, based on that, decides whether to export or not – cannot sit in the Create method, but has rather to be included in the Push. 
-This very case (checking existing object) is [already covered by the Push logic](./Adapter-Actions/).
+This very case (checking existing object) is [already covered by the Push logic](Adapter-Actions.md).
 
 The main point is: keep the Create simple. It will be called when appropriate by the Push.
 
@@ -36,21 +36,21 @@ If no API calls are necessary to convert the objects, the best practice is to do
 
 If API calls are required for the conversion, it's best to include the conversion process directly in the Create method. See [Robot_Toolkit](https://github.com/BHoM/Robot_Toolkit) for an example of this.
 
-In the [Toolkit template](/documentation/Basics/The-BHoM-Toolkit), you will find some methods to get you started for creating `BH.oM.Structure.Element.Bar` objects.
+In the [Toolkit template](../Contributing/Implementing-a-new-Toolkit.md), you will find some methods to get you started for creating `BH.oM.Structure.Element.Bar` objects.
 
 
 ### AssignNextFreeId
 
 This is a method for returning a free index that can be used in the creation process. 
 
-Important method to implement to get pushing of dependant properties working correctly. Some more info given in the [Toolkit template](/documentation/Basics/The-BHoM-Toolkit/). 
+Important method to implement to get pushing of dependant properties working correctly. Some more info given in the [Toolkit template](../Contributing/Implementing-a-new-Toolkit.md). 
 
 
 
 # Read
 The read method is responsible for reading the external model and returning all objects that respect some rule (or, simply, all of them).
 
-There are many available overloads for the Read. You should assume that any of them can be [called "when appropriate" by the Push and Pull adapter actions](/documentation/Adapter-Actions/).
+There are many available overloads for the Read. You should assume that any of them can be [called "when appropriate" by the Push and Pull adapter actions](Adapter-Actions.md).
 
 ## The Read method in practice
 The Read method scope should in general be specular to the Create:
@@ -64,11 +64,11 @@ Otherwise, if API calls are required for the conversion, it's best to include th
 # Update
 The Update has to take care of copying properties from from a new version of an object (typically, the one currently being Pushed) to an old version of an object (typically, the one that has been Read from the external model). 
 
-The update will be [called when appropriate by the Push](/documentation/Adapter-Actions/).
+The update will be [called when appropriate by the Push](Adapter-Actions.md).
 
 ## The Update method in practice
 
-If you have implemented your custom [object Comparers and Dependency objects](/documentation/The-BHoM-Toolkit#additional-methods-and-properties), then the CRUD method `Update` will be called for any objects deemed to already exist in the model. 
+If you have implemented your custom [object Comparers and Dependency objects](Implement-an-Adapter.md#additional-methods-and-properties), then the CRUD method `Update` will be called for any objects deemed to already exist in the model. 
 
 Unlike the Create, Delete and Read, this method already exposes a simple implementation in the base Adapter, which may be enough for your purposes: it calls Delete and then Create.
 
@@ -78,7 +78,7 @@ This base implementation can always be overridden at the Toolkit level for a mor
 
 # Delete
 The Update has to take care of deleting an object from an external model.
-The Delete is called by these Adapter Actions: the Remove and the Push. See the [Adapter Actions page for more info](./Adapter-Actions/).
+The Delete is called by these Adapter Actions: the Remove and the Push. See the [Adapter Actions page for more info](Adapter-Actions.md).
 
 ### The Delete method in practice
 

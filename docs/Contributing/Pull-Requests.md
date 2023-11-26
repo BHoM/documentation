@@ -13,7 +13,7 @@ A raised pull request should have the following features within it - these are p
  - Clear identification of any dependant pull requests that this work is relying on to operate - for example, if your work in a toolkit depends on a change in BHoM_Engine, then in the toolkit pull request there should be a clear link to the BHoM_Engine at the top of your toolkit pull request
  - Linked issues that are being resolved by this pull request - where there are multiple pull requests in a series, at least one of them needs to be referencing an issue that clearly outlines what needs to change in the code. The pull request should aim to solve just the issue outlined. One pull request can resolve several issues at once if needed
  - Test scripts - either reference to data-driven unit-tests (which BHoMBot will then run) or links to test scripts built in a BHoM suitable UI, or reference to the issue which may contain test scripts when the issue was raised.
- - Change log - see [our change log guidance](/documentation/Releases/Changelog)
+ - Change log - see [our change log guidance](../DevOps/Changelog.md)
  - Additional comments - anything extra you feel will help the reviewers in reviewing your pull request
 
 ## Categorising a Pull Request

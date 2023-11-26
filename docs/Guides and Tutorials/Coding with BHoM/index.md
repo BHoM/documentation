@@ -2,7 +2,7 @@
 
 Welcome Developers! 🚀
 
-Here's a quick start guide. After reading this, you might want to head to [create your own Toolkit](/documentation/Basics/The-BHoM-Toolkit).
+Here's a quick start guide. After reading this, you might want to head to [create your own Toolkit](../../Contributing/Implementing-a-new-Toolkit.md).
 
 ## Building BHoM from Source
 

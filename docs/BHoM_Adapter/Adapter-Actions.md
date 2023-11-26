@@ -1,8 +1,8 @@
 # Adapter actions 
 
-After covering the basics in [Introduction to BHoM_Adapter](/documentation/BHoM_Adapter/Introduction-to-the-BHoM_Adapter), this page explains the Adapter Actions more in detail, including their underlying mechanism.
+After covering the basics in [Introduction to BHoM_Adapter](index.md), this page explains the Adapter Actions more in detail, including their underlying mechanism.
 
-After reading this you should be all set to develop your own [BHoM Toolkit](/documentation/Basics/The-BHoM-Toolkit)! 🚀 
+After reading this you should be all set to develop your own [BHoM Toolkit](../Basics/BHoM-Toolkits.md)! 🚀 
 
 
 
@@ -12,7 +12,7 @@ After reading this you should be all set to develop your own [BHoM Toolkit](/doc
 
 
 ## How the Adapter Actions work
-[As we saw before](/documentation/BHoM_Adapter/Introduction-to-the-BHoM_Adapter), the Adapter Actions are backed by what we call *CRUD* methods. Let's see what that means.
+[As we saw before](index.md), the Adapter Actions are backed by what we call *CRUD* methods. Let's see what that means.
 
 ### The CRUD paradigm
 A very common **paradigm** that describes **all the possible action types** is [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete). This paradigm says that, regardless of the connection being made, the connector actions can be always categorised as:
@@ -64,9 +64,9 @@ The following times, we expect the existing objects to be `Update`d with the par
 The paragraphs that follow down below are dedicated to explaining _the relationship between the CRUD methods and the Adapter Actions_. 
 
 For first time developers, this is not essential – **you just need to assume that _the CRUD methods are called by the Adapter Actions when appropriate_**.  
-You may now want to jump to [our guide to build a **BHoM Toolkit**](/documentation/BHoM_Adapter/The-BHoM-Toolkit).
+You may now want to jump to [our guide to build a **BHoM Toolkit**](../Contributing/Implementing-a-new-Toolkit.md).
 
-> You will read more about the CRUD methods and how you should implement them in [their dedicated page](/documentation/BHoM_Adapter/The-CRUD-methods) that you should read after the BHoM_Toolkit page.
+> You will read more about the CRUD methods and how you should implement them in [their dedicated page](The-CRUD-methods.md) that you should read after the BHoM_Toolkit page.
 
 Otherwise, keep reading.
 
@@ -193,7 +193,7 @@ There is some additional logic related to technicalities, for instance how we de
 ![image](https://user-images.githubusercontent.com/6352844/74739504-def9de00-5250-11ea-807f-d38df3a8e4f1.png)
 
 
-You can find more info on Requests in their related section of the [Adapter Actions - Advanced parameters](/documentation/BHoM_Adapter/Adapter-Actions---advanced-parameters) wiki page.
+You can find more info on Requests in their related section of the [Adapter Actions - Advanced parameters](Adapter-Actions---advanced-parameters.md) wiki page.
 
 Note that the method returns a list of `object`, because the pulled objects must not necessarily be limited to BHoM objects (you can import any other class/type, also from different Object Models).
 
@@ -244,5 +244,5 @@ The method returns _true_ if the command was executed successfully.
 
 # Next steps: Create Your Own Adapter
 
-Read on our [guide to build a **BHoM Toolkit**](/documentation/BHoM_Adapter/The-BHoM-Toolkit).
+Read on our [guide to build a **BHoM Toolkit**](../Contributing/Implementing-a-new-Toolkit.md).
 

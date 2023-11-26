@@ -5,12 +5,12 @@ Since the the _Project SCRUM Board_ is fully automatised, it is read-only and re
 
 ![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/ScrumBoard.png).
 
-Each card that you see there corresponds to an [issue raised in one of the repos](Submitting-an-Issue). From the moment it is created to the time when that issue has been completely resolved, the corresponding cards, i.e. the issue card and the associated pull-request card, will go through the different columns of this board. 
+Each card that you see there corresponds to an [issue raised in one of the repos](../Submitting-an-Issue.md). From the moment it is created to the time when that issue has been completely resolved, the corresponding cards, i.e. the issue card and the associated pull-request card, will go through the different columns of this board. 
 
 ## Creating a Card
-The best way to create a card is to [create an issue in the corresponding repository](Submitting-an-Issue) and add it to "SCRUM Development Board Planning" project. The card will automatically appear in the most appropriate column.
+The best way to create a card is to [create an issue in the corresponding repository](../Submitting-an-Issue.md) and add it to "SCRUM Development Board Planning" project. The card will automatically appear in the most appropriate column.
 
-Although this is not recommended, if you want to create the card from the project board itself, see the GitHub's help page [Adding issues and pull requests to a project board](https://help.github.com/en/articles/adding-issues-and-pull-requests-to-a-project-board). Be mindful that when you convert the card to issue, it should follow the guidelines described in [Submitting an Issue](Submitting-an-Issue)
+Although this is not recommended, if you want to create the card from the project board itself, see the GitHub's help page [Adding issues and pull requests to a project board](https://help.github.com/en/articles/adding-issues-and-pull-requests-to-a-project-board). Be mindful that when you convert the card to issue, it should follow the guidelines described in [Submitting an Issue](../Submitting-an-Issue.md)
 
 ## SCRUM Board Columns
 
@@ -20,10 +20,10 @@ This column contains only issue cards. Once an issue has been assigned to a pers
 
 ### In Progress 
 
-This column contains only pull request cards. A card is in this column when a person [starts working on the corresponding issue](Resolving-an-Issue). New pull requests that are added to the "SCRUM Development Board Planning" project will automatically appear here. Normally, only one card per person should be in that column at a time.
+This column contains only pull request cards. A card is in this column when a person [starts working on the corresponding issue](../Resolving-an-Issue.md). New pull requests that are added to the "SCRUM Development Board Planning" project will automatically appear here. Normally, only one card per person should be in that column at a time.
 <!-- The difference between Draft prs and usual prs is discussed in Resolving and Issue --->
 
-Cards in that column are also _**locking**_ the repository or the project it targets. This means that nobody is allowed to start editing code in that repository while a card is in the _In Progress_ or _Review in Progress_ column. This also means that you can only add a card in that column if there is not already a card locking the same repository. Coordinate with the card's owner [if this is the case](Working-Together-%E2%80%90-Avoiding-Clashes).
+Cards in that column are also _**locking**_ the repository or the project it targets. This means that nobody is allowed to start editing code in that repository while a card is in the _In Progress_ or _Review in Progress_ column. This also means that you can only add a card in that column if there is not already a card locking the same repository. Coordinate with the card's owner [if this is the case](Coding-together-avoiding-conflicts.md).
 
 ### Review in Progress
 
@@ -35,4 +35,4 @@ This column contains only pull request cards. Once the changes in the pull reque
 
 ### Completed
 
-Once the pull request has been [merged into the master branch](Resolving-an-Issue#review-process) and the issue closed, the card is moved the the **Completed** column where it will be discussed in the next planning call. Notice that, once an issue is closed, the logo at the top left of the card has turn red. The **Completed** column is the only one that should have cards in that state.
+Once the pull request has been [merged into the master branch](../Resolving-an-Issue.md#review-process) and the issue closed, the card is moved the the **Completed** column where it will be discussed in the next planning call. Notice that, once an issue is closed, the logo at the top left of the card has turn red. The **Completed** column is the only one that should have cards in that state.

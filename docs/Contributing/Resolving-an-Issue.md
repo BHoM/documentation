@@ -37,7 +37,7 @@ Board](Using-the-SCRUM-Board) - it's easy!
       conversation being done is done publicly on Github to ease to process of
       the reviewers.
    2. If ___Urgent___ and you cannot coordinate
-      [work locally, but do not branch yet](Working-Together-‐-Avoiding-Conflicts#my-issue-is-super-urgent-but-someone-else-is-already-blocking-the-projectrepository)
+      [work locally, but do not branch yet](Best-practices/Coding-together-avoiding-conflicts.md#my-issue-is-super-urgent-but-someone-else-is-already-blocking-the-projectrepository)
 
 
 ### B. Solving the issue
@@ -48,7 +48,7 @@ Board](Using-the-SCRUM-Board) - it's easy!
    and considering [to branch or not to
    branch?](Working-Together-‐-Avoiding-Conflicts)
 
-1. As soon as you pushed your first commit, open a _Draft Pull Request_, and [add the card to the _Project SCRUM Board_](/documentation/Using-the-SCRUM-Board#creating-a-card). This action will communicate to others that the repo is now _locked_ and [avoids conflicts](Working-Together-‐-Avoiding-Conflicts). 
+1. As soon as you pushed your first commit, open a _Draft Pull Request_, and [add the card to the _Project SCRUM Board_](Best-practices/Using-the-SCRUM-Board.md#creating-a-card). This action will communicate to others that the repo is now _locked_ and [avoids conflicts](Best-practices/Coding-together-avoiding-conflicts.md). 
 
 1. Push each individual __Commit__ - keeping commits as specific and frequent
    as possible. Always review what files you are committing. And make sure your

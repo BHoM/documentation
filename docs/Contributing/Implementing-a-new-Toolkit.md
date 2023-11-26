@@ -13,15 +13,15 @@ Use the [template repository](https://github.com/BHoM/template-repository) to cr
 The oM should contain property-only classes that make the schema for your Toolkit. All functionality should be placed in the Engine.
 Functionality that is specific to a class should be defined in the Engine as an extension method. 
 
-See [The Object Model](/documentation/BHoM_oM) and [The Engine](/documentation/BHoM_Engine) for more information.
+See [The Object Model](../BHoM_oM/index.md) and [The Engine](../BHoM_Engine/index.md) for more information.
 
 
 ## Implement the Engine
 
 The Engine should contain the functions applicable to the objects you've defined in the oM.
 
-See [The Engine](/documentation/BHoM_Engine) for more information.
+See [The Engine](../BHoM_Engine/index.md) for more information.
 
 ## Implement the Adapter
 
-See the dedicated page to [Implementing an Adapter](/documentation/Implement-an-Adapter).
+See the dedicated page to [Implementing an Adapter](../BHoM_Adapter/Implement-an-Adapter.md).

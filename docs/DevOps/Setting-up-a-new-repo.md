@@ -1,7 +1,7 @@
 # Setting up a new Repo
 Following the clarification of the best location for different code above - instructions on how to create a new BHoM Repo with the correct settings:
 
-1. Name the Repo _SoftwareNameOrFocus_ _Toolkit. It will always end in Toolkit see explaination [here](/documentation/Basics/Structure-of-the-BHoM)
+1. Name the Repo _SoftwareNameOrFocus_ _Toolkit. It will always end in Toolkit see explaination [here](../Basics/BHoM-Toolkits.md)
 
 1. Make sure the __Public__ option is selected.
 

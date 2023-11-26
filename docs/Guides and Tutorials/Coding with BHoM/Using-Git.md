@@ -4,13 +4,13 @@
 
 This documentation will be focused on the use of Git Bash.
 
-The first step is to create a space on your computer where you want all your local files to be stored. Now you want to create different repositories (repos) in this folder. Do this by opening up git bash and using `git clone (web address)`. A good list of repos for getting started can be found [here.](https://bhom.xyz/documentation/Contributing/Getting-started-for-developers/)
+The first step is to create a space on your computer where you want all your local files to be stored. Now you want to create different repositories (repos) in this folder. Do this by opening up git bash and using `git clone (web address)`. A good list of repos for getting started can be found [here.](index.md)
 
 ## Pushing code changes to GitHub
 
 Before getting started it is recommended to read through [this](https://docs.github.com/en/get-started/quickstart/github-flow) first.
 
-Start off by creating a new branch with an [appropriate name.](https://bhom.xyz/documentation/Development/Best%20practices/Branching-Strategy/)
+Start off by creating a new branch with an [appropriate name.](../../Contributing/Best-practices/Branching-Strategy.md)
 
 You create a new branch with `git checkout -b (name of the branch)`. Make sure that you are on develop when creating a new branch to prevent branches created from other branches. 
 It is now time for you to do the changes you wish to do. When you are satisfied with everything it is time make a commit. You should always rebuild the code to make sure that it compiles, and if needed test out the code before pushing it to GitHub. 

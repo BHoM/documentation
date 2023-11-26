@@ -68,7 +68,7 @@ namespace BH.oM.Base
 As you can see, **the `BHoMObject` only contains a set of properties**. 
 
 As for any other class in the BHoM framework, we try to keep behaviour (functions, methods) and properties separated. Minor exceptions to this separation are seldom made for for practical efficiency and technical reasons. 
-The functionalities of the `BHoMObject`, as well as of the other BHoM framework types, are defined in the [BHoM_Engine](/documentation/BHoM_Engine).
+The functionalities of the `BHoMObject`, as well as of the other BHoM framework types, are defined in the [BHoM_Engine](../BHoM_Engine/index.md).
 
 ## Everything is an IObject
 
@@ -144,9 +144,9 @@ This structure makes sure that on update of the points, the length will also be 
 
 ## Defining Constructors and Local Methods
 
-**Important:** To the exception of [Immutable Objects](#immutable-objects), BHoM objects should never have a constructor. In general, there should be no method defined in the class either (see [Casting methods](#casting-methods)). So, ultimately, a BHoM object is really nothing more than a list of properties and their default values. Objects will be created either by using an [Object Initialiser](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers) or via a `Create` method from the [Engine](/documentation/BHoM_Engine). 
+**Important:** To the exception of [Immutable Objects](#immutable-objects), BHoM objects should never have a constructor. In general, there should be no method defined in the class either (see [Casting methods](#casting-methods)). So, ultimately, a BHoM object is really nothing more than a list of properties and their default values. Objects will be created either by using an [Object Initialiser](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers) or via a `Create` method from the [Engine](../BHoM_Engine/index.md). 
 
-Anything that manipulates data should generally be in the [BHoM Engine](/documentation/BHoM_Engine). That being said, there are rare occasions where you will see a local method written directly in the object definition. Those methods are generally created there for optimisation reasons or because of the constraints of C# and are therefore the exception, not the rule.
+Anything that manipulates data should generally be in the [BHoM Engine](../BHoM_Engine/index.md). That being said, there are rare occasions where you will see a local method written directly in the object definition. Those methods are generally created there for optimisation reasons or because of the constraints of C# and are therefore the exception, not the rule.
 
 For those of you coming from object oriented programming, it might seems quite unnatural to take functionality outside a class as much as possible. There is a few reasons why we have gone that direction:
 
