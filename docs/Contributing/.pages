@@ -4,4 +4,5 @@ nav:
     - Submitting-an-Issue.md
     - Resolving-an-Issue.md
     - Pull-Requests.md
+    - Implementing-a-new-Toolkit.md
     - Best-practices

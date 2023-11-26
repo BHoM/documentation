@@ -1,14 +1,14 @@
-# The BHoM code organisation
+# BHoM Toolkits
 
-The programming code of BHoM is hosted under a GitHub organisation: https://github.com/BHoM.
+The source code of BHoM is hosted under the public GitHub organisation: [https://github.com/BHoM](https://github.com/BHoM)
 
-The organisation hosts long list of things called Repositories. Most of them will have a name finishing with **"_Toolkit"**. Foundational repositories are instead called `BHoM`, `BHoM_Engine`, `BHoM_Adapter`, `BHoM_UI`, among others. The Toolkits are the things that host the actual code, with specific terminologies (object Models, oMs), functionalities (Engines) and translators (Adapters).
+The organisation hosts a number of repositories. Most of them have a name finishing with **"_Toolkit"**. Foundational repositories are instead called `BHoM`, `BHoM_Engine`, `BHoM_Adapter`, `BHoM_UI`, among others. The Toolkits are the things that host the actual code, with specific terminologies (object Models, oMs), functionalities (Engines) and translators (Adapters).
 
 ![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/MainRepoList.png)
 
-Before we discuss in more details what is a repository and what it contains, let's take a step back and look at the different categories of code/functionality we can find inside them.
+Before we discuss in more detail the individual repositories and what they contain, let's take a step back and look at the different categories of code/functionality we can find inside them.
 
-## The 4 categories of code
+## The four categories of code
 
 If you ever have created your own tool or script, you must have been exposed to the two dual aspects of computation: _data_ and _functionality_. In Excel, data would be the value of your cells and functionality would be the formulas or VB scripts. In Grasshopper, the functionality is made by the components, and the data is stored within parameters.
 
@@ -20,13 +20,13 @@ The two categories above are called respectively **oM** (stands for object model
 
 ![img](https://raw.githubusercontent.com/BHoM/documentation/main/Images/BHoM_Anatomy_02a.png)
 
-In summary, the 4 categories of code, you will find among those repositories are:
+In summary, the four categories of code, you will find among those repositories are:
 
 * **oM**: Definitions of the data we manipulate (e.g. Beam, Wall, Speaker,…)
 
 * **Engine**: Our own custom tools, algorithms, data exploration & manipulation.
 
-* **Adapters**: Connections between the BHoM and engineering tools such as Revit, GSA, Tas, IES,... This is where BHoM objects are translated to and from the proprietary representation used in each of those tools.
+* **Adapter**: Connections between the BHoM and engineering tools such as Revit, GSA, Tas, IES,... This is where BHoM objects are translated to and from the proprietary representation used in each of those tools.
 
 * **UI**: Expose the BHoM functionality through user interfaces such as Grasshopper and Excel.
 
@@ -38,7 +38,7 @@ In summary, the 4 categories of code, you will find among those repositories are
 
 The BHoM is designed to be extendable. We want anyone to be able to create a set of tools relevant to a specific task (e.g. linking to another external software, providing a set of discipline specific functionality, ...). This is where the repository come in. They are independent units of development with their own team of developers responsible for maintaining the code in the long run. We call them toolkits. 
 
-Internally, they will all follow the same conventions about the 4 categories of code defined above. To get slightly more into details regarding how that code is structure, let's talk for a second about how those different parts of the code are related to each other. 
+Internally, they will all follow the same conventions about the four categories of code defined above. To get slightly more into details regarding how that code is structure, let's talk for a second about how those different parts of the code are related to each other. 
 
 * **oM**: You could see this as our base specialised vocabulary. It doesn't depend on anything else but everything else will rely on the definitions it contains.
 
