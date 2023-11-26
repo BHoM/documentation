@@ -4,19 +4,19 @@ This means there are a number of different entry points to get started with usin
 
 ## BHoM Visual Programming Plugins
 
-BHoM encourages thinking about design as simple workflows and data models:
+!!! Info inline end "BHoM Visual Programming"
 
-_<p style="text-align: center;">inputs, processes and outputs</p>_
+    BHoM encourages thinking about design as simple modular workflows and data models:
 
-BHoM is therefore a perfect fit for flow based visual programming! 
+    _<p style="text-align: center;">inputs, processes and   outputs</p>_
+
+    BHoM is therefore a perfect fit for flow based visual programming! 
 
 We have two community developed and supported plugins giving access to BHoM functionality in our favourite and most widely used computational design environments.
 
 ### BHoM for Grasshopper and BHoM for Excel 
 
-One great place to start is therefore our introductory guide: 
-
-[Getting started with the BHoM in visual programming](<../Guides and Tutorials/Visual Programming with BHoM/index.md>)
+One great place to start is therefore our introductory guide: **[Getting started with the BHoM in visual programming](<../Guides and Tutorials/Visual Programming with BHoM/index.md>)**
 
 This is also a good entry point to explore many of the basic concepts of BHoM.
 
