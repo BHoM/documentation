@@ -6,7 +6,7 @@ Data driven tests are simply a way to take a "snapshot" of the input and output 
 
 To record the test data, you simply need to run a target Engine method with some specific input data. The input data and the ouput of the method, together with the method name, will be recorded. When the data-driven test will be run, it will simply call again the method in question with the stored input data, and compare it with the output data. This way, it is possible to check that Engine methods keep behaving reliably.
 
-This kind of "Data-driven Unit test" [can be run automatically via CI/CD](/documentation/DevOps/Code Compliance and CI/CI Checks/Check-Unit-Tests) for an automated checking of the functionality.
+This kind of "Data-driven Unit test" [can be run automatically via CI/CD](<../../../DevOps/Code Compliance and CI/CI Checks/Check-Unit-Tests.md>) for an automated checking of the functionality.
 
 ## Storing test data for Engine Methods
 

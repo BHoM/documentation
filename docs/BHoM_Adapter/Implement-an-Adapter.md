@@ -2,7 +2,7 @@
 
 An adapter can be implemented in order to add conversion features from BHoM to another software, and vice versa.
 
-An adapter should be added to a dedicated Toolkit repository. See the page dedicated to the _[The BHoM Toolkit](/documentation/Basics/The-BHoM-Toolkit)_ to learn how to set up a Toolkit, which can then contain an Adapter.
+An adapter should be added to a dedicated Toolkit repository. See the page dedicated to the _[The BHoM Toolkits](../Basics/BHoM-Toolkits.md)_ to learn how to set up a Toolkit, which can then contain an Adapter.
 
 
 
@@ -10,10 +10,10 @@ An adapter should be added to a dedicated Toolkit repository. See the page dedic
 
     Before reading this page, please check out:
 
-    - [Getting started for developers](<../Guides and Tutorials/Coding with BHoM/Getting-started-for-developers.md>)
-    - [Introduction to BHoM_Adapter](/documentation/BHoM_Adapter)
-    - [Adapter Actions](/documentation/BHoM_Adapter/Adapter-Actions)
-    - [The BHoM Toolkit](/documentation/Basics/The-BHoM-Toolkit)
+    - [Getting started for developers](<../Guides and Tutorials/Coding with BHoM/index.md>)
+    - [Introduction to BHoM_Adapter](index.md)
+    - [Adapter Actions](Adapter-Actions.md)
+    - [The BHoM Toolkit](../Basics/BHoM-Toolkits.md)
 
 
 
@@ -44,7 +44,7 @@ In order to reuse the existing logic embedded in the Adapter Actions, you should
 ## The Adapter Settings
 The Adapter settings are general settings that can be used by the Adapter Actions and/or the CRUD methods. 
 
-You can define them as you want; just consider that the settings are supposed to stay the same across any instance of the same adapter, i.e. the Adapter Settings are global `static` settings valid for all instances of your Toolkit Adapter. In other words, these settings are independent of what Action your Toolkit is doing (unlike the [ActionConfig](/documentation/BHoM_Adapter/Adapter-Actions---advanced-parameters#actionconfig)). If you want to create settings that affect a specific action, implement an ActionConfig instead.
+You can define them as you want; just consider that the settings are supposed to stay the same across any instance of the same adapter, i.e. the Adapter Settings are global `static` settings valid for all instances of your Toolkit Adapter. In other words, these settings are independent of what Action your Toolkit is doing (unlike the [ActionConfig](Adapter-Actions---advanced-parameters.md#actionconfig)). If you want to create settings that affect a specific action, implement an ActionConfig instead.
 
 The base [BHoM_Adapter code](https://github.com/BHoM/BHoM_Adapter) gives you extensive explanation/descriptions/comments about the Adapter Settings. 
 
@@ -52,7 +52,7 @@ The base [BHoM_Adapter code](https://github.com/BHoM/BHoM_Adapter) gives you ext
 
 The CRUD folder should contain all the needed CRUD methods. 
 
-You can see the [CRUD methods implementation details in their dedicated page](/documentation/BHoM_Adapter/The-CRUD-methods).
+You can see the [CRUD methods implementation details in their dedicated page](The-CRUD-methods.md).
 
 Here we will cover a convention that we use in the code organisation: the CRUD "interface methods".
 

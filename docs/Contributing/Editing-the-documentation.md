@@ -53,8 +53,8 @@ Each header will be reflected in the navigation menu on the right hand side of t
 ### Recommended way
 Links to other documentation pages should be relative URLs (starting with a `/`) where the first slash must be followed with the `documentation` folder. Some examples:
 
-- To link to the [Introduction to BHoM_Adapter](/documentation/BHoM_Adapter/Introduction-to-the-BHoM_Adapter) page, you can provide this link: `/documentation/BHoM_Adapter/Introduction-to-the-BHoM_Adapter`.
-- To link to the [IsValidDataset](/documentation/DevOps/Code%20Compliance%20and%20CI/Compliance%20Checks/IsValidDataset) page, you can provide this link: `/documentation/DevOps/Code%20Compliance%20and%20CI/Compliance%20Checks/IsValidDataset`.
+- To link to the [Introduction to BHoM_Adapter](../BHoM_Adapter/index.md) page, you can provide this link: `/documentation/BHoM_Adapter/Introduction-to-the-BHoM_Adapter`.
+- To link to the [IsValidDataset](<../DevOps/Code Compliance and CI/Compliance Checks/IsValidDataset.md>) page, you can provide this link: `/documentation/DevOps/Code%20Compliance%20and%20CI/Compliance%20Checks/IsValidDataset`.
 
 !!! note
 
@@ -123,7 +123,7 @@ You can edit the `.page` file according to [mkdocs awesome pages plugin](https:/
 
 ### Customising the appearance of the documentation
 
-See the available customisations of [Material for Mkdocs](https://squidfunk.github.io/): [setup](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/) and [extra elements](https://squidfunk.github.io/mkdocs-material/reference/).
+See the available customisations of [Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/): [setup](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/) and [extra elements](https://squidfunk.github.io/mkdocs-material/reference/).
 
 
 ## Github actions configuration

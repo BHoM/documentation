@@ -69,7 +69,7 @@ These .json files contain multiple objects. To extract objects from these datase
 
 ## Compliance
 
-Compliance regulations for Datasets are outlined in [IsValidDataset](/documentation/DevOps/Code%20Compliance%20and%20CI/Compliance%20Checks/IsValidDataset).
+Compliance regulations for Datasets are outlined in [IsValidDataset](<../../../DevOps/Code Compliance and CI/Compliance Checks/IsValidDataset.md>).
 
 ### Source
 
