@@ -4,7 +4,7 @@ Open issues are reviewed weekly and the most critical ones are assigned to
 specific people as part of their weekly tasks. That task of resolving an issue
 is called a sprint. If you need more information on how those issues are being
 created, check [this
-page](Submitting-an-Issue).
+page](Submitting-an-Issue.md).
 
 A person in charge of that issue will then create a new branch, write the code
 necessary to solve that issue (with potentially multiple commits on that
@@ -16,7 +16,7 @@ merged with the main one. For more detailed explanations on the process, check
 [this short guide](https://guides.github.com/introduction/flow/)
 
 If you haven't already make sure you read [Using the SCRUM
-Board](Using-the-SCRUM-Board) - it's easy!
+Board](Best-practices/Using-the-SCRUM-Board.md) - it's easy!
 
 
 ## Overview of important steps to successful coding in the BHoM 
