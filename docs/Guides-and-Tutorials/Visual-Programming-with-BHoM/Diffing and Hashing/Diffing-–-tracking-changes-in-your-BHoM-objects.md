@@ -4,7 +4,7 @@ Diffing is the process of determining what changed between two sets of objects.
 
 Typically, the two sets of objects are two versions of the same thing (of a pulled Revit model, of a Structural Model that we want to Push to an Adapter, etc), in which case Diffing can effectively be used as a Version Control tool.
 
-🤖 **Developers**: check out also the [Diffing and Hash: Guide for developers](../../Coding with BHoM/Diffing and Hashing/Diffing-and-Hashing-–-guide-for-developers.md).
+🤖 **Developers**: check out also the [Diffing and Hash: Guide for developers](../../Coding-with-BHoM/Diffing and Hashing/Diffing-and-Hashing-–-guide-for-developers.md).
 
 ![image](https://user-images.githubusercontent.com/6352844/146008221-15ebcb4b-8b0c-410d-8dcb-ddf576664931.png)
 
@@ -150,7 +150,7 @@ The Diffing config has the following inputs:
 
 In addition to the main Diffing method `IDiffing()`, there are several other methods that can be used to perform Diffing. These are a bit more advanced and should be used only for specific cases. The additional diffing methods can be found in the [Compute folder of Diffing_Engine](https://github.com/BHoM/BHoM_Engine/tree/main/Diffing_Engine/Compute). 
 
-Other than these, _Toolkit-specific_ diffing methods exist to deal with the subtleties of comparing Objects defined in a Toolkit. Users do not generally need to know about these, as [Toolkit-specific diffing methods will be automatically called for you if needed by the generic IDiffing method](../../Coding with BHoM/Diffing and Hashing/Diffing-and-Hashing-–-guide-for-developers.md#invoking-of-the-toolkit-specific-diffing-methods). Just for reference, a Toolkit-specific Diffing method is [`RevitDiffing()`](https://github.com/BHoM/Revit_Toolkit/blob/main/Revit_Engine/Compute/RevitDiffing.cs).
+Other than these, _Toolkit-specific_ diffing methods exist to deal with the subtleties of comparing Objects defined in a Toolkit. Users do not generally need to know about these, as [Toolkit-specific diffing methods will be automatically called for you if needed by the generic IDiffing method](../../Coding-with-BHoM/Diffing and Hashing/Diffing-and-Hashing-–-guide-for-developers.md#invoking-of-the-toolkit-specific-diffing-methods). Just for reference, a Toolkit-specific Diffing method is [`RevitDiffing()`](https://github.com/BHoM/Revit_Toolkit/blob/main/Revit_Engine/Compute/RevitDiffing.cs).
 
 
 
@@ -176,7 +176,7 @@ The IDs are then used to match the objects from the `pastObjs` set to objects in
 
 - If an object in the `pastObjs` does not have a corresponding object in the `followingObjs` set, it means that it has been deleted in the following version, so it is identified as "Removed" (old).
 - If an object in the `followingObjs` does not have a corresponding object in the `pastObjs` set, it means that it has been deleted in the past version, so it is identified as "Added" (new).
-- If an object in the `pastObjs` matches by ID an object in the `followingObjs`, then it is identified as "Modified" (it changed between the two versions). This means that the two objects will be compared and all their differences will be found. This is done by invoking the `ObjectDifferences()` method, that is [explained in detail here](../../Coding with BHoM/Diffing and Hashing/Diffing-and-Hashing-–-guide-for-developers.md#objectdifferences-method-inner-workings).
+- If an object in the `pastObjs` matches by ID an object in the `followingObjs`, then it is identified as "Modified" (it changed between the two versions). This means that the two objects will be compared and all their differences will be found. This is done by invoking the `ObjectDifferences()` method, that is [explained in detail here](../../Coding-with-BHoM/Diffing and Hashing/Diffing-and-Hashing-–-guide-for-developers.md#objectdifferences-method-inner-workings).
 
 
 ### DiffOneByOne()

@@ -10,7 +10,7 @@ In short, a Toolkit can contain **one or more** of the following projects:
 - A [BHoM_Engine](../BHoM_Engine/index.md) project, that contains the _functionality_ specific to your Toolkit.
 - A [BHoM_Adapter](../BHoM_Adapter/index.md) project, that contains the _connectivity_ required to interface with an external software.
 
-If you are an User you might want to check out [Getting started with the BHoM in Visual Programming](<../Guides and Tutorials/Visual Programming with BHoM/index.md>).
+If you are an User you might want to check out [Getting started with the BHoM in Visual Programming](<../Guides-and-Tutorials/Visual-Programming-with-BHoM/index.md>).
 
 If you are interested in programming, creating your own new Toolkit, or contributing to the code of an existing one, keep reading.
 

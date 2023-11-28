@@ -10,7 +10,7 @@ An adapter should be added to a dedicated Toolkit repository. See the page dedic
 
     Before reading this page, please check out:
 
-    - [Getting started for developers](<../Guides and Tutorials/Coding with BHoM/index.md>)
+    - [Getting started for developers](<../Guides-and-Tutorials/Coding-with-BHoM/index.md>)
     - [Introduction to BHoM_Adapter](index.md)
     - [Adapter Actions](Adapter-Actions.md)
     - [The BHoM Toolkit](../Basics/BHoM-Toolkits.md)

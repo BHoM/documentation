@@ -51,4 +51,4 @@ Note that some ComparisonConfig options may slow down the computation of the Has
 > 
 > Here is an example [for Revit's `RevitParameter` object](https://github.com/BHoM/Revit_Toolkit/blob/main/Revit_Engine/Query/HashString.cs). The `HashString()` method will get invoked when computing the Hash(). 
 >
-> More info in the [Diffing and Hash: guide for developers](../../Coding with BHoM/Diffing and Hashing/Diffing-and-Hashing-–-guide-for-developers.md) wiki page.
+> More info in the [Diffing and Hash: guide for developers](../../Coding-with-BHoM/Diffing and Hashing/Diffing-and-Hashing-–-guide-for-developers.md) wiki page.

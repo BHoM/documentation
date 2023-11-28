@@ -23,7 +23,7 @@ There is a range of settings that can be specified in `RevitSettings` for each a
 
 - `ConnectionSettings` - socket connection settings for Revit Adapter
 - `FamilyLoadSettings` - Revit family load settings for Revit Adapter
-- `MappingSettings` - [relationships between property names of BHoM types and parameter names of correspondent Revit elements](../../../Coding with BHoM\Revit Toolkit/Handling of Parameters#Parameter mapping) as well as [relationships between Revit family names and BHoM types to explicitly convert them to on Pull](../Pull/Family and Type Mapping)
+- `MappingSettings` - [relationships between property names of BHoM types and parameter names of correspondent Revit elements](../../../Coding-with-BHoM\Revit Toolkit/Handling of Parameters#Parameter mapping) as well as [relationships between Revit family names and BHoM types to explicitly convert them to on Pull](../Pull/Family and Type Mapping)
 - `DistanceTolerance` - used in geometry processing
 - `AngleTolerance` - used in geometry processing
 
