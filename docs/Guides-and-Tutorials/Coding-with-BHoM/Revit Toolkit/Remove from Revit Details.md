@@ -2,8 +2,8 @@
 
 This chapter explains in detail the Remove action - it is recommended to read [Revit Adapter details](../Revit Adapter Details) section first for the information about mechanics of the adapter itself.
 
-As explained in [Remove from Revit basics](../../../Visual Programming with BHoM/Revit Toolkit/Remove), there are two action-specific inputs that drive Remove:
-- **Request** of type deriving from `IRequest` explained in more detail in a [dedicated section](../../../Visual Programming with BHoM/Revit Toolkit/Pull/Requests and Filtering)
+As explained in [Remove from Revit basics](../../../Visual-Programming-with-BHoM/Revit Toolkit/Remove), there are two action-specific inputs that drive Remove:
+- **Request** of type deriving from `IRequest` explained in more detail in a [dedicated section](../../../Visual-Programming-with-BHoM/Revit Toolkit/Pull/Requests and Filtering)
 - **Action config** of type `RevitRemoveConfig`
 
 They are specified as arguments of the `Revit` method of `RevitAdapter`. Depending on the thread on which the `Remove` method is executed, they will be either sent via Sockets as a data package (if `Remove` is executed outside of Revit thread) or passed directly to `RevitUIAdapter` (if everything is run on a single Revit thread).

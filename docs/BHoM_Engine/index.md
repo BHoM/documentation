@@ -320,7 +320,7 @@ PS: before anyone asks, using **((dynamic)curve).Bounds();** is not an option. N
 
 ## Fallback Methods
 
-But what if we do not have a method implemented for every type that that can be dynamically called by **IBounds**? That is what private fallback methods are for. In general fallback methods are used for handling unexpected behaviours of main method. In this case it should log an error with a proper message (see [Handling Exceptional Events](<../Guides and Tutorials/Coding with BHoM/Best-practices/Handling-Exceptional-Events.md>) for more information) and return null or NaN.
+But what if we do not have a method implemented for every type that that can be dynamically called by **IBounds**? That is what private fallback methods are for. In general fallback methods are used for handling unexpected behaviours of main method. In this case it should log an error with a proper message (see [Handling Exceptional Events](<../Guides-and-Tutorials/Coding-with-BHoM/Best-practices/Handling-Exceptional-Events.md>) for more information) and return null or NaN.
 
 ```c#
 namespace BH.Engine.Geometry

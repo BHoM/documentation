@@ -4,9 +4,9 @@ This chapter explains in detail the Pull action - it is recommended to read [Rev
 
 ## Pull options: Requests and RevitPullConfig
 
-As explained in [Pull from Revit basics](../../../Visual Programming with BHoM/Revit Toolkit/Pull), there are two action-specific inputs that drive Pull:
+As explained in [Pull from Revit basics](../../../Visual-Programming-with-BHoM/Revit Toolkit/Pull), there are two action-specific inputs that drive Pull:
 
-- **Request** of type deriving from `IRequest` explained in more detail in a [dedicated section](../../../Visual Programming with BHoM/Revit Toolkit/Pull/Requests and Filtering)
+- **Request** of type deriving from `IRequest` explained in more detail in a [dedicated section](../../../Visual-Programming-with-BHoM/Revit Toolkit/Pull/Requests and Filtering)
 - **Action config** of type `RevitPullConfig`
 
 They are specified as arguments of the `Pull` method of `RevitAdapter`. Depending on the thread on which the `Pull` method is executed, they will be either sent via Sockets as a data package (if `Pull` is executed outside of Revit thread) or passed directly to `RevitUIAdapter` (if everything is run on a single Revit thread).
@@ -19,7 +19,7 @@ Next, `RevitUIAdapter` triggers Pull action, which points directly to `Read` [CR
     - `RevitPullConfig` - value carried by `Discipline` property
    
     If discipline is not enforced by any of the two above, `Discipline.Physical` is used as default. Conflict between disciplines is not allowed: if both Request and `RevitPullConfig` enforce a discipline (none of them is equal to `Discipline.Undefined`) and the disciplines enforced by each are not equal, the operation is cancelled with an error.
-3. Retrieves the Revit elements under ElementIds from point 1. and [converts them to BHoM for discipline](../../../Visual Programming with BHoM/Revit Toolkit/Pull/Conversion from Revit) determined in point 2. Conversion of all elements is being driven by `BH.Revit.Engine.Core.Convert.IFromRevit` dispatcher method combined with `BH.Revit.Engine.Core.Query.IBHoMType` and `BH.Revit.Engine.Core.Query.ConvertMethod` queries. To avoid converting any of the objects more than once, identifier of each object that has been converted in a given adapter action is being stored in `refObjects` dictionary together with the output of the convert.
+3. Retrieves the Revit elements under ElementIds from point 1. and [converts them to BHoM for discipline](../../../Visual-Programming-with-BHoM/Revit Toolkit/Pull/Conversion from Revit) determined in point 2. Conversion of all elements is being driven by `BH.Revit.Engine.Core.Convert.IFromRevit` dispatcher method combined with `BH.Revit.Engine.Core.Query.IBHoMType` and `BH.Revit.Engine.Core.Query.ConvertMethod` queries. To avoid converting any of the objects more than once, identifier of each object that has been converted in a given adapter action is being stored in `refObjects` dictionary together with the output of the convert.
 
 The usual flow looks as in the picture below:
 

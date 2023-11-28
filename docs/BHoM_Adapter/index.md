@@ -9,7 +9,7 @@ In this page you will find a first overview about **what is the BHoM Adapter**.
     Before reading this page, have a look at the following pages:
 
     - [Structure of the BHoM framework](../Basics/BHoM-Toolkits.md)
-    - [Getting started for developers](<../Guides and Tutorials/Coding with BHoM/index.md>)
+    - [Getting started for developers](<../Guides-and-Tutorials/Coding-with-BHoM/index.md>)
 
     and make sure you have a general understanding of:
 

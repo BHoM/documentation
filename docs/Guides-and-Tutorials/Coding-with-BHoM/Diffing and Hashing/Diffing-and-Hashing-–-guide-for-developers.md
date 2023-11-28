@@ -1,7 +1,7 @@
 # Diffing and Hashing: guide for developers
 
 This page gives a more in-depth technical explanation about some diffing methods, and also serves as a guide for developers to build functionality on top of existing diffing code.  
-See the [Diffing](<../../Visual Programming with BHoM/Diffing and Hashing/Diffing-–-tracking-changes-in-your-BHoM-objects.md>) and the [Hash](<../../Visual Programming with BHoM/Diffing and Hashing/Hash-–-an-object's-identity.md>) wiki pages for a more quick-start guide.
+See the [Diffing](<../../Visual-Programming-with-BHoM/Diffing and Hashing/Diffing-–-tracking-changes-in-your-BHoM-objects.md>) and the [Hash](<../../Visual-Programming-with-BHoM/Diffing and Hashing/Hash-–-an-object's-identity.md>) wiki pages for a more quick-start guide.
 
 ### Contents
 
@@ -19,7 +19,7 @@ See the [Diffing](<../../Visual Programming with BHoM/Diffing and Hashing/Diffin
 
 # Developing _Toolkit-specific diffing methods_
 
-The [`IDiffing()` method](<../../Visual Programming with BHoM/Diffing and Hashing/Diffing-–-tracking-changes-in-your-BHoM-objects.md#idiffing-method>) is designed to be a "universal" entry point for users wanting to diff their objects; for this reason, it has an automated mechanism to call any _Toolkit-specific diffing method_ that can is compatible with the input objects. This work similarly to the [_Extension Method discovery pattern_](https://github.com/BHoM/BHoM_Engine/blob/b7b03a0785fc21a7dea21680925a4f94c760ef77/Reflection_Engine/Compute/TryRunExtensionMethod.cs) that is often leveraged in many BHoM methods.
+The [`IDiffing()` method](<../../Visual-Programming-with-BHoM/Diffing and Hashing/Diffing-–-tracking-changes-in-your-BHoM-objects.md#idiffing-method>) is designed to be a "universal" entry point for users wanting to diff their objects; for this reason, it has an automated mechanism to call any _Toolkit-specific diffing method_ that can is compatible with the input objects. This work similarly to the [_Extension Method discovery pattern_](https://github.com/BHoM/BHoM_Engine/blob/b7b03a0785fc21a7dea21680925a4f94c760ef77/Reflection_Engine/Compute/TryRunExtensionMethod.cs) that is often leveraged in many BHoM methods.
 
 A _Toolkit-specific Diffing method_ is defined as a method:
 - that is `public`;
@@ -45,7 +45,7 @@ Note that only the first matching method gets invoked. This is because we only a
 
 ## What happens for objects that do not have a Toolkit-specific diffing method
 
-If the previous step does not find any `Toolkit-specific diffing method` compatible with the input objects, then a variety of steps are taken to try possible diffing methods. In a nutshell, a series of checks are done on the input objects to see what diffing method is most suitable. This is better described in the following diagram. For more details on each individual diffing method, [see here](<../../Visual Programming with BHoM/Diffing and Hashing/Diffing-–-tracking-changes-in-your-BHoM-objects.md#other-diffing-methods>).
+If the previous step does not find any `Toolkit-specific diffing method` compatible with the input objects, then a variety of steps are taken to try possible diffing methods. In a nutshell, a series of checks are done on the input objects to see what diffing method is most suitable. This is better described in the following diagram. For more details on each individual diffing method, [see here](<../../Visual-Programming-with-BHoM/Diffing and Hashing/Diffing-–-tracking-changes-in-your-BHoM-objects.md#other-diffing-methods>).
 
 ![IDiffing1](https://user-images.githubusercontent.com/6352844/146181923-e6a5004d-3e39-48e3-a034-2495caf18fb5.png)
 
@@ -56,7 +56,7 @@ In addition to the main Diffing method `IDiffing()`, there are several other met
 
 Most diffing methods are simply relying on an ID that is associated to the input objects, or a similar way to determine which object should be compared to which. Once a match is found, the two matched objects (one from the `pastObjects` set and one from the `followingObjects` set) are sent to the `ObjectDifferences()` method, as illustrated by the following diagram.  
 
-This diagram also illustrates that only the `DiffWithHash()` method does not rely on the `ObjectDifferences()` method. The `DiffWithHash()` is a rather simple and limited method, in that it cannot identify Modified objects but only new/old ones, and it is described [here](<../../Visual Programming with BHoM/Diffing and Hashing/Diffing-–-tracking-changes-in-your-BHoM-objects.md#other-diffing-methods>).
+This diagram also illustrates that only the `DiffWithHash()` method does not rely on the `ObjectDifferences()` method. The `DiffWithHash()` is a rather simple and limited method, in that it cannot identify Modified objects but only new/old ones, and it is described [here](<../../Visual-Programming-with-BHoM/Diffing and Hashing/Diffing-–-tracking-changes-in-your-BHoM-objects.md#other-diffing-methods>).
 
 ![Diffing methods-simplified](https://user-images.githubusercontent.com/6352844/146228227-b826c68b-6b4f-4be5-b41f-3b09b7e9653b.png)
 
@@ -64,11 +64,11 @@ This diagram also illustrates that only the `DiffWithHash()` method does not rel
 
 As shown above, the method that does most of the work in diffing is the [`BH.Engine.Diffing.Query.ObjectDifferences()` method](https://github.com/BHoM/BHoM_Engine/blob/main/Diffing_Engine/Query/ObjectDifferences.cs). 
 
-This is the method that has the task of finding all the differences between two input objects. This method currently leverages an open-source, free library called [`CompareNETObjects` by Kellerman software](https://github.com/GregFinzer/Compare-Net-Objects). It maps our [`ComparisonConfig` options](<../../Visual Programming with BHoM/Diffing and Hashing/Configuring-objects-comparison-(ComparisonConfig).md>) to the [equivalent class](https://github.com/GregFinzer/Compare-Net-Objects/blob/master/Compare-NET-Objects/ComparisonConfig.cs) in the `CompareNETObjects` library, and then executes the comparison using it.
+This is the method that has the task of finding all the differences between two input objects. This method currently leverages an open-source, free library called [`CompareNETObjects` by Kellerman software](https://github.com/GregFinzer/Compare-Net-Objects). It maps our [`ComparisonConfig` options](<../../Visual-Programming-with-BHoM/Diffing and Hashing/Configuring-objects-comparison-(ComparisonConfig).md>) to the [equivalent class](https://github.com/GregFinzer/Compare-Net-Objects/blob/master/Compare-NET-Objects/ComparisonConfig.cs) in the `CompareNETObjects` library, and then executes the comparison using it.
 
 ### Mapping our `ComparisonConfig` to Kellerman library
 
-Because not all of the options available in the [ComparisonConfig](<../../Visual Programming with BHoM/Diffing and Hashing/Configuring-objects-comparison-(ComparisonConfig).md>) are mappable to Kellerman's, `ObjectDifferences()` has to adopt a workaround. For example, our [numerical approximation options](https://github.com/BHoM/BHoM/blob/5ec4a0ec34f95382f64530779aafda34252dbbfa/BHoM/BaseComparisonConfig.cs#L70-L88) are not directly compatible.  
+Because not all of the options available in the [ComparisonConfig](<../../Visual-Programming-with-BHoM/Diffing and Hashing/Configuring-objects-comparison-(ComparisonConfig).md>) are mappable to Kellerman's, `ObjectDifferences()` has to adopt a workaround. For example, our [numerical approximation options](https://github.com/BHoM/BHoM/blob/5ec4a0ec34f95382f64530779aafda34252dbbfa/BHoM/BaseComparisonConfig.cs#L70-L88) are not directly compatible.  
 The general compatibility strategy is:
 - if an option is mappable/convertible, map/convert it from our `ComparisonConfig` to Kellerman's `CompareLogic` object. [This is true for most of them](https://github.com/BHoM/BHoM_Engine/blob/82c1276ecb10d3d773a6a8e28643787f742e6a43/Diffing_Engine/Query/ObjectDifferences.cs#L72-L78).
 - if an option is not compatible with Kellerman (like our [numerical approximation options](https://github.com/BHoM/BHoM/blob/5ec4a0ec34f95382f64530779aafda34252dbbfa/BHoM/BaseComparisonConfig.cs#L70-L88)), set Kellerman `CompareLogic` so it finds all possible differences with regards to that option (like we do for [numerical differences](https://github.com/BHoM/BHoM_Engine/blob/82c1276ecb10d3d773a6a8e28643787f742e6a43/Diffing_Engine/Query/ObjectDifferences.cs#L80-L84)), then **iterate the differences found** and cull out those that are non relevant ([example for the numerical differences](https://github.com/BHoM/BHoM_Engine/blob/82c1276ecb10d3d773a6a8e28643787f742e6a43/Diffing_Engine/Query/ObjectDifferences.cs#L189-L191)).

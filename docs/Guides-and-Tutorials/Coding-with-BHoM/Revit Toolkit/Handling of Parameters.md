@@ -14,7 +14,7 @@ The diagram below shows how to get or set the parameter values depending on whet
 ![Revit parameter value workflow](https://user-images.githubusercontent.com/26874773/151384428-d7a34049-64b3-4b7e-adf6-16637ad3135e.png)
 
 ## Parameter mapping
-It may sometimes happen that different families have the same value stored under different parameter names. In such case, there is a need to map the values from more than one source into a single set. This can be done with the use of custom mapping settings that are part of [Revit adapter settings](../../../Visual Programming with BHoM/Revit Toolkit/Revit Adapter#settings).
+It may sometimes happen that different families have the same value stored under different parameter names. In such case, there is a need to map the values from more than one source into a single set. This can be done with the use of custom mapping settings that are part of [Revit adapter settings](../../../Visual-Programming-with-BHoM/Revit Toolkit/Revit Adapter#settings).
 
 `MappingSettings` object has a property named `ParameterMaps` that can contain parameter maps, each containing a set of `ParameterLinks` that define following relationships:
 - relationship between the name of a Revit parameter and the name of a property of a BHoM object, to which its value will be assigned on Pull

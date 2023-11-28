@@ -17,4 +17,4 @@ Revit_Toolkit is a set of tools that enable and support exchange of information 
 All Adapter actions can be taken from any of the BHoM-supported UIs: Grasshopper and Excel. Push and Pull include conversion [from Revit](Pull/Conversion from Revit) and [to Revit](Push/Conversion to Revit), which is being triggered on the fly. This conversion is an integral part of Push and Pull Adapter actions - besides simply translating Revit elements into BHoM objects, it ensures correctness of the units and, in general, allows representing Revit objects outside of Revit context.
 
 ## More info
-Sections below explain the practicalities of that process, while its code mechanics is discussed in [Coding with BHoM](../../Coding with BHoM/Revit Toolkit) section.
+Sections below explain the practicalities of that process, while its code mechanics is discussed in [Coding-with-BHoM](../../Coding-with-BHoM/Revit Toolkit) section.

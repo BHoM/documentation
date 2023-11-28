@@ -12,7 +12,7 @@ Therefore, Revit_Toolkit split into two realms:
     - **Revit_Adapter** (`BH.Adapter.Revit`) - BHoM side of Revit-specific implementation of `BHoMAdapter` without CRUD, which is sitting on the Revit side of the solution (see below)
 - Revit side:
     - **Revit_Core_Adapter** (`BH.Revit.Adapter.Core`) - Revit side of Revit-specific implementation of `BHoMAdapter`, including adapter action methods, CRUD as well as Revit Listener plugin and event handlers
-    - **Revit_Core_Engine** (`BH.Revit.Engine.Core`) - methods to process Revit objects ([filter](../../../Visual Programming with BHoM/Revit Toolkit/Pull/Requests and Filtering), [convert](../../../Visual Programming with BHoM/Revit Toolkit/Pull/Conversion from Revit), query etc.)
+    - **Revit_Core_Engine** (`BH.Revit.Engine.Core`) - methods to process Revit objects ([filter](../../../Visual-Programming-with-BHoM/Revit Toolkit/Pull/Requests and Filtering), [convert](../../../Visual-Programming-with-BHoM/Revit Toolkit/Pull/Conversion from Revit), query etc.)
 
 Details of each of the adapter actions are presented in a dedicated section:
 

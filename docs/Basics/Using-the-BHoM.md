@@ -16,14 +16,14 @@ We have two community developed and supported plugins giving access to BHoM func
 
 ### BHoM for Grasshopper and BHoM for Excel 
 
-One great place to start is therefore our introductory guide: **[Getting started with the BHoM in visual programming](<../Guides and Tutorials/Visual Programming with BHoM/index.md>)**
+One great place to start is therefore our introductory guide: **[Getting started with the BHoM in visual programming](<../Guides-and-Tutorials/Visual-Programming-with-BHoM/index.md>)**
 
 This is also a good entry point to explore many of the basic concepts of BHoM.
 
 
 ## BHoM as a Framework to build your own tools
 
-The BHoM has been designed as an open framework, ready to be be built on top of, extended and customisied. Being open source all the code is fully explorable on GitHub. So if you are a coder see our guide to [Getting started with coding in the BHoM for developers](<../Guides and Tutorials/Coding with BHoM/index.md>).
+The BHoM has been designed as an open framework, ready to be be built on top of, extended and customisied. Being open source all the code is fully explorable on GitHub. So if you are a coder see our guide to [Getting started with coding in the BHoM for developers](<../Guides-and-Tutorials/Coding-with-BHoM/index.md>).
 
 We can't wait to see what you build! 
 
