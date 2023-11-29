@@ -53,8 +53,7 @@ Each header will be reflected in the navigation menu on the right hand side of t
 ### Recommended way
 Links to other documentation pages should be relative URLs (starting with a `/`) where the first slash must be followed with the `documentation` folder. Some examples:
 
-- To link to the [Introduction to BHoM_Adapter](../BHoM_Adapter/index.md) page, you can provide this link: `/documentation/BHoM_Adapter/Introduction-to-the-BHoM_Adapter`.
-- To link to the [IsValidDataset](<../DevOps/Code Compliance and CI/Compliance Checks/IsValidDataset.md>) page, you can provide this link: `/documentation/DevOps/Code%20Compliance%20and%20CI/Compliance%20Checks/IsValidDataset`.
+This section is work in progress -- please refer to https://github.com/BHoM/documentation/issues/84
 
 !!! note
 
