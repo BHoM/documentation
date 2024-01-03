@@ -72,9 +72,9 @@ Board](Best-practices/Using-the-SCRUM-Board.md) - it's easy!
 
 ## Branch naming conventions
 
-See [the DevOps branching strategy](https://bhom.xyz/documentation/Development/Best%20practices/Branching-Strategy/#branch-naming-convention).
+See [the DevOps branching strategy](https://bhom.xyz/documentation/Contributing/Best-practices/Branching-Strategy/).
 
 
 ## Breaking changes
 
-See [our versioning strategy](https://bhom.xyz/documentation/Development/Versioning/versioning-guide/) for more information on avoiding breaking changes.
+See [our versioning strategy](https://bhom.xyz/documentation/Guides-and-Tutorials/Coding-with-BHoM/Versioning/versioning-guide/) for more information on avoiding breaking changes.
