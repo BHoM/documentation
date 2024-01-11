@@ -82,7 +82,7 @@ There will potentially be grey areas between methods being classed as _Query_ or
 `.ToJson()`
 `.ToSVGString()`
 
-All convert methods must therefore be in a Convert Namespace within an _Engine project, thus separating this simple functionally from the _Adaptor project, in any software toolkits also.
+All convert methods should therefore be in a Convert Namespace within an _Engine project, thus separating this simple functionally from the _Adapter project, in any software toolkits also. However, if the objects and conversions are only related to supporting Adapter functionality, and provide no benefit to the users by being available in a UI, then `Convert` methods may exist within the Adapter project.
 
 ### External
 - Contains a `Constructors` method, which returns a `List<ConstructorInfo>` that will be automatically reflected 
