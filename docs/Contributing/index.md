@@ -8,7 +8,7 @@ There are a number of ways to contribute and get involved in the the BHoM.
 
 ### Contribute to this documentation!
 
-Perhaps you are already using the BHoM and have some tips to share? Or think that the documentation is lacking detail in placees? Have you got an example or tutorial you would like to share? Your contributions to help make this documentaion better is very welcome! 🎓[See editing the documentation](https://bhom.xyz/documentation/Contributing/Editing-the-documentation/).
+Perhaps you are already using the BHoM and have some tips to share? Or think that the documentation is lacking detail in places? Have you got an example or tutorial you would like to share? Your contributions to help make this documentaion better is very welcome! 🎓[See editing the documentation](https://bhom.xyz/documentation/Contributing/Editing-the-documentation/).
   
 Also if you've published some samples or tutorials somewhere else online, let us know! We would love to hear about it! 🤟
 Feel free to share in our [BHoM discussions](https://github.com/orgs/BHoM/discussions)
