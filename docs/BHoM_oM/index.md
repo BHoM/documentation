@@ -126,6 +126,7 @@ Properties correspond to the information you need to define your object (to the 
 - Property names should not contain redundant information, for example, repeating the type of the property in its name. A property of type `Node` for example should not have `Node` in the property name unless it is the only name of the property. E.G. a property set up as `Node StartNode` should only be called `Start`, as the `Node` element comes from the property type - the better implementation of this is `Node Start`. This prevents duplication of information in the properties.
 
 As objects grow in complexity, it is useful to think in terms of splitting an object's properties into categories:
+
 1. Object _**Defining**_ properties. The minimal required information you need to construct the full object. 
 These should generally be the properties of the objects defined in the BHoM
 
