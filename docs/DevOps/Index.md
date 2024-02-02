@@ -6,7 +6,7 @@ Within the following pages of this section, you will find more information about
 
 ## What is DevOps?
 
-The word DevOps is a combination of the terms *development* and *operations*. The vision of DevOps is to have a smooth, streamlined and sophistical cycle for development, deployment and to provide improvements across the BHoM Community. 
+The word DevOps is a combination of the terms *development* and *operations*. The vision of DevOps is to have a smooth, streamlined and sophisticated cycle for development, deployment, and to provide improvements across the BHoM Community. 
 
 This includes:
 
