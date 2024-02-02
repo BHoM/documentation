@@ -1,6 +1,7 @@
 # Introduction to DevOps
 
 This is the section dedicated to **DevOps**. 
+
 Within the following pages of this section, you will find more information about our DevOps practices, procedures and ways of working that facilitate cohesion and collaboration across the BHoM. 
 
 ## What is DevOps?
