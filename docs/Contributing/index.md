@@ -14,21 +14,26 @@ Also if you've published some samples or tutorials somewhere else online, let us
 Feel free to share in our [BHoM discussions](https://github.com/orgs/BHoM/discussions)
 
 
-### Submit an issue
-
-Found a bug? 🐛 Have an idea for a feature? 🧠 Why not [submit an issue](https://bhom.xyz/documentation/Contributing/Submitting-an-Issue/)?
-
-
 ### Contribute code
 
-Want to hack? 💻 Know how to fix an open issue? Branch 🌴 or Fork 🍴 away and feel free to raise a Pull Request to start a conversation. [See resolving an issue](https://bhom.xyz/documentation/Contributing/Resolving-an-Issue/)!
+Want to hack? 💻 See the [Getting started for developers](https://bhom.xyz/documentation/Guides-and-Tutorials/Coding-with-BHoM/) guide. 
+
+Want to fix an open issue? See [resolving an issue](https://bhom.xyz/documentation/Contributing/Resolving-an-Issue/) and then do a branch and PR targeting it.
 
 
-### Join the conversation 
+If unsure, raise a [BHoM discussion](https://github.com/orgs/BHoM/discussions) to start a conversation and see how you can contribute.
+
+### Contribute with new ideas or flagging issues
+
+Found a bug? 🐛 Have an idea for a feature? 🧠  
+Feel free to raise new issues if they don't exist already, but please do a search in advance. 
+
+Read more about [submiting an issue](https://bhom.xyz/documentation/Contributing/Submitting-an-Issue/).
+
+### Start or join discussions
 
 Join the discussion on existing issues and pull requests, or open a new question issue to ask about any aspect of the BHoM code or toolkits.  
 Also do feel free to ask questions or join the conversation on [BHoM discussions](https://github.com/orgs/BHoM/discussions) 📣
-
 
 ### Suggest a new Toolkit
 
@@ -38,8 +43,6 @@ Reach out on [https://github.com/orgs/BHoM/discussions](https://github.com/orgs/
 ### Building a new BHoM Toolkit yourself?
 
 We'd love to hear from you as we may wish to help you maintain it. 🚧
-
-
 
 See also the [BHoM GitHub Contributing page](https://github.com/BHoM/BHoM/blob/main/CONTRIBUTING.md) for more ways to get in touch.
 
