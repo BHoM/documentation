@@ -12,7 +12,11 @@ This page provides instructions on how to set up a repository within BHoM to mee
 
 1. Under Branches. Set the __main__ Branch as ___protected___ with the following settings (click edit on the right-hand side of the listed main branch)
 
-![image](https://user-images.githubusercontent.com/16853390/50325923-859a0000-0522-11e9-95ba-486c8e55dfe6.png)
+![image](https://github.com/BHoM/documentation/assets/18049174/85b0d3c7-b055-4399-8b78-2d9783049fc7)
+![image](https://github.com/BHoM/documentation/assets/18049174/23c57880-2b27-4339-b8de-7d40ea67a24d)
+![image](https://github.com/BHoM/documentation/assets/18049174/a34701bd-c732-4f24-8009-749e435fd9bd)
+![image](https://github.com/BHoM/documentation/assets/18049174/225108d0-4c79-43f3-9ce6-2514917d0e76)
+![image](https://github.com/BHoM/documentation/assets/18049174/c9bb55a6-4d00-403c-a99e-24a2e12da746)
 
 1. If you don't have a team for that repo yet, you can create it [here](https://github.com/orgs/BHoM/teams). Make sure the team has the same name as the repo and that you have added the repo into its list of repositories with the the **"Write"** access level. Now you should be able to link it in the branch setup page above.
 
