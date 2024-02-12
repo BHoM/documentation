@@ -1,4 +1,4 @@
-# 1 - Introduction
+# 1 - Beta Patching
 
 The contents of this page detail the actions to be undertaken in the event of a desire to provide a patch to a beta release. These procedures may be updated at any point.
 

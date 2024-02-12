@@ -1,4 +1,4 @@
-# 1 - Introduction
+# 1 - Preparing a new milestone
 
 The contents of this page detail the actions to be undertaken at the beginning of a given Milestone. These procedures may be updated at any point.
 
