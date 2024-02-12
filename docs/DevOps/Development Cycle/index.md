@@ -12,7 +12,7 @@ Each milestone is referred to by 2 numbers, in an `x.y` format. The `x` number r
 
 As a development community, we are always developing one milestone in advance of what the end-users might be seeing. The end of each milestone becomes our beta release for that quarter, so the development community is always working for 12 weeks on a milestone to culminate in its delivery. This might cause some confusion, because the `x.0` milestone is typically October-December of a given year, and not January-March as some might expect (as the first milestone of the major year). However, when you see that the `x.0` beta is delivered at the end of December/early January to the world, it makes more sense (hopefully) - the users get to start the year on version `x.0`.
 
-Once one milestone is over and the beta is produced (in line with our [end of milestone procedures](End-of-milestone-procedure)), we move into the next milestone. See our [Operating Procedures](Operating-Procedures) for more information on what occurs at the start and end of a milestone.
+Once one milestone is over and the beta is produced (in line with our [end of milestone procedures](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/End%20of%20milestone%20procedure/)), we move into the next milestone. See our [Operating Procedures](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/) for more information on what occurs at the start and end of a milestone.
 
 ## Sprints
 
