@@ -1,6 +1,6 @@
 # Producing a beta installer
 
-This outlines the steps necessary to follow to obtain a beta installer, and make it available for testing and release. This document forms part of the [End of Milestone Procedure](End-of-Milestone-procedure).
+This outlines the steps necessary to follow to obtain a beta installer, and make it available for testing and release. This document forms part of the [End of Milestone Procedure](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/End%20of%20milestone%20procedure/).
 
 # 1 - Scope
 
@@ -10,7 +10,7 @@ This procedure/guide is designed for the creation of a beta installer at the end
 
 The following information is to be provided and authorised by the DevOps team:
 
- - PatchVersion - this should be 0 for an end of milestone release, but if doing a [beta patch release](Beta-Patching-Procedure), this should refer to the patch number being produced
+ - PatchVersion - this should be 0 for an end of milestone release, but if doing a [beta patch release](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/Beta%20patching%20procedure/), this should refer to the patch number being produced
  - ReleaseType - this should be set to beta for any beta installer
  - Version - this should be set to the end of milestone version, inclusive of v - e.g. v3.0 v3.1, etc.
 

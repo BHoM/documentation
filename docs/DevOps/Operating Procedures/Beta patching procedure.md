@@ -6,8 +6,8 @@ The contents of this page detail the actions to be undertaken in the event of a 
 
 The following documents are not considered part of this procedure, but contain additional information which may be beneficial. It is recommended these are read in conjunction with this document.
 
- - [Beta testing procedure](Beta-testing-procedure)
- - [Producing a beta installer guide](Producing-a-beta-installer)
+ - [Beta testing procedure](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/Beta%20testing%20procedure/)
+ - [Producing a beta installer guide](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/Producing%20a%20beta%20installer/)
 
 # 2 - Activation of this procedure
 
@@ -45,11 +45,11 @@ An important note to make, is the `TargetCommit` must be set to `main` to target
 
 ## 5.3 - Produce the beta installers
 
-Full details of producing a beta installer can be found in the [Producing a Beta Installer guide](Producing-a-beta-installer).
+Full details of producing a beta installer can be found in the [Producing a Beta Installer guide](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/Producing%20a%20beta%20installer/).
 
 ## 5.4 - Testing the beta installer
 
-DevOps is responsible for deciding the scope of testing the patched beta artefact. Where there is any doubt as to the potential scope of changes produced by the patch, a full beta test should be conducted, as per the guidelines in [this procedure](End-of-Milestone-procedure#release-beta-installer-for-testing).
+DevOps is responsible for deciding the scope of testing the patched beta artefact. Where there is any doubt as to the potential scope of changes produced by the patch, a full beta test should be conducted, as per the guidelines in [this procedure](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/End%20of%20milestone%20procedure/).
 
 Where the scope of testing can be clearly defined, the Discipline Lead of the affected repository is responsible for reporting back on successful use of the beta patch artefact, using all available test procedures. This work may be delegated down as appropriate to other developers and users, but the Discipline Code Lead takes final responsibility for reporting back.
 
@@ -57,7 +57,7 @@ The testing of the beta patch artefact should be a matter of priority, and the D
 
 ## 5.5 - Releasing the beta installer
 
-This is to be done in line with the release of a standard beta, the procedure for which can be found [here](End-of-Milestone-procedure#release-beta-installer-publicly).
+This is to be done in line with the release of a standard beta, the procedure for which can be found [here](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/End%20of%20milestone%20procedure/).
 
 # 6 - External website
 

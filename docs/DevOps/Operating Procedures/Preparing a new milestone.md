@@ -6,7 +6,7 @@ The contents of this page detail the actions to be undertaken at the beginning o
 
 The following documents are considered related to this procedure. It is recommended these are read in conjunction with this document for a full understanding of the procedures being followed.
 
- - [End of Milestone procedure](End-of-Milestone-procedure)
+ - [End of Milestone procedure](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/End%20of%20milestone%20procedure/)
 
 # 2 - Purpose
 

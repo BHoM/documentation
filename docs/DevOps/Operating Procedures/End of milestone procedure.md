@@ -6,9 +6,9 @@ The contents of this page detail the actions to be undertaken at the end of a gi
 
 The following documents are considered part of this procedure, and contain more in-depth details about specific aspects. It is recommended these are read in conjunction with this document.
 
- - [Beta testing procedure](Beta-testing-procedure)
- - [Producing a beta installer guide](Producing-a-beta-installer)
- - [Preparing a new Milestone](Preparing-a-new-Milestone)
+ - [Beta testing procedure](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/Beta%20testing%20procedure/)
+ - [Producing a beta installer guide](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/Producing%20a%20beta%20installer/)
+ - [Preparing a new Milestone](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/Preparing%20a%20new%20milestone/)
 
 # 1 - Scope
 
@@ -28,7 +28,7 @@ Development teams are responsible for ensuring their developers undertake this p
 
 ### 2.2 - Beta Test Procedure takes effect
 
-The Beta Test Procedure is outlined in [this document](Beta-testing-procedure) and will be followed in accordance with the above statement regarding developing against the Beta installers. The DevOps team will oversee this operation during the lifecycle of the final sprint.
+The Beta Test Procedure is outlined in [this document](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/Beta%20testing%20procedure/) and will be followed in accordance with the above statement regarding developing against the Beta installers. The DevOps team will oversee this operation during the lifecycle of the final sprint.
 
 ### 2.3 - `develop` into `main`
 
@@ -94,7 +94,7 @@ Authorisation for final execution of the script resides with the Governance team
 
 ### 2.10  - Produce beta installer
 
-Full details of producing a beta installer can be found in the [Producing a Beta Installer guide](Producing-a-beta-installer).
+Full details of producing a beta installer can be found in the [Producing a Beta Installer guide](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/Producing%20a%20beta%20installer/).
 
 ### 2.11 - Release beta installer for testing
 
@@ -133,7 +133,7 @@ The milestone should be closed and the GitHub milestones updated to reflect the 
 
 Following the close out of the milestone, the next milestone should be set up ready to begin as soon as is appropriate. Typically, this might be after a weekend, but should be set up in such a way that the next milestone could begin the next day after release.
 
-Full details of actions needed to be undertaken to set up the next milestone can be found in the [Preparing a new Milestone Procedure](Preparing-a-new-Milestone)
+Full details of actions needed to be undertaken to set up the next milestone can be found in the [Preparing a new Milestone Procedure](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/Preparing%20a%20new%20milestone/)
 
 # 3 - Communications of the end of the milestone
 

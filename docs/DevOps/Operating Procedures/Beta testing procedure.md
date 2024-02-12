@@ -1,6 +1,6 @@
 # Beta Testing
 
-The contents of this page detail the actions to be undertaken, with approximate timings, at the end of a Milestone to test the Beta installers in the lead up to the release of that Milestones beta. These procedures may be updated at any point. This document forms part of the [End of Milestone Procedure](End-of-Milestone-procedure).
+The contents of this page detail the actions to be undertaken, with approximate timings, at the end of a Milestone to test the Beta installers in the lead up to the release of that Milestones beta. These procedures may be updated at any point. This document forms part of the [End of Milestone Procedure](https://bhom.xyz/documentation/DevOps/Operating%20Procedures/End%20of%20milestone%20procedure/).
 
 # 1 - Purpose
 
