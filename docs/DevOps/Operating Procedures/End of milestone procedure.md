@@ -54,7 +54,7 @@ If a Toolkit requires alignment updates to compile and deploy, a separate Pull R
 
 ### 3.6 - Tagging
 
-Each repository included in the beta must be tagged at the commit latest to `main` for the version being produced. This can be done using the script in the folder above.
+Each repository included in the beta must be tagged at the commit latest to `main` for the version being produced.
 
 An important note to make, is the `TargetCommit` must be set to `main` to target the `main` branch - otherwise it will default to target the default branch (which is `develop` for beta repositories). This will cause issues if not set and other work is committed to `develop` before the tags are completed.
 
