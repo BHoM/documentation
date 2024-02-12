@@ -58,6 +58,8 @@ Each repository included in the beta must be tagged at the commit latest to `mai
 
 An important note to make, is the `TargetCommit` must be set to `main` to target the `main` branch - otherwise it will default to target the default branch (which is `develop` for beta repositories). This will cause issues if not set and other work is committed to `develop` before the tags are completed.
 
+The installer repository should also be tagged to correspond to the version of the installer at the time the beta was produced.
+
 ### 3.7 - Change Log Creation
 
 The Change Log is prepared by a member of the DevOps team using the authorised script. The Change Log should encompass every pull request merged during the milestone to the `main` branch for deployment, from every repository included within the installer.

@@ -23,6 +23,10 @@ Where a repository has not made the initial beta due to issues with testing and 
 
 A new branch from `main` for the repository to be patched should be made, with code written to resolve the bug and reviewed via a Pull Request in the usual manner without circumventing the standard code review procedures. The Pull Request must be tested thoroughly, ideally against any existing test procedure for that repository where available. Where a test procedure is not available, it is the Discipline Code Lead who is responsible for signing off on the Pull Request. Once the Pull Request is merged, DevOps will then carry out the following functions.
 
+## 5.1 - Patching `develop`
+
+The same branch (if not deleted) can be used to patch `develop` as well and ensure the bug fix is in both branches so alphas aren't affected either. Thie pull request can be handled in the usual fashion as it will be going into `develop` as part of that milestone and not need any special support. However, it is important that the bug fix is put into `develop` to prevent the patch being needed again at the end of the milestone when `develop` is merged into `main`.
+
 # 6 - Preparing the patch
 
 The following actions must be undertaken to prepare the beta patch.
@@ -36,6 +40,8 @@ DevOps responsible for generating an updated change log for the patched beta to 
 DevOps is responsible for tagging the repository with the appropriate patch number.
 
 Should the patch number be required, the patch number should always be 1 greater than the most recent patch number. For example, if a beta patch has previously been generated on a different repository (thus making the current beta version Vx.y.b.1) then the beta patch for this repository will become Vx.y.b.2 even if this repository does not have a Vx.y.b.1 patch itself.
+
+An important note to make, is the `TargetCommit` must be set to `main` to target the `main` branch - otherwise it will default to target the default branch (which is `develop` for beta repositories). This will cause issues if not set and other work is committed to `develop` before the tags are completed.
 
 ## 6.3 - Produce the beta installers
 
