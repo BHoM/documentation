@@ -18,5 +18,5 @@ Occasionally bots may be referred to by other names, such as pipelines, actions,
 
 # Adding to our bot family
 
-If you have an idea for our bot family, either as an addition or our maintained bot (BHoMBot) or an externally provided bot-like action, please feel free to raise a [discussion item](https://github.com/orgs/BHoM/discussions) - our DevOps team don't know of every tool on the market and always welcome new ideas from our community :smile:
+If you have an idea for our bot family, either as an addition or our maintained bot (BHoMBot) or an externally provided bot-like action, please feel free to raise a [discussion item](https://github.com/orgs/BHoM/discussions) - our DevOps team don't know of every tool on the market and always welcome new ideas from our community
 
