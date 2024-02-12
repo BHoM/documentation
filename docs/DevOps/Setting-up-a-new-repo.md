@@ -18,3 +18,5 @@ This page provides instructions on how to set up a repository within BHoM to mee
 ![image](https://github.com/BHoM/documentation/assets/18049174/c9bb55a6-4d00-403c-a99e-24a2e12da746)
 
 If you don't have a team for that repo yet, you can create it [here](https://github.com/orgs/BHoM/teams). Make sure the team has the same name as the repo and that you have added the repo into its list of repositories with the the **"Write"** access level. Now you should be able to link it in the branch setup page above.
+
+Once you've set up the repository, follow the instructions in the [template repository](https://github.com/BHoM/template-repository) to finish setting up the repository from the code perspective.
