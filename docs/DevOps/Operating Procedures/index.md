@@ -1,4 +1,4 @@
-# Introduction
+# Introduction to our Operating Procedures
 
 The section outlines the operating procedures under which the [DevOps Team](https://github.com/orgs/BHoM/teams/devops) work. It oulines our playbooks, our procedures, our prototcols, and other aspects of DevOps decision making.
 

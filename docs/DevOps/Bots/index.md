@@ -1,4 +1,4 @@
-# Introduction
+# Introduction to Bots in BHoM
 
 Bots are a handy way of supporting our BHoM Community in delivering outstanding work. The official DevOps strategy for BHoM says:
 

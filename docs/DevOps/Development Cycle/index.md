@@ -1,4 +1,4 @@
-# Introduction
+# Introduction to the Development Cycle
 
 This section outlines the development cycle used by the BHoM Community in preparing, producing, and delivering the BHoM package to the world.
 
