@@ -42,7 +42,7 @@ As you can see, events are also BHoM object that you can explode as any other ty
 
 You can control the Current Events to capture events that occur during the run of your code. To do this, start by clearing the current event log to ensure you have nothing from another process by calling `BH.Engine.Base.Compute.ClearCurrentEvents()`. Then, when you're ready to obtain the current events, you can use `BH.Engine.Base.Query.CurrentEvents()` to get all the events logged since the current events were last cleared.
 
-### Accessing All Events Since A Certtain Time
+### Accessing All Events Since A Certain Time
 
 You can access all events logged since a certain time by calling `BH.Engine.Base.Compute.EventsSince(DateTime utcTime)`. This will return all events logged where the `UtcTime` of the event is on or after the provided `utcTime` passed into the method.
 
