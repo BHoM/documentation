@@ -237,3 +237,63 @@ public static bool MyMethod(List<BHoMObject> objects)
 Here we've added only a small amount of extra information - the index of the object which is null - but in doing so, we've now empowered the user to inspect their objects at that specific index to identify the problem and potentially fix it.
 
 On the flip side, don't oversaturate the user with information so that they're unable to process the important bits. Keep the information in the message factual and to the point for a positive user experience.
+
+## Suppressing Events
+
+There may be times when you don't want the user to be given events, for example when your method is handling expected errors occuring with the objects. You might not want to user to be told `Polyline is not planar` if it doesn't actually matter to your process and you do something different for planar vs non-planar polylines.
+
+Obviously you can't always remove the events being logged from parts of the code base where they exist, particularly if building on top of the BHoM framework where the community has opted to put in event logging for when the methods are used on their own in one of the BHoM supported UIs.
+
+Therefore, the option exists to suppress the event logging, and prevent events being logged to the user during the execution of your method.
+
+To do this, call the `BH.Engine.Base.Compute.StartSuppressRecordingEvents(bool suppressErrors, bool suppressWarnings, bool suppressNotes)` method. Each `boolean` input corresponds to the type of event you wish to suppress. You can suppress all 3, or just certain combinations of the 3 as you wish depending on your use case.
+
+When events are suppressed, they go into the suppressed log, which is separate from the Events Log. This is a mechanism deliberately put in for the event where suppression occurs by accident - events are not lost completely and can be retrieved as needed.
+
+When calling `StartSuppressRecordingEvents` you provide the `booleans` for the events you want to suppress. However, if another method has opted to suppress events then this will also occur. Take the example:
+
+```c#
+public static bool MethodA(List<BHoMObject> objects)
+{
+   BH.Engine.Base.Compute.StartSuppressRecordingEvents(false, true, false); //Suppress Warnings but not Errors or Notes
+
+   MethodB(objects);
+}
+
+public static bool MethodB(List<BHoMObject> objects)
+{
+   BH.Engine.Base.Compute.StartSuppressRecordingEvents(true, false, false); //Suppress Errors but not Warnings or Notes
+
+   [...]
+}
+```
+
+When `MethodA` is called by itself warnings will be suppressed, and when `MethodB` is called by itself errors will be suppressed. However because `MethodA` calls `MethodB` as part of its execution, `MethodA` will suppress warnings, and `MethodB` will suppress errors, meaning the end result will be BOTH errors and warnings are suppressed. This has been done so that `MethodB` could not override the suppression desires of `MethodA` by stating `false` to suppressing warnings.
+
+### Stop suppressing events
+
+When you're ready to stop suppressing events, simply call the method `BH.Engine.Base.Compute.StopSuppressRecordingEvents()`. This will reset event logging to the default state for all types of events.
+
+**You should always stop event suppression at the end of the method you have started it, to prevent the Log system being suppressed for longer than necessary and risking events not being raised to users when they should.**
+
+If you want to suppress warnings, then turn warnings back on and suppress errors, you would do so like this example:
+
+```c#
+public static bool MethodA(List<BHoMObject> objects)
+{
+   BH.Engine.Base.Compute.StartSuppressRecordingEvents(false, true, false); //Suppress Warnings but not Errors or Notes
+
+   [...]
+
+   BH.Engine.Base.Compute.StopSuppressRecordingEvents(); //Turn on all events
+   BH.Engine.Base.Compute.StartSuppressRecordingEvents(true, false, false); //Suppress Errors
+}
+```
+
+### Retrieving suppressed events
+
+If you want to retrieve events raised during the suppressed time period, you can call `BH.Engine.Base.Compute.RetrieveSuppressedLog()`. This will move all events recorded during the suppressed period to the main Log, which can be accessed in the ways outlined at the top of this page.
+
+The suppressed log will be reset once its events have been retrieved, so you don't need to worry about retrieving duplicates.
+
+Retrieved events won't appear on the UI on components though, so users may still not know about them initially, but they can be queried using the same access components above in any of the BHoM supported UIs.
