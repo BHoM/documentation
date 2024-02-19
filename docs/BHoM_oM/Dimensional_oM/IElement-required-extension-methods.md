@@ -35,3 +35,6 @@ Please note that the default implementations do _not_ cover the mass interface `
 
 3. `Spatial_Engine` contains a default `Transform` method for all `IElementXD`s. This implementation only covers the transformation of the base geometry, and does not handle any additional parameters, such as local orientations of the element. For an object that contains this additional layer of information, a object specific `Transform` method must be implemented.
 <br/><br/>
+
+
+This is checked by [this CI check](https://bhom.xyz/documentation/DevOps/Code%20Compliance%20and%20CI/Compliance%20Checks/ImplementsRequiredMethods/) so any changes to the requirements should be reflected in the check appropriately.
