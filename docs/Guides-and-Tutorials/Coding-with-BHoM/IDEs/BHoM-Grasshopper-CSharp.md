@@ -93,3 +93,30 @@ This simply means that you need to add references to `Structure_oM.dll`. If we a
 
 This is because the `Structure_oM.dll` itself depends on `Analytical_oM.dll`.  
 By adding this last dependency the error will go away.
+
+### Simplfying namespaces
+
+For complex C# script components where multiple object types are used, it can be cumbersome to type `BH.oM.Geometry.Node` everytime you want to create a `Node`. 
+
+On L13 of the C# component you can add references to specific namespaces:
+
+![Alt text](L13references.PNG)
+
+!!! note
+
+    You need to be mindful that the BHoM object types do not clash with the Rhino object types. For example, on L13 `using BH.oM.Geometry` and trying to use a `Point` object will return an error.
+	
+	That is because on L6 there is a reference to `Rhino.Geometry` and the component cannot distinguish between a Rhino.Geometry.Point and a BH.oM.Geometry.Point.
+	
+	A workaround to this is to shortern the namespace. For example, `using BHG = BH.oM.Geometry` will allow you to use `BHG.Point` without causing an ambiguity error with a `Rhino.Geometry.Point`.
+	
+### Using BHoM objects as inputs
+
+If you want to use a BHoM object as an input for the C# component, you need to first change the type hint to `System.Object`:
+
+![Alt text](typehint-c#component.PNG)
+
+When you use the object in the script, you need to first cast it to a BHoM object. Then you can use the object as you would in any other IDE:
+
+![Alt text](castingToBHoMAndUsage.PNG)
+
