@@ -114,7 +114,7 @@ On L13 of the C# component you can add references to specific namespaces:
 
 If you want to use a BHoM object as an input for the C# component, you need to first change the type hint to `System.Object`:
 
-![Alt text](typehint-c#component.PNG)
+![Alt text](typehint_CSharpComponent.PNG)
 
 When you use the object in the script, you need to first cast it to a BHoM object. Then you can use the object as you would in any other IDE:
 
