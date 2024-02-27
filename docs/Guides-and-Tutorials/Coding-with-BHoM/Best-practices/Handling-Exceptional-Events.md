@@ -192,11 +192,11 @@ If your method ends up in a situation where it could not return any meaningful o
 
 ### Log errors as exceptions
 
-You can also opt to catch BHoM Error Events as Exceptions if you so wish. By default, errors are just logged in the Log and not handled any further. However, you can call `BH.Engine.Base.Compute.ThrowError(false)` which will turn off the suppression of exception throwing.
+You can also opt to catch BHoM Error Events as Exceptions if you so wish. By default, errors are just logged in the Log and not handled any further. However, you can call `BH.Engine.Base.Compute.ThrowErrorsAsExceptions(true)` which will turn off the suppression of exception throwing.
 
 If you choose to do this, any error recorded into the Log while this suppression is off will be thrown as an exception itself, which you can then catch in a `try/catch` statement.
 
-If you want to turn the suppression back on after your use, you can call `BH.Engine.Base.Compute.ThrowError(true)` and this will revert the Log to work in the default manner.
+If you want to turn the suppression back on after your use, you can call `BH.Engine.Base.Compute.ThrowErrorsAsExceptions(false)` and this will revert the Log to work in the default manner.
 
 ## Good Log Messages
 
