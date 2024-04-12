@@ -50,7 +50,7 @@ Step by step instructions:
 4. **Start the debugger with new instance of the UI software attached** (e.g Rhino).  
    Press F5 or the big green "play" button at the top to start Rhino; this instance of Rhino will have the debugger already attached and the Edit-and-Continue feature enabled.
 
-The last step will fire up your UI application and you will be able to modify the code while debugging (just press the `Pause` button in Visual Studio).
+The last step will fire up your UI application and you will be able to modify the code while debugging (just press the `Pause` button in Visual Studio). **The Edit-and-Continue will be working for all the code in the Solution**.
 
 
 
