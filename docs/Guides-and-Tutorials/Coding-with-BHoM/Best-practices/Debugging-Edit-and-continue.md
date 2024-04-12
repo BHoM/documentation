@@ -40,14 +40,15 @@ Step by step instructions:
 
 3. **Configure the project to start with an UI application attached**. For Rhino/Grasshopper:
    
-   3.1 Go in the project settings by right-clicking the Project and selecting "Properties".
+      3.1 Go in the project settings by right-clicking the Project and selecting "Properties".
 
-   3.2 Go in the "Debug" section on the left, then select the "Start external program" radio button and specify the Rhino executable path (as found on your machine - check where it's located and copy its path) in the textbox.
+      3.2 Go in the "Debug" section on the left, then select the "Start external program" radio button and specify the Rhino executable path (as found on your machine - check where it's located and copy its path) in the textbox.
 
-   ![alt text](../_images/HotReload-08-DebugSetting.png)
+      ![alt text](../_images/HotReload-08-DebugSetting.png)
 
 
-4. **Start the debugger with new instance of the UI software attached** (e.g Rhino). Press F5 or the big green "play" button at the top to start Rhino; this instance of Rhino will have the debugger already attached and the Edit-and-Continue feature enabled.
+4. **Start the debugger with new instance of the UI software attached** (e.g Rhino).  
+   Press F5 or the big green "play" button at the top to start Rhino; this instance of Rhino will have the debugger already attached and the Edit-and-Continue feature enabled.
 
 The last step will fire up your UI application and you will be able to modify the code while debugging (just press the `Pause` button in Visual Studio).
 
