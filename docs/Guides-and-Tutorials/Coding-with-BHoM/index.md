@@ -24,20 +24,10 @@ We recommend [Visual Studio Community](https://visualstudio.microsoft.com/vs/com
 
     When you build, **if there is any UI open** (e.g. Rhino/Grasshopper/Revit/Excel), **the dlls will not be overwritten in the central folder** because they are referenced by the UI software. Therefore, to ensure the changes are visible in the UI, you must make sure to close all UI software, then reopen it to see updated changes.
     
-!!! tip
+!!! tip "Debugging and Edit-and-continue"
 
-      When developing a Toolkit, in order to reduce rebuild iterations, you might want to:
-      
-      1. Rebuild your Toolkit
-      2. Rebuild BHoM_UI 
-      3. [Start Debugging your Toolkit with an UI application attached](https://user-images.githubusercontent.com/6352844/74458548-c91ba000-4e81-11ea-9590-cf37698b911a.png). 
+   Please have a look at the page dedicated to [Debugging and Edit-and-continue](docs\Guides-and-Tutorials\Coding-with-BHoM\Best-practices\Debugging-Edit-and-continue.md) for tips on how to be most effective when coding/debugging with BHoM.
 
-      The last step will fire up your UI application and you will be able to modify the code while debugging, on-the-fly (just press the `Pause` button in Visual Studio).
-
-      Note that _not all IDEs support this_ (notably, not the Express editions of Visual Studio – only the Community, Professional and Enterprise ones do).
-
-      An alternative that always works is, after steps 1 and 2 above, simply [fire up your UI application and attach to its process](https://docs.microsoft.com/en-us/visualstudio/debugger/attach-to-running-processes-with-the-visual-studio-debugger?view=vs-2019#BKMK_Attach_to_a_running_process).
-      This way you will be able to follow code execution and check exceptions; however, this does not allow for code modification while debugging.
 
 
 
