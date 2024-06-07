@@ -36,7 +36,7 @@ If you get an error such as:
 
 ![image](https://github.com/BHoM/documentation/assets/6352844/234a043c-8413-4cff-a385-f5d14c1ed4ee)
 
-This can happen on Windows multi-user machines where a previous user had installed an old version of BHoM, and the current user that is trying to install it for himself does not have admin rights.
+This can happen on Windows multi-user machines where a previous user had installed an old version of BHoM, and the current user that is trying to install it for themself does not have admin rights.
 
 The solution is to delete the `C:\ProgramData\BHoM` folder.  
 Unfortunately, if you don't have admin rights, the only way is to ask your Administrator to delete it.
