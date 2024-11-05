@@ -1,3 +1,5 @@
+# Configuring object comparison: `ComparisonConfig`
+
 As seen in the [Diffing](Diffing-%E2%80%93-tracking-changes-in-your-BHoM-objects.md) and the [Hash](Hash-%E2%80%93-an-object's-identity.md) wiki pages, the real power of object comparison is given by the options that you have when performing it. For this reason, we expose options to customise these operations via the `ComparisonConfig` object. 
 
 Here is an example of the ComparisonConfig object seen from Grasshopper:
