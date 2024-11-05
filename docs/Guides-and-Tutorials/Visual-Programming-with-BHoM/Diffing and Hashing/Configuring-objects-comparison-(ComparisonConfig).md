@@ -160,6 +160,7 @@ Properties whose **Nesting Level** is equal to or larger than `MaxNesting` will 
 > ### Property Nesting Level definition
 > The nesting level of a property defines how deep we are in the object property tree.  
 > For example:
+> 
 > - a [`Bar`'s](https://github.com/BHoM/BHoM/blob/afb17a5a206da0747f671bca286c368d37f498b2/Structure_oM/Elements/Bar.cs#L39-L71) `StartNode` property is at Nesting Level 1 (it is also called a  "top-level" property of the object)
 > - a [`Bar`'s](https://github.com/BHoM/BHoM/blob/afb17a5a206da0747f671bca286c368d37f498b2/Structure_oM/Elements/Bar.cs#L39-L71) `StartNode.Position` property is at Nesting Level 2, because `Position` is a sub-property of `StartNode`.
 
@@ -172,6 +173,7 @@ This option is better used as a safety measure to avoid excessive computation ti
 When Diffing, this indicates the maximum number of Property Differences that will be collected and returned. This setting does not affect the Hash calculation (in fact, this option should be moved in [DiffingConfig](https://github.com/BHoM/BHoM/blob/afb17a5a206da0747f671bca286c368d37f498b2/Diffing_oM/DiffingConfig.cs#L34-L55) instead). 
 
 You can not control what properties are returned and what remain excluded due to this numeric limit. Hence, this option is better used as a safety measure to avoid excessive computation time when:
+
 - we care about finding different objects, but do not care about what properties did change between them, although a better and faster option for this would be to use [`DiffingConfig.EnablePropertyDiffing`](https://github.com/BHoM/BHoM/blob/afb17a5a206da0747f671bca286c368d37f498b2/Diffing_oM/DiffingConfig.cs#L43-L46) set to `false`;
 - we are okay with finding only the first n differences between objects, whatever those may be.
 
@@ -207,6 +209,7 @@ If both `NumericTolerance` and `SignificantFigures` are provided in the Comparis
 This option applies a given Numeric Tolerance to a specific property, therefore considering its value approximated using the given tolerance.
 
 In order to use it, you have to create and input in `PropertyNumericTolerance` one or more [`NamedNumericTolerance` objects](https://github.com/BHoM/BHoM/blob/afb17a5a206da0747f671bca286c368d37f498b2/BHoM/NamedNumericTolerance.cs#L27-L40), where you set:
+
 - the `Name` of the property you want to target; this supports `*` wildcard usage;
 - the `Tolerance` that you want to apply to the given property.
 
@@ -216,6 +219,7 @@ If a match is found, this takes precedence over the `NumericTolerance` option.
 If conflicting values/multiple matches are found among the `ComparisonConfig`'s numerical precision options, the largest approximation among all (least precise number) is registered.
 
 The `Name` field supports wildcard usage. Some examples:
+
 - `BH.oM.Geometry.Vector`: applies the corresponding tolerance to all numerical properties of Vectors, i.e. X, Y, Z
 - `BH.oM.Structure.Elements.*.Position`: applies the corresponding tolerance to all numerical properties of properties named `Position` under any Structural Element, e.g. `Bar.Position.X`, `Bar.Position.Y`, `Bar.Position.Z` and at the same time also `Node.Position.X`, `Node.Position.Y,` `Node.Position.Z`.
 
@@ -251,6 +255,7 @@ If both `SignificantFigures` and `NumericTolerance` are provided in the Comparis
 This option applies the approximation with given Significant Figures to a specific property.
 
 In order to use it, you have to create and input in `PropertyNumericTolerance` one or more [`NamedSignificantFigures` objects](https://github.com/BHoM/BHoM/blob/afb17a5a206da0747f671bca286c368d37f498b2/BHoM/NamedSignificantFigures.cs#L27-L40), where you set:
+
 - the `Name` of the property you want to target; this supports `*` wildcard usage;
 - the `SignificantFigures ` that you want to consider when evaluating the given property.
 
