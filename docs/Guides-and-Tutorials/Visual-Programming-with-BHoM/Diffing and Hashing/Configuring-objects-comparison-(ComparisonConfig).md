@@ -180,26 +180,26 @@ You can not control what properties are returned and what remain excluded due to
 This option sets the Numeric tolerance applied when considering any _numerical property_ of objects.
 For example, a [`Bar`'s](https://github.com/BHoM/BHoM/blob/afb17a5a206da0747f671bca286c368d37f498b2/Structure_oM/Elements/Bar.cs#L39-L71) `StartNode.Position.X` property is a numerical property.
 
-When a numerical property is encountered, the function [`BH.Engine.Base.RoundWithTolerance()`](https://github.com/BHoM/BHoM_Engine/blob/main/BHoM_Engine/Query/RoundWithTolerance.cs) is applied to its value, which becomes approximated with the given `NumericTolerance`.
+When a numerical property is encountered, the function [`BH.Engine.Base.Round()`](https://github.com/BHoM/BHoM_Engine/blob/main/BHoM_Engine/Query/Round.cs) is applied to its value, which becomes approximated with the given `NumericTolerance`.
 
 Therefore, when Hashing, the property's approximate value will be recorded in the Hash. When Diffing, the property approximate value will be used for the comparison.
 
 If both `NumericTolerance` and `SignificantFigures` are provided in the ComparisonConfig, both approximations are executed, and the largest approximation among all (the least precise number) is registered.
 
 
-> ### `RoundWithTolerance()` details
+> ### `Round()` details
 > 
-> The function [`BH.Engine.Base.RoundWithTolerance()`](https://github.com/BHoM/BHoM_Engine/blob/main/BHoM_Engine/Query/RoundWithTolerance.cs) will approximate the input value with the given tolerance, which is done by rounding (to floor) to the nearest tolerance multiplier.
+> The function [`BH.Engine.Base.Round()`](https://github.com/BHoM/BHoM_Engine/blob/main/BHoM_Engine/Query/Round.cs) will approximate the input value with the given tolerance, which is done by rounding to the nearest tolerance multiplier.
 > 
-> Some examples of `RoundWithTolerance()` are:
+> Some examples of `Round()` are:
 > 
 > | Input number | Input Tolerance | Result (approximated number) |
 > |--------------|-----------------|------------------------------|
-> | 12           | 20              | 0                            |
-> | 121          | 2               | 120                          |
+> | 12           | 20              | 20                           |
+> | 121          | 2               | 122                          |
 > | 1.2345       | 1.1             | 1.1                          |
 > | 0.014        | 0.01            | 0.01                         |
-> | 0.014        | 0.02            | 0                            |
+> | 0.014        | 0.02            | 0.02                         |
 
 
 ## PropertyNumericTolerance
@@ -232,7 +232,7 @@ If both `SignificantFigures` and `NumericTolerance` are provided in the Comparis
 
 > ### `RoundToSignificantFigures()` details
 >
-> The function [`BH.Engine.Base.RoundToSignificantFigures()`](https://github.com/BHoM/BHoM_Engine/blob/main/BHoM_Engine/Query/RoundWithTolerance.cs) will approximate the input value with the given Significant Figures. Some examples:
+> The function [`BH.Engine.Base.RoundToSignificantFigures()`](https://github.com/BHoM/BHoM_Engine/blob/main/BHoM_Engine/Query/RoundToSignificantFigures.cs) will approximate the input value with the given Significant Figures. Some examples:
 >
 > | Input number | Input Significant Figures | Result (approximated number) |
 > |--------------|-----------------|------------------------------|
