@@ -265,5 +265,6 @@ If a match is found, this takes precedence over the `SignificantFigures` option.
 If conflicting values/multiple matches are found among the `ComparisonConfig`'s numerical precision options, the largest approximation among all (least precise number) is registered.
 
 The `Name` field supports wildcard usage. Some examples:
+
 - `BH.oM.Geometry.Vector`: applies the corresponding tolerance to all numerical properties of Vectors, i.e. X, Y, Z
 - `BH.oM.Structure.Elements.*.Position`: applies the corresponding tolerance to all numerical properties of properties named `Position` under any Structural Element, e.g. `Bar.Position.X`, `Bar.Position.Y`, `Bar.Position.Z` and at the same time also `Node.Position.X`, `Node.Position.Y,` `Node.Position.Z`.
