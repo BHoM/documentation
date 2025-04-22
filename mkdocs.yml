@@ -18,6 +18,7 @@ theme:
   features:
     - navigation.tracking
     - navigation.top
+    - navigation.tabs
     - content.action.edit
     - content.action.view
     - content.tabs.link # allows to link to specific Content tab. See https://squidfunk.github.io/mkdocs-material/reference/content-tabs/#linked-content-tabs
@@ -28,7 +29,10 @@ plugins:
   - git-revision-date-localized: # Displays date created/modified on the page. The below configurations are bugged, so only date modified works.
     # enable_creation_date: true
     # fallback_to_build_date: true
-    
+  - redirects:
+      redirect_maps:
+        'index.md': 'documentation/index.md'
+        'oM/index.md': 'https://bhom.xyz/api_documentation/oM/'
 
 
 markdown_extensions:
@@ -54,6 +58,9 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  
+  - toc:
+      permalink: true
 
 extra_javascript: 
   # Also required for Mathjax support
