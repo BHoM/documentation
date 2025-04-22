@@ -85,6 +85,7 @@ A test file to use on the adapters to check that the forces extracted matches th
 Bar offsets specify a local vector from the bars node to where the bar is calculated from, with a rigid link between the Node object and the analysis bars end point.
 
 Hence:
+
 * a BHoM bars nodes are where it attaches to other nodes,
 * offsets are specified in the local coordinate system and is a translation from the node,
 * local x = bar.Tangent();
