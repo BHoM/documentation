@@ -5,6 +5,7 @@ Geometry_oM is the core library, on which all engineering BHoM objects are based
 All objects can be found [here in the Geometry_oM](https://github.com/BHoM/BHoM/tree/master/Geometry_oM)
 
 The code is divided into a few thematic domains, each stored in a separate folder:
+
 -	Coordinate System
 -	Curve
 -	Interface
