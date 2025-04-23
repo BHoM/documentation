@@ -8,6 +8,7 @@ theme:
   name: material
   logo: _logos/logo.png
   favicon: _logos/favicon.ico
+  custom_dir: docs/overrides
   palette:
     primary: white
     accent: pink
@@ -29,10 +30,6 @@ plugins:
   - git-revision-date-localized: # Displays date created/modified on the page. The below configurations are bugged, so only date modified works.
     # enable_creation_date: true
     # fallback_to_build_date: true
-  - redirects:
-      redirect_maps:
-        'index.md': 'documentation/index.md'
-        'oM/index.md': 'https://bhom.xyz/api_documentation/oM/'
 
 
 markdown_extensions:
