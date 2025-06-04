@@ -198,7 +198,7 @@ In the following example, two properties of the object `Bar` that lives in the n
       }
     ```
 
-### Structural changes to a a class
+### Structural changes to a class
 
 What if you completely redesigned a type of object and changed the properties that define it?
 
@@ -209,35 +209,32 @@ This case cannot be solved by a simple replacement of a string and will most lik
 
 So what do you need to do to cover the upgrade?
 
-- First, locate the `Converter.cs` file int the project of the current upgrader.
-- In that file, write a conversion method with the following signature: `public static Dictionary<string, object> UpgradeOldClassName(Dictionary<string, object> old)`. 
-- In the `Converter` constructor, add that method to the `ToNewObject` Dictionary. the key is that object type full name (namespace + type name) and the value is the method.
-- If you want to cover backward compatibility, you can also write a `DowngradeNewClassName` method and add it to the `ToOldObject` dictionary.
+- First, locate the `vXX.cs` file in the `CustomUpgrades` folder of the `BHoMUpgrades` project (with `XX` corresponding to the current version of the BHoM).
+- In that file, write a conversion method with the following signature: 
+```c#
+[VersioningTarget("<Object type full name (namespace + type name)>")]
+public static Dictionary<string, object> UpgradeOldClassName(Dictionary<string, object> old)
+{
+    // Your upgrade code here
+}
+``` 
+- If you want to cover backward compatibility, you can also have to do the same in the CustomDowngrades folder. We generally don't provide downgraders so, if there isn't any, you will have to create a folder and a containing class. That class can be name what you want but make sure you attach a `Downgrader` attribute to it.
 
 Here's an example.
 
 !!! example "Structural changes to an object"
 
-    ```c#
-    public class Converter : Base.Converter
+```c#
+namespace BH.Upgraders
+{
+    [Upgrader(8, 2)]
+    public static class v82
     {
         /***************************************************/
-        /**** Constructors                              ****/
+        /**** Public Methods                           ****/
         /***************************************************/
 
-        public Converter() : base()
-        {
-            PreviousVersion = "";
-
-            ToNewObject.Add("BH.oM.Versioning.OldVersion", UpgradeOldVersion); 
-        }
-
-
-        /***************************************************/
-        /**** Private Methods                           ****/
-        /***************************************************/
-
-
+        [VersioningTarget("BH.oM.Versioning.OldVersion")]
         public static Dictionary<string, object> UpgradeOldVersion(Dictionary<string, object> old)
         {
             if (old == null)
@@ -261,6 +258,7 @@ Here's an example.
 
         /***************************************************/
     }
+}
     ```
 
 A few things to notice:
