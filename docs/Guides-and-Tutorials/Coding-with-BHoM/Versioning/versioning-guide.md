@@ -224,41 +224,41 @@ Here's an example.
 
 !!! example "Structural changes to an object"
 
-```c#
-namespace BH.Upgraders
-{
-    [Upgrader(8, 2)]
-    public static class v82
+    ```c#
+    namespace BH.Upgraders
     {
-        /***************************************************/
-        /**** Public Methods                           ****/
-        /***************************************************/
-
-        [VersioningTarget("BH.oM.Versioning.OldVersion")]
-        public static Dictionary<string, object> UpgradeOldVersion(Dictionary<string, object> old)
+        [Upgrader(8, 2)]
+        public static class v82
         {
-            if (old == null)
-                return null;
-
-            double A = 0;
-            if (old.ContainsKey("A")) 
-                A = (double)old["A"];
-
-            double B = 0;
-            if (old.ContainsKey("B"))
-                B = (double)old["B"];
-
-            return new Dictionary<string, object>
+            /***************************************************/
+            /**** Public Methods                           ****/
+            /***************************************************/
+    
+            [VersioningTarget("BH.oM.Versioning.OldVersion")]
+            public static Dictionary<string, object> UpgradeOldVersion(Dictionary<string, object> old)
             {
-                { "_t",  "BH.oM.Versioning.NewVersion" },
-                { "AplusB", A + B },
-                { "AminusB", A - B }
-            };
+                if (old == null)
+                    return null;
+    
+                double A = 0;
+                if (old.ContainsKey("A")) 
+                    A = (double)old["A"];
+    
+                double B = 0;
+                if (old.ContainsKey("B"))
+                    B = (double)old["B"];
+    
+                return new Dictionary<string, object>
+                {
+                    { "_t",  "BH.oM.Versioning.NewVersion" },
+                    { "AplusB", A + B },
+                    { "AminusB", A - B }
+                };
+            }
+    
+            /***************************************************/
         }
-
-        /***************************************************/
     }
-}
     ```
 
 A few things to notice:
