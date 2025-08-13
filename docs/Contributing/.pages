@@ -1,6 +1,7 @@
 nav:
     - index.md
     - Editing-the-documentation.md
+    - Updating the API documentation.md
     - Submitting-an-Issue.md
     - Resolving-an-Issue.md
     - Pull-Requests.md
