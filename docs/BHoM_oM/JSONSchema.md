@@ -149,6 +149,91 @@ The initial part of requiring `"_t"` to exist and match one of the types guarant
         }]
     }
     ```
+### Enums
+
+[C# enums](https://learn.microsoft.com/en-us/dotnet/api/system.enum?view=netstandard-2.0) are generally serialised into strings using the BHoM Serialiser_Engine. This means they can be validated using the [JSON schema enum](https://json-schema.org/understanding-json-schema/reference/enum) keyword.
+
+The exception to this rule is when either the enum is serialised as a top level object, or when it is stored in json under a property of a different type, for example [System.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object?view=netstandard-2.0). For this case, the enum is serialised as an object aware of the type, and with the value stored as a property.
+
+To handle both these cases BHoM enums are turned into JSON schemas wrapped in an [anyOf](https://json-schema.org/understanding-json-schema/reference/combining#anyOf) keyword.
+
+!!! example
+    Example below shows the JSON schema for the [Offset](https://bhom.xyz/api/oM/Physical/Physical/Enums/Offset/) enum. The highlighted portions in the tabs below correspond to the two different options for the handling of the enums. The anyOf pattern on line 3 makes it so that any of the two options will validate as correct.
+
+    === "Simple - as known property"
+
+        ``` json linenums="1" hl_lines="4-5"
+        {
+        "$id" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Physical_oM/Elements/Offset.json",
+        "anyOf" : [{
+            "type" : ["string", "null"],
+            "enum" : ["Undefined", "Centre", "InnerEdge", "OuterEdge"]
+            }, {
+            "type" : ["object", "null"],
+            "properties" : {
+                "_t" : {
+                "type" : ["string", "null"],
+                "const" : "System.Enum"
+                },
+                "TypeName" : {
+                "type" : ["object", "null"],
+                "properties" : {
+                    "_t" : {
+                    "type" : ["string", "null"],
+                    "const" : "System.Type"
+                    },
+                    "Name" : {
+                    "type" : ["string", "null"],
+                    "const" : "BH.oM.Physical.Elements.Offset"
+                    }
+                }
+                },
+                "Value" : {
+                "type" : ["string", "null"],
+                "enum" : ["Undefined", "Centre", "InnerEdge", "OuterEdge"]
+                }
+            }
+            }]
+        }
+        ```
+
+    === "As top level object"
+
+        ``` Json linenums="1" hl_lines="7-29"
+        {
+        "$id" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Physical_oM/Elements/Offset.json",
+        "anyOf" : [{
+            "type" : ["string", "null"],
+            "enum" : ["Undefined", "Centre", "InnerEdge", "OuterEdge"]
+            }, {
+            "type" : ["object", "null"],
+            "properties" : {
+                "_t" : {
+                "type" : ["string", "null"],
+                "const" : "System.Enum"
+                },
+                "TypeName" : {
+                "type" : ["object", "null"],
+                "properties" : {
+                    "_t" : {
+                    "type" : ["string", "null"],
+                    "const" : "System.Type"
+                    },
+                    "Name" : {
+                    "type" : ["string", "null"],
+                    "const" : "BH.oM.Physical.Elements.Offset"
+                    }
+                }
+                },
+                "Value" : {
+                "type" : ["string", "null"],
+                "enum" : ["Undefined", "Centre", "InnerEdge", "OuterEdge"]
+                }
+            }
+            }]
+        }
+        ```
+
 
 ## Releases
 
