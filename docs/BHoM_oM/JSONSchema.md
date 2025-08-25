@@ -298,9 +298,10 @@ After all schemas have been generated, they should be [tested](#testing) to ensu
 Unit tests have been set up in the [.ci](https://github.com/BHoM/BHoM_JSONSchema/tree/develop/.ci/Generation/SchemaGeneration) folder of the [BHoM_JSONSchema](https://github.com/BHoM/BHoM_JSONSchema) repository.
 
 This contains tests that:
-- Valid obejcts validate as valid
+
+- Valid objects validate as valid
 - Invalid objects validates as invalid (added to give confidence that the validation is correct)
-- Tests to ensure all assemblies are available on the machine execution the tests.
+- Tests to ensure all assemblies are available on the machine executing the tests.
 
 
 ### Config
