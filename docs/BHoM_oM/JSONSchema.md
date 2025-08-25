@@ -14,71 +14,73 @@ The BHoM JSON schemas make use of [references ($ref)](https://json-schema.org/un
 A major benfit of using this type of structure is that in reduces the size and complexity of the schemas, especially for cases when a property is targeting an [interface](#interfaces).
 
 #### Properties
-For properties that target another IObject, the property is linked across via $ref. As an example, the [Line](https://bhom.xyz/api/oM/Dimensional/Geometry/Curve/Line/) class has two properties, start and end, that are of type [Point](https://bhom.xyz/api/oM/Dimensional/Geometry/Vector/Point/). These properties are referenced in via the ref keyword:
+For properties that target another IObject, the property is linked across via $ref. This allows for greater flexibility as well as simpler composition, especially for more complex schemas. As an example, the [Line](https://bhom.xyz/api/oM/Dimensional/Geometry/Curve/Line/) class has two properties, start and end, that are of type [Point](https://bhom.xyz/api/oM/Dimensional/Geometry/Vector/Point/). These properties are referenced in via the ref keyword:
 
-``` JSON hl_lines="8 11" title="Line.json" linenums="1"
-{
-  "$id" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Geometry_oM/Line.json",
-  "title" : "Line",
-  "type" : ["object", "null"],
-  "description" : "Line: A straight segment in space defining the shortest distance between two points in three-dimensional Euclidean geometry.\nThe Vector from Start to End defines the Line direction, which can be important for some applications.",
-  "properties" : {
-    "Start" : {
-      "$ref" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Geometry_oM/Point.json"
-    },
-    "End" : {
-      "$ref" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Geometry_oM/Point.json"
-    },
-    "Infinite" : {
-      "type" : "boolean",
-      "description" : "Defines the Line as a ray of infinite extents in both directions"
-    },
-    "_t" : {
-      "type" : ["string", "null"],
-      "description" : "Optional type disciminator.",
-      "const" : "BH.oM.Geometry.Line"
-    },
-    "_bhomVersion" : {
-      "type" : ["string", "null"],
-      "description" : "Optional version of BHoM used as part of automatic versioning and schema upgrades."
-    }
-  },
-  "required" : ["Start", "End", "Infinite"]
-}
-```
+!!! example
 
-``` JSON hl_lines="2" title="Point.json" linenums="1"
-{
-  "$id" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Geometry_oM/Point.json",
-  "title" : "Point",
-  "type" : ["object", "null"],
-  "description" : "Point: Defines a dimensionless location in three-dimensional space.",
-  "properties" : {
-    "X" : {
-      "type" : "number",
-      "description" : "Position along global X coordinate axis."
+    ``` JSON hl_lines="8 11" title="Line.json" linenums="1"
+    {
+    "$id" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Geometry_oM/Line.json",
+    "title" : "Line",
+    "type" : ["object", "null"],
+    "description" : "Line: A straight segment in space defining the shortest distance between two points in three-dimensional Euclidean geometry.\nThe Vector from Start to End defines the Line direction, which can be important for some applications.",
+    "properties" : {
+        "Start" : {
+        "$ref" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Geometry_oM/Point.json"
+        },
+        "End" : {
+        "$ref" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Geometry_oM/Point.json"
+        },
+        "Infinite" : {
+        "type" : "boolean",
+        "description" : "Defines the Line as a ray of infinite extents in both directions"
+        },
+        "_t" : {
+        "type" : ["string", "null"],
+        "description" : "Optional type disciminator.",
+        "const" : "BH.oM.Geometry.Line"
+        },
+        "_bhomVersion" : {
+        "type" : ["string", "null"],
+        "description" : "Optional version of BHoM used as part of automatic versioning and schema upgrades."
+        }
     },
-    "Y" : {
-      "type" : "number",
-      "description" : "Position along global Y coordinate axis."
-    },
-    "Z" : {
-      "type" : "number",
-      "description" : "Position along global Z coordinate axis."
-    },
-    "_t" : {
-      "type" : ["string", "null"],
-      "description" : "Optional type disciminator.",
-      "const" : "BH.oM.Geometry.Point"
-    },
-    "_bhomVersion" : {
-      "type" : ["string", "null"],
-      "description" : "Optional version of BHoM used as part of automatic versioning and schema upgrades."
+    "required" : ["Start", "End", "Infinite"]
     }
-  },
-  "required" : ["X", "Y", "Z"]
-}
-```
+    ```
+
+    ``` JSON hl_lines="2" title="Point.json" linenums="1"
+    {
+    "$id" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Geometry_oM/Point.json",
+    "title" : "Point",
+    "type" : ["object", "null"],
+    "description" : "Point: Defines a dimensionless location in three-dimensional space.",
+    "properties" : {
+        "X" : {
+        "type" : "number",
+        "description" : "Position along global X coordinate axis."
+        },
+        "Y" : {
+        "type" : "number",
+        "description" : "Position along global Y coordinate axis."
+        },
+        "Z" : {
+        "type" : "number",
+        "description" : "Position along global Z coordinate axis."
+        },
+        "_t" : {
+        "type" : ["string", "null"],
+        "description" : "Optional type disciminator.",
+        "const" : "BH.oM.Geometry.Point"
+        },
+        "_bhomVersion" : {
+        "type" : ["string", "null"],
+        "description" : "Optional version of BHoM used as part of automatic versioning and schema upgrades."
+        }
+    },
+    "required" : ["X", "Y", "Z"]
+    }
+    ```
 
 In the example above, you can see that the Point class is referenced across using the $ref keyword, and that the $id of the point is exactly matching the ref used.
 
@@ -90,7 +92,7 @@ For a json object to validate against a interface schema it requires the type di
 !!! note
     The type discriminator "_t" is not generally set as required across the BHoM JSON schemas for validation against a known class schema. When validating against a interface schema, at base level or as a property, however it is required to determine the schema to validate against.
 
-!!! note
+!!! warning
     To successfully evaluate a type that is implementing an interface agaist the schema of that interface, the subtype needs to known at the point of creation of the interface schema. This means a class in a repo not set to be part of the [generation](#generation) wont be able to be validated against its base interface, even if it is implementing that inferface in C#.
 
 It then uses the [if then + all of](https://json-schema.org/understanding-json-schema/reference/conditionals#ifthenelse) pattern to validate the object against the appropriate type.
@@ -107,44 +109,46 @@ Then the all-of + if-the pattern follows, which can be read as: If the value `"_
 
 The initial part of requiring `"_t"` to exist and match one of the types guarantiues that only valid types are validated as correct. The allOf if, then ensures that this subtime is valid against the matching schema.
 
-``` JSON title="IPolyline" linenums="1" hl_lines="3 6 14 20 27 33"
-{
-  "$id" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Geometry_oM/IPolyline.json",
-  "required" : ["_t"],
-  "properties" : {
-    "_t" : {
-      "enum" : ["BH.oM.Geometry.Polyline", "BH.oM.Geometry.Polygon"]
+!!! example
+
+    ``` JSON title="IPolyline" linenums="1" hl_lines="3 6 14 20 27 33"
+    {
+    "$id" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Geometry_oM/IPolyline.json",
+    "required" : ["_t"],
+    "properties" : {
+        "_t" : {
+        "enum" : ["BH.oM.Geometry.Polyline", "BH.oM.Geometry.Polygon"]
+        }
+    },
+    "allOf" : [{
+        "if" : {
+            "properties" : {
+            "_t" : {
+                "type" : ["string", "null"],
+                "const" : "BH.oM.Geometry.Polyline"
+            }
+            },
+            "required" : ["_t"]
+        },
+        "then" : {
+            "$ref" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Geometry_oM/Polyline.json"
+        }
+        }, {
+        "if" : {
+            "properties" : {
+            "_t" : {
+                "type" : ["string", "null"],
+                "const" : "BH.oM.Geometry.Polygon"
+            }
+            },
+            "required" : ["_t"]
+        },
+        "then" : {
+            "$ref" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Geometry_oM/Polygon.json"
+        }
+        }]
     }
-  },
-  "allOf" : [{
-      "if" : {
-        "properties" : {
-          "_t" : {
-            "type" : ["string", "null"],
-            "const" : "BH.oM.Geometry.Polyline"
-          }
-        },
-        "required" : ["_t"]
-      },
-      "then" : {
-        "$ref" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Geometry_oM/Polyline.json"
-      }
-    }, {
-      "if" : {
-        "properties" : {
-          "_t" : {
-            "type" : ["string", "null"],
-            "const" : "BH.oM.Geometry.Polygon"
-          }
-        },
-        "required" : ["_t"]
-      },
-      "then" : {
-        "$ref" : "https://raw.githubusercontent.com/BHoM/BHoM_JSONSchema/develop/Geometry_oM/Polygon.json"
-      }
-    }]
-}
-```
+    ```
 
 ## Releases
 
