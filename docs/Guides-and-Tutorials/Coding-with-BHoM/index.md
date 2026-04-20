@@ -28,6 +28,8 @@ We recommend [Visual Studio Community](https://visualstudio.microsoft.com/vs/com
 
    Please have a look at the page dedicated to [Debugging and Edit-and-continue](docs\Guides-and-Tutorials\Coding-with-BHoM\Best-practices\Debugging-Edit-and-continue.md) for tips on how to be most effective when coding/debugging with BHoM.
 
+<!-- This is a comment --> The link above is broken.
+
 
 
 
