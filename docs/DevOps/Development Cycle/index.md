@@ -54,3 +54,13 @@ All betas listed here were released at the end of their span.
 | 6.2 | 2023 | April - June |
 | 6.3 | 2023 | July - September |
 | 7.0 | 2023 | September - December |
+| 7.1 | 2024 | January - March      |
+| 7.2 | 2024 | April - June         |
+| 7.3 | 2024 | July - September     |
+| 8.0 | 2024 | September - December |
+| 8.1 | 2025 | January - March      |
+| 8.2 | 2025 | April - June         |
+| 8.3 | 2025 | July - September     |
+| 9.0 | 2025 | September - December |
+| 9.1 | 2026 | January - March      |
+| 9.2 | 2026 | April - June         |
