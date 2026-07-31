@@ -84,12 +84,12 @@ The method in the example is a [constructor](https://learn.microsoft.com/en-us/d
 
 This alternative is trickier and not required in most cases.
 
-The way to do it is to provide a `Method` section in the `VersioningXX.json` file:
+The way to do it is to provide a `Method` section in the `Versioning_XX.json` file:
 
-- Add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
+- Add a `Versioning_XX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
 - [Create a Versioning key as explained here](#obtaining-a-versioning-key). 
 - Get a representational string of the method, [like this](https://user-images.githubusercontent.com/16853390/82109755-2964fb00-976b-11ea-838e-ad9b80ff2455.png). If you are changing a constructor method, just leave the `methodName` input empty.
-- Add the following to the `Method` section of the `VersioningXX.json` file, as shown in the below example; make sure to place your changing method's Versioning key and representational string.
+- Add the following to the `Method` section of the `Versioning_XX.json` file, as shown in the below example; make sure to place your changing method's Versioning key and representational string.
 
 
 !!! example "Versioning using the `Versioning.json` file for a method whose inputs are being changed"
@@ -119,7 +119,7 @@ This applies to the case where an entire namespace is renamed. This means all th
 
 To record that change:
 
-- Add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
+- Add a `Versioning_XX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
 - provide the old namespace as key and the new namespace as value to the `Namespace.ToNew` section of the json file. 
 
 In order to make the change backward compatible (i.e. to allow downgrading, i.e. to open a newer BHoM script from a machine running an older version of BHoM), you can fill the `ToOld` section with mirrored information.
@@ -146,7 +146,7 @@ In order to make the change backward compatible (i.e. to allow downgrading, i.e.
 
 Modifying the name of a type (i.e. of a class, an object's type) requires to:
 
-- add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
+- add a `Versioning_XX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
 - add versioning information to the Versioning json file: provide the full name of the old type (namespace + type name) as key and the full name of the new type as value. 
  
 In order to make the change backward compatible (i.e. to allow downgrading, i.e. to open a newer BHoM script from a machine running an older version of BHoM), you can fill the `ToOld` section with mirrored information. 
@@ -176,7 +176,7 @@ In the example below, we show how the Versioning json file looks like for two cl
 For the case where an object type (i.e. class) was only modified by renaming some of its property, we have a simple solution relying on the Versioning json file.
 It requires to:
 
-- add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
+- add a `Versioning_XX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
 - add versioning information to the Versioning json file under the `Property.ToNew` entry. As a key, provide the full name of the type that contains the property you are renaming (namespace + type name) followed by the old property name. The value must be the new property name. 
 
 In order to make the change backward compatible (i.e. to allow downgrading, i.e. to open a newer BHoM script from a machine running an older version of BHoM), you can fill the `ToOld` section with mirrored information. 
@@ -281,7 +281,7 @@ Updating the path to a Dataset works in a similar manner to changes to names of 
 
 When this has happened, you will need to:
 
-- add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
+- add a `Versioning_XX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
 - add versioning information to the Versioning json file under the `Dataset` entries, as shown in the example below.
 
 In the example below, the Versioning json file specifies the move of some structural material files to a parent folder called `Structure`.
@@ -346,7 +346,7 @@ In some cases, an upgrade/downgrade of a method or object is simply not possible
 
 In such cases, it is important to inform the user and provide them with as much information as possible to facilitate the transition to the new version of the code. You will need to:
 
-- add a `VersioningXX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
+- add a `Versioning_XX.json` file to the project, if it does not yet exists for the current version of BHoM, [as explained here](#adding-a-versioning_xxjson-file-to-the-project).
 - add versioning information to the Versioning json file under the `MessageForDeleted` and/or `MessageForNoUpgrade` entries. As shown in the example below.
 
 
@@ -468,4 +468,3 @@ You should now have command windows popping up as soon as the upgrader are neede
 * [How to check your versioned changes are working](/documentation/How-to-check-your-versioned-changes-are-working-%3F)
 * [Property name change](/documentation/Change-to-a-property-name)
 * [Object name change and associated custom create method](/documentation/Object-name-change-and-associated-custom-create-method)
-
