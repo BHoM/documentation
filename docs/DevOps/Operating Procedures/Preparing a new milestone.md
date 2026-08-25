@@ -26,7 +26,7 @@ The following tasks should be completed as part of the preparation of a new mile
  - Upticking current milestone version for Test Toolkit
  - The `AssemblyFileVersion` should be updated across all repositories
  - The [Versioning_Toolkit](https://github.com/BHoM/Versioning_Toolkit) needs to have a new upgrader added and prepared for the next milestone to aid the next milestones development
- - The `PreviousVersionAttribute`s should be removed across all repositories, along with all `Versioning_xy.json` files
+ - The `PreviousVersionAttribute`s should be removed across all repositories, along with all `Versioning_XX.json` files
  - Upticking of copyright versions on BHoM repositories only
 
 ## 4.1 - Closure of milestones

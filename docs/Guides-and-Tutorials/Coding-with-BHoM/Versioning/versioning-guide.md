@@ -92,7 +92,7 @@ The way to do it is to provide a `Method` section in the `Versioning_XX.json` fi
 - Add the following to the `Method` section of the `Versioning_XX.json` file, as shown in the below example; make sure to place your changing method's Versioning key and representational string.
 
 
-!!! example "Versioning using the `Versioning.json` file for a method whose inputs are being changed"
+!!! example "Versioning using the `Versioning_XX.json` file for a method whose inputs are being changed"
 
     ```json
       "Method": {
@@ -153,7 +153,7 @@ In order to make the change backward compatible (i.e. to allow downgrading, i.e.
 
 In the example below, we show how the Versioning json file looks like for two classes being renamed, respectively from `DocumentBuilder` to `GBXMLDocumentBuilder` and from `XMLSettings` to `GBXMLSettings`.
 
-!!! example "Adding information to the `Versioning.json` file regarding two classes being renamed"
+!!! example "Adding information to the `Versioning_XX.json` file regarding two classes being renamed"
 
     ```json
     {
