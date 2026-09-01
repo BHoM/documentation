@@ -14,6 +14,10 @@ To store data for tests, you can use the [Test_Toolkit](https://github.com/BHoM/
 
 ![image](https://user-images.githubusercontent.com/6352844/210525746-f55ad541-4022-4418-b35a-b2f174620c66.png)
 
+!!! tip
+
+	Note the `check unit-tests` is conducted in a .NET Framework environment. There is a difference in how `double.ToString()` parses between .NET Framework and .NET Core. When creating unit tests, either use Rhino 7 or use `SetDotNetRunTime` to `.NET Framework` in Rhino 8.
+
 ### Procedure
 
 0. Compile the [Test_Toolkit](https://github.com/BHoM/Test_Toolkit) - it contains some useful methods that are not shipped in the BHoM installer.
@@ -29,4 +33,4 @@ To store data for tests, you can use the [Test_Toolkit](https://github.com/BHoM/
 
    ![image](https://user-images.githubusercontent.com/6352844/210527902-53bdf492-d305-405b-9f2b-3be671204519.png)
 
-8. Make sure to commit and push the data in your PR.
+7. Make sure to commit and push the data in your PR.
