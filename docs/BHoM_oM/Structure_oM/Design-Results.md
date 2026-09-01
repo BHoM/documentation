@@ -32,14 +32,18 @@ This is an `Enum` that is included on the specific object to designate the speci
 
 !!! example "What a steel design designation might look like"
     ```c#
-	    public enum SteelDesignation
+	namespace BH.oM.Structure.Design.AISC
 		{
-			[Description("Part 1-1: General rules and rules for buildings")]
-			[DisplayText("UK National Annex to EN 1993-1-1:2005")]
-			UK_NA_EN_1993-1-1_2005_A1-2014 = 0,
-			[Description("Specification for structural steel buildings")]
-			[DisplayText("AISC 360-22 : 2022")]
-			AISC_360-22_2022 = 1
+			public enum SteelDesignation
+			{
+				[Description("Specification for structural steel buildings")]
+				[DisplayText("AISC 360-16 : 2016")]
+				AISC_360_16_2016 = 0,
+
+				[Description("Specification for structural steel buildings")]
+				[DisplayText("AISC 360-22 : 2022")]
+				AISC_360_22_2022 = 1    
+			}
 		}
     ```
 
