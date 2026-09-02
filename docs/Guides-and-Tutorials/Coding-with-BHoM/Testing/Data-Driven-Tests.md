@@ -16,7 +16,7 @@ To store data for tests, you can use the [Test_Toolkit](https://github.com/BHoM/
 
 !!! tip
 
-	Note the `check unit-tests` is conducted in a .NET Framework environment. There is a difference in how `double.ToString()` parses between .NET Framework and .NET Core. When creating unit tests, either use Rhino 7 or use `SetDotNetRunTime` to `.NET Framework` in Rhino 8.
+	Note the `check unit-tests` is conducted in a .NET Framework environment. There is a difference in how `double.ToString()` parses between .NET Framework and .NET Core. When creating unit tests, either use Rhino 7 or use `SetDotNetRunTime` to `.NET Framework` in Rhino 8. You can read more in [Floating-Point Parsing and Formatting improvements in .NET Core 3.0](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/#potential-impact-to-existing-code).
 
 ### Procedure
 
