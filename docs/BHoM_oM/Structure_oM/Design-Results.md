@@ -103,7 +103,7 @@ Similar classes can be derived for `CompressionDesign`, `BucklingDesign` and `Sh
 	
 	The `IImmutable` is not strictly required on the class definition as it's implicit from `IDesignResult` but it's clearer to state explicitly. You can read from about [`IImmutable` here.](https://bhom.xyz/documentation/BHoM_oM/Base_oM/Interfaces/IImmutable/)
 
-#### Hashing
+#### Identifying results
 Specific results can be identified using a combination of `ObjectId`, `ResultCase`, `TimeStep`, `ModeNumber`. 
 
 For example, when a user wants to retrieve a specific result from a database. 
