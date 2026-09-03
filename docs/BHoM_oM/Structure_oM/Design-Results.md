@@ -20,7 +20,7 @@ These can be extended to materials too (e.g. `BH.oM.Structure.Design.Eurocode.Ti
 
 !!! tip
 
-	We do not need to include the subsection and part of the code in the namespace - that is covered in the designation `ENum`.
+	We do not need to include the subsection and part of the code in the namespace - that is covered in the designation `Enum`.
 
 Next, we need to decide on an object name.
 
