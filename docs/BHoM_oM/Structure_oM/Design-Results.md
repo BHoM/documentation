@@ -3,10 +3,10 @@ Design results represents the outputs from design checks carried out by bespoke 
 
 This is intentional and preferred to more generic implementations such as having a generic `Parameters` property of type `Dictionary<string,double>` where the properties can fluccuate between implementations.
 
-To provide consistency across different design result objects a base `IDesignResult` is provided that inherits from existing classes in the `Structure` and `Analytical` namespaces.
+To provide consistency across different design result objects a base `DesignResult` is provided that inherits from existing classes in the `Structure` and `Analytical` namespaces.
 
 ### Base Class
-The base class for all structural design results is stored in `BH.oM.Structure.Design` as an `IDesignResult` which inherits from the [`IStructuralResultClass`](https://github.com/BHoM/BHoM/blob/develop/Structure_oM/Results/IStructuralResult.cs) and [`IResultItem`](https://github.com/BHoM/BHoM/blob/cded0de0047171577144479fe8165684648f1ac3/Analytical_oM/Results/IResultItem.cs). 
+The base class for all structural design results is stored in `BH.oM.Structure.Design` as an `DesignResult` which inherits from the [`IStructuralResultClass`](https://github.com/BHoM/BHoM/blob/develop/Structure_oM/Results/IStructuralResult.cs) and [`IResultItem`](https://github.com/BHoM/BHoM/blob/cded0de0047171577144479fe8165684648f1ac3/Analytical_oM/Results/IResultItem.cs). 
 
 ### Creating your own design result class
 The first decision to make is what namespace our class will sit in.
@@ -56,7 +56,7 @@ Bringing together those decisions, we can create a class for tension design in a
 	{
 
 		[Description("An object that contains the outputs from a tension check.")]
-		public class Tension : IDesignResult, IImmutable
+		public class Tension : DesignResult, IImmutable
 		{
 			/***************************************************/
 			/**** Properties                                ****/
@@ -101,7 +101,7 @@ Similar classes can be derived for `CompressionDesign`, `BucklingDesign` and `Sh
 
 !!! tip
 	
-	The `IImmutable` is not strictly required on the class definition as it's implicit from `IDesignResult` but it's clearer to state explicitly. You can read from about [`IImmutable` here.](https://bhom.xyz/documentation/BHoM_oM/Base_oM/Interfaces/IImmutable/)
+	The `IImmutable` is not strictly required on the class definition as it's implicit from `DesignResult` but it's clearer to state explicitly. You can read from about [`IImmutable` here.](https://bhom.xyz/documentation/BHoM_oM/Base_oM/Interfaces/IImmutable/)
 
 #### Identifying results
 Specific results can be identified using a combination of `ObjectId`, `ResultCase`, `TimeStep`, `ModeNumber`. 
