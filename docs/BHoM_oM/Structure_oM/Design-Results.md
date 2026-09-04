@@ -96,10 +96,6 @@ Bringing together those decisions, we can create a class for tension design in a
             double designAxial, double resistanceAxial)
             : base(objectId, resultCase, modeNumber, timeStep)
         {
-            ObjectId = objectId;
-            ResultCase = resultCase;
-            ModeNumber = modeNumber;
-            TimeStep = timeStep;
             Utilisation = utilisation;
             GammaM0 = gammaM0;
             DesignAxial = designAxial;
