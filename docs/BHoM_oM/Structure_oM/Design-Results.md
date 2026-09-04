@@ -74,22 +74,37 @@ Bringing together those decisions, we can create a class for tension design in a
 			public virtual double TimeStep { get; }
 
 			[Description("The utilisation of the design check.")]
-			public virtual double Utilisation { get; }
-			
-			[Description("The specific national annex the design check relates to.")]
-			public virtual SteelDesignation NationalAnnex { get; }
-			
+			public override double Utilisation { get; }
+
 			[Description("The partial safety factor for the resistance of cross-sections.")]
 			public virtual double GammaM0 { get; }
-			
+
 			[Force]
 			[Description("The design axial force derived from the characteristic load multiplied by the relevant partial safety factors.")]
 			public virtual double DesignAxial { get; }
-			
+
 			[Force]
 			[Description("The design ultimate resistance of the net cross section subject to tension.")]
 			public virtual double ResistanceAxial { get; }
 		}
+		
+		/***************************************************/
+        /**** Constructors                              ****/
+        /***************************************************/
+
+        public Tension(IComparable objectId, IComparable resultCase, int modeNumber, double timeStep, double utilisation, double gammaM0,
+            double designAxial, double resistanceAxial)
+            : base(objectId, resultCase, modeNumber, timeStep)
+        {
+            ObjectId = objectId;
+            ResultCase = resultCase;
+            ModeNumber = modeNumber;
+            TimeStep = timeStep;
+            Utilisation = utilisation;
+            GammaM0 = gammaM0;
+            DesignAxial = designAxial;
+            ResistanceAxial = resistanceAxial;
+        }
 	}
     ```
 	
