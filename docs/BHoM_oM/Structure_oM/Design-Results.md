@@ -108,7 +108,7 @@ Bringing together those decisions, we can create a class for tension design in a
 2. Only properties that are dervied from the design code should be stored on the `DesignResult` object.  
 3. [Quantity Attributes](https://github.com/BHoM/BHoM/tree/develop/Quantities_oM/Attributes) are used to specify the units (adhering to the BHoM SI). 
 4. The utilisation property has the `abstract` modifier on the `DesignResult` class. Therefore, it is required to have an `override` modifier in the implemented class - see the above `Tension` class. This ensures the `DescriptionAttribute` for the `Utilisation` property is tailored to the specific design result.
-5. The constructor uses the `base` keyword to declare the properties from the `abstract` `DesignResult` class so they do not need to be set in the constructor.
+5. The constructor uses the `base` keyword to set the properties from the `abstract` `DesignResult` class so they do not need to be declared in the constructor.
 
 Similar classes can be derived for `CompressionDesign`, `BucklingDesign` and `ShearAndTorsionDesign`.
 
