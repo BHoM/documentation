@@ -37,7 +37,7 @@ So what makes a good description?
 1. A description must impart additional useful information beyond the property name, object and namespace. 
 2. Further to a definition, the description is an opportunity to include usage guidance, tips or additional context.
 3. The description is a place you can include synonyms etc. to help clarify for others in different regions/domains, being inclusive as possible.
-4. Also don't forget the addition of a [Quantity Attribute](https://github.com/BHoM/BHoM/tree/master/Quantities_oM/Attributes) can be used now, appropriate for Doubles and Vectors.
+4. Also don't forget the addition of a [Quantity Attribute](https://github.com/BHoM/BHoM/tree/main/Quantities_oM/Attributes) can be used now, appropriate for Doubles and Vectors. Units should never be written out in plain text (e.g. `"Length of the beam in metres"`) - any quantity must always be handled by the appropriate Quantity Attribute instead. See the [Quantity attributes](/BHoM_oM/BHoM-Units-conventions/#quantity-attributes) section of the Units conventions page for more information.
 
 ### DisplayText
 
@@ -80,11 +80,23 @@ Used on methods to describe the input parameters. Consists of two strings, name 
 ```
 
 ### Output
-Used on methods to describe the resulting return object. Consists of two strings, name and description. The name will be used by the UIs to name the result of the method and the description will help explain the returned object. You can only add one output to each method. Example:
+Used on methods to describe the resulting return object. Consists of two strings, name and description. The name will be used by the UIs to name the result of the method and the description will help explain the returned object. You can only add one output to each method. If the method returns one of the `BH.oM.Base.Output<T1, ..., Tn>` types, use the [MultiOutput](#multioutput) attribute instead. Example:
 
 ```
         [Output("List", "Filtered list containing only objects assignable from the provided type")]
         public static List<object> FilterByType(this IEnumerable<object> list, Type type)
+        {
+            //....code
+        }
+```
+
+### MultiOutput
+Used on methods that return a `BH.oM.Base.Output<T1, ..., Tn>` type to describe each of the individual outputs of the method. Consists of an index, name and description. The index is zero-based and needs to be unique for each `MultiOutput` attribute on the method, corresponding to the position of the item in the `Output` type. The name will be used by the UIs to name that particular result and the description will help explain it. Multiple `MultiOutput` tags are required on the same method - one per item returned by the `Output` type. Example:
+
+```
+        [MultiOutput(0, "min", "The minimum point of the bounding box.")]
+        [MultiOutput(1, "max", "The maximum point of the bounding box.")]
+        public static Output<Point, Point> MinMax(this BoundingBox box)
         {
             //....code
         }

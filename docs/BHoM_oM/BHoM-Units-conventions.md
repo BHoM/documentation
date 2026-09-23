@@ -28,6 +28,6 @@ The [Localisation_Toolkit](https://github.com/BHoM/Localisation_Toolkit) provide
 ## Quantity attributes
 
 BHoM object properties can be decorated with a _Quantity Attribute_ to define (in SI) what unity the property should be considered in. 
-This is to be applied only to properties that are of a primitive numerical type, e.g. `int`, `double`, etc. 
+This is to be applied only to properties that are of a primitive numerical type, e.g. `int`, `double`, etc, as well as `Vector`, which is also a valid candidate for a Quantity Attribute. 
 
-See [Quantities_oM](https://github.com/BHoM/BHoM/tree/master/Quantities_oM/Attributes) for the available attributes.
+See [Quantities_oM](https://github.com/BHoM/BHoM/tree/main/Quantities_oM/Attributes) for the available attributes.
